@@ -16,7 +16,7 @@ A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable 
 
 The easiest way to try this starter is to run it locally on your computer.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking the ["Use this template"](https://github.com/ferrucc-io/weekly-changelog/generate) button on GitHub and filling out the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+First, you'll need to create your own copy of this starter. You can do so by clicking the ["Use this template"](https://github.com/ferrucc-io/changelog/generate) button on GitHub and filling out the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
 Once you've cloned the repository, install dependencies and start the Next.js server:
 
@@ -35,6 +35,12 @@ If you want to change the default environment variables, create a `.env.local` f
 ```
 cp .env.local.example .env.local
 ```
+
+## Deploying
+
+You can deploy your blog to any hosting provider that supports Next.js. We recommend [Vercel](https://vercel.com), as it is the easiest way to deploy Next.js apps.
+
+To deploy you'll need to make sure you include the right environment variables. You can find some examples of our environment variables in the [`.env.local.example`](https://github.com/juneHQ/changelog/tree/master/.env.example) file.
 
 ## Routes
 
@@ -77,5 +83,5 @@ Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/u
 
 Most of the branding elements can be found in `<Navbar>` and `<Footer>` components. To customize these components, update the code in these directories:
 
-- [`components/core/navbar/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/components/core/navbar)
-- [`components/core/footer/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/components/core/footer)
+- [`components/core/navbar/index.tsx`](https://github.com/juneHQ/changelog/tree/master/components/core/navbar)
+- [`components/core/footer/index.tsx`](https://github.com/juneHQ/changelog/tree/master/components/core/footer)
