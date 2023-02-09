@@ -9,7 +9,7 @@ const Page = ({ slugs }) => {
   const router = useRouter();
   const page = parseInt(router.query.page as string);
 
-  const Articles = slugs.map((slug) => dynamic(() => import(`../changelogs/${slug}.mdx`)));
+  const Articles = slugs.map((slug) => dynamic(() => import(`./changelogs/${slug}.mdx`)));
 
   return (
     <PaginatedArticles page={page}>
