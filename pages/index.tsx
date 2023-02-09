@@ -20,21 +20,6 @@ const Page = ({ slugs }) => {
   );
 };
 
-export async function getStaticPaths() {
-  const slugs = getArticleSlugs();
-  const articlesLength = Math.floor(slugs.length / ARTICLES_PER_PAGE);
-  const numbers = Array.from(Array(articlesLength), (x, i) => i);
-
-  return {
-    paths: numbers.map((number) => ({
-      params: {
-        page: number.toString(),
-      },
-    })),
-    fallback: false,
-  };
-}
-
 export async function getStaticProps() {
   const slugs = getArticleSlugs();
 
