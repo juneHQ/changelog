@@ -38,9 +38,7 @@ export async function getStaticPaths() {
 export async function getStaticProps() {
   const slugs = getArticleSlugs();
 
-  const results = await Promise.allSettled(
-    slugs.map((slug) => import(`../changelogs/${slug}.mdx`))
-  );
+  const results = await Promise.allSettled(slugs.map((slug) => import(`./changelogs/${slug}.mdx`)));
 
   const meta = results
     .map((res) => res.status === "fulfilled" && res.value.meta)
