@@ -1,16 +1,14 @@
-import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Index = () => {
-  return null;
-};
+  const router = useRouter();
 
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  return {
-    redirect: {
-      destination: "/page/0",
-      permanent: true,
-    },
-  };
+  useEffect(() => {
+    router.replace("/page/0");
+  }, [router]);
+
+  return null;
 };
 
 export default Index;
