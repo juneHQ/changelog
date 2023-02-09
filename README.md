@@ -1,4 +1,4 @@
-# Weekly Changelog Blog
+# Changelog
 
 Set-up a blog and share what you ship as easy as 1-2-3!
 
@@ -18,13 +18,7 @@ The easiest way to try this starter is to run it locally on your computer.
 
 First, you'll need to create your own copy of this starter. You can do so by clicking the ["Use this template"](https://github.com/ferrucc-io/weekly-changelog/generate) button on GitHub and filling out the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
 
-Once you've cloned the repository, make sure you're in the `frontend` directory:
-
-```bash
-cd frontend
-```
-
-Install dependencies and start the Next.js server:
+Once you've cloned the repository, install dependencies and start the Next.js server:
 
 ```bash
 # Using yarn
@@ -51,20 +45,20 @@ cp .env.local.example .env.local
 ## File structure
 
 ```bash
-frontend
-├─ bin             # Scripts
-├─ components      # Reusable components
-│  ├─ core
-│  ├─ mdx-layout.tsx
-│  └─ ...
-├─ lib              # Types, theme, utilities, services
-├─ pages
-│  ├─ changelogs    # MDX articles
-│  ├─ page
-│  │  └─ [page].tsx # Paginated articles
-│  ├─ _app.tsx
-│  └─ _middleware.ts
+
+bin             # Scripts
+components      # Reusable components
+├─ core
+├─ mdx-layout.tsx
 └─ ...
+lib              # Types, theme, utilities, services
+pages
+├─ changelogs    # MDX articles
+├─ page
+│  └─ [page].tsx # Paginated articles
+├─ _app.tsx
+└─ _middleware.ts
+...
 ```
 
 ## Writing articles
@@ -83,5 +77,5 @@ Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/u
 
 Most of the branding elements can be found in `<Navbar>` and `<Footer>` components. To customize these components, update the code in these directories:
 
-- [`frontend/components/core/navbar/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/frontend/components/core/navbar)
-- [`frontend/components/core/footer/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/frontend/components/core/footer)
+- [`components/core/navbar/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/components/core/navbar)
+- [`components/core/footer/index.tsx`](https://github.com/juneHQ/weekly-changelog/tree/master/components/core/footer)
