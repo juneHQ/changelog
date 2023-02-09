@@ -117,4 +117,4 @@ build
 .env.*
 !.env.example
 
-frontend/out/*
+out/*
