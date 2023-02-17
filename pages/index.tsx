@@ -1,18 +1,14 @@
-import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
-import { getArticleSlugs } from "lib/get-articles-slugs";
-import { PaginatedArticles } from "components/paginated-articles";
+import dynamic from 'next/dynamic';
+import { getArticleSlugs } from 'lib/get-articles-slugs';
+import { PaginatedArticles } from 'components/paginated-articles';
 
 const ARTICLES_PER_PAGE = 4;
 
 const Page = ({ slugs }) => {
-  const router = useRouter();
-  const page = parseInt(router.query.page as string);
-
   const Articles = slugs.map((slug) => dynamic(() => import(`./changelogs/${slug}.mdx`)));
 
   return (
-    <PaginatedArticles page={page}>
+    <PaginatedArticles page={0}>
       {Articles.map((Article, index) => (
         <Article key={index} hideLayout={true} hideHead={true} hideAuthors={true} />
       ))}
