@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Link from "next/link";
-import { defaultPx } from "lib/utils/default-container-px";
-import { DesktopNavItem } from "components/core/navbar/desktop-nav-item";
-import { HamburgerMenu } from "components/core/custom-icons/hamburger-icon";
-import { CloseIcon } from "components/core/custom-icons/close-icon";
-import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import { useState } from 'react';
+import Link from 'next/link';
+import { defaultPx } from 'lib/utils/default-container-px';
+import { DesktopNavItem } from 'components/core/navbar/desktop-nav-item';
+import { HamburgerMenu } from 'components/core/custom-icons/hamburger-icon';
+import { CloseIcon } from 'components/core/custom-icons/close-icon';
+import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
 const MOBILE_MENU_COLOR = "#241f47";
 const MOBILE_FONT_WEIGHT = 600;
@@ -172,7 +172,7 @@ export default function Navbar(props: Props) {
           {/* Logo */}
           <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST} passHref prefetch={false}>
             <Flex display={["none", "none", "block"]} cursor="pointer">
-              <Image h={12} src="/June-logo.svg" alt="june-logo" />
+              <Image h={8} src="/June-logo.svg" alt="june-logo" />
             </Flex>
           </Link>
           {/* Navigation items */}
