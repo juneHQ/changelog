@@ -1,3 +1,5 @@
+![](/highlight.png)
+
 # Changelog
 
 Set-up a blog and share what you ship as easy as 1-2-3!
@@ -14,9 +16,9 @@ A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable 
 
 ## Getting started
 
-The easiest way to try this starter is to run it locally on your computer.
+The easiest way to try this is to run it locally on your computer.
 
-First, you'll need to create your own copy of this starter. You can do so by clicking the ["Use this template"](https://github.com/ferrucc-io/changelog/generate) button on GitHub and filling out the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template).
+First, you'll need to create your own copy of this code. You can do so by clicking the ["Fork"](https://github.com/juneHQ/changelog/fork) button on GitHub and filling out the form.
 
 Once you've cloned the repository, install dependencies and start the Next.js server:
 
