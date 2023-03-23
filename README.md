@@ -20,7 +20,13 @@ The easiest way to try this is to run it locally on your computer.
 
 First, you'll need to create your own copy of this code. You can do so by clicking the ["Fork"](https://github.com/juneHQ/changelog/fork) button on GitHub and filling out the form.
 
-Once you've cloned the repository, install dependencies and start the Next.js server:
+Once you've cloned the repository, create a `.env.local` file to setup the environment variables, you can reuse the default variables or change them as you will:
+
+```bash
+cp .env.example .env.local
+```
+
+Then install dependencies and start the Next.js server:
 
 ```bash
 # Using yarn
@@ -32,13 +38,7 @@ npm install
 npm run dev
 ```
 
-If you want to change the default environment variables, create a `.env.local` file like this:
-
-```
-cp .env.local.example .env.local
-```
-
-## Deploying
+## Deploying
 
 You can deploy your blog to any hosting provider that supports Next.js. We recommend [Vercel](https://vercel.com), as it is the easiest way to deploy Next.js apps.
 
