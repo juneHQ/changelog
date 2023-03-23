@@ -1,4 +1,4 @@
-import { Avatar, Flex, HStack, Text } from "@chakra-ui/react";
+import { Avatar, Flex, HStack, Text } from '@chakra-ui/react';
 
 interface ContributorProps {
   avatarUrl?: string;
