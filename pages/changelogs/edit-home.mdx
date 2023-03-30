@@ -65,6 +65,8 @@ Over the next months we want to accelerate the pace at which we make June evolve
 
 - **Demo workspace data improvements**. We improved the data we generate for demo workspaces. This should make it easier for people evaluating June to get an idea of what you can do with it.
 
+- **We added property filtering to Slack notifications**. As part of this work we revamped and redesigned the experience around setting up Slack event notifications.
+
 - **We updated our approximate queries for company reports**. If you're not using the group context to track your users we updated the logic we have to count companies as active. In the past we considered every company a user was part of as active. This meant that companies that didn't match your audience filters, but had users that belonged to companies that did match your filters would be counted as active as part of reports. We now only match the first company for a user if you have the group context disabled. Our recommendation is to always implement the group context if you have impersonation workflows or if your users can belong to multiple companies. [See the docs](https://www.june.so/docs/companies/track)
 
 **Live talks with Stytch**
