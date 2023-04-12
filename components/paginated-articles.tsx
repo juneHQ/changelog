@@ -44,6 +44,31 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
             <Text fontSize="xl" color="gray.700">
               How June gets better, every week
             </Text>
+            <HStack>
+              <Text
+                as="a"
+                fontSize="xl"
+                color="primary"
+                href="https://twitter.com/intent/follow?screen_name=JuneDotSo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Follow @JuneDotSo on Twitter
+              </Text>
+              <Text fontSize="xl" color="gray.700">
+                •
+              </Text>
+              <Text
+                as="a"
+                fontSize="xl"
+                color="primary"
+                href="https://help.june.so/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore our docs
+              </Text>
+            </HStack>
           </VStack>
           <Divider my={16} />
           <VStack spacing={16} divider={<Divider />}>
