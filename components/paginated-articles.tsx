@@ -47,26 +47,26 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
             <HStack>
               <Text
                 as="a"
-                fontSize="xl"
+                fontSize="lg"
                 color="primary"
                 href="https://twitter.com/intent/follow?screen_name=JuneDotSo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Follow @JuneDotSo on Twitter
+                Follow us on Twitter
               </Text>
-              <Text fontSize="xl" color="gray.700">
+              <Text fontSize="lg" color="gray.700">
                 •
               </Text>
               <Text
                 as="a"
-                fontSize="xl"
+                fontSize="lg"
                 color="primary"
-                href="https://help.june.so/en/"
+                href="https://june.so/docs/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Explore our docs
+                Read our docs
               </Text>
             </HStack>
           </VStack>
