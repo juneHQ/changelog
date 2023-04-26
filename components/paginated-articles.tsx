@@ -55,19 +55,6 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
               >
                 Follow us on Twitter
               </Text>
-              <Text fontSize="lg" color="gray.700">
-                •
-              </Text>
-              <Text
-                as="a"
-                fontSize="lg"
-                color="primary"
-                href="https://june.so/docs/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read our docs
-              </Text>
             </HStack>
           </VStack>
           <Divider my={16} />
