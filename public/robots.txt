@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://changelog.june.so
+
+# Sitemaps
+Sitemap: https://changelog.june.so/sitemap.xml

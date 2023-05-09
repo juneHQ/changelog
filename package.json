@@ -5,6 +5,7 @@
   "scripts": {
     "develop": "next dev",
     "dev": "next dev",
+    "postbuild": "next-sitemap",
     "build": "next build && next export",
     "start": "next start",
     "lint": "eslint .",
@@ -44,6 +45,7 @@
     "@typescript-eslint/parser": "5.x",
     "babel-eslint": "10.x",
     "eslint": "8.x",
+    "next-sitemap": "^2.5.17",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-react-app": "^7.0.0",
     "eslint-plugin-flowtype": "8.x",
