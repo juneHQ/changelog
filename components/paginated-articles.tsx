@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import { defaultPx } from 'lib/utils/default-container-px';
-import { TryBanner } from 'components/core/try-banner';
 import Navbar from 'components/core/navbar';
 import Footer from 'components/core/footer';
 import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from '@chakra-ui/react';
