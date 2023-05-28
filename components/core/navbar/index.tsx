@@ -11,23 +11,23 @@ const MOBILE_FONT_WEIGHT = 600;
 
 const ROUTES = [
   {
-    href: "/",
-    title: "Changelog",
-    type: "internal-link",
-  },
-  {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/customer-stories",
-    title: "Zing",
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/company/about-us",
+    title: "About",
     type: "external-link",
   },
   {
-    href: "https://qualify.june.so",
-    title: "Qualification",
+    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/resources",
+    title: "Resources",
     type: "external-link",
   },
   {
-    href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/pricing",
-    title: "Pricing",
+    href: "https://blog.zingfi.co",
+    title: "Blog",
+    type: "external-link",
+  },
+  {
+    href: "https://docs.zingfi.co",
+    title: "Documentation",
     type: "external-link",
   },
 ] as const;
@@ -53,7 +53,7 @@ export default function Navbar(props: Props) {
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
+              <Flex p={4} as="a" href="/">
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
@@ -68,7 +68,7 @@ export default function Navbar(props: Props) {
         <Box w="100%" zIndex="overlay" display={["block", "block", "none"]} position="absolute">
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href={process.env.NEXT_PUBLIC_MARKETING_HOST}>
+              <Flex p={4} as="a" href="/">
                 <Image h={12} src="/june-logo-small.svg" alt="june-logo" />
               </Flex>
               <Flex p={4} onClick={toggle}>
@@ -97,38 +97,38 @@ export default function Navbar(props: Props) {
           <Flex
             align="center"
             as="a"
-            href="https://changelog.june.so/"
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/company/about-us`}
             style={{ textDecoration: "none" }}
           >
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-              Changelog
+              About
             </Text>
           </Flex>
           <Link
             prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/customer-stories`}
+            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/resources`}
           >
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-                Customers
+                Resources
               </Text>
             </Flex>
           </Link>
-          <Link prefetch={false} href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/templates`}>
+          <Link prefetch={false} href="https://blog.zingfi.co">
             <Flex align="center" style={{ textDecoration: "none" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-                Templates
+                Blog
               </Text>
             </Flex>
           </Link>
           <Link
             prefetch={false}
-            href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
+            href="https://docs.zingfi.co"
             passHref
           >
             <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
               <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-                Pricing
+                Documentation
               </Text>
             </Flex>
           </Link>
@@ -139,11 +139,11 @@ export default function Navbar(props: Props) {
             size="md"
             h={50}
             as="a"
-            href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
+            href={process.env.NEXT_PUBLIC_MARKETING_HOST}
             borderRadius={6}
             fontWeight={MOBILE_FONT_WEIGHT}
           >
-            Sign up
+            Back to website
           </Button>
         </Stack>
       </Flex>
@@ -160,7 +160,7 @@ export default function Navbar(props: Props) {
       >
         <Flex py={6} direction="row" justify="space-between">
           {/* Logo */}
-          <Link href={process.env.NEXT_PUBLIC_MARKETING_HOST} passHref prefetch={false}>
+          <Link href="/">
             <Flex display={["none", "none", "block"]} cursor="pointer">
               <Image h={8} src="/June-logo.svg" alt="june-logo" />
             </Flex>
@@ -181,18 +181,10 @@ export default function Navbar(props: Props) {
             <Button
               as="a"
               size="landingMd"
-              variant="landingOutline"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
-            >
-              Login
-            </Button>
-            <Button
-              as="a"
-              size="landingMd"
               variant="landingSolid"
-              href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
+              href={process.env.NEXT_PUBLIC_MARKETING_HOST}
             >
-              Sign up
+              Back to website
             </Button>
           </HStack>
         </Flex>
