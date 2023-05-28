@@ -54,7 +54,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
       {!props.hideHead && (
         <Head>
           <title>{title}</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/public/favicon.ico" />
           <meta name="title" content={title} />
           <meta name="description" content={description} />
           <meta name="image" content={props.meta.headerImage} />
