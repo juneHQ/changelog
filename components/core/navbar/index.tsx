@@ -6,7 +6,7 @@ import { HamburgerMenu } from 'components/core/custom-icons/hamburger-icon';
 import { CloseIcon } from 'components/core/custom-icons/close-icon';
 import { Box, Button, Container, Flex, HStack, Image, Stack, Text } from '@chakra-ui/react';
 
-const MOBILE_MENU_COLOR = "#241f47";
+const MOBILE_MENU_COLOR = "#6e5899";
 const MOBILE_FONT_WEIGHT = 600;
 
 const ROUTES = [
@@ -17,7 +17,7 @@ const ROUTES = [
   },
   {
     href: process.env.NEXT_PUBLIC_MARKETING_HOST + "/customer-stories",
-    title: "Customers",
+    title: "Zing",
     type: "external-link",
   },
   {
