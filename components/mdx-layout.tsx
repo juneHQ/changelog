@@ -45,16 +45,16 @@ export interface MdxLayoutProps {
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
-  const title = `${props.meta.title} | June Changelog`;
-  const description = "Discover new updates and improvements to June.";
-  const url = "https://changelog.june.so";
+  const title = `${props.meta.title} | Zing Changelog`;
+  const description = "Discover new updates and improvements to Zing.";
+  const url = "https://changelog.zingfi.co";
 
   return (
     <MDXProvider components={components}>
       {!props.hideHead && (
         <Head>
           <title>{title}</title>
-          <link rel="icon" href="/public/favicon.ico" />
+          <link rel="icon" href="https://res.cloudinary.com/tamilore/image/upload/c_scale,w_32/v1685100484/favicon.svg" />
           <meta name="title" content={title} />
           <meta name="description" content={description} />
           <meta name="image" content={props.meta.headerImage} />
