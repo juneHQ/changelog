@@ -12,25 +12,25 @@ export interface PaginatedArticlesProps {
 }
 
 export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) => {
-  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
+  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} Zing Changelog`;
 
   return (
     <>
       <Head>
         <title>{metaTitle}</title>
-        <link rel="icon" href="/public/favicon.ico" />
+        <link rel="icon" href="https://res.cloudinary.com/tamilore/image/upload/c_scale,w_32/v1685100484/favicon.svg" />
         <meta name="title" content={metaTitle} />
-        <meta name="description" content="Discover new updates and improvements to June." />
+        <meta name="description" content="Discover new updates and improvements to Zing." />
         <meta name="image" content="https://changelog.june.so/social.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://changelog.june.so" />
+        <meta property="og:url" content="https://changelog.zingfi.co" />
         <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content="Discover new updates and improvements to June." />
+        <meta property="og:description" content="Discover new updates and improvements to Zing." />
         <meta property="og:image" content="https://changelog.june.so/social.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://changelog.june.so" />
+        <meta name="twitter:url" content="https://changelog.zingfi.co" />
         <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content="Discover new updates and improvements to June." />
+        <meta name="twitter:description" content="Discover new updates and improvements to Zing." />
         <meta name="twitter:image" content="https://changelog.june.so/social.png" />
       </Head>
       <Navbar />
