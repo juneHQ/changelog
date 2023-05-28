@@ -18,7 +18,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
     <>
       <Head>
         <title>{metaTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
         <meta name="title" content={metaTitle} />
         <meta name="description" content="Discover new updates and improvements to June." />
         <meta name="image" content="https://changelog.june.so/social.png" />
