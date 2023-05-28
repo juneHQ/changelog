@@ -103,7 +103,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             </VStack>
             {/* Article content */}
             <Box px={[6]} pt={[10]} fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
-              {props.children}
+              {props.meta.summary}
             </Box>
             {/* Article authors */}
             {!props.hideAuthors && (
