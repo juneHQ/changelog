@@ -135,16 +135,6 @@ export default function Navbar(props: Props) {
         </Flex>
         <Stack spacing={4} mt={16}>
           <Button
-            h={50}
-            size="md"
-            as="a"
-            href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
-            borderRadius={6}
-            fontWeight={MOBILE_FONT_WEIGHT}
-          >
-            Log in
-          </Button>
-          <Button
             colorScheme="purple"
             size="md"
             h={50}
