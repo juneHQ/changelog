@@ -44,137 +44,92 @@ export default function Footer(props: Props) {
         </GridItem>
         <GridItem gridArea="solution">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Explore</FooterTitle>
+            <FooterTitle>Company</FooterTitle>
             <FooterLink
-              title="Overview"
+              title="About"
               type="external"
-              href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/company/about-us`}
             />
             <FooterLink
-              title="Pricing"
+              title="Blog"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog`}
             />
-            <FooterLink title="Changelog" href="/" />
-            <FooterLink title="Widget for iOS" type="external" href="https://widgets.june.so/" />
+            <FooterLink 
+              title="Resources"
+              type="external"
+              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/resources`}
+              />
+            <FooterLink title="Contact" type="external" href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/contact`} />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Alternatives</FooterTitle>
+            <FooterTitle>Products</FooterTitle>
             <FooterLink
-              title="June vs Amplitude"
+              title="Identity"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-amplitude`}
+              href="#"
             />
             <FooterLink
-              title="June vs Mixpanel"
+              title="Transactons"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-mixpanel`}
+              href="#"
+            />
+            <FooterLink
+              title="Income"
+              type="external"
+              href="#"
+            />
+            <FooterLink
+              title="Balances"
+              type="external"
+              href="#"
+            />
+            <FooterLink
+              title="Investments"
+              type="external"
+              href="#"
+            />
+            <FooterLink
+              title="Payments"
+              type="external"
+              href="#"
             />
           </VStack>
         </GridItem>
         <GridItem gridArea="company">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Company</FooterTitle>
+            <FooterTitle>Solutions</FooterTitle>
             {/* <FooterLink title="Our story" /> */}
             <FooterLink
-              title="Careers"
+              title="Mortgages"
               type="external"
-              href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
+              href="#"
             />
-            <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
-            <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
-            <FooterLink title="Blog" type="external" href="https://inside.june.so" />
+            <FooterLink title="Lending" type="external" href="#" />
+            <FooterLink title="Banking" type="external" href="#" />
           </VStack>
         </GridItem>
         <GridItem gridArea="legal">
           <VStack align="start" spacing={gap}>
-            <FooterTitle>Legal</FooterTitle>
+            <FooterTitle>Developer</FooterTitle>
             <FooterLink
-              title="Terms"
+              title="Quickstart"
               type="external"
-              href="https://www.notion.so/Terms-of-Service-3a8be1c25dd04cf699800425153a03f8"
+              href="#"
             />
             <FooterLink
-              title="Privacy"
+              title="Documentation"
               type="external"
-              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+              href="#"
             />
-            <VStack align="start">
-              <FooterLink
-                style={{ display: ["none", "none", "block"] }}
-                title="Backed by"
-                type="text"
-              />
-              <FooterLink
-                type="node"
-                title={
-                  <Image
-                    src="/yc-orange-logo.png"
-                    alt="y-combinator logo"
-                    height={6}
-                    w="auto"
-                    display={["none", "none", "block"]}
-                  />
-                }
-              />
-            </VStack>
             <FooterLink
-              type="node"
-              title={
-                <chakra.a
-                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
-                  target="_blank"
-                  rel="noreferrer"
-                  display={["none", "none", "block"]}
-                >
-                  <Image
-                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
-                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
-                    htmlWidth="250"
-                    htmlHeight="54"
-                    width="250px"
-                    height="54px"
-                  />
-                </chakra.a>
-              }
+              title="API Reference"
+              type="external"
+              href="#"
             />
-            <FooterLink title="Copyright © 2023 June" type="text" />
-          </VStack>
-        </GridItem>
-        <GridItem display={["block", "block", "none"]}>
-          <VStack align="start">
-            <FooterLink title="Backed by" type="text" />
-            <FooterLink
-              type="node"
-              title={
-                <Image src="/yc-orange-logo.png" alt="y-combinator logo" height={6} w="auto" />
-              }
-            />
-          </VStack>
-        </GridItem>
-        <GridItem display={["block", "block", "none"]}>
-          <VStack align="start" spacing={gap}>
-            <FooterLink
-              type="node"
-              title={
-                <a
-                  href="https://www.producthunt.com/posts/june-1-0?utm_source=badge-golden-kitty-badge&utm_medium=badge&utm_souce=badge-june-1-0"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Image
-                    src="https://api.producthunt.com/widgets/embed-image/v1/golden-kitty-badge.svg?post_id=285721&theme=light"
-                    alt="June 1.0 - Instant analytics reports built on top of Segment | Product Hunt"
-                    htmlWidth="250"
-                    htmlHeight="54"
-                    width="250px"
-                    height="54px"
-                  />
-                </a>
-              }
-            />
+            <FooterLink title="Copyright © 2023 Zing" type="text" />
           </VStack>
         </GridItem>
       </Grid>
