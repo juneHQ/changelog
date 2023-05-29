@@ -38,7 +38,7 @@ export const defaultNavItemStyle: TextProps = {
   style: { textDecoration: "none" },
   fontFamily: "landingHeading",
   fontWeight: "bold",
-  fontSize: "sm",
+  fontSize: "md",
   color: "landing.black",
   textAlign: "center",
   cursor: "pointer",
