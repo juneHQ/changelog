@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.zingfi.co"
+        }
+      ],
+      "destination": "/blog/:path*"
+    }
+  ]
+}
