@@ -1,0 +1,97 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "feature-report-improvements",
+  publishedAt: "2023-01-20T09:00:00.000Z",
+  title: "Adding some magic to the feature report",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/feature-report-improvements/header.png",
+  authors: [
+    {
+      name: "Alberto Incisa della Rocchetta",
+      description: "Product & Growth",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg",
+    },
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg",
+    },
+    {
+      name: "Alice Clavel",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/alice_clavel_d41351cbdc.jpeg",
+    },
+    {
+      name: "Daniel Beere",
+      description: "Designer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg",
+    },
+    {
+      name: "Adis Banda",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG",
+    },
+    {
+      name: "Vinayak Mehta",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg",
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg",
+    },
+  ],
+};
+
+Before starting June I was a product engineer at Intercom. Our team was building the messaging capabilities (email, chat messages and push notifications) and we spent 2 years working on a massive revamp of the underlying logic of how the product works.
+
+When we launched the new system we all got into a room. The PMs brought pizzas and donuts and we all celebrated as a team. It was a great moment. We had worked hard and we were proud of what we had achieved.
+
+We created Datadog dashboards to measure usage, and received in Slack updates of the first users using the new system. We were all excited to see our work finally getting into the hands of our customers.
+
+When starting June what me and Enzo realised is that the current tools we use to measure the impact of our work are just dumb calculators. They are built to answer the most complex questions, but are sometimes not able to answer the simplest ones. They also seem to be built in a vacuum, without any consideration of the people who will use them.
+
+So this week with all the team we decided to take a step back from what we normally build. We decided to try and add some donuts and pizza to our dashboards. Give them some personality. Make them work like product teams work.
+
+## Company level adoption
+
+Our first step to improve the way we help B2B companies measure the impact of their work was to add support for the feature report at a company level.
+
+This is now in line with almost all the other reports we have. It allows you to see the adoption of a feature across all the users and companies using your product.
+
+Now you can finally answer questions like know what's companies
+
+## Achievements and celebrations
+
+We added a new section to the feature report to celebrate the achievements of your team. Every time you launch something new you can now track your progress. Both in terms of adoption and usage of the feature.
+
+Symbolic milestones like reaching the first 100 users are fun to celebrate. They're an easy way to get everyone on the team excited about the work they're doing.
+
+Often times product teams aren't able to stay close to the users. They don't get to see the impact of their work. This is why we added a section to the feature report to celebrate the achievements of your team.
+
+## Auto-generated feature reports
+
+For new users we now automatically create feature reports from your events (excluding the ones that are too generic like `user created` or `user signed up`).
+
+This is a great way to get started with the product. It allows you to see the adoption of your product without having to do any work.
+
+This is a great addition to the other improvement we shipped last week which allows you to create a feature report in one click once you started sending a new event.
+
+**Other improvements**
+
+- Added a default suggested filter to all reports excluding the domain email of the person creating the report
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,0 +1,44 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "improved-time-based-audiences",
+  publishedAt: "2021-06-18T10:00:00.000Z",
+  title: "Improved time-based audiences",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_q2_c2_w1_retention_by_cohort_6d5c16be80.png",
+  authors: [
+    {
+      name: "Vinayak Mehta",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg",
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg",
+    },
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg",
+    },
+  ],
+};
+
+This week we've added a better way to interact with [time-based audiences](https://changelog.june.so/changelog/time-based-audiences) on the user retention template.
+
+You can now use the dropdown on the retention graph to select the time-based audiences you want to compare retention curves for. Ideally you should see your time-based cohorts moving upward.
+
+Other improvements:
+
+- The single-user screen now automatically opens in a new tab when you click on a user with the drill-downs in your reports. This helps you keep the focus.
+- In addition to these, we worked on database/infrastructure upgrades, app should feel faster!
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

@@ -1,0 +1,41 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "ui-improvements-and-fixes",
+  publishedAt: "2021-04-09T11:00:00.000Z",
+  title: "UI improvements and fixes",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_apr_9_48e1cbea4e.png",
+  authors: [
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg",
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg",
+    },
+    {
+      name: "Vinayak Mehta",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg",
+    },
+  ],
+};
+
+We improved UI components like buttons and headings across the app. In addition to that, we also:
+
+- Added better tooltips for charts on the active users, active companies, and feature usage templates
+- Fixed a bug on the cohort table where we weren't calculating cohorts for calendar intervals
+- Fixed the funnel template to handle long event names in the template setup and bar chart
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

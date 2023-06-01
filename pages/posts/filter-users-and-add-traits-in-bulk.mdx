@@ -1,0 +1,53 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "filter-users-and-add-traits-in-bulk",
+  publishedAt: "2021-07-09T11:00:00.000Z",
+  title: "Filter users and add traits in bulk",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_q2_c2_w4_audience_filters_bulk_trait_63e0291704.png",
+  authors: [
+    {
+      name: "Vinayak Mehta",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg",
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg",
+    },
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg",
+    },
+  ],
+};
+
+This week we added audience filters to the user's list. These filters let you segment users based on traits and behaviors. Once you've filtered your users into a segment, you can add traits to all of them in bulk!
+
+💡 _Pro tips_: when you add filters they get saved in the URL of the page so that you can share the segment you create with your team.
+
+**Other improvements:**
+
+- You can now configure slack notification for the Slipping Away template! When you do that, we'll send you a weekly notification with the list of users who are slipping away based on your template setup. You can click on an email to copy it and reach out right away! ![Capture d’écran 2021-07-13 à 16.19.20.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_07_13_a_16_19_20_be76d5c59c.png)
+
+- Templates are getting smart events! The first template to get the 'Any event' smart event is Active Users, which looks for _any event_ to mark a user as active. ![Capture d’écran 2021-07-13 à 16.20.43.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_07_13_a_16_20_43_cd613b7faa.png)
+
+- We now show user information on the frontend by falling back on [reserved traits from Segment](https://segment.com/docs/connections/spec/identify/#traits). We start by looking for 'firstName' and 'lastName'. If they are not present, we look for 'name', then 'username', and then 'email'. If we're not able to find any of those traits for a user, we mark them as 'Unknown'. We've also started showing the user ids from Segment on the single user page.
+
+- We've also started to show required events for every template in its preview during the report creation flow. ![Capture d’écran 2021-07-13 à 16.22.04.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_07_13_a_16_22_04_020cb30c40.png)
+
+- We fixed bugs that weren't letting users change the name and upload an image for their workspaces.
+- We also added an invite button on the reports page and fixed a bug where the daily active user's card won't reload automatically on updating the template setup.
+- We're gonna start sending weekly analytics emails starting next Monday, so keep an eye out for them in your inboxes!
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

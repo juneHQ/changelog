@@ -1,0 +1,51 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "new-onboarding-experience",
+  publishedAt: "2021-05-07T10:00:00.000Z",
+  title: "New onboarding experience",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/onboarding_revamp_b5f06fef66.png",
+  authors: [
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg",
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl:
+        "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg",
+    },
+  ],
+};
+
+This week we focused on revamping the onboarding experience for June. We introduced an optional onboarding call as we realised a 15 minute call with us can really make a difference when it comes to getting value from the product.
+
+[Feel free to book a call here if you had trouble setting up your June workspace](https://calendly.com/enzo-a/)
+
+Other than that:
+
+![Screenshot 2021-05-07 at 17.03.56.png](https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2021_05_07_at_17_03_56_c558c68705.png)
+
+✨Any time a new version of June is pushed we now display a notification. Before this some of our users were getting blank screens when we pushed some breaking changes to our APIs
+
+✨Performance improvements to the Power Users template (it now loads 10x faster for large workspaces)
+
+🐛Feed layout in Safari looks good now
+
+🐛The report title editor now is full width
+
+We also spent quite some time squashing more under the hood bugs and addressing some of our technical debt.
+
+Vinayak (we're still just a team of 3), is currently in Delhi where the COVID situation is really troubling. If you want to contribute to the relief funds [here's](https://actgrants.in/donate/) a good place to do it.
+
+If you're currently in India stay strong and best wishes from the June team
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
