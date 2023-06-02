@@ -1,8 +1,7 @@
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-
-import { PaginatedArticles } from "components/paginated-articles";
+import dynamic from "next/dynamic";
 import { getArticleSlugs } from "lib/get-articles-slugs";
+import { PaginatedArticles } from "components/paginated-articles";
 
 const ARTICLES_PER_PAGE = 4;
 
