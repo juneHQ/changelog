@@ -1,6 +1,7 @@
-import dynamic from 'next/dynamic';
-import { getArticleSlugs } from 'lib/get-articles-slugs';
-import { PaginatedArticles } from 'components/paginated-articles';
+import dynamic from "next/dynamic";
+import { getArticleSlugs } from "lib/get-articles-slugs";
+import { generateRssFeed } from "lib/generate-rss-feed";
+import { PaginatedArticles } from "components/paginated-articles";
 
 const ARTICLES_PER_PAGE = 4;
 
@@ -17,6 +18,7 @@ const Page = ({ slugs }) => {
 };
 
 export async function getStaticProps() {
+  await generateRssFeed();
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(slugs.map((slug) => import(`./changelogs/${slug}.mdx`)));

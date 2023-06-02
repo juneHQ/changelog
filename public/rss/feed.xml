@@ -1,0 +1,878 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>June Changelog</title>
+        <link>https://changelog.june.so</link>
+        <description>How June gets better every week</description>
+        <lastBuildDate>Fri, 02 Jun 2023 10:48:04 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for June changelog</generator>
+        <image>
+            <title>June Changelog</title>
+            <url>https://changelog.june.so/favicon.ico</url>
+            <link>https://changelog.june.so</link>
+        </image>
+        <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Instant Slack notifications 2.0]]></title>
+            <link>https://changelog.june.so/changelog/instant-slack-notifications-v2</link>
+            <guid>https://changelog.june.so/changelog/instant-slack-notifications-v2</guid>
+            <pubDate>Fri, 26 May 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/instant-slack-notifications-v2/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Manual domain and email enrichment]]></title>
+            <link>https://changelog.june.so/changelog/domain-and-email-enrichment</link>
+            <guid>https://changelog.june.so/changelog/domain-and-email-enrichment</guid>
+            <pubDate>Fri, 19 May 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/domain-and-email-enrichment/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Order your features]]></title>
+            <link>https://changelog.june.so/changelog/order-your-features</link>
+            <guid>https://changelog.june.so/changelog/order-your-features</guid>
+            <pubDate>Fri, 12 May 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/order-your-features/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Performance Improvements]]></title>
+            <link>https://changelog.june.so/changelog/performance-improvements</link>
+            <guid>https://changelog.june.so/changelog/performance-improvements</guid>
+            <pubDate>Fri, 05 May 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/performance-improvements/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Bug bashing week]]></title>
+            <link>https://changelog.june.so/changelog/bug-bashing</link>
+            <guid>https://changelog.june.so/changelog/bug-bashing</guid>
+            <pubDate>Fri, 28 Apr 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/bug-bashing/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Advanced company tracking]]></title>
+            <link>https://changelog.june.so/changelog/improved-company-tracking</link>
+            <guid>https://changelog.june.so/changelog/improved-company-tracking</guid>
+            <pubDate>Fri, 21 Apr 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/improved-company-tracking/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Doing things that scale]]></title>
+            <link>https://changelog.june.so/changelog/scaling-support</link>
+            <guid>https://changelog.june.so/changelog/scaling-support</guid>
+            <pubDate>Fri, 14 Apr 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/scaling-support/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Custom insights]]></title>
+            <link>https://changelog.june.so/changelog/custom-insights</link>
+            <guid>https://changelog.june.so/changelog/custom-insights</guid>
+            <pubDate>Fri, 07 Apr 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/custom-insights/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[June AI + 2 more things]]></title>
+            <link>https://changelog.june.so/changelog/ai</link>
+            <guid>https://changelog.june.so/changelog/ai</guid>
+            <pubDate>Fri, 31 Mar 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/ai/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Editable home]]></title>
+            <link>https://changelog.june.so/changelog/edit-home</link>
+            <guid>https://changelog.june.so/changelog/edit-home</guid>
+            <pubDate>Fri, 24 Mar 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/edit-home/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Making funnels flexible]]></title>
+            <link>https://changelog.june.so/changelog/funnel-multiple-events</link>
+            <guid>https://changelog.june.so/changelog/funnel-multiple-events</guid>
+            <pubDate>Fri, 17 Mar 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/funnel-multiple-events/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Share your feedback]]></title>
+            <link>https://changelog.june.so/changelog/send-your-feedback</link>
+            <guid>https://changelog.june.so/changelog/send-your-feedback</guid>
+            <pubDate>Fri, 10 Mar 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/send-your-feedback/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[In-app onboarding]]></title>
+            <link>https://changelog.june.so/changelog/redesigned-onboarding</link>
+            <guid>https://changelog.june.so/changelog/redesigned-onboarding</guid>
+            <pubDate>Fri, 03 Mar 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/redesigned-onboarding/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Announcing June 3.0]]></title>
+            <link>https://changelog.june.so/changelog/june-3-0</link>
+            <guid>https://changelog.june.so/changelog/june-3-0</guid>
+            <pubDate>Fri, 24 Feb 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/june-3-0/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[SOC 2 Type II audit and the new June logo]]></title>
+            <link>https://changelog.june.so/changelog/soc2-type-2</link>
+            <guid>https://changelog.june.so/changelog/soc2-type-2</guid>
+            <pubDate>Fri, 17 Feb 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/soc2-type-2/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company reports]]></title>
+            <link>https://changelog.june.so/changelog/company-reports</link>
+            <guid>https://changelog.june.so/changelog/company-reports</guid>
+            <pubDate>Fri, 10 Feb 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/company-reports/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Open sourcing our Changelog]]></title>
+            <link>https://changelog.june.so/changelog/open-sourcing-our-changelog</link>
+            <guid>https://changelog.june.so/changelog/open-sourcing-our-changelog</guid>
+            <pubDate>Fri, 03 Feb 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/open-sourcing-our-changelog/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Make features people want]]></title>
+            <link>https://changelog.june.so/changelog/make-features-people-want</link>
+            <guid>https://changelog.june.so/changelog/make-features-people-want</guid>
+            <pubDate>Fri, 27 Jan 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/make-features-people-want/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Adding some magic to the feature report]]></title>
+            <link>https://changelog.june.so/changelog/feature-report-improvements</link>
+            <guid>https://changelog.june.so/changelog/feature-report-improvements</guid>
+            <pubDate>Fri, 20 Jan 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/feature-report-improvements/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New audience rules editor]]></title>
+            <link>https://changelog.june.so/changelog/new-audience-editor</link>
+            <guid>https://changelog.june.so/changelog/new-audience-editor</guid>
+            <pubDate>Fri, 13 Jan 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/new-audience-editor/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Features list]]></title>
+            <link>https://changelog.june.so/changelog/features-list</link>
+            <guid>https://changelog.june.so/changelog/features-list</guid>
+            <pubDate>Fri, 06 Jan 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/features-list/features-list.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Small bug fixes]]></title>
+            <link>https://changelog.june.so/changelog/nye-small-bug-fixes</link>
+            <guid>https://changelog.june.so/changelog/nye-small-bug-fixes</guid>
+            <pubDate>Fri, 30 Dec 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/nye-small-bug-fixes/small-fixes.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[June year in review]]></title>
+            <link>https://changelog.june.so/changelog/2022-in-review</link>
+            <guid>https://changelog.june.so/changelog/2022-in-review</guid>
+            <pubDate>Fri, 23 Dec 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/2022-in-review/2022-in-review.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Automatic sign up enrichment and qualification]]></title>
+            <link>https://changelog.june.so/changelog/automatic-sign-up-enrichment-and-qualification</link>
+            <guid>https://changelog.june.so/changelog/automatic-sign-up-enrichment-and-qualification</guid>
+            <pubDate>Fri, 16 Dec 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_image_a5da5b13e4.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[RIP Templates]]></title>
+            <link>https://changelog.june.so/changelog/rip-templates</link>
+            <guid>https://changelog.june.so/changelog/rip-templates</guid>
+            <pubDate>Fri, 09 Dec 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_templates_800c41316a.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New June SDKs and documentation]]></title>
+            <link>https://changelog.june.so/changelog/june-sdk</link>
+            <guid>https://changelog.june.so/changelog/june-sdk</guid>
+            <pubDate>Fri, 02 Dec 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/1_91_1_y_1_f4b0d383d2.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Integrate your product analytics with your CRM]]></title>
+            <link>https://changelog.june.so/changelog/integrate-your-product-analytics-with-your-crm</link>
+            <guid>https://changelog.june.so/changelog/integrate-your-product-analytics-with-your-crm</guid>
+            <pubDate>Fri, 25 Nov 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_hubspot_b_b5924cf115.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Save your audiences]]></title>
+            <link>https://changelog.june.so/changelog/save-your-audiences</link>
+            <guid>https://changelog.june.so/changelog/save-your-audiences</guid>
+            <pubDate>Fri, 18 Nov 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_saved_audiences_dc89d93423.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Product metrics benchmarks]]></title>
+            <link>https://changelog.june.so/changelog/product-metrics-benchmarks</link>
+            <guid>https://changelog.june.so/changelog/product-metrics-benchmarks</guid>
+            <pubDate>Fri, 11 Nov 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/benchmarks_social_share_9949c94f6d.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Revamping our user onboarding]]></title>
+            <link>https://changelog.june.so/changelog/revamping-our-user-onboarding</link>
+            <guid>https://changelog.june.so/changelog/revamping-our-user-onboarding</guid>
+            <pubDate>Fri, 04 Nov 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_onboarding_665f5c8bc6.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Save your audiences - Alpha release]]></title>
+            <link>https://changelog.june.so/changelog/save-your-audiences-alpha-release</link>
+            <guid>https://changelog.june.so/changelog/save-your-audiences-alpha-release</guid>
+            <pubDate>Fri, 28 Oct 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_saved_audiences_e7a57d067b.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Zoom into your engagement]]></title>
+            <link>https://changelog.june.so/changelog/zoom-into-your-engagement</link>
+            <guid>https://changelog.june.so/changelog/zoom-into-your-engagement</guid>
+            <pubDate>Fri, 21 Oct 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_profile_events_388ae3b97e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Usage thresholds for Activation]]></title>
+            <link>https://changelog.june.so/changelog/usage-thresholds-for-activation</link>
+            <guid>https://changelog.june.so/changelog/usage-thresholds-for-activation</guid>
+            <pubDate>Fri, 14 Oct 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_event_occurences_0f969adb87.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Hack week]]></title>
+            <link>https://changelog.june.so/changelog/hack-week</link>
+            <guid>https://changelog.june.so/changelog/hack-week</guid>
+            <pubDate>Fri, 07 Oct 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/59947c25_47b8_40e5_a4e0_a6ff6c086c4f_cdcebb9f8e.jpeg" length="0" type="image/jpeg"/>
+        </item>
+        <item>
+            <title><![CDATA[Report labels]]></title>
+            <link>https://changelog.june.so/changelog/labels-on-reports-list</link>
+            <guid>https://changelog.june.so/changelog/labels-on-reports-list</guid>
+            <pubDate>Fri, 30 Sep 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_labels_fe8c3fcec1.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature release 2.0]]></title>
+            <link>https://changelog.june.so/changelog/feature-release-2-0</link>
+            <guid>https://changelog.june.so/changelog/feature-release-2-0</guid>
+            <pubDate>Fri, 23 Sep 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_feature_release_update_4a7c7cf127.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[All time high]]></title>
+            <link>https://changelog.june.so/changelog/all-time-high</link>
+            <guid>https://changelog.june.so/changelog/all-time-high</guid>
+            <pubDate>Fri, 16 Sep 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_ath_cd256d0719.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Search on drilldowns]]></title>
+            <link>https://changelog.june.so/changelog/search-on-drilldowns</link>
+            <guid>https://changelog.june.so/changelog/search-on-drilldowns</guid>
+            <pubDate>Fri, 09 Sep 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_drilldown_filter_c4cbd99452.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company milestones revamp]]></title>
+            <link>https://changelog.june.so/changelog/company-milestones-revamp</link>
+            <guid>https://changelog.june.so/changelog/company-milestones-revamp</guid>
+            <pubDate>Fri, 02 Sep 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_milestones_1_a36e1a626f.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[CMD+K]]></title>
+            <link>https://changelog.june.so/changelog/cmd-k</link>
+            <guid>https://changelog.june.so/changelog/cmd-k</guid>
+            <pubDate>Fri, 26 Aug 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_cmdk_f249526f91.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Remove noisy events]]></title>
+            <link>https://changelog.june.so/changelog/remove-noisy-events</link>
+            <guid>https://changelog.june.so/changelog/remove-noisy-events</guid>
+            <pubDate>Fri, 19 Aug 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_system_events_78b0ab35f6.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Funnel Breakdowns]]></title>
+            <link>https://changelog.june.so/changelog/funnel-breakdowns</link>
+            <guid>https://changelog.june.so/changelog/funnel-breakdowns</guid>
+            <pubDate>Fri, 05 Aug 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_funnel_breakdown_680bdc0fe3.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Introducing June Tracking]]></title>
+            <link>https://changelog.june.so/changelog/introducing-june-tracking</link>
+            <guid>https://changelog.june.so/changelog/introducing-june-tracking</guid>
+            <pubDate>Fri, 29 Jul 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_sdk_490bc8a2aa.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company level funnel]]></title>
+            <link>https://changelog.june.so/changelog/company-level-funnel</link>
+            <guid>https://changelog.june.so/changelog/company-level-funnel</guid>
+            <pubDate>Fri, 22 Jul 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_company_funnel_22c1b5d591.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Browser tab titles]]></title>
+            <link>https://changelog.june.so/changelog/browser-tab-titles</link>
+            <guid>https://changelog.june.so/changelog/browser-tab-titles</guid>
+            <pubDate>Fri, 15 Jul 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_report_name_tabs_8e89dd3444.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Most engaged companies]]></title>
+            <link>https://changelog.june.so/changelog/most-engaged-companies</link>
+            <guid>https://changelog.june.so/changelog/most-engaged-companies</guid>
+            <pubDate>Fri, 08 Jul 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_2129_be5428608b.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Understand what your users are doing]]></title>
+            <link>https://changelog.june.so/changelog/understand-what-users-do</link>
+            <guid>https://changelog.june.so/changelog/understand-what-users-do</guid>
+            <pubDate>Fri, 01 Jul 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_profile_activity_filter_92851dfa39.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Where are your visitors coming from?]]></title>
+            <link>https://changelog.june.so/changelog/where-are-your-visitors-coming-from</link>
+            <guid>https://changelog.june.so/changelog/where-are-your-visitors-coming-from</guid>
+            <pubDate>Fri, 24 Jun 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_new_users_insights_1_cd1943edb0.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved experience filtering users across the product]]></title>
+            <link>https://changelog.june.so/changelog/improved-audience-experience-across-the-product</link>
+            <guid>https://changelog.june.so/changelog/improved-audience-experience-across-the-product</guid>
+            <pubDate>Fri, 17 Jun 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_recommended_filters_cf361d0e85.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature usage on the home]]></title>
+            <link>https://changelog.june.so/changelog/feature-usage-on-the-home</link>
+            <guid>https://changelog.june.so/changelog/feature-usage-on-the-home</guid>
+            <pubDate>Fri, 10 Jun 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_feature_release_home_42ca7dc50b.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Introducing the explorer report]]></title>
+            <link>https://changelog.june.so/changelog/introducing-the-explorer-report</link>
+            <guid>https://changelog.june.so/changelog/introducing-the-explorer-report</guid>
+            <pubDate>Fri, 03 Jun 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_explorer_afd9002994.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Finding Product-Market fit using June]]></title>
+            <link>https://changelog.june.so/changelog/finding-product-market-fit-using-june</link>
+            <guid>https://changelog.june.so/changelog/finding-product-market-fit-using-june</guid>
+            <pubDate>Fri, 27 May 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_user_retention_insights_959eba0f33.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature release insights]]></title>
+            <link>https://changelog.june.so/changelog/feature-release-insights</link>
+            <guid>https://changelog.june.so/changelog/feature-release-insights</guid>
+            <pubDate>Mon, 23 May 2022 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_feature_release_insights_1d31b04783.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Visible set up]]></title>
+            <link>https://changelog.june.so/changelog/visible-set-up</link>
+            <guid>https://changelog.june.so/changelog/visible-set-up</guid>
+            <pubDate>Fri, 13 May 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_report_setup_f80c04fc3b.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature release]]></title>
+            <link>https://changelog.june.so/changelog/feature-release</link>
+            <guid>https://changelog.june.so/changelog/feature-release</guid>
+            <pubDate>Thu, 12 May 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_feature_release_2_e3d56e88e8.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Freshpaint integration]]></title>
+            <link>https://changelog.june.so/changelog/freshpaint-integration</link>
+            <guid>https://changelog.june.so/changelog/freshpaint-integration</guid>
+            <pubDate>Fri, 29 Apr 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/3_c5b69edf3d.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company milestones]]></title>
+            <link>https://changelog.june.so/changelog/company-milestones</link>
+            <guid>https://changelog.june.so/changelog/company-milestones</guid>
+            <pubDate>Fri, 22 Apr 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1724_ab26ac6735.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature adoption]]></title>
+            <link>https://changelog.june.so/changelog/feature-adoption</link>
+            <guid>https://changelog.june.so/changelog/feature-adoption</guid>
+            <pubDate>Fri, 15 Apr 2022 16:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1720_c96d319062.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Better funnels]]></title>
+            <link>https://changelog.june.so/changelog/better-funnels</link>
+            <guid>https://changelog.june.so/changelog/better-funnels</guid>
+            <pubDate>Fri, 08 Apr 2022 19:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1717_69e565d1e3.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[User milestones]]></title>
+            <link>https://changelog.june.so/changelog/user-milestones</link>
+            <guid>https://changelog.june.so/changelog/user-milestones</guid>
+            <pubDate>Fri, 01 Apr 2022 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1716_afadeaa4df.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Export everything as a CSV]]></title>
+            <link>https://changelog.june.so/changelog/export-everything-as-a-csv</link>
+            <guid>https://changelog.june.so/changelog/export-everything-as-a-csv</guid>
+            <pubDate>Fri, 25 Mar 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/export_csv_cea5fd925e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company level Home]]></title>
+            <link>https://changelog.june.so/changelog/company-home</link>
+            <guid>https://changelog.june.so/changelog/company-home</guid>
+            <pubDate>Fri, 18 Mar 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1712_187cfc0dae.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New company page]]></title>
+            <link>https://changelog.june.so/changelog/new-company-page</link>
+            <guid>https://changelog.june.so/changelog/new-company-page</guid>
+            <pubDate>Fri, 11 Mar 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1711_b4b8d4b786.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New user page]]></title>
+            <link>https://changelog.june.so/changelog/new-user-page</link>
+            <guid>https://changelog.june.so/changelog/new-user-page</guid>
+            <pubDate>Fri, 04 Mar 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1630_9ef3b85ee3.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Retreat in Marseille]]></title>
+            <link>https://changelog.june.so/changelog/june-retreat-in-marseille</link>
+            <guid>https://changelog.june.so/changelog/june-retreat-in-marseille</guid>
+            <pubDate>Fri, 25 Feb 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/DSCF_1498_0e1241095c.jpeg" length="0" type="image/jpeg"/>
+        </item>
+        <item>
+            <title><![CDATA[Power companies report]]></title>
+            <link>https://changelog.june.so/changelog/power-companies-report</link>
+            <guid>https://changelog.june.so/changelog/power-companies-report</guid>
+            <pubDate>Fri, 18 Feb 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/power_companies_changelog_573bf9b603.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Accurate companies]]></title>
+            <link>https://changelog.june.so/changelog/accurate-grouping</link>
+            <guid>https://changelog.june.so/changelog/accurate-grouping</guid>
+            <pubDate>Fri, 11 Feb 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1629_ec0e40995f.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Event digest]]></title>
+            <link>https://changelog.june.so/changelog/event-digest</link>
+            <guid>https://changelog.june.so/changelog/event-digest</guid>
+            <pubDate>Fri, 04 Feb 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1625_339a45da52.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Slack digests for any graph]]></title>
+            <link>https://changelog.june.so/changelog/slack-digests-for-any-insight</link>
+            <guid>https://changelog.june.so/changelog/slack-digests-for-any-insight</guid>
+            <pubDate>Fri, 28 Jan 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2022_01_25_a_16_33_41_879c940100.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[User growth]]></title>
+            <link>https://changelog.june.so/changelog/growth</link>
+            <guid>https://changelog.june.so/changelog/growth</guid>
+            <pubDate>Fri, 21 Jan 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1616_ed8a9fb912.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New users]]></title>
+            <link>https://changelog.june.so/changelog/new-users</link>
+            <guid>https://changelog.june.so/changelog/new-users</guid>
+            <pubDate>Mon, 17 Jan 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1614_905f1ca090.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Event frequency]]></title>
+            <link>https://changelog.june.so/changelog/event-frequency</link>
+            <guid>https://changelog.june.so/changelog/event-frequency</guid>
+            <pubDate>Mon, 10 Jan 2022 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2022_01_10_at_14_16_32_fd16469413.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Anonymous users support for Active Users]]></title>
+            <link>https://changelog.june.so/changelog/anonymous-users-support-for-active-users</link>
+            <guid>https://changelog.june.so/changelog/anonymous-users-support-for-active-users</guid>
+            <pubDate>Fri, 31 Dec 2021 16:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w52_anonymous_users_7309c9b0cb.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Tidying things up for the New Year]]></title>
+            <link>https://changelog.june.so/changelog/tidying-things-up-for-the-new-year</link>
+            <guid>https://changelog.june.so/changelog/tidying-things-up-for-the-new-year</guid>
+            <pubDate>Fri, 24 Dec 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/report_redesign_ff6e36c65e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Duplicate reports]]></title>
+            <link>https://changelog.june.so/changelog/duplicate-reports</link>
+            <guid>https://changelog.june.so/changelog/duplicate-reports</guid>
+            <pubDate>Mon, 20 Dec 2021 15:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/cw_50_ed511e5ef2.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Tracking recommendation]]></title>
+            <link>https://changelog.june.so/changelog/tracking-recommendation</link>
+            <guid>https://changelog.june.so/changelog/tracking-recommendation</guid>
+            <pubDate>Fri, 10 Dec 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_1605_1_313a0390c6.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Company Retention]]></title>
+            <link>https://changelog.june.so/changelog/june-for-i-os</link>
+            <guid>https://changelog.june.so/changelog/june-for-i-os</guid>
+            <pubDate>Fri, 03 Dec 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/company_ret_a99c0dfbdd.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Property and trait value suggestions]]></title>
+            <link>https://changelog.june.so/changelog/choose-the-right-properties-and-traits</link>
+            <guid>https://changelog.june.so/changelog/choose-the-right-properties-and-traits</guid>
+            <pubDate>Tue, 30 Nov 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Screenshot_2021_11_30_at_12_46_02_377ff63af7.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Smart events for User Retention]]></title>
+            <link>https://changelog.june.so/changelog/smart-events-for-user-retention</link>
+            <guid>https://changelog.june.so/changelog/smart-events-for-user-retention</guid>
+            <pubDate>Fri, 19 Nov 2021 14:30:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w46_smart_events_bd84989cc6.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New template set up]]></title>
+            <link>https://changelog.june.so/changelog/new-template-set-up</link>
+            <guid>https://changelog.june.so/changelog/new-template-set-up</guid>
+            <pubDate>Fri, 12 Nov 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_400_868fdf5632.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Shared graphs]]></title>
+            <link>https://changelog.june.so/changelog/shared-graph</link>
+            <guid>https://changelog.june.so/changelog/shared-graph</guid>
+            <pubDate>Fri, 05 Nov 2021 14:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Changelog_CW_44_0246606f99.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[June's first retreat]]></title>
+            <link>https://changelog.june.so/changelog/june-first-retreat</link>
+            <guid>https://changelog.june.so/changelog/june-first-retreat</guid>
+            <pubDate>Fri, 29 Oct 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/boat_e8f4d427b4.jpeg" length="0" type="image/jpeg"/>
+        </item>
+        <item>
+            <title><![CDATA[Home]]></title>
+            <link>https://changelog.june.so/changelog/home</link>
+            <guid>https://changelog.june.so/changelog/home</guid>
+            <pubDate>Fri, 22 Oct 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_396_5fec6d7336.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Event activity]]></title>
+            <link>https://changelog.june.so/changelog/event-activity</link>
+            <guid>https://changelog.june.so/changelog/event-activity</guid>
+            <pubDate>Fri, 15 Oct 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_394_7131438961.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Slipping away companies template]]></title>
+            <link>https://changelog.june.so/changelog/slipping-away-companies-template</link>
+            <guid>https://changelog.june.so/changelog/slipping-away-companies-template</guid>
+            <pubDate>Fri, 08 Oct 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w39_slipping_groups_4e73d5637e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Bug smashing week]]></title>
+            <link>https://changelog.june.so/changelog/bug-smashing-week</link>
+            <guid>https://changelog.june.so/changelog/bug-smashing-week</guid>
+            <pubDate>Fri, 01 Oct 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Capture_d_ecran_2021_08_27_a_17_11_29_dc70db9055.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Amplitude importer]]></title>
+            <link>https://changelog.june.so/changelog/amplitude-importer</link>
+            <guid>https://changelog.june.so/changelog/amplitude-importer</guid>
+            <pubDate>Fri, 24 Sep 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_386_3edd3e0aa5.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[AND/OR ]]></title>
+            <link>https://changelog.june.so/changelog/and-or</link>
+            <guid>https://changelog.june.so/changelog/and-or</guid>
+            <pubDate>Fri, 17 Sep 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_384_ef60a15ee5.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Differentiate between users and visitors]]></title>
+            <link>https://changelog.june.so/changelog/differentiate-between-users-and-visitors</link>
+            <guid>https://changelog.june.so/changelog/differentiate-between-users-and-visitors</guid>
+            <pubDate>Fri, 10 Sep 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/cover_7aafbada0e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Filter on company trait]]></title>
+            <link>https://changelog.june.so/changelog/filter-on-company-trait</link>
+            <guid>https://changelog.june.so/changelog/filter-on-company-trait</guid>
+            <pubDate>Fri, 03 Sep 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_383_bbaeb5e9a7.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Page events in more templates]]></title>
+            <link>https://changelog.june.so/changelog/page-events-in-retention</link>
+            <guid>https://changelog.june.so/changelog/page-events-in-retention</guid>
+            <pubDate>Fri, 27 Aug 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_379_8daf10c4af.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Page events in funnels]]></title>
+            <link>https://changelog.june.so/changelog/page-events-in-funnels</link>
+            <guid>https://changelog.june.so/changelog/page-events-in-funnels</guid>
+            <pubDate>Fri, 20 Aug 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/page_events_0df62fe10f.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved audience filters]]></title>
+            <link>https://changelog.june.so/changelog/improved-audience-filters</link>
+            <guid>https://changelog.june.so/changelog/improved-audience-filters</guid>
+            <pubDate>Fri, 13 Aug 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_q3_c1_w3_improved_audience_filters_69a5fa41af.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Shared reports]]></title>
+            <link>https://changelog.june.so/changelog/shared-reports</link>
+            <guid>https://changelog.june.so/changelog/shared-reports</guid>
+            <pubDate>Fri, 06 Aug 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/shared_reports_60bf7edefd.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Clear navigation]]></title>
+            <link>https://changelog.june.so/changelog/clear-navigation</link>
+            <guid>https://changelog.june.so/changelog/clear-navigation</guid>
+            <pubDate>Fri, 30 Jul 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_373_c0f572bebc.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Celebrate events]]></title>
+            <link>https://changelog.june.so/changelog/event-notification</link>
+            <guid>https://changelog.june.so/changelog/event-notification</guid>
+            <pubDate>Fri, 23 Jul 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_371_734739ca94.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature adoption template]]></title>
+            <link>https://changelog.june.so/changelog/feature-adoption-template</link>
+            <guid>https://changelog.june.so/changelog/feature-adoption-template</guid>
+            <pubDate>Mon, 19 Jul 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_337_1_1bf6028ffa.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Filter users and add traits in bulk]]></title>
+            <link>https://changelog.june.so/changelog/filter-users-and-add-traits-in-bulk</link>
+            <guid>https://changelog.june.so/changelog/filter-users-and-add-traits-in-bulk</guid>
+            <pubDate>Fri, 09 Jul 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_q2_c2_w4_audience_filters_bulk_trait_63e0291704.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Template previews]]></title>
+            <link>https://changelog.june.so/changelog/template-previews</link>
+            <guid>https://changelog.june.so/changelog/template-previews</guid>
+            <pubDate>Fri, 02 Jul 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/report_preview_db5069e62e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Data Processing Agreement]]></title>
+            <link>https://changelog.june.so/changelog/data-processing-agreement</link>
+            <guid>https://changelog.june.so/changelog/data-processing-agreement</guid>
+            <pubDate>Fri, 25 Jun 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_351_5c6156f163.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved time-based audiences]]></title>
+            <link>https://changelog.june.so/changelog/improved-time-based-audiences</link>
+            <guid>https://changelog.june.so/changelog/improved-time-based-audiences</guid>
+            <pubDate>Fri, 18 Jun 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_q2_c2_w1_retention_by_cohort_6d5c16be80.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved slipping away report]]></title>
+            <link>https://changelog.june.so/changelog/improved-slipping-away-report</link>
+            <guid>https://changelog.june.so/changelog/improved-slipping-away-report</guid>
+            <pubDate>Fri, 11 Jun 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/slipping_away_4115d383f0.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Time-based audiences]]></title>
+            <link>https://changelog.june.so/changelog/time-based-audiences</link>
+            <guid>https://changelog.june.so/changelog/time-based-audiences</guid>
+            <pubDate>Fri, 04 Jun 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_338_0d73461907.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature retention template]]></title>
+            <link>https://changelog.june.so/changelog/feature-retention-template</link>
+            <guid>https://changelog.june.so/changelog/feature-retention-template</guid>
+            <pubDate>Fri, 28 May 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w22_feature_retention_ac82fce69e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Properties in single user screen]]></title>
+            <link>https://changelog.june.so/changelog/properties-in-single-user-screen</link>
+            <guid>https://changelog.june.so/changelog/properties-in-single-user-screen</guid>
+            <pubDate>Fri, 21 May 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w21_event_props_user_page_0f13b118c7.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Redesigned reports]]></title>
+            <link>https://changelog.june.so/changelog/redesigned-reports</link>
+            <guid>https://changelog.june.so/changelog/redesigned-reports</guid>
+            <pubDate>Fri, 14 May 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/3_bb9fed7fc7.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New onboarding experience]]></title>
+            <link>https://changelog.june.so/changelog/new-onboarding-experience</link>
+            <guid>https://changelog.june.so/changelog/new-onboarding-experience</guid>
+            <pubDate>Fri, 07 May 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/onboarding_revamp_b5f06fef66.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Infinite activity]]></title>
+            <link>https://changelog.june.so/changelog/infinite-activity-feed</link>
+            <guid>https://changelog.june.so/changelog/infinite-activity-feed</guid>
+            <pubDate>Fri, 30 Apr 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/feed_ef9685b724.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature usage in Slack]]></title>
+            <link>https://changelog.june.so/changelog/feature-usage-in-slack</link>
+            <guid>https://changelog.june.so/changelog/feature-usage-in-slack</guid>
+            <pubDate>Fri, 23 Apr 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/today_4423ef3de0.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[The June weekly]]></title>
+            <link>https://changelog.june.so/changelog/the-june-weekly</link>
+            <guid>https://changelog.june.so/changelog/the-june-weekly</guid>
+            <pubDate>Fri, 16 Apr 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_314_04370aa0c6.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[UI improvements and fixes]]></title>
+            <link>https://changelog.june.so/changelog/ui-improvements-and-fixes</link>
+            <guid>https://changelog.june.so/changelog/ui-improvements-and-fixes</guid>
+            <pubDate>Fri, 09 Apr 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_apr_9_48e1cbea4e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[User traits schema beta]]></title>
+            <link>https://changelog.june.so/changelog/user-traits-schema-beta</link>
+            <guid>https://changelog.june.so/changelog/user-traits-schema-beta</guid>
+            <pubDate>Fri, 02 Apr 2021 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/user_schema_8f3043622e.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Conversion evolution ]]></title>
+            <link>https://changelog.june.so/changelog/conversion-evolution</link>
+            <guid>https://changelog.june.so/changelog/conversion-evolution</guid>
+            <pubDate>Fri, 26 Mar 2021 12:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_e48511ed6b.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Pageviews]]></title>
+            <link>https://changelog.june.so/changelog/pageviews</link>
+            <guid>https://changelog.june.so/changelog/pageviews</guid>
+            <pubDate>Fri, 19 Mar 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w11_pageviews_graph_1eb0850a7d.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Companies]]></title>
+            <link>https://changelog.june.so/changelog/companies</link>
+            <guid>https://changelog.june.so/changelog/companies</guid>
+            <pubDate>Fri, 12 Mar 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/companies_b9ea543142.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved feature usage ]]></title>
+            <link>https://changelog.june.so/changelog/improved-feature-usage</link>
+            <guid>https://changelog.june.so/changelog/improved-feature-usage</guid>
+            <pubDate>Fri, 05 Mar 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/new_216e395fc9.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Acquisition Cohorts]]></title>
+            <link>https://changelog.june.so/changelog/acquisition-cohorts</link>
+            <guid>https://changelog.june.so/changelog/acquisition-cohorts</guid>
+            <pubDate>Fri, 26 Feb 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w8_acquisition_cohorts_a7ea24000f.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[New reports page]]></title>
+            <link>https://changelog.june.so/changelog/new-reports-page</link>
+            <guid>https://changelog.june.so/changelog/new-reports-page</guid>
+            <pubDate>Fri, 19 Feb 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/ew_template_page2_842b6c0c6d.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[Goals]]></title>
+            <link>https://changelog.june.so/changelog/goals</link>
+            <guid>https://changelog.june.so/changelog/goals</guid>
+            <pubDate>Fri, 12 Feb 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_55_637b9b8b6a.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Active Groups template]]></title>
+            <link>https://changelog.june.so/changelog/active-groups-template</link>
+            <guid>https://changelog.june.so/changelog/active-groups-template</guid>
+            <pubDate>Fri, 05 Feb 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_w5_1_1edb0e493d.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Power Users template]]></title>
+            <link>https://changelog.june.so/changelog/power-users-template</link>
+            <guid>https://changelog.june.so/changelog/power-users-template</guid>
+            <pubDate>Fri, 29 Jan 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog_powe_users_eb9b514b60.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Feature audit insights]]></title>
+            <link>https://changelog.june.so/changelog/feature-audit-insights</link>
+            <guid>https://changelog.june.so/changelog/feature-audit-insights</guid>
+            <pubDate>Fri, 22 Jan 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_40_ac8e421c29.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Slack]]></title>
+            <link>https://changelog.june.so/changelog/slack</link>
+            <guid>https://changelog.june.so/changelog/slack</guid>
+            <pubDate>Fri, 15 Jan 2021 11:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/Group_39_a25fe46fce.png" length="0" type="image/png"/>
+        </item>
+    </channel>
+</rss>
