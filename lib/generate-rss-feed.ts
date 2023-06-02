@@ -62,12 +62,8 @@ export const generateRssFeed = async () => {
   const Rssfeed = feed.rss2();
 
   console.debug("-------------------");
-  console.debug("Writing RSS feed to public/rss/feed.xml");
+  console.debug("Writing RSS feed to public/rss.xml");
   console.debug("-------------------");
 
-  fs.mkdirSync(path.join(__dirname, "..", "public", "rss"), {
-    recursive: true,
-  });
-
-  fs.writeFileSync(path.join(__dirname, "..", "public", "rss", "feed.xml"), Rssfeed, "utf8");
+  fs.writeFileSync(path.join(__dirname, "..", "public", "rss.xml"), Rssfeed, "utf8");
 };
