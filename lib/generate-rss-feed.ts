@@ -44,7 +44,7 @@ export const generateRssFeed = async () => {
 
   changelogsMeta.forEach((changelog) => {
     const { title, description, content, publishedAt, slug, headerImage } = changelog;
-    const url = `${siteURL}/changelog/${slug}`;
+    const url = `${siteURL}/changelogs/${slug}`;
     feed.addItem({
       title: title,
       id: url,
@@ -65,5 +65,5 @@ export const generateRssFeed = async () => {
   console.debug("Writing RSS feed to public/rss.xml");
   console.debug("-------------------");
 
-  fs.writeFileSync(path.join(__dirname, "..", "public", "rss.xml"), Rssfeed, "utf8");
+  fs.writeFileSync("./public/rss.xml", Rssfeed, "utf8");
 };
