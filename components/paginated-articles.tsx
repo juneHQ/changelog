@@ -38,24 +38,12 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
       <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
         <Container maxW="landingMax" px={defaultPx(32)} mt={[86, 86, 140]}>
           <VStack>
-            <Heading as="h1" fontSize={["5xl"]} color="black">
+          <Text fontSize="xl" color="gray.700" textAlign={'start'}>
+              The latest from June
+            </Text>
+            <Heading as="h1" fontSize={["5xl"]} color="black" textAlign={'start'}>
               Changelog
             </Heading>
-            <Text fontSize="xl" color="gray.700">
-              How June gets better, every week
-            </Text>
-            <HStack>
-              <Text
-                as="a"
-                fontSize="lg"
-                color="primary"
-                href="https://twitter.com/intent/follow?screen_name=JuneDotSo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Follow us on Twitter
-              </Text>
-            </HStack>
           </VStack>
           <Divider my={16} />
           <VStack spacing={16} divider={<Divider />}>

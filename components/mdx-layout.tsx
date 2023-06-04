@@ -2,6 +2,7 @@ import {
   Box,
   Divider,
   Heading,
+  HStack,
   Image,
   ListItem,
   OrderedList,
@@ -43,12 +44,24 @@ export interface MdxLayoutProps {
   hideLayout?: boolean;
   hideHead?: boolean;
   hideAuthors?: boolean;
+  imagePreviewMode?: boolean;
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
   const title = `${props.meta.title} | June Changelog`;
   const description = "Discover new updates and improvements to June.";
   const url = "https://changelog.june.so";
+
+  if (props.imagePreviewMode) {
+    return (
+      <Image
+          src={props.meta.headerImage}
+          alt={props.meta.title}
+          height="100%"
+          objectFit={'cover'}
+        />
+    )
+  }
 
   return (
     <MDXProvider components={components}>
@@ -71,16 +84,31 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <meta name="twitter:image" content={props.meta.headerImage} />
         </Head>
       )}
-      <Box>
+      <HStack 
+        position={props.hideLayout ? 'relative' : 'unset'}
+      >
         {!props.hideLayout && <Navbar />}
+        {props.hideLayout && (
+          <VStack h={'100%'} position='absolute'
+            top={0}
+            left={0}
+            borderRight='1px solid #E2E8F0'
+          >
+            <Text fontSize="sm" color="landing.gray">
+              {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
+            </Text>
+            {/* full height div */}
+            <Box h={'100%'} />
+          </VStack>
+        )}
         <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
           <Box mt={!props.hideLayout && [86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
             {/* Article header */}
             <VStack align="start" spacing={[4, 4, 6]}>
               <VStack align="start">
-                <Text fontSize="sm" color="landing.gray">
+                {/* <Text fontSize="sm" color="landing.gray">
                   {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-                </Text>
+                </Text> */}
                 <Link href={`/changelogs/${props.meta.slug}`}>
                   <Heading
                     as="h1"
@@ -125,7 +153,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             </>
           )}
         </Box>
-      </Box>
+      </HStack>
     </MDXProvider>
   );
 };
