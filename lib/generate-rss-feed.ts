@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { Feed } from "feed";
+import matter from "gray-matter";
 
 const MDX_DIR = "changelogs";
 
@@ -43,14 +44,21 @@ export const generateRssFeed = async () => {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
   changelogsMeta.forEach((changelog) => {
-    const { title, description, content, publishedAt, slug, headerImage } = changelog;
+    const { title, publishedAt, slug, headerImage } = changelog;
     const url = `${siteURL}/changelogs/${slug}`;
+
+    // Read the MDX file
+    const mdxFilePath = path.join(process.cwd(), "pages", MDX_DIR, `${slug}.mdx`);
+    const mdxFileContent = fs.readFileSync(mdxFilePath, "utf8");
+
+    // Parse the frontmatter and body content using gray-matter
+    const { content } = matter(mdxFileContent);
+
     feed.addItem({
       title: title,
       id: url,
       link: url,
-      description: description,
-      content: content,
+      description: content,
       image: headerImage,
       date: new Date(publishedAt),
     });
