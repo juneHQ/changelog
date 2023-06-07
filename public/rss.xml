@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Fri, 02 Jun 2023 11:11:28 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 07 Jun 2023 07:56:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Conversational reports and the new dock]]></title>
+            <link>https://changelog.june.so/changelogs/conversational-ai-and-new-dock</link>
+            <guid>https://changelog.june.so/changelogs/conversational-ai-and-new-dock</guid>
+            <pubDate>Fri, 02 Jun 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/conversational-ai-and-new-dock/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Instant Slack notifications 2.0]]></title>
             <link>https://changelog.june.so/changelogs/instant-slack-notifications-v2</link>
