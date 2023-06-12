@@ -1,11 +1,12 @@
-import { ReactNode } from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import { defaultPx } from 'lib/utils/default-container-px';
-import { TryBanner } from 'components/core/try-banner';
-import Navbar from 'components/core/navbar';
-import Footer from 'components/core/footer';
-import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { ReactNode } from "react";
+import Link from "next/link";
+import Head from "next/head";
+import { defaultPx } from "lib/utils/default-container-px";
+import { TryBanner } from "components/core/try-banner";
+import Navbar from "components/core/navbar";
+import Footer from "components/core/footer";
+import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import TimeSelectionTabs from "./core/time-selection-tabs";
 
 export interface PaginatedArticlesProps {
   page: number;
@@ -36,18 +37,28 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
       </Head>
       <Navbar />
       <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
-        <Container maxW="landingMax" px={defaultPx(32)} mt={[86, 86, 140]}>
-          <VStack>
-          <Text fontSize="xl" color="gray.700" textAlign={'start'}>
-              The latest from June
-            </Text>
-            <Heading as="h1" fontSize={["5xl"]} color="black" textAlign={'start'}>
-              Changelog
-            </Heading>
-          </VStack>
-          <Divider my={16} />
-          <VStack spacing={16} divider={<Divider />}>
-            {children}
+        <Container
+          maxW="landingMax"
+          display="flex"
+          justifyContent="center"
+          px={defaultPx(32)}
+          mt={[86, 86, 140]}
+        >
+          <VStack spacing={8} width="80%" alignItems="center">
+            <TimeSelectionTabs />
+            <VStack display="flex" justifyContent="center" alignItems="start" gap={14}>
+              <VStack alignItems="start" width="100%">
+                <Text fontSize="xl" color="gray.700" textAlign={"start"}>
+                  The latest from June
+                </Text>
+                <Heading as="h1" fontSize={["5xl"]} color="black" textAlign={"start"}>
+                  Changelog
+                </Heading>
+              </VStack>
+              <VStack spacing={0} justifyContent="center">
+                {children}
+              </VStack>
+            </VStack>
             <VStack align={["stretch", "stretch", "center"]}>
               {page === 0 ? (
                 <Link href="/page/1">

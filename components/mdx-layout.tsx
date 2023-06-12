@@ -23,6 +23,7 @@ import Navbar from "components/core/navbar";
 import { TryBanner } from "components/core/try-banner";
 import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
+import Timeline from "./layout/timeline";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
@@ -84,76 +85,105 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <meta name="twitter:image" content={props.meta.headerImage} />
         </Head>
       )}
-      <HStack 
-        position={props.hideLayout ? 'relative' : 'unset'}
-      >
-        {!props.hideLayout && <Navbar />}
-        {props.hideLayout && (
-          <VStack h={'100%'} position='absolute'
-            top={0}
-            left={0}
-            borderRight='1px solid #E2E8F0'
-          >
-            <Text fontSize="sm" color="landing.gray">
-              {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-            </Text>
-            {/* full height div */}
-            <Box h={'100%'} />
-          </VStack>
-        )}
-        <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
-          <Box mt={!props.hideLayout && [86, 86, 140]} maxW="4xl" mx="auto" px={defaultPx(32)}>
-            {/* Article header */}
-            <VStack align="start" spacing={[4, 4, 6]}>
-              <VStack align="start">
-                {/* <Text fontSize="sm" color="landing.gray">
+      <Timeline date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}>
+        <HStack position={props.hideLayout ? "relative" : "unset"}>
+          {!props.hideLayout && <Navbar />}
+          {props.hideLayout && (
+            // <VStack h={'100%'} position='absolute'
+            //   top={0}
+            //   left={0}
+            //   borderRight='1px solid #E2E8F0'
+            // >
+            //   <Text fontSize="sm" color="landing.gray">
+            //     {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
+            //   </Text>
+            //   {/* full height div */}
+            //   <Box h={'100%'} />
+            // </VStack>
+            <></>
+          )}
+          <Box w="full" maxW="100vw" zIndex="docked">
+            <Box
+              mt={!props.hideLayout && [86, 86, 140]}
+              maxW="4xl"
+              mx="auto"
+              width="682px"
+              // px={defaultPx(32)}
+            >
+              {/* Article header */}
+              <VStack align="start" spacing={[4, 4, 6]}>
+                <Box
+                  height="22px"
+                  bg="#F1F3F5"
+                  color="#0D131B"
+                  fontSize="14px"
+                  borderRadius="full"
+                  px={2}
+                  lineHeight="21px"
+                  fontWeight={500}
+                  position="relative"
+                  top="-8px"
+                  mb="-10px"
+                >
+                    Enrichment
+                </Box>
+                <VStack align="start">
+                  {/* <Text fontSize="sm" color="landing.gray">
                   {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
                 </Text> */}
-                <Link href={`/changelogs/${props.meta.slug}`}>
-                  <Heading
-                    as="h1"
-                    fontSize={["2xl", "2xl", "32px"]}
-                    color="#000"
-                    cursor="pointer"
-                    _hover={{
-                      textDecor: "underline",
-                    }}
-                  >
-                    {props.meta.title}
-                  </Heading>
-                </Link>
-              </VStack>
-              <Image
-                borderRadius="md"
-                src={props.meta.headerImage}
-                alt={props.meta.title}
-                w="full"
-              />
-            </VStack>
-            {/* Article content */}
-            <Box px={[6]} pt={[10]} fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
-              {props.children}
-            </Box>
-            {/* Article authors */}
-            {!props.hideAuthors && (
-              <>
-                <Divider mt={16} mb={8} />
-                <VStack px={[6]} align="start" spacing={4}>
-                  {props.meta.authors.map((author) => (
-                    <Contributor key={author.name} {...author} />
-                  ))}
+                  <Link href={`/changelogs/${props.meta.slug}`}>
+                    <Heading
+                      as="h1"
+                      fontSize={["2xl", "2xl", "32px"]}
+                      color="#000"
+                      cursor="pointer"
+                      _hover={{
+                        textDecor: "underline",
+                      }}
+                    >
+                      {props.meta.title}
+                    </Heading>
+                  </Link>
                 </VStack>
+                <Image
+                  borderRadius="md"
+                  src={props.meta.headerImage}
+                  alt={props.meta.title}
+                  w="full"
+                />
+              </VStack>
+              {/* Article content */}
+              <Box
+                px={[6]}
+                pt={[10]}
+                pb={16}
+                fontSize="lg"
+                lineHeight="32px"
+                color="landing.almostBlack.500"
+              >
+                {props.children}
+              </Box>
+              {/* Article authors */}
+              {!props.hideAuthors && (
+                <>
+                  <Divider mt={16} mb={8} />
+                  <VStack px={[6]} align="start" spacing={4}>
+                    {props.meta.authors.map((author) => (
+                      <Contributor key={author.name} {...author} />
+                    ))}
+                  </VStack>
+                </>
+              )}
+            </Box>
+            {!props.hideLayout && (
+              <>
+                <TryBanner _wrapper={{ my: [50, 50, 120] }} />
+                <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
               </>
             )}
           </Box>
-          {!props.hideLayout && (
-            <>
-              <TryBanner _wrapper={{ my: [50, 50, 120] }} />
-              <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
-            </>
-          )}
-        </Box>
-      </HStack>
+        </HStack>
+      </Timeline>
     </MDXProvider>
   );
 };
