@@ -1,7 +1,7 @@
 import { Box, Grid, GridItem, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
-import useTimelineStore from "lib/state/useTimelineStore";
+import useTimelineStore from "lib/state/use-timeline-store";
 import Timeline from "../../components/layout/timeline";
 
 const Years = ({ yearChangelogsMap }) => {
@@ -20,12 +20,15 @@ const Years = ({ yearChangelogsMap }) => {
   yearUrls.forEach((year, index) => {
     const urls = year.slice(0, 27);
     const YearViewGridLayer = [];
-    
+
     while (urls.length) {
       const currentLength = urls.length;
       YearViewGridLayer.push(
-      urls.length < 9 ? urls.splice(0, 9).concat(Array(9 - currentLength).fill([])) : urls.splice(0, 9)
-    )};
+        urls.length < 9
+          ? urls.splice(0, 9).concat(Array(9 - currentLength).fill([]))
+          : urls.splice(0, 9)
+      );
+    }
 
     yearChangelogs.push(YearViewGridLayer);
   });

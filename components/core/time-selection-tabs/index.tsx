@@ -1,6 +1,6 @@
 import { Button, VStack, ButtonGroup } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import useTimelineStore from "lib/state/useTimelineStore";
+import useTimelineStore from "lib/state/use-timeline-store";
 
 const TimeSelectionTabs = () => {
   const buttonGroup: Array<"weeks" | "months" | "years"> = ["weeks", "months", "years"];

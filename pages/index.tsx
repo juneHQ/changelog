@@ -3,7 +3,7 @@ import { PaginatedArticles } from "components/paginated-articles";
 import Months from "./page/months";
 import Years from "./page/years";
 import Weeks from "./page/weeks";
-import useTimelineStore from "lib/state/useTimelineStore";
+import useTimelineStore from "lib/state/use-timeline-store";
 
 const ARTICLES_PER_PAGE = 4;
 

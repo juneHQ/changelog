@@ -6,7 +6,8 @@ interface ITimelineState {
 }
 
 const useTimelineStore = create<ITimelineState>((set) => ({
-  view: "months",
+  view: "weeks",
   setView: (targetTime) => set(() => ({ view: targetTime })),
 }));
+
 export default useTimelineStore;

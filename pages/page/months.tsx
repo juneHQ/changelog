@@ -1,7 +1,7 @@
 import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
-import useTimelineStore from "lib/state/useTimelineStore";
+import useTimelineStore from "lib/state/use-timeline-store";
 import Timeline from "../../components/layout/timeline";
 
 const Months = ({ monthChangelogsMap }) => {
