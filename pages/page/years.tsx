@@ -1,9 +1,11 @@
 import { Box, Grid, GridItem, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import useTimelineStore from "lib/state/useTimelineStore";
 import Timeline from "../../components/layout/timeline";
 
 const Years = ({ yearChangelogsMap }) => {
+  const timeline = useTimelineStore();
 
   const yearsRecent = Object.keys(yearChangelogsMap || {}).sort((a, b) => {
     const dateA = new Date(a);
@@ -13,13 +15,32 @@ const Years = ({ yearChangelogsMap }) => {
   const yearUrls: IMonthlyChangelog[][] = yearsRecent.map((year) => {
     return yearChangelogsMap[year];
   });
+  const yearChangelogs = [];
+
+  yearUrls.forEach((year, index) => {
+    const urls = year.slice(0, 27);
+    const YearViewGridLayer = [];
+    
+    while (urls.length) {
+      const currentLength = urls.length;
+      YearViewGridLayer.push(
+      urls.length < 9 ? urls.splice(0, 9).concat(Array(9 - currentLength).fill([])) : urls.splice(0, 9)
+    )};
+
+    yearChangelogs.push(YearViewGridLayer);
+  });
 
   return (
     <>
-      {yearUrls.map((changelogs, index) => (
+      {yearChangelogs.map((changelogs, index) => (
         <Timeline key={index} date={dayjs(yearsRecent[index]).format("YYYY")}>
-          <Box display="flex" paddingBottom={index === yearUrls.length - 1 ? 0 : 20}>
-            <VStack>
+          <Box display="flex" paddingBottom={index === yearChangelogs.length - 1 ? 0 : 20}>
+            <VStack
+              onClick={() => {
+                timeline.setView("months");
+              }}
+              cursor="pointer"
+            >
               <Box
                 overflow="hidden"
                 borderRadius={"16px"}
@@ -68,23 +89,85 @@ const Years = ({ yearChangelogsMap }) => {
                   </Grid>
                 ) : (
                   <Grid
-                    gap={"8px"}
-                    templateColumns="repeat(8, 1fr)"
-                    templateRows="repeat(7, 1fr)"
+                    gap={"2px"}
+                    templateColumns="repeat(1, 1fr)"
+                    templateRows="repeat(3, 1fr)"
                     height="100%"
                   >
-                    {changelogs.slice(0, 9).map(({ imageUrl }, index) => (
-                      <GridItem
-                        key={index}
-                        rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
-                        colSpan={[1, 3, 6].includes(index) ? 4 : 2}
-                      >
-                        <Image
-                          src={imageUrl}
-                          alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
-                          height="100%"
-                          objectFit={"cover"}
-                        />
+                    {changelogs.map((gridItems, index) => (
+                      <GridItem rowSpan={1} key={index}>
+                        <HStack spacing="2px">
+                          {index % 2 === 0 && (
+                            <>
+                              <Image
+                                src={gridItems[0].imageUrl}
+                                alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
+                                h="198px"
+                                w="282px"
+                                objectFit={"cover"}
+                              />
+                              <Grid
+                                gap="2px"
+                                templateColumns="repeat(4, 1fr)"
+                                templateRows="repeat(2, 1fr)"
+                              >
+                                {gridItems
+                                  .slice(1, gridItems.length)
+                                  .map(({ imageUrl, slug }, index) => (
+                                    <GridItem key={index} rowSpan={1} colSpan={1}>
+                                      {imageUrl ? (
+                                        <Image
+                                          src={imageUrl}
+                                          alt={`${
+                                            Object.keys(yearChangelogsMap)[index]
+                                          } - ${index}`}
+                                          height="98px"
+                                          objectFit={"cover"}
+                                        />
+                                      ) : (
+                                        <Box bg="#F1F3F5" h="full" w="full" />
+                                      )}
+                                    </GridItem>
+                                  ))}
+                              </Grid>
+                            </>
+                          )}
+                          {index % 2 === 1 && (
+                            <>
+                              <Grid
+                                gap="2px"
+                                templateColumns="repeat(4, 1fr)"
+                                templateRows="repeat(2, 1fr)"
+                              >
+                                {gridItems
+                                  .slice(0, gridItems.length - 1)
+                                  .map(({ imageUrl, slug }, index) => (
+                                    <GridItem key={index} rowSpan={1} colSpan={1}>
+                                      {imageUrl ? (
+                                        <Image
+                                          src={imageUrl}
+                                          alt={`${
+                                            Object.keys(yearChangelogsMap)[index]
+                                          } - ${index}`}
+                                          height="98px"
+                                          objectFit={"cover"}
+                                        />
+                                      ) : (
+                                        <Box bg="#F1F3F5" h="full" w="full" />
+                                      )}
+                                    </GridItem>
+                                  ))}
+                              </Grid>
+                              <Image
+                                src={gridItems[gridItems.length - 1].imageUrl}
+                                alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
+                                h="198px"
+                                w="282px"
+                                objectFit={"cover"}
+                              />
+                            </>
+                          )}
+                        </HStack>
                       </GridItem>
                     ))}
                   </Grid>

@@ -24,11 +24,12 @@ import { TryBanner } from "components/core/try-banner";
 import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
 import Timeline from "./layout/timeline";
+import { motion, AnimatePresence } from "framer-motion";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
   h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
-  p: (props) => <Text my={6} {...props} />,
+  p: (props) => <Text my={6} color="#495057" fontSize="16px" lineHeight="24px" {...props} />,
   a: (props) => (
     <Text as="a" href={props.href} rel="noopener noreferrer" color="#6868F7" fontWeight="bold">
       {props.children}
@@ -36,7 +37,15 @@ const components: MDXComponents = {
   ),
   ul: (props) => <UnorderedList spacing={4} {...props} />,
   ol: (props) => <OrderedList spacing={4} {...props} />,
-  li: (props) => <ListItem _before={{ content: "unset" }} {...props} />,
+  li: (props) => (
+    <ListItem
+      color="#495057"
+      lineHeight="32px"
+      fontSize="16px"
+      _before={{ content: "unset" }}
+      {...props}
+    />
+  ),
 };
 
 export interface MdxLayoutProps {
@@ -56,12 +65,12 @@ export const MdxLayout = (props: MdxLayoutProps) => {
   if (props.imagePreviewMode) {
     return (
       <Image
-          src={props.meta.headerImage}
-          alt={props.meta.title}
-          height="100%"
-          objectFit={'cover'}
-        />
-    )
+        src={props.meta.headerImage}
+        alt={props.meta.title}
+        height="100%"
+        objectFit={"cover"}
+      />
+    );
   }
 
   return (
@@ -85,28 +94,17 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <meta name="twitter:image" content={props.meta.headerImage} />
         </Head>
       )}
-      <Timeline date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}>
-        <HStack position={props.hideLayout ? "relative" : "unset"}>
-          {!props.hideLayout && <Navbar />}
-          {props.hideLayout && (
-            // <VStack h={'100%'} position='absolute'
-            //   top={0}
-            //   left={0}
-            //   borderRight='1px solid #E2E8F0'
-            // >
-            //   <Text fontSize="sm" color="landing.gray">
-            //     {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-            //   </Text>
-            //   {/* full height div */}
-            //   <Box h={'100%'} />
-            // </VStack>
-            <></>
-          )}
-          <Box w="full" maxW="100vw" zIndex="docked">
+      {!props.hideLayout && <Navbar />}
+      <AnimatePresence>
+        <motion.div layoutId="weekly-article" transition={{ duration: 0.2 }}>
+          <Timeline
+            selected={!props.hideLayout}
+            date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
+          >
             <Box
               mt={!props.hideLayout && [86, 86, 140]}
-              maxW="4xl"
-              mx="auto"
+              // maxW="4xl"
+              // mx="auto"
               width="682px"
               // px={defaultPx(32)}
             >
@@ -125,37 +123,32 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                   top="-8px"
                   mb="-10px"
                 >
-                    Enrichment
+                  Enrichment
                 </Box>
-                <VStack align="start">
-                  {/* <Text fontSize="sm" color="landing.gray">
-                  {dayjs(props.meta.publishedAt).format("MMM Do YYYY")}
-                </Text> */}
-                  <Link href={`/changelogs/${props.meta.slug}`}>
-                    <Heading
-                      as="h1"
-                      fontSize={["2xl", "2xl", "32px"]}
-                      color="#000"
-                      cursor="pointer"
-                      _hover={{
-                        textDecor: "underline",
-                      }}
-                    >
-                      {props.meta.title}
-                    </Heading>
-                  </Link>
-                </VStack>
-                <Image
-                  borderRadius="md"
-                  src={props.meta.headerImage}
-                  alt={props.meta.title}
-                  w="full"
-                />
+                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+                  <Image
+                    borderRadius="16px"
+                    src={props.meta.headerImage}
+                    alt={props.meta.title}
+                    w="full"
+                    cursor={props.hideLayout ? "pointer" : "default"}
+                  />
+                </Link>
+
+                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+                  <Heading
+                    as="h1"
+                    fontSize="24px"
+                    color="#0D131B"
+                    cursor={props.hideLayout ? "pointer" : "default"}
+                  >
+                    {props.meta.title}
+                  </Heading>
+                </Link>
               </VStack>
               {/* Article content */}
               <Box
-                px={[6]}
-                pt={[10]}
+                // pt={[10]}
                 pb={16}
                 fontSize="lg"
                 lineHeight="32px"
@@ -175,15 +168,15 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                 </>
               )}
             </Box>
-            {!props.hideLayout && (
-              <>
-                <TryBanner _wrapper={{ my: [50, 50, 120] }} />
-                <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
-              </>
-            )}
-          </Box>
-        </HStack>
-      </Timeline>
+          </Timeline>
+        </motion.div>
+      </AnimatePresence>
+      {!props.hideLayout && (
+        <>
+          <TryBanner _wrapper={{ my: [50, 50, 120] }} />
+          <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
+        </>
+      )}
     </MDXProvider>
   );
 };

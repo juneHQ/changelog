@@ -1,11 +1,14 @@
 import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import useTimelineStore from "lib/state/useTimelineStore";
 import Timeline from "../../components/layout/timeline";
 
 const Months = ({ monthChangelogsMap }) => {
+  const timeline = useTimelineStore();
 
   const monthUrls: IMonthlyChangelog[][] = Object.keys(monthChangelogsMap || {})
+
     .sort((a, b) => {
       const dateB = new Date(b);
       const dateA = new Date(a);
@@ -23,7 +26,12 @@ const Months = ({ monthChangelogsMap }) => {
           date={dayjs(Object.keys(monthChangelogsMap)[index]).format("MMM YYYY")}
         >
           <Box display="flex" paddingBottom={index === monthUrls.length - 1 ? 0 : 20}>
-            <VStack>
+            <VStack
+              onClick={() => {
+                timeline.setView("weeks");
+              }}
+              cursor="pointer"
+            >
               <Box
                 height={"360px"}
                 overflow="hidden"

@@ -21,7 +21,7 @@ const Page = ({ slugs, changelogsMap }) => {
   );
 };
 
-interface IMonthlyChangelog {
+export interface IMonthlyChangelog {
   imageUrl: string;
   slug: string;
   publishedAt: string;

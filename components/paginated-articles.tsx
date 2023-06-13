@@ -42,10 +42,10 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
           display="flex"
           justifyContent="center"
           px={defaultPx(32)}
-          mt={[86, 86, 140]}
+          mt={[86, 86, 100]}
         >
           <VStack spacing={8} width="80%" alignItems="center">
-            <TimeSelectionTabs />
+                <TimeSelectionTabs />
             <VStack display="flex" justifyContent="center" alignItems="start" gap={14}>
               <VStack alignItems="start" width="100%">
                 <Text fontSize="xl" color="gray.700" textAlign={"start"}>
