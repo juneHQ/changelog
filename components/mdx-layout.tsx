@@ -18,9 +18,9 @@ import Head from "next/head";
 import Link from "next/link";
 
 import { Contributor } from "components/contributor";
-import Footer from "components/core/footer";
+import { Footer } from "components/core/footer";
 import Navbar from "components/core/navbar";
-import { TryBanner } from "components/core/try-banner";
+import TryBanner from "components/core/try-banner";
 import { MdxMeta } from "lib/models/mdx-meta";
 import { defaultPx } from "lib/utils/default-container-px";
 import Timeline from "./layout/timeline";

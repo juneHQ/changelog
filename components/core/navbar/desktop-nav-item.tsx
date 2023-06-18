@@ -7,6 +7,7 @@ export interface DesktopNavItemProps {
   type: "external-link" | "internal-link";
   href?: string;
   isActive?: boolean;
+  mode?: "light" | "dark";
 }
 
 export function DesktopNavItem(props: DesktopNavItemProps) {
@@ -17,11 +18,13 @@ export function DesktopNavItem(props: DesktopNavItemProps) {
           <Link href={props.href} passHref prefetch={false} {...linkProps} />
         );
 
+  const staticColor = props.mode === "dark" ? "white" : "purple.900";
+
   return (
     <Wrapper>
       <Text
-        {...defaultNavItemStyle}
-        color={props.isActive ? "purple.500" : "landing.black"}
+        {...desktopNavItemStyle}
+        color={props.isActive ? "purple.500" : staticColor}
         as={props.type === "external-link" ? "a" : "div"}
         {...(props.type === "external-link" && {
           href: props.href,
@@ -34,13 +37,10 @@ export function DesktopNavItem(props: DesktopNavItemProps) {
   );
 }
 
-export const defaultNavItemStyle: TextProps = {
+export const desktopNavItemStyle: TextProps = {
   style: { textDecoration: "none" },
-  fontFamily: "landingHeading",
-  fontWeight: "bold",
-  fontSize: "16px",
-  lineHeight: "20px",
-  color: "landing.black",
+  fontWeight: "semibold",
+  color: "purple.900",
   textAlign: "center",
   cursor: "pointer",
   _hover: { color: "purple.500" },
