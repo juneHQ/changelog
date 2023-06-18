@@ -8,4 +8,5 @@ export interface MdxMeta {
     avatarUrl: string;
   }[];
   slug: string;
+  tags?: string[];
 }

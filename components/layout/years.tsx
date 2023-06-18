@@ -1,46 +1,56 @@
 import { Box, Grid, GridItem, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import { IImagePreviewMeta, IYearlyChangelog } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
+import { useRouter } from "next/router";
 import Timeline from "../../components/layout/timeline";
 
-const Years = ({ yearChangelogsMap }) => {
-  const timeline = useTimelineStore();
+interface IYearsProps {
+  yearChangelogsMap: { [key: string]: IImagePreviewMeta[] };
+}
 
-  const yearsRecent = Object.keys(yearChangelogsMap || {}).sort((a, b) => {
+const Years = ({ yearChangelogsMap }: IYearsProps) => {
+  const timeline = useTimelineStore();
+  const router = useRouter();
+
+  const sortedYearKeys = Object.keys(yearChangelogsMap || {}).sort((a, b) => {
     const dateA = new Date(a);
     const dateB = new Date(b);
     return dateB.getTime() - dateA.getTime();
   });
-  const yearUrls: IMonthlyChangelog[][] = yearsRecent.map((year) => {
+
+  const sortedChangelogsByYear: IImagePreviewMeta[][] = sortedYearKeys.map((year) => {
     return yearChangelogsMap[year];
   });
+
   const yearChangelogs = [];
 
-  yearUrls.forEach((year, index) => {
-    const urls = year.slice(0, 27);
-    const YearViewGridLayer = [];
+  sortedChangelogsByYear.forEach((year, index) => {
+    const imagePreviewMetas = year.slice(0, 27);
+    const yearViewGridRows = [];
 
-    while (urls.length) {
-      const currentLength = urls.length;
-      YearViewGridLayer.push(
-        urls.length < 9
-          ? urls.splice(0, 9).concat(Array(9 - currentLength).fill([]))
-          : urls.splice(0, 9)
+    while (imagePreviewMetas.length) {
+      const currentLength = imagePreviewMetas.length;
+      yearViewGridRows.push(
+        imagePreviewMetas.length < 9
+          ? imagePreviewMetas.splice(0, 9).concat(Array(9 - currentLength).fill([]))
+          : imagePreviewMetas.splice(0, 9)
       );
     }
 
-    yearChangelogs.push(YearViewGridLayer);
+    yearChangelogs.push(yearViewGridRows);
   });
 
   return (
     <>
       {yearChangelogs.map((changelogs, index) => (
-        <Timeline key={index} date={dayjs(yearsRecent[index]).format("YYYY")}>
+        <Timeline key={index} date={dayjs(sortedYearKeys[index]).format("YYYY")}>
           <Box display="flex" paddingBottom={index === yearChangelogs.length - 1 ? 0 : 20}>
             <VStack
               onClick={() => {
                 timeline.setView("months");
+                router.push(`/page/${index}/months`);
               }}
               cursor="pointer"
             >
@@ -183,12 +193,5 @@ const Years = ({ yearChangelogsMap }) => {
     </>
   );
 };
-
-interface IMonthlyChangelog {
-  imageUrl: string;
-  slug: string;
-  publishedAt: string;
-  weeklyViewPage: number;
-}
 
 export default Years;

@@ -1,14 +1,20 @@
 import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import { IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
-import Timeline from "../../components/layout/timeline";
+import { useRouter } from "next/router";
+import Timeline from "./timeline";
 
-const Months = ({ monthChangelogsMap }) => {
+interface IMonthsProps {
+  monthChangelogsMap: { [key: string]: IImagePreviewMeta[] };
+}
+
+const Months = ({ monthChangelogsMap }: IMonthsProps) => {
+  const router = useRouter();
   const timeline = useTimelineStore();
 
-  const monthUrls: IMonthlyChangelog[][] = Object.keys(monthChangelogsMap || {})
-
+  const sortedChangelogsArrayByMonth: IImagePreviewMeta[][] = Object.keys(monthChangelogsMap || {})
     .sort((a, b) => {
       const dateB = new Date(b);
       const dateA = new Date(a);
@@ -20,12 +26,15 @@ const Months = ({ monthChangelogsMap }) => {
 
   return (
     <>
-      {monthUrls.map((changelogs, index) => (
+      {sortedChangelogsArrayByMonth.map((changelogs, index) => (
         <Timeline
           key={index}
           date={dayjs(Object.keys(monthChangelogsMap)[index]).format("MMM YYYY")}
         >
-          <Box display="flex" paddingBottom={index === monthUrls.length - 1 ? 0 : 20}>
+          <Box
+            display="flex"
+            paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : 20}
+          >
             <VStack
               onClick={() => {
                 timeline.setView("weeks");
@@ -38,10 +47,13 @@ const Months = ({ monthChangelogsMap }) => {
                 borderRadius={"16px"}
                 maxWidth={"682px"}
                 display="flex"
-                onClick={() => {}}
+                onClick={() => {
+                  timeline.setView("weeks");
+                  router.push(`/page/${changelogs[0].weeklyViewPage}`);
+                }}
                 position="relative"
               >
-                {monthUrls.length > 3 && (
+                {sortedChangelogsArrayByMonth.length > 3 && (
                   <Box
                     w={10}
                     h={6}
@@ -58,7 +70,7 @@ const Months = ({ monthChangelogsMap }) => {
                     color="white"
                     fontWeight="bold"
                   >
-                    +{monthUrls.length - 3}
+                    +{sortedChangelogsArrayByMonth.length - 3}
                   </Box>
                 )}
                 {changelogs.length <= 2 ? (
@@ -109,12 +121,5 @@ const Months = ({ monthChangelogsMap }) => {
     </>
   );
 };
-
-interface IMonthlyChangelog {
-  imageUrl: string;
-  slug: string;
-  publishedAt: string;
-  weeklyViewPage: number;
-}
 
 export default Months;

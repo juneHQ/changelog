@@ -1,11 +1,22 @@
 import { Button, VStack, ButtonGroup } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import useTimelineStore from "lib/state/use-timeline-store";
+import { useRouter } from "next/router";
 
 const TimeSelectionTabs = () => {
+  const router = useRouter();
   const buttonGroup: Array<"weeks" | "months" | "years"> = ["weeks", "months", "years"];
 
   const timeline = useTimelineStore();
+
+  const changeTimelineView = (view: "weeks" | "months" | "years") => {
+    timeline.setView(view);
+    if (router.pathname.includes("/page/")) {
+      router.push("/page/0");
+    }
+    router.push(`#${view}`);
+  };
+
   return (
     <VStack>
       <ButtonGroup
@@ -37,7 +48,8 @@ const TimeSelectionTabs = () => {
                   }
                 : {}
             }
-            onClick={() => timeline.setView(view)}
+            // onClick={() => timeline.setView(view)}
+            onClick={() => changeTimelineView(view)}
             isActive={timeline.view === view}
             _hover={{
               color: "#0D131B",

@@ -1,9 +1,10 @@
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import { PaginatedArticles } from "components/paginated-articles";
-import Months from "./page/months";
-import Years from "./page/years";
-import Weeks from "./page/weeks";
+import Months from "components/layout/months";
+import Years from "components/layout/years";
+import Weeks from "components/layout/weeks";
 import useTimelineStore from "lib/state/use-timeline-store";
+import { IImagePreviewMeta, IYearlyChangelog } from "lib/models/view";
 
 const ARTICLES_PER_PAGE = 4;
 
@@ -21,14 +22,7 @@ const Page = ({ slugs, changelogsMap }) => {
   );
 };
 
-export interface IMonthlyChangelog {
-  imageUrl: string;
-  slug: string;
-  publishedAt: string;
-  weeklyViewPage: number;
-}
-
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(slugs.map((slug) => import(`./changelogs/${slug}.mdx`)));
@@ -43,13 +37,13 @@ export async function getStaticProps() {
     return dateB.getTime() - dateA.getTime();
   });
 
-  const start = 0;
-  const end = ARTICLES_PER_PAGE;
+  const start = parseInt(params?.page ?? 0) * ARTICLES_PER_PAGE;
+  const end = start + ARTICLES_PER_PAGE;
   const recents = meta.slice(start, end).map((item) => item.slug);
 
   // aggregate images for monthly changelogs
   const monthChangelogsMap: {
-    [key: string]: IMonthlyChangelog[];
+    [key: string]: IImagePreviewMeta[];
   } = meta.reduce((acc, item, index) => {
     const date = new Date(item.publishedAt);
     const year = date.getFullYear();
@@ -62,7 +56,7 @@ export async function getStaticProps() {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: index / ARTICLES_PER_PAGE + 1,
+      weeklyViewPage: Math.floor(index / ARTICLES_PER_PAGE + 1),
     });
     return acc;
   }, {});
@@ -74,7 +68,7 @@ export async function getStaticProps() {
       return acc;
     }, {});
 
-  const yearsChangelogsMap: { [key: string]: IMonthlyChangelog[] } = meta.reduce(
+  const yearsChangelogsMap: { [key: string]: IImagePreviewMeta[] } = meta.reduce(
     (acc, item, index) => {
       const date = new Date(item.publishedAt);
       const year = date.getFullYear().toString();
@@ -85,7 +79,12 @@ export async function getStaticProps() {
         imageUrl: item.headerImage,
         slug: item.slug,
         publishedAt: item.publishedAt,
-        weeklyViewPage: index / ARTICLES_PER_PAGE + 1,
+        weeklyViewPage: Math.floor(index / ARTICLES_PER_PAGE + 1),
+        montlyViewPage: Math.floor(
+          Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) /
+            ARTICLES_PER_PAGE +
+            1
+        ),
       });
       return acc;
     },

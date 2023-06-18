@@ -7,6 +7,7 @@ import Navbar from "components/core/navbar";
 import Footer from "components/core/footer";
 import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "./core/time-selection-tabs";
+import useTimelineStore from "lib/state/use-timeline-store";
 
 export interface PaginatedArticlesProps {
   page: number;
@@ -15,6 +16,7 @@ export interface PaginatedArticlesProps {
 
 export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) => {
   const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
+  const timeline = useTimelineStore();
 
   return (
     <>
@@ -45,7 +47,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
           mt={[86, 86, 100]}
         >
           <VStack spacing={8} width="80%" alignItems="center">
-                <TimeSelectionTabs />
+            <TimeSelectionTabs />
             <VStack display="flex" justifyContent="center" alignItems="start" gap={14}>
               <VStack alignItems="start" width="100%">
                 <Text fontSize="xl" color="gray.700" textAlign={"start"}>
@@ -69,13 +71,21 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
               ) : (
                 <HStack justifyContent="center" spacing={4}>
                   {page > 0 && (
-                    <Link href={`/page/${page - 1}`}>
+                    <Link
+                      href={`/page/${page - 1}${
+                        timeline.view !== "weeks" ? "#" + timeline.view : ""
+                      }`}
+                    >
                       <Button variant="landingOutline" size="landingLg">
                         Previous page
                       </Button>
                     </Link>
                   )}
-                  <Link href={`/page/${page + 1}`}>
+                  <Link
+                    href={`/page/${page + 1}${
+                      timeline.view !== "weeks" ? "#" + timeline.view : ""
+                    }`}
+                  >
                     <Button variant="landingOutline" size="landingLg">
                       Next page
                     </Button>
