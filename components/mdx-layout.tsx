@@ -1,6 +1,7 @@
 import {
   Box,
   Divider,
+  Flex,
   Heading,
   HStack,
   Image,
@@ -55,6 +56,7 @@ export interface MdxLayoutProps {
   hideHead?: boolean;
   hideAuthors?: boolean;
   imagePreviewMode?: boolean;
+  tags?: string[];
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
@@ -110,21 +112,25 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             >
               {/* Article header */}
               <VStack align="start" spacing={[4, 4, 6]}>
-                <Box
-                  height="22px"
-                  bg="#F1F3F5"
-                  color="#0D131B"
-                  fontSize="14px"
-                  borderRadius="full"
-                  px={2}
-                  lineHeight="21px"
-                  fontWeight={500}
-                  position="relative"
-                  top="-8px"
-                  mb="-10px"
-                >
-                  Enrichment
-                </Box>
+                {props.tags !== undefined && <Flex gap={2}>
+                  {props.tags?.map((tag, index) => (
+                    <Box
+                      height="22px"
+                      bg="#F1F3F5"
+                      color="#0D131B"
+                      fontSize="14px"
+                      borderRadius="full"
+                      px={2}
+                      lineHeight="21px"
+                      fontWeight={500}
+                      position="relative"
+                      top="-8px"
+                      mb="-10px"
+                    >
+                      {tag}
+                    </Box>
+                  ))}
+                </Flex>}
                 <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
                   <Image
                     borderRadius="16px"

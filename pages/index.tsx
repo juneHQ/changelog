@@ -5,6 +5,7 @@ import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IImagePreviewMeta, IYearlyChangelog } from "lib/models/view";
+import { AnimatePresence, motion } from "framer-motion";
 
 const ARTICLES_PER_PAGE = 4;
 
@@ -14,9 +15,51 @@ const Page = ({ slugs, changelogsMap }) => {
   return (
     <>
       <PaginatedArticles page={0}>
-        {timeline.view === "weeks" && <Weeks slugs={slugs} />}
-        {timeline.view === "months" && <Months monthChangelogsMap={changelogsMap.months} />}
-        {timeline.view === "years" && <Years yearChangelogsMap={changelogsMap.years} />}
+        <AnimatePresence>
+          {timeline.view === "weeks" && (
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { duration: 0.6 } },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              <Weeks slugs={slugs} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {timeline.view === "months" && (
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { duration: 0.6 } },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              <Months monthChangelogsMap={changelogsMap.months} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <AnimatePresence>
+          {timeline.view === "years" && (
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1, transition: { duration: 0.6 } },
+              }}
+              exit={{ opacity: 0 }}
+            >
+              <Years yearChangelogsMap={changelogsMap.years} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </PaginatedArticles>
     </>
   );

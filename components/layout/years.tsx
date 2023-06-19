@@ -27,19 +27,25 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
   const yearChangelogs = [];
 
   sortedChangelogsByYear.forEach((year, index) => {
-    const imagePreviewMetas = year.slice(0, 27);
-    const yearViewGridRows = [];
 
-    while (imagePreviewMetas.length) {
-      const currentLength = imagePreviewMetas.length;
-      yearViewGridRows.push(
-        imagePreviewMetas.length < 9
-          ? imagePreviewMetas.splice(0, 9).concat(Array(9 - currentLength).fill([]))
-          : imagePreviewMetas.splice(0, 9)
-      );
+    if (year.length <= 9 ){
+      yearChangelogs.push(year.concat(Array(9 - year.length).fill([])));
+    } else {
+      //convert 1d array to 2d array for grid layout
+      const imagePreviewMetas = year.slice(0, 27);
+      const yearViewGridRows = [];
+
+      while (imagePreviewMetas.length) {
+        const currentLength = imagePreviewMetas.length;
+        yearViewGridRows.push(
+          imagePreviewMetas.length < 9
+            ? imagePreviewMetas.splice(0, 9).concat(Array(9 - currentLength).fill([]))
+            : imagePreviewMetas.splice(0, 9)
+        );
+      }
+
+      yearChangelogs.push(yearViewGridRows);
     }
-
-    yearChangelogs.push(yearViewGridRows);
   });
 
   return (
@@ -63,41 +69,51 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 onClick={() => {}}
                 position="relative"
               >
-                {changelogs.length > 9 && (
-                  <Box
-                    w={10}
-                    h={6}
-                    display="flex"
-                    position="absolute"
-                    bottom={4}
-                    right={4}
-                    bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"
-                    borderRadius={999}
-                    textAlign="center"
-                    fontSize="14px"
-                    alignItems="center"
-                    justifyContent="center"
-                    color="white"
-                    fontWeight="bold"
-                  >
-                    +{changelogs.length - 9}
-                  </Box>
-                )}
-                {changelogs.length <= 2 ? (
+                {/* {
+                  (changelogs.length === 3 && (
+                    <Box
+                      w={10}
+                      h={6}
+                      display="flex"
+                      position="absolute"
+                      bottom={4}
+                      right={4}
+                      bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"
+                      borderRadius={999}
+                      textAlign="center"
+                      fontSize="14px"
+                      alignItems="center"
+                      justifyContent="center"
+                      color="white"
+                      fontWeight="bold"
+                    >
+                      +{changelogs.length === 3 ? changelogs.length - 9 : 12 }
+                    </Box>
+                  ))} */}
+                {changelogs.length === 9 ? (
                   <Grid
                     gap={"8px"}
-                    templateColumns={changelogs.length === 1 ? "repeat(1, 1fr)" : "repeat(2, 1fr)"}
+                    templateColumns="repeat(8, 1fr)"
+                    templateRows="repeat(7, 1fr)"
                     height="100%"
                   >
                     {changelogs.map(({ imageUrl }, index) => (
-                      <Box key={index}>
-                        <Image
-                          src={imageUrl}
-                          alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
-                          height="100%"
-                          objectFit={"cover"}
-                        />
-                      </Box>
+                      <GridItem
+                        key={index}
+                        rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
+                        colSpan={[1, 3, 6].includes(index) ? 4 : 2}
+                      >
+                        {imageUrl ? (
+                          <Image
+                            src={imageUrl}
+                            alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
+                            height="100%"
+                            objectFit={"cover"}
+                          />
+                        ) : (
+                          <Box bg="#F1F3F5" h="full" w="full" />
+                        )}
+                      </GridItem>
                     ))}
                   </Grid>
                 ) : (
