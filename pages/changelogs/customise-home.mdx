@@ -81,3 +81,9 @@ To try it out, go to your product home and click on the "Edit" button. You'll th
 ## Other improvements
 
 - We started working on more advanced audience filtering options for the people list and reports. This work is still in progress - but we're hoping to release it for you next week.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
