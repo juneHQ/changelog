@@ -1,9 +1,18 @@
+import Link from "next/link";
+import Head from "next/head";
+import { MdxMeta } from "lib/models/mdx-meta";
+import dayjs from "dayjs";
+import { TryBanner } from "components/core/try-banner";
+import Navbar from "components/core/navbar";
+import Footer from "components/core/footer";
+import { Contributor } from "components/contributor";
+import { ReactNode } from "@mdx-js/react/lib";
+import { MDXProvider } from "@mdx-js/react";
 import {
   Box,
   Divider,
   Flex,
   Heading,
-  HStack,
   Image,
   ListItem,
   OrderedList,
@@ -11,22 +20,8 @@ import {
   UnorderedList,
   VStack,
 } from "@chakra-ui/react";
-import { MDXProvider } from "@mdx-js/react";
-import { ReactNode } from "@mdx-js/react/lib";
-import dayjs from "dayjs";
+
 import type { MDXComponents } from "mdx/types";
-import Head from "next/head";
-import Link from "next/link";
-
-import { Contributor } from "components/contributor";
-import { Footer } from "components/core/footer";
-import Navbar from "components/core/navbar";
-import TryBanner from "components/core/try-banner";
-import { MdxMeta } from "lib/models/mdx-meta";
-import { defaultPx } from "lib/utils/default-container-px";
-import Timeline from "./layout/timeline";
-import { motion, AnimatePresence } from "framer-motion";
-
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
   h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
@@ -94,6 +89,12 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={props.meta.headerImage} />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="June Changelog"
+            href="https://changelog.june.so/rss.xml"
+          />
         </Head>
       )}
       {!props.hideLayout && <Navbar />}
