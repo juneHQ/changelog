@@ -4,64 +4,68 @@ import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
 import useTimelineStore from "lib/state/use-timeline-store";
-import { IImagePreviewMeta, IYearlyChangelog } from "lib/models/view";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import { AnimatePresence, motion } from "framer-motion";
+import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import React from "react";
+import { useRouter } from "next/router";
 
-const ARTICLES_PER_PAGE = 4;
+const ITEMS_PER_PAGE = 4;
 
-const Page = ({ slugs, changelogsMap }) => {
+interface IPageProps {
+  slugs: string[];
+  changelogsMap: { months: IAggregatedChangelogs; years: IAggregatedChangelogs };
+  totalItems: { weeks: number; months: number; years: number };
+}
+
+const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   const timeline = useTimelineStore();
+  const router = useRouter();
+  const page = parseInt((router.query?.page || "0") as string);
 
   return (
-    <>
-      <PaginatedArticles page={0}>
-        <AnimatePresence>
-          {timeline.view === "weeks" && (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { duration: 0.6 } },
-              }}
-              exit={{ opacity: 0 }}
-            >
+    <PaginatedArticles
+      page={page}
+      itemsPerPage={ITEMS_PER_PAGE}
+      totalItems={{
+        weeks: totalItems.weeks,
+        months: totalItems.months,
+        years: totalItems.years,
+      }}
+    >
+      <Tabs
+        isLazy
+        isFitted
+        index={timeline.view === "weeks" ? 0 : timeline.view === "months" ? 1 : 2}
+        onChange={(index) => {
+          if (index === 0) {
+            timeline.setView("weeks");
+          } else if (index === 1) {
+            timeline.setView("months");
+          } else if (index === 2) {
+            timeline.setView("years");
+          }
+        }}
+      >
+        <TabPanels>
+          <TabPanel as={AnimatePresence}>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <Weeks slugs={slugs} />
             </motion.div>
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {timeline.view === "months" && (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { duration: 0.6 } },
-              }}
-              exit={{ opacity: 0 }}
-            >
+          </TabPanel>
+          <TabPanel as={AnimatePresence}>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <Months monthChangelogsMap={changelogsMap.months} />
             </motion.div>
-          )}
-        </AnimatePresence>
-        <AnimatePresence>
-          {timeline.view === "years" && (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1, transition: { duration: 0.6 } },
-              }}
-              exit={{ opacity: 0 }}
-            >
+          </TabPanel>
+          <TabPanel as={AnimatePresence}>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <Years yearChangelogsMap={changelogsMap.years} />
             </motion.div>
-          )}
-        </AnimatePresence>
-      </PaginatedArticles>
-    </>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </PaginatedArticles>
   );
 };
 
@@ -80,14 +84,12 @@ export async function getStaticProps({ params }) {
     return dateB.getTime() - dateA.getTime();
   });
 
-  const start = parseInt(params?.page ?? 0) * ARTICLES_PER_PAGE;
-  const end = start + ARTICLES_PER_PAGE;
+  const start = parseInt(params?.page ?? 0) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
   const recents = meta.slice(start, end).map((item) => item.slug);
 
   // aggregate images for monthly changelogs
-  const monthChangelogsMap: {
-    [key: string]: IImagePreviewMeta[];
-  } = meta.reduce((acc, item, index) => {
+  const monthChangelogsMap: IAggregatedChangelogs = meta.reduce((acc, item, index) => {
     const date = new Date(item.publishedAt);
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -99,45 +101,53 @@ export async function getStaticProps({ params }) {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: Math.floor(index / ARTICLES_PER_PAGE + 1),
+      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE + 1),
     });
     return acc;
   }, {});
 
-  const recentMonthChangelogsMap = Object.keys(monthChangelogsMap)
+  const recentMonthChangelogsMap: IAggregatedChangelogs = Object.keys(monthChangelogsMap)
     .slice(start, end)
     .reduce((acc, key) => {
       acc[key] = monthChangelogsMap[key];
       return acc;
     }, {});
 
-  const yearsChangelogsMap: { [key: string]: IImagePreviewMeta[] } = meta.reduce(
-    (acc, item, index) => {
-      const date = new Date(item.publishedAt);
-      const year = date.getFullYear().toString();
-      if (!acc[year]) {
-        acc[year] = [];
-      }
-      acc[year].push({
-        imageUrl: item.headerImage,
-        slug: item.slug,
-        publishedAt: item.publishedAt,
-        weeklyViewPage: Math.floor(index / ARTICLES_PER_PAGE + 1),
-        montlyViewPage: Math.floor(
-          Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) /
-            ARTICLES_PER_PAGE +
-            1
-        ),
-      });
+  const yearsChangelogsMap: IAggregatedChangelogs = meta.reduce((acc, item, index) => {
+    const date = new Date(item.publishedAt);
+    const year = date.getFullYear().toString();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push({
+      imageUrl: item.headerImage,
+      slug: item.slug,
+      publishedAt: item.publishedAt,
+      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE + 1),
+      montlyViewPage: Math.floor(
+        Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) / ITEMS_PER_PAGE +
+          1
+      ),
+    });
+    return acc;
+  }, {});
+
+  const recentYearsChangelogsMap: IAggregatedChangelogs = Object.keys(yearsChangelogsMap)
+    .slice(start, end)
+    .reduce((acc, key) => {
+      acc[key] = yearsChangelogsMap[key];
       return acc;
-    },
-    {}
-  );
+    }, {});
 
   return {
     props: {
       slugs: recents,
-      changelogsMap: { months: recentMonthChangelogsMap, years: yearsChangelogsMap },
+      changelogsMap: { months: recentMonthChangelogsMap, years: recentYearsChangelogsMap },
+      totalItems: {
+        weeks: slugs.length,
+        months: Object.keys(monthChangelogsMap).length,
+        years: Object.keys(yearsChangelogsMap).length,
+      },
     },
     revalidate: 1,
   };

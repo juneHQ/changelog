@@ -12,9 +12,10 @@ const TimeSelectionTabs = () => {
   const changeTimelineView = (view: "weeks" | "months" | "years") => {
     timeline.setView(view);
     if (router.pathname.includes("/page/")) {
-      router.push("/page/0");
+      router.push(`/page/0#${view}`);
+    } else {
+      router.push(`#${view}`);
     }
-    router.push(`#${view}`);
   };
 
   return (

@@ -97,86 +97,84 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         </Head>
       )}
       {!props.hideLayout && <Navbar />}
-      <AnimatePresence>
-        <motion.div layoutId="weekly-article" transition={{ duration: 0.2 }}>
-          <Timeline
-            selected={!props.hideLayout}
-            date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
-          >
-            <Box
-              mt={!props.hideLayout && [86, 86, 140]}
-              // maxW="4xl"
-              // mx="auto"
-              width="682px"
-              // px={defaultPx(32)}
-            >
-              {/* Article header */}
-              <VStack align="start" spacing={[4, 4, 6]}>
-                {props.tags !== undefined && <Flex gap={2}>
-                  {props.tags?.map((tag, index) => (
-                    <Box
-                      height="22px"
-                      bg="#F1F3F5"
-                      color="#0D131B"
-                      fontSize="14px"
-                      borderRadius="full"
-                      px={2}
-                      lineHeight="21px"
-                      fontWeight={500}
-                      position="relative"
-                      top="-8px"
-                      mb="-10px"
-                    >
-                      {tag}
-                    </Box>
-                  ))}
-                </Flex>}
-                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-                  <Image
-                    borderRadius="16px"
-                    src={props.meta.headerImage}
-                    alt={props.meta.title}
-                    w="full"
-                    cursor={props.hideLayout ? "pointer" : "default"}
-                  />
-                </Link>
-
-                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-                  <Heading
-                    as="h1"
-                    fontSize="24px"
+      <Timeline
+        selected={!props.hideLayout}
+        date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
+      >
+        <Box
+          mt={!props.hideLayout && [86, 86, 140]}
+          // maxW="4xl"
+          // mx="auto"
+          width="682px"
+          // px={defaultPx(32)}
+        >
+          {/* Article header */}
+          <VStack align="start" spacing={[4, 4, 6]}>
+            {props.tags !== undefined && (
+              <Flex gap={2}>
+                {props.tags?.map((tag, index) => (
+                  <Box
+                    height="22px"
+                    bg="#F1F3F5"
                     color="#0D131B"
-                    cursor={props.hideLayout ? "pointer" : "default"}
+                    fontSize="14px"
+                    borderRadius="full"
+                    px={2}
+                    lineHeight="21px"
+                    fontWeight={500}
+                    position="relative"
+                    top="-8px"
+                    mb="-10px"
                   >
-                    {props.meta.title}
-                  </Heading>
-                </Link>
-              </VStack>
-              {/* Article content */}
-              <Box
-                // pt={[10]}
-                pb={16}
-                fontSize="lg"
-                lineHeight="32px"
-                color="landing.almostBlack.500"
+                    {tag}
+                  </Box>
+                ))}
+              </Flex>
+            )}
+            <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+              <Image
+                borderRadius="16px"
+                src={props.meta.headerImage}
+                alt={props.meta.title}
+                w="full"
+                cursor={props.hideLayout ? "pointer" : "default"}
+              />
+            </Link>
+
+            <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+              <Heading
+                as="h1"
+                fontSize="24px"
+                color="#0D131B"
+                cursor={props.hideLayout ? "pointer" : "default"}
               >
-                {props.children}
-              </Box>
-              {/* Article authors */}
-              {!props.hideAuthors && (
-                <>
-                  <Divider mt={16} mb={8} />
-                  <VStack px={[6]} align="start" spacing={4}>
-                    {props.meta.authors.map((author) => (
-                      <Contributor key={author.name} {...author} />
-                    ))}
-                  </VStack>
-                </>
-              )}
-            </Box>
-          </Timeline>
-        </motion.div>
-      </AnimatePresence>
+                {props.meta.title}
+              </Heading>
+            </Link>
+          </VStack>
+          {/* Article content */}
+          <Box
+            // pt={[10]}
+            pb={16}
+            fontSize="lg"
+            lineHeight="32px"
+            color="landing.almostBlack.500"
+          >
+            {props.children}
+          </Box>
+          {/* Article authors */}
+          {!props.hideAuthors && (
+            <>
+              <Divider mt={16} mb={8} />
+              <VStack px={[6]} align="start" spacing={4}>
+                {props.meta.authors.map((author) => (
+                  <Contributor key={author.name} {...author} />
+                ))}
+              </VStack>
+            </>
+          )}
+        </Box>
+      </Timeline>
       {!props.hideLayout && (
         <>
           <TryBanner _wrapper={{ my: [50, 50, 120] }} />

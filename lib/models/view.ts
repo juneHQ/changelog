@@ -10,3 +10,7 @@ export interface IYearlyChangelog {
   changelogs: IImagePreviewMeta[];
   monthlyViewPage: number;
 }
+
+export interface IAggregatedChangelogs {
+  [key: string]: IImagePreviewMeta[];
+}

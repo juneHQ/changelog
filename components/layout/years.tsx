@@ -1,13 +1,12 @@
 import { Box, Grid, GridItem, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { motion } from "framer-motion";
-import { IImagePreviewMeta, IYearlyChangelog } from "lib/models/view";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
 import Timeline from "../../components/layout/timeline";
 
 interface IYearsProps {
-  yearChangelogsMap: { [key: string]: IImagePreviewMeta[] };
+  yearChangelogsMap: IAggregatedChangelogs;
 }
 
 const Years = ({ yearChangelogsMap }: IYearsProps) => {
@@ -27,8 +26,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
   const yearChangelogs = [];
 
   sortedChangelogsByYear.forEach((year, index) => {
-
-    if (year.length <= 9 ){
+    if (year.length <= 9) {
       yearChangelogs.push(year.concat(Array(9 - year.length).fill([])));
     } else {
       //convert 1d array to 2d array for grid layout
@@ -56,7 +54,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
             <VStack
               onClick={() => {
                 timeline.setView("months");
-                router.push(`/page/${index}/months`);
+                router.push(`/page/${index}#months`);
               }}
               cursor="pointer"
             >
@@ -64,32 +62,10 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 overflow="hidden"
                 borderRadius={"16px"}
                 width="682px"
-                // maxWidth={"682px"}
                 display="flex"
                 onClick={() => {}}
                 position="relative"
               >
-                {/* {
-                  (changelogs.length === 3 && (
-                    <Box
-                      w={10}
-                      h={6}
-                      display="flex"
-                      position="absolute"
-                      bottom={4}
-                      right={4}
-                      bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"
-                      borderRadius={999}
-                      textAlign="center"
-                      fontSize="14px"
-                      alignItems="center"
-                      justifyContent="center"
-                      color="white"
-                      fontWeight="bold"
-                    >
-                      +{changelogs.length === 3 ? changelogs.length - 9 : 12 }
-                    </Box>
-                  ))} */}
                 {changelogs.length === 9 ? (
                   <Grid
                     gap={"8px"}

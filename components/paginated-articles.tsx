@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { defaultPx } from "lib/utils/default-container-px";
@@ -13,11 +13,32 @@ import { motion } from "framer-motion";
 export interface PaginatedArticlesProps {
   page: number;
   children: ReactNode;
+  itemsPerPage: number;
+  totalItems: {
+    weeks: number;
+    months: number;
+    years: number;
+  };
 }
 
-export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) => {
+export const PaginatedArticles = ({
+  page,
+  children,
+  itemsPerPage,
+  totalItems,
+}: PaginatedArticlesProps) => {
   const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
   const timeline = useTimelineStore();
+
+  React.useEffect(() => {
+    const hash = window?.location.hash ?? "";
+
+    timeline.setView(
+      hash ? (hash === "#months" ? "months" : hash === "#years" ? "years" : "weeks") : "weeks"
+    );
+  }, []);
+
+  const hasMorePage = page < Math.floor(totalItems[timeline.view] / itemsPerPage);
 
   return (
     <>
@@ -58,7 +79,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
             <VStack spacing={8} width="80%" alignItems="center">
               <motion.div
                 variants={{
-                  hidden: { opacity: 0, },
+                  hidden: { opacity: 0 },
                   visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
                 }}
               >
@@ -91,7 +112,7 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
                 }}
               >
                 <VStack align={["stretch", "stretch", "center"]}>
-                  {page === 0 ? (
+                  {page === 0 && hasMorePage ? (
                     <Link href="/page/1">
                       <Button variant="landingOutline" size="landingLg">
                         Load more
@@ -100,25 +121,19 @@ export const PaginatedArticles = ({ page, children }: PaginatedArticlesProps) =>
                   ) : (
                     <HStack justifyContent="center" spacing={4}>
                       {page > 0 && (
-                        <Link
-                          href={`/page/${page - 1}${
-                            timeline.view !== "weeks" ? "#" + timeline.view : ""
-                          }`}
-                        >
+                        <Link href={`/page/${page - 1}${"#" + timeline.view}`}>
                           <Button variant="landingOutline" size="landingLg">
                             Previous page
                           </Button>
                         </Link>
                       )}
-                      <Link
-                        href={`/page/${page + 1}${
-                          timeline.view !== "weeks" ? "#" + timeline.view : ""
-                        }`}
-                      >
-                        <Button variant="landingOutline" size="landingLg">
-                          Next page
-                        </Button>
-                      </Link>
+                      {hasMorePage && (
+                        <Link href={`/page/${page + 1}${"#" + timeline.view}`}>
+                          <Button variant="landingOutline" size="landingLg">
+                            Next page
+                          </Button>
+                        </Link>
+                      )}
                     </HStack>
                   )}
                 </VStack>

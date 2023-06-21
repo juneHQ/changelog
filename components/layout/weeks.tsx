@@ -1,11 +1,14 @@
 import dynamic from "next/dynamic";
+import React from "react";
 
-interface IWeeks {
+interface IWeeksProps {
   slugs: string[];
 }
 
-const Weeks = ({ slugs }: IWeeks) => {
-  const Articles = slugs.map((slug) => dynamic(() => import(`../../pages/changelogs/${slug}.mdx`)));
+const Weeks = ({ slugs }: IWeeksProps) => {
+  const Articles = React.useMemo(() => {
+    return slugs.map((slug) => dynamic(() => import(`../../pages/changelogs/${slug}.mdx`)));
+  }, [slugs]);
 
   return (
     <>

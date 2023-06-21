@@ -1,13 +1,12 @@
 import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
 import dayjs from "dayjs";
-import { motion } from "framer-motion";
-import { IImagePreviewMeta } from "lib/models/view";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
 import Timeline from "./timeline";
 
 interface IMonthsProps {
-  monthChangelogsMap: { [key: string]: IImagePreviewMeta[] };
+  monthChangelogsMap: IAggregatedChangelogs;
 }
 
 const Months = ({ monthChangelogsMap }: IMonthsProps) => {
