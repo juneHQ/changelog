@@ -58,6 +58,12 @@ export const PaginatedArticles = ({
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content="Discover new updates and improvements to June." />
         <meta name="twitter:image" content="https://changelog.june.so/social.png" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="June Changelog"
+          href="https://changelog.june.so/rss.xml"
+        />
       </Head>
       <motion.div initial="hidden" animate="visible">
         <motion.div

@@ -9,6 +9,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
+import { generateRssFeed } from "lib/generate-rss-feed";
+
 
 const ITEMS_PER_PAGE = 4;
 
@@ -69,7 +71,9 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   );
 };
 
+
 export async function getStaticProps({ params }) {
+  await generateRssFeed();
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(slugs.map((slug) => import(`./changelogs/${slug}.mdx`)));
