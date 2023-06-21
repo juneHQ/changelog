@@ -1,14 +1,15 @@
-import { getArticleSlugs } from "lib/get-articles-slugs";
-import { PaginatedArticles } from "components/paginated-articles";
-import Months from "components/layout/months";
-import Years from "components/layout/years";
-import Weeks from "components/layout/weeks";
-import useTimelineStore from "lib/state/use-timeline-store";
-import { IAggregatedChangelogs } from "lib/models/view";
-import { AnimatePresence, motion } from "framer-motion";
-import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
+import useTimelineStore from "lib/state/use-timeline-store";
+import { IAggregatedChangelogs } from "lib/models/view";
+import { getArticleSlugs } from "lib/get-articles-slugs";
+import { generateRssFeed } from "lib/generate-rss-feed";
+import { AnimatePresence, motion } from "framer-motion";
+import { PaginatedArticles } from "components/paginated-articles";
+import Years from "components/layout/years";
+import Weeks from "components/layout/weeks";
+import Months from "components/layout/months";
+import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 
 const ITEMS_PER_PAGE = 4;
 
@@ -70,6 +71,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
 };
 
 export async function getStaticProps({ params }) {
+  await generateRssFeed();
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(slugs.map((slug) => import(`./changelogs/${slug}.mdx`)));
