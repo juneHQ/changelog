@@ -215,10 +215,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                                                 objectFit={"cover"}
                                               />
                                             ) : (
-                                              // <Box bg="#F1F3F5" h="full" w="full" />
                                               <Image
-                                                // src={gridItems[0].imageUrl}
-                                                // get random image from the first few items
                                                 src={
                                                   rowItems[Math.floor(Math.random() * 3)].imageUrl
                                                 }
@@ -228,10 +225,6 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                                                 h="full"
                                                 w="full"
                                                 objectFit={"cover"}
-                                                // filter={`blur(${Math.floor(Math.random() * 3) + 1}px)`}
-                                                // backdropFilter={`blur(${
-                                                //   Math.floor(Math.random() * 3) + 1
-                                                // }px)`}
                                               />
                                             )}
                                           </GridItem>
@@ -274,10 +267,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                                                 objectFit={"cover"}
                                               />
                                             ) : (
-                                              // <Box bg="#F1F3F5" h="full" w="full" />
                                               <Image
-                                                // src={gridItems[0].imageUrl}
-                                                // get random image from the first few items
                                                 src={
                                                   rowItems[Math.floor(Math.random() * 3)].imageUrl
                                                 }
@@ -287,10 +277,6 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                                                 h="full"
                                                 w="full"
                                                 objectFit={"cover"}
-                                                // filter={`blur(${Math.floor(Math.random() * 3) + 1}px)`}
-                                                // backdropFilter={`blur(${
-                                                //   Math.floor(Math.random() * 3) + 1
-                                                // }px)`}
                                               />
                                             )}
                                           </GridItem>
@@ -307,40 +293,6 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                                 />
                               </>
                             )}
-                            {/* {rowItems.map(({ imageUrl }, index) =>
-                              index === 0 ? (
-                                <Image
-                                  src={imageUrl}
-                                  alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
-                                  h="198px"
-                                  w="282px"
-                                  objectFit={"cover"}
-                                />
-                              ) : imageUrl ? (
-                                <Image
-                                  src={imageUrl}
-                                  alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
-                                  height="98px"
-                                  width="98px"
-                                  objectFit={"cover"}
-                                />
-                              ) : (
-                                // <Box bg="#F1F3F5" h="full" w="full" />
-                                <Image
-                                  // src={gridItems[0].imageUrl}
-                                  // get random image from the first few items
-                                  src={imageUrl}
-                                  alt={`${Object.keys(yearChangelogsMap)[index]} - ${index}`}
-                                  h="full"
-                                  w="full"
-                                  objectFit={"cover"}
-                                  // filter={`blur(${Math.floor(Math.random() * 3) + 1}px)`}
-                                  // backdropFilter={`blur(${
-                                  //   Math.floor(Math.random() * 3) + 1
-                                  // }px)`}
-                                />
-                              )
-                            )} */}
                           </HStack>
                         </GridItem>
                       ))}

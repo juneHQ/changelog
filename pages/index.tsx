@@ -4,7 +4,7 @@ import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
 import useTimelineStore from "lib/state/use-timeline-store";
-import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
+import { IAggregatedChangelogs } from "lib/models/view";
 import { AnimatePresence, motion } from "framer-motion";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
