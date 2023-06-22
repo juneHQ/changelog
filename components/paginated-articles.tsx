@@ -5,7 +5,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { Box, Button, Container, Divider, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "./core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
@@ -74,7 +74,7 @@ export const PaginatedArticles = ({
         >
           <Navbar />
         </motion.div>
-        <Box w="full" maxW="100vw" overflow="hidden" zIndex="docked">
+        <Box w="100vw" overflow="hidden" zIndex="docked">
           <Container
             maxW="landingMax"
             display="flex"
@@ -82,7 +82,7 @@ export const PaginatedArticles = ({
             px={defaultPx(32)}
             mt={[86, 86, 100]}
           >
-            <VStack spacing={8} width="80%" alignItems="center">
+            <VStack spacing={8} alignItems="center" w="full">
               <motion.div
                 variants={{
                   hidden: { opacity: 0 },
@@ -97,7 +97,7 @@ export const PaginatedArticles = ({
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
                 }}
               >
-                <VStack display="flex" justifyContent="center" alignItems="start" gap={14}>
+                <VStack display="flex" justifyContent="center" alignItems="start" gap={[8, 8, 14]}>
                   <VStack alignItems="start" width="100%">
                     <Text fontSize="xl" color="gray.700" textAlign={"start"}>
                       The latest from June

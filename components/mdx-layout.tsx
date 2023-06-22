@@ -100,16 +100,16 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         </Head>
       )}
       {!props.hideLayout && <Navbar />}
-      <Timeline
-        selected={!props.hideLayout}
-        date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
-      >
+      <Timeline date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}>
         <Box
-          mt={!props.hideLayout && [86, 86, 140]}
+          // mt={!props.hideLayout && [86, 86, 140]}
           // maxW="4xl"
           // mx="auto"
-          width="682px"
+          // w="100%"
+          maxW="682px"
           // px={defaultPx(32)}
+          position={props.hideLayout ? "relative" : "static"}
+          top={props.hideLayout ? "-8px" : 0}
         >
           {/* Article header */}
           <VStack align="start" spacing={[4, 4, 6]}>

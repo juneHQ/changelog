@@ -38,7 +38,7 @@ const MediumGrid = (props: IGridProps) => {
     </VStack>
   ) : (
     <Grid gap={"8px"} templateColumns="repeat(8, 1fr)" templateRows="repeat(7, 1fr)" height="100%">
-      {changelogs.map(({ imageUrl, slug }, index) => (
+      {changelogs.slice(0,9).map(({ imageUrl, slug }, index) => (
         <GridItem
           key={index}
           rowSpan={[0, 2, 3].includes(index) ? 3 : 2}

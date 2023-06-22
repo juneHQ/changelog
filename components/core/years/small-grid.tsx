@@ -6,11 +6,12 @@ const SmallGrid = (props: IGridProps) => {
 
   return (
     <HStack height="100%">
-      <Box width="498px">
+      <Box width="100%">
         <Image
           src={changelogs[0]?.imageUrl}
           alt={changelogs[0]?.slug}
-          height="360px"
+          minHeight={["176px", "176px", "360px"]}
+          height="100%"
           objectFit={"cover"}
         />
       </Box>

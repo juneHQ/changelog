@@ -33,7 +33,9 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
         >
           <Box
             display="flex"
-            paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : 20}
+            paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12,16,20]}
+            position="relative"
+            top="-8px"
           >
             <VStack
               onClick={() => {
@@ -42,7 +44,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
               cursor="pointer"
             >
               <Box
-                height={"360px"}
+                maxHeight="360px"
                 overflow="hidden"
                 borderRadius={"16px"}
                 maxWidth={"682px"}
@@ -75,11 +77,12 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                   </Grid>
                 ) : (
                   <HStack height="100%">
-                    <Box width="498px">
+                    <Box width="100%">
                       <Image
                         src={changelogs[0]?.imageUrl}
                         alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
-                        height="360px"
+                        minHeight={["176px", "176px", "360px"]}
+                        height="100%"
                         objectFit={"cover"}
                       />
                     </Box>

@@ -1,15 +1,19 @@
-import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Text, VStack, useMediaQuery } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
 
 export interface TimelineProps {
   date: string;
   children: ReactNode;
-  selected?: boolean;
 }
 
-const Timeline = ({ date, children, selected = false }) => {
+const Timeline = (props: TimelineProps) => {
+  const { children, date } = props;
+
   const router = useRouter();
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
+  const selected = router.pathname.includes("/changelogs");
 
   return (
     <HStack
@@ -19,8 +23,16 @@ const Timeline = ({ date, children, selected = false }) => {
       alignItems="start"
       spacing={0}
       pt={selected ? 40 : 0}
+      px={selected ? [6, 6, 0] : 0}
     >
-      <VStack position="relative" top="-8px" width="120px" spacing={4}>
+      {/* {isLargerThan768 &&( */}
+      <VStack
+        position="relative"
+        top={selected ? "" : "-8px"}
+        width="120px"
+        spacing={4}
+        display={isLargerThan768 ? "flex" : "none"}
+      >
         {selected && (
           <Box
             onClick={() => {
@@ -31,24 +43,25 @@ const Timeline = ({ date, children, selected = false }) => {
             gap={3}
             alignItems="center"
             justifyContent="start"
-            width="full"
+            width="125px"
           >
-            <svg
-              width="6"
-              height="10"
-              viewBox="0 0 6 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.25 9L1.25 5L5.25 1"
-                stroke="#868E96"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-
+            <div>
+              <svg
+                width="6"
+                height="10"
+                viewBox="0 0 6 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.25 9L1.25 5L5.25 1"
+                  stroke="#868E96"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
             <Text
               fontSize="16px"
               color="#868E96"
@@ -59,11 +72,12 @@ const Timeline = ({ date, children, selected = false }) => {
             </Text>
           </Box>
         )}
-        <Text fontSize="16px" color="#868E96" alignItems="start" width="full">
+        <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
           {date}
         </Text>
       </VStack>
-      <HStack alignItems="start" spacing={8} display="relative">
+      {/* )} */}
+      <HStack alignItems="start" spacing={selected ? 0 : 8} display="relative">
         <Box
           style={{
             display: "flex",
@@ -94,7 +108,58 @@ const Timeline = ({ date, children, selected = false }) => {
             }}
           />
         </Box>
-        {children}
+        <VStack alignItems="start" spacing={[0,0,2]}>
+          <VStack
+            position="relative"
+            top="-8px"
+            spacing={4}
+            display={isLargerThan768 ? "none" : "flex"}
+            mb={[4, 4]}
+          >
+            {selected && (
+              <Box
+                onClick={() => {
+                  router.back();
+                }}
+                cursor="pointer"
+                display="flex"
+                gap={3}
+                alignItems="center"
+                justifyContent="start"
+                width="full"
+              >
+                <svg
+                  width="6"
+                  height="10"
+                  viewBox="0 0 6 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.25 9L1.25 5L5.25 1"
+                    stroke="#868E96"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+
+                <Text
+                  fontSize="16px"
+                  color="#868E96"
+                  alignItems="start"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  Back
+                </Text>
+              </Box>
+            )}
+            <Text fontSize="16px" color="#868E96" alignItems="start" width="full">
+              {date}
+            </Text>
+          </VStack>
+          {children}
+        </VStack>
       </HStack>
     </HStack>
   );
