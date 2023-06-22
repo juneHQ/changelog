@@ -1,4 +1,5 @@
 import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
+import MoreItems from "components/core/more-items";
 import dayjs from "dayjs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
@@ -53,24 +54,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                 position="relative"
               >
                 {sortedChangelogsArrayByMonth.length > 3 && (
-                  <Box
-                    w={10}
-                    h={6}
-                    display="flex"
-                    position="absolute"
-                    bottom={4}
-                    right={4}
-                    bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"
-                    borderRadius={999}
-                    textAlign="center"
-                    fontSize="14px"
-                    alignItems="center"
-                    justifyContent="center"
-                    color="white"
-                    fontWeight="bold"
-                  >
-                    +{sortedChangelogsArrayByMonth.length - 3}
-                  </Box>
+                  <MoreItems numberOfItems={sortedChangelogsArrayByMonth.length - 3} />
                 )}
                 {changelogs.length <= 2 ? (
                   <Grid
