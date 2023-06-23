@@ -36,7 +36,8 @@
     "react-dom": "17.0.2",
     "react-markdown": "^8.0.0",
     "remark-gfm": "^3.0.1",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "zustand": "^4.3.8"
   },
   "license": "MIT",
   "devDependencies": {

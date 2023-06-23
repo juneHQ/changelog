@@ -1,24 +1,31 @@
+import React from "react";
+import NextImage from "next/image";
 import { defaultPx } from "lib/utils/default-container-px";
-import { FooterTitle } from "components/core/footer/footer-title";
-import { FooterLink } from "components/core/footer/footer-link";
 import {
   Box,
   chakra,
   Container,
   ContainerProps,
+  Flex,
   Grid,
   GridItem,
+  HStack,
   Image,
+  Text,
   VStack,
 } from "@chakra-ui/react";
+import { FooterTitle } from "./footer-title";
+import { FooterLink } from "./footer-link";
+import { NextResponsiveImage } from "../next-responsive-image";
 
-const gap = [2, 2, 8];
+const LINK_GAPS = [2, 2, 8];
 
-interface Props {
+interface FooterProps {
   _wrapper?: ContainerProps;
+  mode?: "light" | "dark";
 }
 
-export default function Footer(props: Props) {
+export function Footer(props: FooterProps) {
   return (
     <Container maxW="landingMax" px={defaultPx(32)} {...props._wrapper}>
       <Grid
@@ -31,92 +38,185 @@ export default function Footer(props: Props) {
         ]}
       >
         <GridItem gridArea="logo">
-          <Box flexShrink={0}>
-            <Image
-              src="/june-logo-small.svg"
+          <Box flexShrink={0} mb={8}>
+            <NextResponsiveImage
+              src="/june-logo-symbol-only.svg"
               alt="june"
-              width={68}
-              height={68}
-              htmlWidth={68}
-              htmlHeight={68}
+              width={["75px"]}
+              height={["80px"]}
+              {...(props.mode === "dark" && {
+                filter: "invert(1) brightness(10000%)",
+              })}
             />
           </Box>
+          <FooterLink
+            mode={props.mode}
+            href="https://june.so/security"
+            title={
+              <HStack cursor={"pointer"}>
+                <Image src="/soc2type2.svg" alt="SOC 2 Type II" />
+                <Text color={props.mode === "dark" ? "gray.600" : "landing.gray"}>
+                  SOC 2 Type II
+                </Text>
+              </HStack>
+            }
+          />
+          <FooterLink
+            mode={props.mode}
+            href="https://june.so/security"
+            title={
+              <HStack cursor={"pointer"}>
+                <Flex h="32px" w="32px" justify={"center"} align="center">
+                  <Image h={"24px"} w={"24px"} src="/gdrp.svg" alt="GDPR" />
+                </Flex>
+                <Text color={props.mode === "dark" ? "gray.600" : "landing.gray"}>GDPR Ready</Text>
+              </HStack>
+            }
+          />
         </GridItem>
         <GridItem gridArea="solution">
-          <VStack align="start" spacing={gap}>
-            <FooterTitle>Explore</FooterTitle>
+          <VStack align="start" spacing={LINK_GAPS}>
+            <FooterTitle mode={props.mode}>Solutions</FooterTitle>
+            <FooterLink mode={props.mode} title="Product Analytics" href="https://june.so/" />
             <FooterLink
-              title="Overview"
-              type="external"
-              href={process.env.NEXT_PUBLIC_MARKETING_HOST}
+              mode={props.mode}
+              title="Feature Report"
+              href="https://june.so/feature-launches"
             />
             <FooterLink
-              title="Pricing"
+              mode={props.mode}
+              title="Qualification Bot"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
+              href="https://qualify.june.so"
             />
-            <FooterLink title="Changelog" href="/" />
-            <FooterLink title="Widget for iOS" type="external" href="https://widgets.june.so/" />
+            <FooterLink
+              mode={props.mode}
+              title="Widget for iOS"
+              type="external"
+              href="https://widgets.june.so"
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="for">
-          <VStack align="start" spacing={gap}>
-            <FooterTitle>Alternatives</FooterTitle>
+          <VStack align="start" spacing={LINK_GAPS}>
+            <FooterTitle mode={props.mode}>Resources</FooterTitle>
             <FooterLink
-              title="June vs Amplitude"
+              mode={props.mode}
+              title="Customers"
+              href="https://june.so/customer-stories"
+            />
+            <FooterLink mode={props.mode} title="Docs" href="https://june.so/docs" />
+            <FooterLink mode={props.mode} title="June School" href="https://school.june.so" />
+            <FooterLink
+              mode={props.mode}
+              title="Benchmarks"
               type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-amplitude`}
+              href="https://www.june.so/benchmarks"
             />
             <FooterLink
+              mode={props.mode}
+              title="June vs Amplitude"
+              href="https://june.so/blog/june-vs-amplitude"
+            />
+            <FooterLink
+              mode={props.mode}
               title="June vs Mixpanel"
-              type="external"
-              href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog/june-vs-mixpanel`}
+              href="https://june.so/blog/june-vs-mixpanel"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="June vs Heap"
+              href="https://june.so/blog/june-vs-heap"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="June vs Pendo"
+              href="https://june.so/blog/june-vs-pendo"
             />
           </VStack>
         </GridItem>
         <GridItem gridArea="company">
-          <VStack align="start" spacing={gap}>
-            <FooterTitle>Company</FooterTitle>
-            {/* <FooterLink title="Our story" /> */}
+          <VStack align="start" spacing={LINK_GAPS}>
+            <FooterTitle mode={props.mode}>Company</FooterTitle>
+            <FooterLink mode={props.mode} title="Pricing" href="https://june.so/pricing" />
             <FooterLink
+              mode={props.mode}
+              title="Changelog"
+              type="external"
+              href="https://changelog.june.so"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="Linkedin"
+              type="external"
+              href="https://www.linkedin.com/company/junedotso/"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="Twitter"
+              type="external"
+              href="https://twitter.com/JuneDotSo"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="Blog"
+              type="external"
+              href="https://june.so/blog"
+            />
+            <FooterLink
+              mode={props.mode}
               title="Careers"
               type="external"
               href="https://www.notion.so/projectanalytics/Work-at-June-ba2ff41d03cb4a1ba230eda21daccada"
             />
-            <FooterLink title="Contact" type="external" href="mailto:enzo@june.so" />
-            <FooterLink title="Twitter" type="external" href="https://twitter.com/JuneDotSo" />
-            <FooterLink title="Blog" type="external" href="https://inside.june.so" />
+            <FooterLink
+              mode={props.mode}
+              title="Contact us"
+              type="external"
+              href="mailto:enzo@june.so"
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="legal">
-          <VStack align="start" spacing={gap}>
-            <FooterTitle>Legal</FooterTitle>
+          <VStack align="start" spacing={LINK_GAPS}>
+            <FooterTitle mode={props.mode}>Legal</FooterTitle>
             <FooterLink
+              mode={props.mode}
               title="Terms"
               type="external"
-              href="https://www.notion.so/Terms-of-Service-3a8be1c25dd04cf699800425153a03f8"
+              href="https://help.june.so/en/articles/6823511-terms-of-service"
             />
             <FooterLink
+              mode={props.mode}
               title="Privacy"
               type="external"
-              href="https://www.notion.so/Privacy-Policy-a4f99393a98b4ce6aa1bacd5f48157cc"
+              href="https://help.june.so/en/articles/6823521-privacy-policy"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="Security"
+              type="internal"
+              href="https://june.so/security"
             />
             <VStack align="start">
               <FooterLink
                 style={{ display: ["none", "none", "block"] }}
+                mode={props.mode}
                 title="Backed by"
                 type="text"
               />
               <FooterLink
                 type="node"
                 title={
-                  <Image
-                    src="/yc-orange-logo.png"
-                    alt="y-combinator logo"
-                    height={6}
+                  <Box
+                    position="relative"
+                    sx={{ aspectRatio: "5" }}
+                    h={6}
                     w="auto"
                     display={["none", "none", "block"]}
-                  />
+                  >
+                    <NextImage src="/yc-orange-logo.png" alt="y-combinator logo" layout="fill" />
+                  </Box>
                 }
               />
             </VStack>
@@ -140,22 +240,33 @@ export default function Footer(props: Props) {
                 </chakra.a>
               }
             />
-            <FooterLink title="Copyright © 2023 June" type="text" />
+            <FooterLink
+              mode={props.mode}
+              title={`Copyright © ${new Date().getFullYear().toString()} June`}
+              type="text"
+            />
           </VStack>
         </GridItem>
         <GridItem display={["block", "block", "none"]}>
           <VStack align="start">
-            <FooterLink title="Backed by" type="text" />
+            <FooterLink mode={props.mode} title="Backed by" type="text" />
             <FooterLink
               type="node"
               title={
-                <Image src="/yc-orange-logo.png" alt="y-combinator logo" height={6} w="auto" />
+                <Box>
+                  <NextImage
+                    src="/yc-orange-logo.png"
+                    alt="y-combinator logo"
+                    width={120}
+                    height={24}
+                  />
+                </Box>
               }
             />
           </VStack>
         </GridItem>
         <GridItem display={["block", "block", "none"]}>
-          <VStack align="start" spacing={gap}>
+          <VStack align="start" spacing={LINK_GAPS}>
             <FooterLink
               type="node"
               title={

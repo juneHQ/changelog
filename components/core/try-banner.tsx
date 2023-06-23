@@ -1,39 +1,44 @@
-import {
-  Box,
-  Button,
-  Container,
-  ContainerProps,
-  Heading,
-  Image,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { NextResponsiveImage } from "components/core/next-responsive-image";
+import { Box, Button, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { PageSectionProps } from "lib/models/page-section-props";
+import { GradientHighlight, Highlight } from "./highlight";
 
-interface TryBannerProps {
+interface TryJuneBannerProps extends PageSectionProps {
   subheading?: string;
   heading?: string | React.ReactNode;
   description?: string;
   buttonText?: string;
   buttonHref?: string;
   buttonHrefType?: "external" | "internal";
-  _wrapper?: ContainerProps;
+  mode?: "light" | "dark";
 }
 
-export function TryBanner(props: TryBannerProps) {
+function TryJuneBanner(props: TryJuneBannerProps) {
   const {
-    subheading = "Try today",
     heading = (
       <>
-        Set up June in
-        <br />5 minutes
+        Set up June{" "}
+        <GradientHighlight {...(props.mode === "dark" && { variant: "lightest", glow: true })}>
+          in 2 minutes
+        </GradientHighlight>
       </>
     ),
-    description = "Get instant product analytics reports in seconds not hours.",
-    buttonText = "Get started",
-    buttonHref = `${process.env.NEXT_PUBLIC_APP_HOST}/start`,
+    description = (
+      <>
+        Just connect <Highlight>Segment</Highlight>, implement{" "}
+        <Highlight as="a" href="https://www.june.so/docs">
+          our SDK
+        </Highlight>{" "}
+        or use our <Highlight>other integrations</Highlight> to start understanding how your product
+        is used
+      </>
+    ),
+    buttonText = "Get started for free",
+    buttonHref = "https://analytics.june.so/start",
     buttonHrefType = "external",
+    mode = "light",
   } = props;
 
   const LinkOrFragment =
@@ -44,58 +49,86 @@ export function TryBanner(props: TryBannerProps) {
         );
 
   return (
-    <Container maxW="landingMax" px={[0, 0, 12, 12, 32]} {...props._wrapper}>
+    <Container maxW="landingMax" position="relative" px={[0, 0, 12, 12, 40]} {...props._wrapper}>
+      {/* Glowing background */}
+      {mode === "dark" && (
+        <Box
+          pos="absolute"
+          bg="purple.500"
+          opacity={0.5}
+          filter="blur(200px)"
+          top="64px"
+          bottom="64px"
+          left="-16px"
+          right="-16px"
+          zIndex="auto"
+        />
+      )}
       <Box
-        bg="linear-gradient(113.99deg, #D1D4FF 15.75%, #A7ACFC 57.98%, #8588E5 83.82%);"
-        borderRadius="md"
-        pos="relative"
-        p={[8, 8, 16, 16, 120]}
+        position="relative"
+        px={[8, 8, 20]}
+        py={[8, 8, 16]}
+        {...(mode === "dark" && {
+          bg: "purple.900",
+          border: "2px solid",
+          borderColor: "purple.800",
+          borderRadius: "2xl",
+          filter: "drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.2))",
+        })}
       >
-        <picture>
-          <source type="image/webp" srcSet="/rocket.webp" />
-          <source type="image/png" srcSet="/rocket.png" />
-          <Image
-            src="/rocket.png"
-            alt="rocket"
-            objectFit={["cover"]}
-            pos="absolute"
-            w={["3xl", 800]}
-            h={["3xl", 800]}
-            top="50%"
-            left="50%"
-            transform={["translate(15%, -42.5%)", "translate(-5%, -45%)"]}
-            display={["none", "none", "block"]}
+        {/* Background with opacity */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          opacity={0.05}
+          borderRadius="2xl"
+          bg="linear-gradient(129.77deg, #ADABFF 16.97%, #9C88DD 64.88%, #CB8AE8 94.21%);"
+        />
+        {/* Background grid */}
+        <Box position="absolute" right={0} bottom={0} top={0}>
+          <NextResponsiveImage
+            src="/try-june-bg-grid.svg"
+            alt="Background grid"
+            sx={{ aspectRatio: "0.7788018433" }}
+            height="full"
+            visibility={["hidden", "hidden", "visible"]}
           />
-        </picture>
-        <VStack align="start" spacing={4} pos="relative">
-          <Text
-            fontFamily="landingHeading"
-            fontSize={38}
-            fontWeight="semibold"
-            color="#8588E5"
-            lineHeight="shorter"
-          >
-            {subheading}
-          </Text>
-          <Heading
-            as="h2"
-            fontFamily="landingHeading"
-            fontSize={[54, 54, 80]}
-            lineHeight={[1.2, 1.2, "83.5px"]}
-            color="landing.almostBlack.500"
-          >
-            {heading}
-          </Heading>
-          <Text fontSize={22} fontWeight="medium" color="landing.gray">
-            {description}
-          </Text>
+        </Box>
+        <VStack align="center" spacing={6}>
+          <VStack align="center" spacing={4} pos="relative">
+            <Heading
+              as="h2"
+              fontFamily="landingHeading"
+              fontSize={[48, 48, 64]}
+              lineHeight="1.2"
+              color={mode === "light" ? "purple.900" : "white"}
+              letterSpacing="-0.02em"
+              textAlign={"center"}
+            >
+              {heading}
+            </Heading>
+            <Text
+              fontSize="md"
+              fontFamily="landingHeading"
+              color={mode === "light" ? "gray.900" : "white"}
+              lineHeight="7"
+              maxW={["100%", "100%", "75%"]}
+              textAlign={"center"}
+            >
+              {description}
+            </Text>
+          </VStack>
           <LinkOrFragment>
             <Button
               as="a"
               size="landingMd"
-              variant="landingSolid"
-              fontFamily="landingHeading"
+              variant={"landingGradient"}
               rel="noreferrer noopener"
+              className="g-conversion-button"
+              w={["full", "full", "unset"]}
               {...(buttonHrefType === "external" && { href: buttonHref })}
             >
               {buttonText}
@@ -106,3 +139,5 @@ export function TryBanner(props: TryBannerProps) {
     </Container>
   );
 }
+
+export default TryJuneBanner;
