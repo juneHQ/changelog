@@ -36,8 +36,6 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
           <Box
             display="flex"
             paddingBottom={index === sortedChangelogsByYear.length - 1 ? 0 : [12, 16, 20]}
-            position="relative"
-            top="-8px"
           >
             <VStack
               onClick={() => {

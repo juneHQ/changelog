@@ -34,8 +34,6 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
           <Box
             display="flex"
             paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
-            position="relative"
-            top="-8px"
           >
             <VStack
               onClick={() => {

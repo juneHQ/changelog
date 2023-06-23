@@ -108,8 +108,6 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           // w="100%"
           maxW="682px"
           // px={defaultPx(32)}
-          position={props.hideLayout ? "relative" : "static"}
-          top={props.hideLayout ? "-8px" : 0}
         >
           {/* Article header */}
           <VStack align="start" spacing={[4, 4, 6]}>
