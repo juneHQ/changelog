@@ -22,7 +22,7 @@ const Timeline = (props: TimelineProps) => {
       justifyContent="center"
       alignItems="start"
       spacing={0}
-      pt={selected ? 40 : 0}
+      pt={selected ? (isLargerThan768 ? 52 : 28) : 0}
       px={selected ? [6, 6, 0] : 0}
     >
       {/* {isLargerThan768 &&( */}
@@ -108,7 +108,7 @@ const Timeline = (props: TimelineProps) => {
             }}
           />
         </Box>
-        <VStack alignItems="start" spacing={[0,0,2]}>
+        <VStack alignItems="start" spacing={[0, 0, 2]}>
           <VStack
             position="relative"
             top="-8px"

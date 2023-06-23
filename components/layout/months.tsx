@@ -33,7 +33,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
         >
           <Box
             display="flex"
-            paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12,16,20]}
+            paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
             position="relative"
             top="-8px"
           >
@@ -51,7 +51,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                 display="flex"
                 onClick={() => {
                   timeline.setView("weeks");
-                  router.push(`/page/${changelogs[0].weeklyViewPage}`);
+                  router.push(`/page/${changelogs[0].weeklyViewPage}#weeks`);
                 }}
                 position="relative"
               >

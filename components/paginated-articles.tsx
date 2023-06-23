@@ -74,7 +74,7 @@ export const PaginatedArticles = ({
         >
           <Navbar />
         </motion.div>
-        <Box w="100vw" overflow="hidden" zIndex="docked">
+        <Box w="100vw" overflow="hidden" zIndex="docked" maxW={"100%"}>
           <Container
             maxW="landingMax"
             display="flex"

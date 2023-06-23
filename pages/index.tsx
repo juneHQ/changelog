@@ -11,7 +11,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { generateRssFeed } from "lib/generate-rss-feed";
 
-
 const ITEMS_PER_PAGE = 4;
 
 interface IPageProps {
@@ -71,7 +70,6 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   );
 };
 
-
 export async function getStaticProps({ params }) {
   await generateRssFeed();
   const slugs = getArticleSlugs();
@@ -105,7 +103,7 @@ export async function getStaticProps({ params }) {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE + 1),
+      weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
     });
     return acc;
   }, {});
@@ -127,10 +125,9 @@ export async function getStaticProps({ params }) {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE + 1),
+      weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
       montlyViewPage: Math.floor(
-        Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) / ITEMS_PER_PAGE +
-          1
+        Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) / ITEMS_PER_PAGE
       ),
     });
     return acc;
