@@ -1,5 +1,6 @@
 import React from "react";
 import NextImage from "next/image";
+import { defaultPx } from "lib/utils/default-container-px";
 import {
   Box,
   chakra,
@@ -16,7 +17,6 @@ import {
 import { FooterTitle } from "./footer-title";
 import { FooterLink } from "./footer-link";
 import { NextResponsiveImage } from "../next-responsive-image";
-import { defaultPx } from "lib/utils/default-container-px";
 
 const LINK_GAPS = [2, 2, 8];
 
@@ -51,8 +51,9 @@ export function Footer(props: FooterProps) {
           </Box>
           <FooterLink
             mode={props.mode}
+            href="https://june.so/security"
             title={
-              <HStack>
+              <HStack cursor={"pointer"}>
                 <Image src="/soc2type2.svg" alt="SOC 2 Type II" />
                 <Text color={props.mode === "dark" ? "gray.600" : "landing.gray"}>
                   SOC 2 Type II
@@ -62,8 +63,9 @@ export function Footer(props: FooterProps) {
           />
           <FooterLink
             mode={props.mode}
+            href="https://june.so/security"
             title={
-              <HStack>
+              <HStack cursor={"pointer"}>
                 <Flex h="32px" w="32px" justify={"center"} align="center">
                   <Image h={"24px"} w={"24px"} src="/gdrp.svg" alt="GDPR" />
                 </Flex>
@@ -75,8 +77,12 @@ export function Footer(props: FooterProps) {
         <GridItem gridArea="solution">
           <VStack align="start" spacing={LINK_GAPS}>
             <FooterTitle mode={props.mode}>Solutions</FooterTitle>
-            <FooterLink mode={props.mode} title="Product Analytics" href="/" />
-            <FooterLink mode={props.mode} title="Feature Report" href="/feature-launches" />
+            <FooterLink mode={props.mode} title="Product Analytics" href="https://june.so/" />
+            <FooterLink
+              mode={props.mode}
+              title="Feature Report"
+              href="https://june.so/feature-launches"
+            />
             <FooterLink
               mode={props.mode}
               title="Qualification Bot"
@@ -94,8 +100,12 @@ export function Footer(props: FooterProps) {
         <GridItem gridArea="for">
           <VStack align="start" spacing={LINK_GAPS}>
             <FooterTitle mode={props.mode}>Resources</FooterTitle>
-            <FooterLink mode={props.mode} title="Customers" href="/customer-stories" />
-            <FooterLink mode={props.mode} title="Docs" href="/docs" />
+            <FooterLink
+              mode={props.mode}
+              title="Customers"
+              href="https://june.so/customer-stories"
+            />
+            <FooterLink mode={props.mode} title="Docs" href="https://june.so/docs" />
             <FooterLink mode={props.mode} title="June School" href="https://school.june.so" />
             <FooterLink
               mode={props.mode}
@@ -106,17 +116,29 @@ export function Footer(props: FooterProps) {
             <FooterLink
               mode={props.mode}
               title="June vs Amplitude"
-              href="/blog/june-vs-amplitude"
+              href="https://june.so/blog/june-vs-amplitude"
             />
-            <FooterLink mode={props.mode} title="June vs Mixpanel" href="/blog/june-vs-mixpanel" />
-            <FooterLink mode={props.mode} title="June vs Heap" href="/blog/june-vs-heap" />
-            <FooterLink mode={props.mode} title="June vs Pendo" href="/blog/june-vs-pendo" />
+            <FooterLink
+              mode={props.mode}
+              title="June vs Mixpanel"
+              href="https://june.so/blog/june-vs-mixpanel"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="June vs Heap"
+              href="https://june.so/blog/june-vs-heap"
+            />
+            <FooterLink
+              mode={props.mode}
+              title="June vs Pendo"
+              href="https://june.so/blog/june-vs-pendo"
+            />
           </VStack>
         </GridItem>
         <GridItem gridArea="company">
           <VStack align="start" spacing={LINK_GAPS}>
             <FooterTitle mode={props.mode}>Company</FooterTitle>
-            <FooterLink mode={props.mode} title="Pricing" href="/pricing" />
+            <FooterLink mode={props.mode} title="Pricing" href="https://june.so/pricing" />
             <FooterLink
               mode={props.mode}
               title="Changelog"
@@ -170,7 +192,12 @@ export function Footer(props: FooterProps) {
               type="external"
               href="https://help.june.so/en/articles/6823521-privacy-policy"
             />
-            <FooterLink mode={props.mode} title="Security" type="internal" href="/security" />
+            <FooterLink
+              mode={props.mode}
+              title="Security"
+              type="internal"
+              href="https://june.so/security"
+            />
             <VStack align="start">
               <FooterLink
                 style={{ display: ["none", "none", "block"] }}

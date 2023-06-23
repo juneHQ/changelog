@@ -22,7 +22,7 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
     >
       <Flex direction="column">
         <Flex align="center" justify="space-between">
-          <Flex p={4} as="a" href="/">
+          <Flex p={4} as="a" href="https://june.so/">
             <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="june-logo" />
           </Flex>
           <Flex p={4} onClick={toggle}>
@@ -46,7 +46,7 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
       overflowY="hidden"
     >
       <Flex width="100%" direction="column" h="40%" justify="space-between">
-        <Link prefetch={false} href="/feature-launches" passHref>
+        <Link prefetch={false} href="https://june.so/feature-launches" passHref>
           <Flex align="center" style={{ textDecoration: "none" }}>
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Feature report
@@ -60,26 +60,21 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
             </Text>
           </Flex>
         </Link>
-        <Link prefetch={false} href="/customer-stories" passHref>
+        <Link prefetch={false} href="https://june.so/customer-stories" passHref>
           <Flex align="center" style={{ textDecoration: "none" }}>
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Customers
             </Text>
           </Flex>
         </Link>
-        <Link prefetch={false} href="/pricing" passHref>
+        <Link prefetch={false} href="https://june.so/pricing" passHref>
           <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
             <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
               Pricing
             </Text>
           </Flex>
         </Link>
-        <Flex
-          align="center"
-          as="a"
-          href="https://changelog.june.so/"
-          style={{ textDecoration: "none" }}
-        >
+        <Flex align="center" as="a" href="/" style={{ textDecoration: "none" }}>
           <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
             Changelog
           </Text>

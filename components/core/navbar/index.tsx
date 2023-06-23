@@ -3,6 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 import dynamic from "next/dynamic";
+import { defaultPx } from "lib/utils/default-container-px";
+// import { NextResponsiveImage } from "../next-responsive-image";
+import { gradients } from "lib/constants/gradients";
 import {
   Box,
   Button,
@@ -22,11 +25,8 @@ import {
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { NavbarMobileMenuProps } from "./navbar-mobile-menu";
 import { DesktopNavItem, desktopNavItemStyle } from "./desktop-nav-item";
-// import { NextResponsiveImage } from "../next-responsive-image";
-import { gradients } from "lib/constants/gradients";
-import { SelectedTick } from "../custom-icons/selected-tick";
-import { defaultPx } from "lib/utils/default-container-px";
 import { NextResponsiveImage } from "../next-responsive-image";
+import { SelectedTick } from "../custom-icons/selected-tick";
 
 const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
   () => import("./navbar-mobile-menu").then((mod) => mod.NavbarMobileMenu),
@@ -45,9 +45,9 @@ const wordmarkSvg = `<svg width="313" height="100" viewBox="0 0 313 100" fill="n
 `;
 
 const ROUTES = [
-  { href: "/customer-stories", title: "Customers", type: "internal-link" },
-  { href: "/pricing", title: "Pricing", type: "internal-link" },
-  { href: "https://changelog.june.so", title: "Changelog", type: "external-link" },
+  { href: "https://june.so/customer-stories", title: "Customers", type: "external-link" },
+  { href: "https://june.so/pricing", title: "Pricing", type: "external-link" },
+  { href: "/", title: "Changelog", type: "internal-link" },
 ] as const;
 
 interface NavbarProps {
@@ -98,7 +98,7 @@ function Navbar(props: NavbarProps) {
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="/">
+              <Flex p={4} as="a" href="https://june.so/">
                 <NextImage
                   height={48}
                   width={48}
@@ -182,7 +182,7 @@ function Navbar(props: NavbarProps) {
               setShowLogoMenu(!showLogoMenu);
             }}
           >
-            <Link href="/" passHref prefetch={false}>
+            <Link href="https://june.so/" passHref prefetch={false}>
               <NextResponsiveImage
                 display={["none", "none", "block"]}
                 src="/june-3.0-logo.svg"
@@ -238,7 +238,7 @@ function Navbar(props: NavbarProps) {
                           color="landing.almostBlack.500"
                           _hover={{ color: "primary", cursor: "pointer" }}
                           as="a"
-                          href="/"
+                          href="https://june.so/"
                         >
                           Product Analytics
                         </Text>
@@ -250,7 +250,7 @@ function Navbar(props: NavbarProps) {
                             fontWeight="medium"
                             color="landing.almostBlack.500"
                             as="a"
-                            href="/feature-launches"
+                            href="https://june.so/feature-launches"
                             _hover={{ color: "primary", cursor: "pointer" }}
                           >
                             Feature Report
@@ -275,7 +275,7 @@ function Navbar(props: NavbarProps) {
                             fontWeight="medium"
                             color="landing.almostBlack.500"
                             as="a"
-                            href="/ai"
+                            href="https://june.so/ai"
                             _hover={{ color: "primary", cursor: "pointer" }}
                           >
                             June AI
