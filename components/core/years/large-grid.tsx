@@ -1,5 +1,6 @@
 import { VStack, Grid, GridItem, HStack, Image } from "@chakra-ui/react";
 import { IGridProps } from "./grid-interfaces";
+import LargeSubGrid from "./large-sub-grid";
 
 const LargeGrid = (props: IGridProps) => {
   const { changelogs } = props;
@@ -47,33 +48,11 @@ const LargeGrid = (props: IGridProps) => {
                         return result;
                       }, [])
                       .map((subGridRowItems, subIndex) => (
-                        <Grid
+                        <LargeSubGrid
                           key={subIndex}
-                          gap="2px"
-                          templateColumns={`repeat(${subGridRowItems.length}, 1fr)`}
-                        >
-                          {subGridRowItems.map(({ imageUrl, slug }, subI) => (
-                            <GridItem key={subI}>
-                              {imageUrl ? (
-                                <Image
-                                  src={imageUrl}
-                                  alt={slug}
-                                  height={rowItems.length - 1 <= 4 ? "198px" : "98px"}
-                                  width={`${400 / subGridRowItems.length - 2}px`}
-                                  objectFit={"cover"}
-                                />
-                              ) : (
-                                <Image
-                                  src={rowItems[Math.floor(Math.random() * 3)].imageUrl}
-                                  alt={slug}
-                                  h="full"
-                                  w="full"
-                                  objectFit={"cover"}
-                                />
-                              )}
-                            </GridItem>
-                          ))}
-                        </Grid>
+                          changelogs={subGridRowItems}
+                          rowLength={rowItems.length}
+                        />
                       ))}
                   </VStack>
                 </>
@@ -93,33 +72,11 @@ const LargeGrid = (props: IGridProps) => {
                         return result;
                       }, [])
                       .map((subGridRowItems, subIndex) => (
-                        <Grid
+                        <LargeSubGrid
                           key={subIndex}
-                          gap="2px"
-                          templateColumns={`repeat(${subGridRowItems.length}, 1fr)`}
-                        >
-                          {subGridRowItems.map(({ imageUrl, slug }, subI) => (
-                            <GridItem key={subI}>
-                              {imageUrl ? (
-                                <Image
-                                  src={imageUrl}
-                                  alt={slug}
-                                  height={rowItems.length - 1 <= 4 ? "198px" : "98px"}
-                                  width={`${400 / subGridRowItems.length - 2}px`}
-                                  objectFit={"cover"}
-                                />
-                              ) : (
-                                <Image
-                                  src={rowItems[Math.floor(Math.random() * 3)].imageUrl}
-                                  alt={slug}
-                                  h="full"
-                                  w="full"
-                                  objectFit={"cover"}
-                                />
-                              )}
-                            </GridItem>
-                          ))}
-                        </Grid>
+                          changelogs={subGridRowItems}
+                          rowLength={rowItems.length}
+                        />
                       ))}
                   </VStack>
                   <Image
