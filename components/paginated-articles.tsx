@@ -119,7 +119,7 @@ export const PaginatedArticles = ({
               >
                 <VStack align={["stretch", "stretch", "center"]}>
                   {page === 0 && hasMorePage ? (
-                    <Link href="/page/1">
+                    <Link href={`/page/1#${timeline.view}`}>
                       <Button variant="landingOutline" size="landingLg">
                         Load more
                       </Button>

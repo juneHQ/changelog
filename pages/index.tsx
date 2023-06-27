@@ -4,7 +4,7 @@ import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
 import useTimelineStore from "lib/state/use-timeline-store";
-import { IAggregatedChangelogs } from "lib/models/view";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import { AnimatePresence, motion } from "framer-motion";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
@@ -104,7 +104,7 @@ export async function getStaticProps({ params }) {
       slug: item.slug,
       publishedAt: item.publishedAt,
       weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
-    });
+    } as IImagePreviewMeta);
     return acc;
   }, {});
 
@@ -121,15 +121,20 @@ export async function getStaticProps({ params }) {
     if (!acc[year]) {
       acc[year] = [];
     }
+
     acc[year].push({
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
       weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
-      montlyViewPage: Math.floor(
-        Object.keys(monthChangelogsMap).indexOf(`${year}-${date.getMonth() + 1}`) / ITEMS_PER_PAGE
+      monthlyViewPage: Math.floor(
+        (Object.keys(monthChangelogsMap)
+          .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
+          .indexOf(`${year}-${date.getMonth() + 1}`) +
+          1) /
+          ITEMS_PER_PAGE
       ),
-    });
+    } as IImagePreviewMeta);
     return acc;
   }, {});
 

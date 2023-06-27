@@ -14,7 +14,7 @@ const Weeks = ({ slugs }: IWeeksProps) => {
     <>
       {Articles.map((Article, index) => (
         // @ts-ignore
-        <Article key={index} hideLayout={true} hideHead={true} hideAuthors={true} />
+        <Article key={index} index={index} hideLayout={true} hideHead={true} hideAuthors={true} />
       ))}
     </>
   );
