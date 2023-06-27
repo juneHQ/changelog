@@ -23,6 +23,8 @@ import {
 import Timeline from "./layout/timeline";
 
 import type { MDXComponents } from "mdx/types";
+import { useRouter } from "next/router";
+import React from "react";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
@@ -54,12 +56,40 @@ export interface MdxLayoutProps {
   hideAuthors?: boolean;
   imagePreviewMode?: boolean;
   tags?: string[];
+  index?: number;
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
   const title = `${props.meta.title} | June Changelog`;
   const description = "Discover new updates and improvements to June.";
   const url = "https://changelog.june.so";
+
+  const router = useRouter();
+  React.useLayoutEffect(() => {
+    // using a timeout to wait for the page to render and get the right scroll position
+    const timeout = setTimeout(() => {
+      const month = router.asPath.split("month=")[1];
+
+      const articleMonth = dayjs(props.meta.publishedAt).format("MM");
+
+      // if the current article is the first one in the page
+      // and the month is different from the current month
+      // scroll to the month
+      if (month && month !== articleMonth && props.index === 0 && props.hideLayout) {
+        const element = document.querySelector(`.timeline-month-${month}`);
+        const rect = element?.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const top = rect?.top + scrollTop;
+
+        window.scrollTo({
+          behavior: "smooth",
+          top: top - 70,
+        });
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [router.asPath]);
 
   if (props.imagePreviewMode) {
     return (
@@ -100,7 +130,10 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         </Head>
       )}
       {!props.hideLayout && <Navbar />}
-      <Timeline date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}>
+      <Timeline
+        date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
+        className={`timeline-month-${dayjs(props.meta.publishedAt).format("MM")}`}
+      >
         <Box
           // mt={!props.hideLayout && [86, 86, 140]}
           // maxW="4xl"

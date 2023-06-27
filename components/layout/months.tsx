@@ -5,6 +5,7 @@ import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
 import Timeline from "./timeline";
+import React from "react";
 
 interface IMonthsProps {
   monthChangelogsMap: IAggregatedChangelogs;
@@ -24,10 +25,34 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
       return monthChangelogsMap[date];
     });
 
+  // check for query params: year = YYYY on load, if so scroll to that year
+  React.useLayoutEffect(() => {
+    // if year && the first item in sortedChangelogsArrayByMonth is not the year, scroll to that year
+
+    const year = router.asPath.split("year=")[1];
+
+    if (
+      year &&
+      sortedChangelogsArrayByMonth[0] &&
+      dayjs(sortedChangelogsArrayByMonth[0][0].publishedAt).format("YYYY") !== year
+    ) {
+      const yearIndex = sortedChangelogsArrayByMonth.findIndex((changelogs) => {
+        return dayjs(changelogs[0].publishedAt).format("YYYY") === year;
+      });
+      if (yearIndex !== -1) {
+        window.scrollTo({
+          top: document.getElementById(`timeline-month-${yearIndex}`)?.offsetTop - 70,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [router.asPath, monthChangelogsMap]);
+
   return (
     <>
       {sortedChangelogsArrayByMonth.map((changelogs, index) => (
         <Timeline
+          id={`timeline-month-${index}`}
           key={index}
           date={dayjs(Object.keys(monthChangelogsMap)[index]).format("MMM YYYY")}
         >
@@ -36,9 +61,9 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
             paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
           >
             <VStack
-              onClick={() => {
-                timeline.setView("weeks");
-              }}
+              // onClick={() => {
+              //   timeline.setView("weeks");
+              // }}
               cursor="pointer"
             >
               <Box
@@ -49,7 +74,11 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                 display="flex"
                 onClick={() => {
                   timeline.setView("weeks");
-                  router.push(`/page/${changelogs[0].weeklyViewPage}#weeks`);
+                  router.push(
+                    `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
+                      Object.keys(monthChangelogsMap)[index]
+                    ).format("MM")}`
+                  );
                 }}
                 position="relative"
               >

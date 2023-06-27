@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, HStack, Image, useMediaQuery, VStack, } from "@chakra-ui/react";
+import { Box, Grid, GridItem, HStack, Image, useMediaQuery, VStack } from "@chakra-ui/react";
 import MoreItems from "components/core/more-items";
 import LargeGrid from "components/core/years/large-grid";
 import MediumGrid from "components/core/years/medium-grid";
@@ -17,7 +17,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
   const timeline = useTimelineStore();
   const router = useRouter();
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
-  
+
   const sortedYearKeys = Object.keys(yearChangelogsMap || {}).sort((a, b) => {
     const dateA = new Date(a);
     const dateB = new Date(b);
@@ -27,7 +27,6 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
   const sortedChangelogsByYear: IImagePreviewMeta[][] = sortedYearKeys.map((year) => {
     return yearChangelogsMap[year];
   });
-
 
   return (
     <>
@@ -40,7 +39,11 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
             <VStack
               onClick={() => {
                 timeline.setView("months");
-                router.push(`/page/${index}#months`);
+                router.push(
+                  `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
+                    sortedYearKeys[index]
+                  ).format("YYYY")}`
+                );
               }}
               cursor="pointer"
             >

@@ -1,11 +1,13 @@
 import { Box, HStack, Text, VStack, useMediaQuery } from "@chakra-ui/react";
-import BackButton from "components/core/timeline/back-button"
+import BackButton from "components/core/timeline/back-button";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 
 export interface TimelineProps {
   date: string;
   children: ReactNode;
+  id?: string;
+  className?: string;
 }
 
 const Timeline = (props: TimelineProps) => {
@@ -21,6 +23,8 @@ const Timeline = (props: TimelineProps) => {
 
   return (
     <HStack
+      id={props.id}
+      className={props.className}
       display="flex"
       position="relative"
       justifyContent="center"
@@ -31,9 +35,7 @@ const Timeline = (props: TimelineProps) => {
     >
       {isLargerThan768 && (
         <VStack position="relative" top={isOpen ? "" : "-8px"} width="120px" spacing={4}>
-          {isOpen && (
-            <BackButton/>
-          )}
+          {isOpen && <BackButton />}
           <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
             {date}
           </Text>
@@ -73,9 +75,7 @@ const Timeline = (props: TimelineProps) => {
         <VStack alignItems="start" spacing={[0, 0, 2]}>
           {!isLargerThan768 && (
             <VStack position="relative" top="-8px" spacing={4} mb={[4, 4]}>
-              {isOpen && (
-                <BackButton/>
-              )}
+              {isOpen && <BackButton />}
               <Text fontSize="16px" color="#868E96" alignItems="start" width="full">
                 {date}
               </Text>
