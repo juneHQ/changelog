@@ -55,13 +55,13 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 onClick={() => {}}
                 position="relative"
               >
-                {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />}
-                {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />}
+                {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
+                {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
                 {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
                   <MediumGrid changelogs={changelogs} />
                 )}
 
-                {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
+                {/* {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />} */}
               </Box>
             </VStack>
           </Box>

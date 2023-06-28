@@ -38,13 +38,13 @@ const MediumGrid = (props: IGridProps) => {
     </VStack>
   ) : (
     <Grid gap={"8px"} templateColumns="repeat(8, 1fr)" templateRows="repeat(7, 1fr)" height="100%">
-      {changelogs.slice(0,9).map(({ imageUrl, slug }, index) => (
+      {changelogs.slice(0, 9).map(({ imageUrl, slug }, index) => (
         <GridItem
           key={index}
           rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
           colSpan={[1, 3, 6].includes(index) ? 4 : 2}
         >
-          <Image src={imageUrl} alt={slug} height="100%" objectFit={"cover"} />
+          <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} />
         </GridItem>
       ))}
     </Grid>
