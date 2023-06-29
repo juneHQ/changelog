@@ -54,6 +54,18 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 display="flex"
                 onClick={() => {}}
                 position="relative"
+                _hover={{
+                  boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  "& img": {
+                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  },
+                }}
+                sx={{
+                  transition: "box-shadow 0.3s",
+                  "& img": {
+                    transition: "box-shadow 0.3s",
+                  },
+                }}
               >
                 {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
                 {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}

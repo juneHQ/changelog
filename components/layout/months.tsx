@@ -68,7 +68,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
             >
               <Box
                 maxHeight="360px"
-                overflow="hidden"
+                // overflow="hidden"
                 borderRadius={"16px"}
                 maxWidth={"682px"}
                 display="flex"
@@ -81,6 +81,16 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                   );
                 }}
                 position="relative"
+                _hover={{
+                  "& img": {
+                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  },
+                }}
+                sx={{
+                  "& img": {
+                    transition: "box-shadow 0.3s",
+                  },
+                }}
               >
                 {sortedChangelogsArrayByMonth.length > 3 && (
                   <MoreItems numberOfItems={sortedChangelogsArrayByMonth.length - 3} />
@@ -98,6 +108,8 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                           alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                           height="100%"
                           objectFit={"cover"}
+                          borderLeftRadius={index === 0 ? "16px" : 0}
+                          borderRightRadius={index === 1 || changelogs.length === 1 ? "16px" : 0}
                         />
                       </Box>
                     ))}
@@ -111,6 +123,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                         minHeight={["176px", "176px", "360px"]}
                         height="100%"
                         objectFit={"cover"}
+                        borderLeftRadius={"16px"}
                       />
                     </Box>
                     <VStack width="176px" height="100%">
@@ -121,6 +134,8 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                           alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                           height="100%"
                           objectFit={"cover"}
+                          borderTopRightRadius={index === 0 ? "16px" : 0}
+                          borderBottomRightRadius={index === 1 ? "16px" : 0}
                         />
                       ))}
                     </VStack>
