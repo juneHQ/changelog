@@ -1,12 +1,12 @@
-import { Box, Grid, GridItem, HStack, Image, useMediaQuery, VStack } from "@chakra-ui/react";
-import MoreItems from "components/core/more-items";
-import LargeGrid from "components/core/years/large-grid";
-import MediumGrid from "components/core/years/medium-grid";
-import SmallGrid from "components/core/years/small-grid";
-import dayjs from "dayjs";
-import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
-import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
+import useTimelineStore from "lib/state/use-timeline-store";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
+import dayjs from "dayjs";
+import SmallGrid from "components/core/years/small-grid";
+import MediumGrid from "components/core/years/medium-grid";
+import LargeGrid from "components/core/years/large-grid";
+import MoreItems from "components/core/more-items";
+import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
 
 interface IYearsProps {
@@ -72,8 +72,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
                   <MediumGrid changelogs={changelogs} />
                 )}
-
-                {/* {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />} */}
+                {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
               </Box>
             </VStack>
           </Box>
