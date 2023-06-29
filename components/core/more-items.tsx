@@ -14,11 +14,12 @@ const MoreItems = (props: { numberOfItems: number }) => {
       bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"
       borderRadius={999}
       textAlign="center"
-      fontSize="14px"
+      fontSize="12px"
       alignItems="center"
       justifyContent="center"
       color="white"
-      fontWeight="bold"
+      fontWeight="semibold"
+      lineHeight={"14.52px"}
     >
       +{numberOfItems}
     </Box>
