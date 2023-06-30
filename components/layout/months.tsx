@@ -48,6 +48,8 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
     }
   }, [router.asPath, monthChangelogsMap]);
 
+  console.log(">>> sortedChangelogsArrayByMonth", sortedChangelogsArrayByMonth);
+
   return (
     <>
       {sortedChangelogsArrayByMonth.map((changelogs, index) => (
