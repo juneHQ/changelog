@@ -88,6 +88,11 @@ export const PaginatedArticles = ({
                   hidden: { opacity: 0 },
                   visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
                 }}
+                style={{
+                  // position: "fixed",
+                  // top: "64px",
+                  zIndex: 1,
+                }}
               >
                 <TimeSelectionTabs />
               </motion.div>
