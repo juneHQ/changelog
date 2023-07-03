@@ -21,6 +21,30 @@ const BackButton = () => {
       alignItems="center"
       justifyContent="start"
       width="125px"
+      // on hover change .arrow-line fill to #000000 and .arrow-head stroke to #000000
+      // and .back-button-text color to #000000
+      _hover={{
+        ".arrow-line": {
+          fill: "#000000",
+        },
+        ".arrow-head": {
+          stroke: "#000000",
+        },
+        ".back-button-text": {
+          color: "#000000",
+        },
+      }}
+      sx={{
+        ".arrow-line": {
+          transition: "fill 0.2s ease",
+        },
+        ".arrow-head": {
+          transition: "stroke 0.2s ease",
+        },
+        ".back-button-text": {
+          transition: "color 0.2s ease",
+        },
+      }}
     >
       <svg
         width="11"
@@ -32,14 +56,18 @@ const BackButton = () => {
         <g clip-path="url(#clip0_2_2540)">
           <path
             d="M1.25 5.75L10.25 5.75C10.6642 5.75 11 5.41421 11 5C11 4.58579 10.6642 4.25 10.25 4.25L1.25 4.25C0.835787 4.25 0.5 4.58579 0.5 5C0.5 5.41421 0.835787 5.75 1.25 5.75Z"
-            fill="black"
+            fill="transparent"
+            className="arrow-line"
           />
           <path
+            className="arrow-head"
             d="M5.25 9L1.25 5L5.25 1"
-            stroke="black"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            // stroke="black"
+            // store rgba(134, 142, 150, 1)
+            stroke="#868E96"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
         </g>
         <defs>
@@ -50,10 +78,11 @@ const BackButton = () => {
       </svg>
 
       <Text
+        className="back-button-text"
         fontSize="16px"
-        color="#0D131B"
+        color="#868E96"
         alignItems="start"
-        _hover={{ textDecoration: "underline" }}
+        // _hover={{ textDecoration: "underline" }}
       >
         Back
       </Text>

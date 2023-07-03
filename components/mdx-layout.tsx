@@ -172,15 +172,26 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                 alt={props.meta.title}
                 w="full"
                 cursor={props.hideLayout ? "pointer" : "default"}
+                _hover={{
+                  // apply underline on hover to the next first .article-title
+                  // "& + .article-title": {
+                  //   textDecoration: "underline",
+                  // },
+                  boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                }}
               />
             </Link>
 
             <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
               <Heading
+                className="article-title"
                 as="h1"
                 fontSize="24px"
                 color="#0D131B"
                 cursor={props.hideLayout ? "pointer" : "default"}
+                _hover={{
+                  textDecoration: "underline",
+                }}
               >
                 {props.meta.title}
               </Heading>

@@ -1,12 +1,12 @@
-import { Box, Grid, GridItem, HStack, Image, useMediaQuery, VStack } from "@chakra-ui/react";
-import MoreItems from "components/core/more-items";
-import LargeGrid from "components/core/years/large-grid";
-import MediumGrid from "components/core/years/medium-grid";
-import SmallGrid from "components/core/years/small-grid";
-import dayjs from "dayjs";
-import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
-import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
+import useTimelineStore from "lib/state/use-timeline-store";
+import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
+import dayjs from "dayjs";
+import SmallGrid from "components/core/years/small-grid";
+import MediumGrid from "components/core/years/medium-grid";
+import LargeGrid from "components/core/years/large-grid";
+import MoreItems from "components/core/more-items";
+import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
 
 interface IYearsProps {
@@ -54,13 +54,24 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                 display="flex"
                 onClick={() => {}}
                 position="relative"
+                _hover={{
+                  boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  "& img": {
+                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  },
+                }}
+                sx={{
+                  transition: "box-shadow 0.3s",
+                  "& img": {
+                    transition: "box-shadow 0.3s",
+                  },
+                }}
               >
-                {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />}
-                {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />}
+                {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
+                {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
                 {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
                   <MediumGrid changelogs={changelogs} />
                 )}
-
                 {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
               </Box>
             </VStack>
