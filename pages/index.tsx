@@ -103,7 +103,7 @@ export async function getStaticProps({ params }) {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
+      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE),
     } as IImagePreviewMeta);
     return acc;
   }, {});
@@ -126,7 +126,7 @@ export async function getStaticProps({ params }) {
       imageUrl: item.headerImage,
       slug: item.slug,
       publishedAt: item.publishedAt,
-      weeklyViewPage: Math.floor((index + 1) / ITEMS_PER_PAGE),
+      weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE),
       monthlyViewPage: Math.floor(
         (Object.keys(monthChangelogsMap)
           .sort((a, b) => new Date(b).getTime() - new Date(a).getTime())
