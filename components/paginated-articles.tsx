@@ -5,7 +5,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { background, Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "./core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
@@ -74,28 +74,22 @@ export const PaginatedArticles = ({
         >
           <Navbar />
         </motion.div>
-        <Box w="100vw" overflow="hidden" zIndex="docked" maxW={"100%"}>
-          <Container
-            maxW="landingMax"
-            display="flex"
-            justifyContent="center"
-            px={defaultPx(32)}
-            mt={[86, 86, 100]}
-          >
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
+          }}
+          style={{
+            position: "sticky",
+            top: "32px",
+            zIndex: 1,
+          }}
+        >
+          <TimeSelectionTabs />
+        </motion.div>
+        <Box w="100vw" maxW={"100%"} zIndex="docked">
+          <Container maxW="landingMax" display="flex" justifyContent="center" px={defaultPx(32)}>
             <VStack spacing={8} alignItems="center" w="full">
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
-                }}
-                style={{
-                  // position: "fixed",
-                  // top: "64px",
-                  zIndex: 1,
-                }}
-              >
-                <TimeSelectionTabs />
-              </motion.div>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },

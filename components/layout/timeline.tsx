@@ -30,7 +30,7 @@ const Timeline = (props: TimelineProps) => {
       justifyContent="center"
       alignItems="start"
       spacing={0}
-      pt={isOpen ? (isLargerThan768 ? 52 : 32) : 0}
+      pt={isOpen ? (isLargerThan768 ? 36 : 32) : 0}
       px={isOpen ? 6 : 0}
     >
       {isLargerThan768 && (
