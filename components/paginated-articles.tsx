@@ -5,7 +5,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { background, Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "./core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
@@ -83,6 +83,7 @@ export const PaginatedArticles = ({
             position: "sticky",
             top: "32px",
             zIndex: 1,
+            paddingBottom: "32px",
           }}
         >
           <TimeSelectionTabs />
