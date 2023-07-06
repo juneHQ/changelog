@@ -74,23 +74,23 @@ export const PaginatedArticles = ({
         >
           <Navbar />
         </motion.div>
-        <Box w="100vw" overflow="hidden" zIndex="docked" maxW={"100%"}>
-          <Container
-            maxW="landingMax"
-            display="flex"
-            justifyContent="center"
-            px={defaultPx(32)}
-            mt={[86, 86, 100]}
-          >
+        <motion.div
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
+          }}
+          style={{
+            position: "sticky",
+            top: "32px",
+            zIndex: 1,
+            paddingBottom: "32px",
+          }}
+        >
+          <TimeSelectionTabs />
+        </motion.div>
+        <Box w="100vw" maxW={"100%"} zIndex="docked">
+          <Container maxW="landingMax" display="flex" justifyContent="center" px={defaultPx(32)}>
             <VStack spacing={8} alignItems="center" w="full">
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
-                }}
-              >
-                <TimeSelectionTabs />
-              </motion.div>
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },

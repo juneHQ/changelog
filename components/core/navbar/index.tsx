@@ -94,7 +94,7 @@ function Navbar(props: NavbarProps) {
           w="100%"
           zIndex="overlay"
           display={["block", "block", "block", "none"]}
-          position="absolute"
+          position="relative"
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
@@ -164,15 +164,14 @@ function Navbar(props: NavbarProps) {
         </Container>
       )}
       <Container
-        position="absolute"
+        position="relative"
         maxW="landingMax"
-        left="50%"
-        transform="translateX(-50%)"
         zIndex={15}
         overflowX="hidden"
         display={["none", "none", "none", "block"]}
         px={defaultPx("120px")}
         my={[6]}
+        top={0}
       >
         <Flex direction="row" alignItems="center" justify="space-between">
           {/* Logo */}
