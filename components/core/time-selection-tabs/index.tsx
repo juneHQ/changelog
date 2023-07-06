@@ -14,6 +14,7 @@ const TimeSelectionTabs = () => {
     if (router.pathname.includes("/page/")) {
       router.push(`/page/0#${view}`);
     } else {
+      // window.scrollTo(0, 0);
       router.push(`#${view}`);
     }
   };

@@ -24,6 +24,12 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   const router = useRouter();
   const page = parseInt((router.query?.page || "0") as string);
 
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [timeline.view]);
+
   return (
     <PaginatedArticles
       page={page}
