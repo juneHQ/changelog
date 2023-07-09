@@ -55,20 +55,14 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
         }}
       >
         <TabPanels>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <TabPanel>
               <Weeks slugs={slugs} />
-            </motion.div>
           </TabPanel>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <TabPanel>
               <Months monthChangelogsMap={changelogsMap.months} />
-            </motion.div>
           </TabPanel>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+          <TabPanel>
               <Years yearChangelogsMap={changelogsMap.years} />
-            </motion.div>
           </TabPanel>
         </TabPanels>
       </Tabs>

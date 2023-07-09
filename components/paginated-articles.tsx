@@ -79,6 +79,8 @@ export const PaginatedArticles = ({
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
           }}
+          layout
+          transition={{ duration: 0 }}
           style={{
             position: "sticky",
             top: "32px",

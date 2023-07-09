@@ -26,11 +26,9 @@ dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <AnimateSharedLayout>
       <ChakraProvider theme={juneTheme}>
         <Component {...pageProps} />
       </ChakraProvider>
-    </AnimateSharedLayout>
   );
 };
 
