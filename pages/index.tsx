@@ -42,6 +42,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
     >
       <Tabs
         isLazy
+        lazyBehavior="keepMounted"
         isFitted
         index={timeline.view === "weeks" ? 0 : timeline.view === "months" ? 1 : 2}
         onChange={(index) => {
@@ -56,13 +57,13 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
       >
         <TabPanels>
           <TabPanel>
-              <Weeks slugs={slugs} />
+            <Weeks slugs={slugs} />
           </TabPanel>
           <TabPanel>
-              <Months monthChangelogsMap={changelogsMap.months} />
+            <Months monthChangelogsMap={changelogsMap.months} />
           </TabPanel>
           <TabPanel>
-              <Years yearChangelogsMap={changelogsMap.years} />
+            <Years yearChangelogsMap={changelogsMap.years} />
           </TabPanel>
         </TabPanels>
       </Tabs>
