@@ -1,10 +1,8 @@
 // import { useAuth } from "unbundled-core/hooks/useAuth";
 import { useState } from "react";
 import Link from "next/link";
-import NextImage from "next/image";
 import dynamic from "next/dynamic";
 import { defaultPx } from "lib/utils/default-container-px";
-// import { NextResponsiveImage } from "../next-responsive-image";
 import { gradients } from "lib/constants/gradients";
 import {
   Box,
@@ -21,11 +19,11 @@ import {
   useDisclosure,
   useToast,
   VStack,
+  Image,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { NavbarMobileMenuProps } from "./navbar-mobile-menu";
 import { DesktopNavItem, desktopNavItemStyle } from "./desktop-nav-item";
-import { NextResponsiveImage } from "../next-responsive-image";
 import { SelectedTick } from "../custom-icons/selected-tick";
 
 const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
@@ -99,9 +97,9 @@ function Navbar(props: NavbarProps) {
           <Flex direction="column">
             <Flex align="center" justify="space-between">
               <Flex p={4} as="a" href="https://june.so/">
-                <NextImage
-                  height={48}
-                  width={48}
+                <Image
+                  height={"48px"}
+                  width={"48px"}
                   src="/june-logo-symbol-only.svg"
                   alt="june-logo"
                 />
@@ -182,7 +180,7 @@ function Navbar(props: NavbarProps) {
             }}
           >
             <Link href="https://june.so/" passHref prefetch={false}>
-              <NextResponsiveImage
+              <Image
                 display={["none", "none", "block"]}
                 src="/june-3.0-logo.svg"
                 alt="June's logo"

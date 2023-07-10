@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import NextImage from "next/image";
-import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Stack, Text } from "@chakra-ui/react";
 import CloseIcon from "../custom-icons/CloseIcon";
 
 export interface NavbarMobileMenuProps {
@@ -23,7 +22,12 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
       <Flex direction="column">
         <Flex align="center" justify="space-between">
           <Flex p={4} as="a" href="https://june.so/">
-            <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="june-logo" />
+            <Image
+              height={"48px"}
+              width={"48px"}
+              src="/june-logo-symbol-only.svg"
+              alt="june-logo"
+            />
           </Flex>
           <Flex p={4} onClick={toggle}>
             <Box pr={1}>

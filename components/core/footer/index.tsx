@@ -1,5 +1,4 @@
 import React from "react";
-import NextImage from "next/image";
 import { defaultPx } from "lib/utils/default-container-px";
 import {
   Box,
@@ -16,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { FooterTitle } from "./footer-title";
 import { FooterLink } from "./footer-link";
-import { NextResponsiveImage } from "../next-responsive-image";
 
 const LINK_GAPS = [2, 2, 8];
 
@@ -39,7 +37,7 @@ export function Footer(props: FooterProps) {
       >
         <GridItem gridArea="logo">
           <Box flexShrink={0} mb={8}>
-            <NextResponsiveImage
+            <Image
               src="/june-logo-symbol-only.svg"
               alt="june"
               width={["75px"]}
@@ -215,7 +213,12 @@ export function Footer(props: FooterProps) {
                     w="auto"
                     display={["none", "none", "block"]}
                   >
-                    <NextImage src="/yc-orange-logo.png" alt="y-combinator logo" layout="fill" />
+                    <Image
+                      src="/yc-orange-logo.png"
+                      alt="y-combinator logo"
+                      // layout="fill"
+                      objectFit="contain"
+                    />
                   </Box>
                 }
               />
@@ -254,7 +257,7 @@ export function Footer(props: FooterProps) {
               type="node"
               title={
                 <Box>
-                  <NextImage
+                  <Image
                     src="/yc-orange-logo.png"
                     alt="y-combinator logo"
                     width={120}

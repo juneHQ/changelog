@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { NextResponsiveImage } from "components/core/next-responsive-image";
-import { Box, Button, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import { PageSectionProps } from "lib/models/page-section-props";
 import { GradientHighlight, Highlight } from "./highlight";
 
@@ -89,7 +88,7 @@ function TryJuneBanner(props: TryJuneBannerProps) {
         />
         {/* Background grid */}
         <Box position="absolute" right={0} bottom={0} top={0}>
-          <NextResponsiveImage
+          <Image
             src="/try-june-bg-grid.svg"
             alt="Background grid"
             sx={{ aspectRatio: "0.7788018433" }}
