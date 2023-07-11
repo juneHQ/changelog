@@ -1,5 +1,6 @@
 import { Box, HStack, Text, VStack, useMediaQuery } from "@chakra-ui/react";
 import BackButton from "components/core/timeline/back-button";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 
@@ -36,9 +37,11 @@ const Timeline = (props: TimelineProps) => {
       {isLargerThan768 && (
         <VStack position="relative" top={isOpen ? "" : "-8px"} width="120px" spacing={4}>
           {isOpen && <BackButton />}
-          <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
-            {date}
-          </Text>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1}} transition={{duration: 0.6}} >
+            <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
+              {date}
+            </Text>
+          </motion.div>
         </VStack>
       )}
       <HStack alignItems="start" spacing={isOpen ? 0 : 8} display="relative">

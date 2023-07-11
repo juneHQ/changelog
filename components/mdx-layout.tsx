@@ -25,6 +25,7 @@ import Timeline from "./layout/timeline";
 import type { MDXComponents } from "mdx/types";
 import { useRouter } from "next/router";
 import React from "react";
+import { motion } from "framer-motion";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
@@ -134,91 +135,97 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
         className={`timeline-month-${dayjs(props.meta.publishedAt).format("MM")}`}
       >
-        <Box
-          // mt={!props.hideLayout && [86, 86, 140]}
-          // maxW="4xl"
-          // mx="auto"
-          // w="100%"
-          maxW="682px"
-          // px={defaultPx(32)}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          {/* Article header */}
-          <VStack align="start" spacing={[4, 4, 6]}>
-            {props.tags !== undefined && (
-              <Flex gap={2}>
-                {props.tags?.map((tag, index) => (
-                  <Box
-                    height="22px"
-                    bg="#F1F3F5"
-                    color="#0D131B"
-                    fontSize="14px"
-                    borderRadius="full"
-                    px={2}
-                    lineHeight="21px"
-                    fontWeight={500}
-                    position="relative"
-                    top="-8px"
-                    mb="-10px"
-                  >
-                    {tag}
-                  </Box>
-                ))}
-              </Flex>
-            )}
-            <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-              <Image
-                borderRadius="16px"
-                src={props.meta.headerImage}
-                alt={props.meta.title}
-                w="full"
-                cursor={props.hideLayout ? "pointer" : "default"}
-                _hover={{
-                  // apply underline on hover to the next first .article-title
-                  // "& + .article-title": {
-                  //   textDecoration: "underline",
-                  // },
-                  boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
-                }}
-              />
-            </Link>
-
-            <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-              <Heading
-                className="article-title"
-                as="h1"
-                fontSize="24px"
-                color="#0D131B"
-                cursor={props.hideLayout ? "pointer" : "default"}
-                _hover={{
-                  textDecoration: "underline",
-                }}
-              >
-                {props.meta.title}
-              </Heading>
-            </Link>
-          </VStack>
-          {/* Article content */}
           <Box
-            // pt={[10]}
-            pb={16}
-            fontSize="lg"
-            lineHeight="32px"
-            color="landing.almostBlack.500"
+            // mt={!props.hideLayout && [86, 86, 140]}
+            // maxW="4xl"
+            // mx="auto"
+            // w="100%"
+            maxW="682px"
+            // px={defaultPx(32)}
           >
-            {props.children}
+            {/* Article header */}
+            <VStack align="start" spacing={[4, 4, 6]}>
+              {props.tags !== undefined && (
+                <Flex gap={2}>
+                  {props.tags?.map((tag, index) => (
+                    <Box
+                      height="22px"
+                      bg="#F1F3F5"
+                      color="#0D131B"
+                      fontSize="14px"
+                      borderRadius="full"
+                      px={2}
+                      lineHeight="21px"
+                      fontWeight={500}
+                      position="relative"
+                      top="-8px"
+                      mb="-10px"
+                    >
+                      {tag}
+                    </Box>
+                  ))}
+                </Flex>
+              )}
+              <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+                <Image
+                  borderRadius="16px"
+                  src={props.meta.headerImage}
+                  alt={props.meta.title}
+                  w="full"
+                  cursor={props.hideLayout ? "pointer" : "default"}
+                  _hover={{
+                    // apply underline on hover to the next first .article-title
+                    // "& + .article-title": {
+                    //   textDecoration: "underline",
+                    // },
+                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                  }}
+                />
+              </Link>
+
+              <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+                <Heading
+                  className="article-title"
+                  as="h1"
+                  fontSize="24px"
+                  color="#0D131B"
+                  cursor={props.hideLayout ? "pointer" : "default"}
+                  _hover={{
+                    textDecoration: "underline",
+                  }}
+                >
+                  {props.meta.title}
+                </Heading>
+              </Link>
+            </VStack>
+            {/* Article content */}
+            <Box
+              // pt={[10]}
+              pb={16}
+              fontSize="lg"
+              lineHeight="32px"
+              color="landing.almostBlack.500"
+            >
+              {props.children}
+            </Box>
+            {/* Article authors */}
+            {!props.hideAuthors && (
+              <>
+                <Divider mt={16} mb={8} />
+                <VStack px={[6]} align="start" spacing={4}>
+                  {props.meta.authors.map((author) => (
+                    <Contributor key={author.name} {...author} />
+                  ))}
+                </VStack>
+              </>
+            )}
           </Box>
-          {/* Article authors */}
-          {!props.hideAuthors && (
-            <>
-              <Divider mt={16} mb={8} />
-              <VStack px={[6]} align="start" spacing={4}>
-                {props.meta.authors.map((author) => (
-                  <Contributor key={author.name} {...author} />
-                ))}
-              </VStack>
-            </>
-          )}
-        </Box>
+        </motion.div>
       </Timeline>
       {!props.hideLayout && (
         <>

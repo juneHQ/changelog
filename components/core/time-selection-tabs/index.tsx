@@ -72,6 +72,7 @@ const TimeSelectionTabs = () => {
                   background: "#FFFFFF",
                   borderRadius: "9999px",
                   boxShadow: "0px 0.636364px 2.24px rgba(33, 40, 54, 0.16)",
+                  zIndex: 5
                 }}
                 transition={{ type: "linear", duration: 0.3 }}
               />
