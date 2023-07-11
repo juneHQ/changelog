@@ -24,6 +24,12 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   const router = useRouter();
   const page = parseInt((router.query?.page || "0") as string);
 
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
+  }, [timeline.view]);
+
   return (
     <PaginatedArticles
       page={page}
@@ -36,6 +42,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
     >
       <Tabs
         isLazy
+        lazyBehavior="keepMounted"
         isFitted
         index={timeline.view === "weeks" ? 0 : timeline.view === "months" ? 1 : 2}
         onChange={(index) => {
@@ -49,20 +56,14 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
         }}
       >
         <TabPanels>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Weeks slugs={slugs} />
-            </motion.div>
+          <TabPanel>
+            <Weeks slugs={slugs} />
           </TabPanel>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Months monthChangelogsMap={changelogsMap.months} />
-            </motion.div>
+          <TabPanel>
+            <Months monthChangelogsMap={changelogsMap.months} />
           </TabPanel>
-          <TabPanel as={AnimatePresence}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-              <Years yearChangelogsMap={changelogsMap.years} />
-            </motion.div>
+          <TabPanel>
+            <Years yearChangelogsMap={changelogsMap.years} />
           </TabPanel>
         </TabPanels>
       </Tabs>

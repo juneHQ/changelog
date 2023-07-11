@@ -8,6 +8,7 @@ import LargeGrid from "components/core/years/large-grid";
 import MoreItems from "components/core/more-items";
 import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
+import { motion } from "framer-motion";
 
 interface IYearsProps {
   yearChangelogsMap: IAggregatedChangelogs;
@@ -32,50 +33,56 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
     <>
       {sortedChangelogsByYear.map((changelogs, index) => (
         <Timeline key={index} date={dayjs(sortedYearKeys[index]).format("YYYY")}>
-          <Box
-            display="flex"
-            paddingBottom={index === sortedChangelogsByYear.length - 1 ? 0 : [12, 16, 20]}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
           >
-            <VStack
-              onClick={() => {
-                timeline.setView("months");
-                router.push(
-                  `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
-                    sortedYearKeys[index]
-                  ).format("YYYY")}`
-                );
-              }}
-              cursor="pointer"
+            <Box
+              display="flex"
+              paddingBottom={index === sortedChangelogsByYear.length - 1 ? 0 : [12, 16, 20]}
             >
-              <Box
-                overflow="hidden"
-                borderRadius={"16px"}
-                maxWidth="682px"
-                display="flex"
-                onClick={() => {}}
-                position="relative"
-                _hover={{
-                  boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
-                  "& img": {
-                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
-                  },
+              <VStack
+                onClick={() => {
+                  timeline.setView("months");
+                  router.push(
+                    `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
+                      sortedYearKeys[index]
+                    ).format("YYYY")}`
+                  );
                 }}
-                sx={{
-                  transition: "box-shadow 0.3s",
-                  "& img": {
-                    transition: "box-shadow 0.3s",
-                  },
-                }}
+                cursor="pointer"
               >
-                {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
-                {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
-                {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
-                  <MediumGrid changelogs={changelogs} />
-                )}
+                <Box
+                  overflow="hidden"
+                  borderRadius={"16px"}
+                  maxWidth="682px"
+                  display="flex"
+                  onClick={() => {}}
+                  position="relative"
+                  _hover={{
+                    boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                    "& img": {
+                      boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                    },
+                  }}
+                  sx={{
+                    transition: "box-shadow 0.3s",
+                    "& img": {
+                      transition: "box-shadow 0.3s",
+                    },
+                  }}
+                >
+                  {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
+                  {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
+                  {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
+                    <MediumGrid changelogs={changelogs} />
+                  )}
                 {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
-              </Box>
-            </VStack>
-          </Box>
+                </Box>
+              </VStack>
+            </Box>
+          </motion.div>
         </Timeline>
       ))}
     </>
