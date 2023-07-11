@@ -14,6 +14,13 @@
         </image>
         <copyright>All rights reserved 2023, June</copyright>
         <item>
+            <title><![CDATA[Leveling up our performance]]></title>
+            <link>https://changelog.june.so/changelogs/performance</link>
+            <guid>https://changelog.june.so/changelogs/performance</guid>
+            <pubDate>Fri, 30 Jun 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/performance/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
             <title><![CDATA[Combine AND / OR rules]]></title>
             <link>https://changelog.june.so/changelogs/combine-and-or</link>
             <guid>https://changelog.june.so/changelogs/combine-and-or</guid>
