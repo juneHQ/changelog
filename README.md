@@ -1,18 +1,26 @@
-![](/highlight.png)
-
 # Changelog
 
-Set-up a blog and share what you ship as easy as 1-2-3!
+![summary-repo](https://github.com/juneHQ/changelog/assets/104089773/91b333a5-0e66-420d-b0bf-815e76570501)
 
-![screenshot](/changelog.png)
+![screenshot-repo](https://github.com/juneHQ/changelog/assets/104089773/18ff86a4-3e9f-4fc8-9fab-38fb15b0c8cd)
 
-A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
+Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
+
+#### [👉 Visit working demo](https://changelog.june.so)
 
 ## Features
 
-- A stylish changelog
-- Celebrate your team's achievements - with team credits on each post
-- Easy-to-use admin panel
+- 💅 A stylish changelog
+- ⏳ Timeline view
+- 📆 Date switcher
+- 🧩 Mosaic mode
+- 🏄‍♀️ Smooth transitions
+- 🎉 Celebrate your team's achievements with team credits on each post
+- ⚙️ Easy-to-use admin panel
+
+👇 Mosaic mode in action below 
+
+![ezgif com-video-to-gif (39)](https://github.com/juneHQ/changelog/assets/104089773/6ae75ac9-2a47-4dc9-9fb0-73cb90dbd2b7)
 
 ## Getting started
 
