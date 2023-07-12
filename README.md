@@ -85,7 +85,7 @@ To write a new blog post, create a new `.mdx` file in the `/pages/changelogs` di
 
 MDX is a superset of markdown that lets you write JSX directly in your markdown files. It is a powerful way to add dynamic interactivity, and embed components within your content, helping you to bring your pages to life.
 
-![mdx-preview](/mdx-preview.png)
+![mdx-preview](https://github.com/danieljune/changelog/assets/104089773/83a35930-8f4e-4c3d-a077-afcd8251af0b)
 
 Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/using-mdx), [Using MDX](https://mdxjs.com/docs/using-mdx/)
 
