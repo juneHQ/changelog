@@ -1,18 +1,26 @@
-![](/highlight.png)
+# Changelog 🚀
 
-# Changelog
+![summary-repo](https://github.com/juneHQ/changelog/assets/104089773/91b333a5-0e66-420d-b0bf-815e76570501)
 
-Set-up a blog and share what you ship as easy as 1-2-3!
+![screenshot-repo](https://github.com/juneHQ/changelog/assets/104089773/18ff86a4-3e9f-4fc8-9fab-38fb15b0c8cd)
 
-![screenshot](/changelog.png)
+Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
 
-A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
+#### [👉 Visit working demo](https://changelog.june.so)
 
 ## Features
 
-- A stylish changelog
-- Celebrate your team's achievements - with team credits on each post
-- Easy-to-use admin panel
+- 💅 A stylish changelog
+- ⏳ Timeline view
+- 📆 Date switcher
+- 🧩 Mosaic mode
+- 🏄‍♀️ Smooth transitions
+- 🎉 Celebrate your team's achievements with team credits on each post
+- ⚙️ Easy-to-use admin panel
+
+👇 Mosaic mode in action below 
+
+![ezgif com-video-to-gif (39)](https://github.com/juneHQ/changelog/assets/104089773/6ae75ac9-2a47-4dc9-9fb0-73cb90dbd2b7)
 
 ## Getting started
 
@@ -77,7 +85,7 @@ To write a new blog post, create a new `.mdx` file in the `/pages/changelogs` di
 
 MDX is a superset of markdown that lets you write JSX directly in your markdown files. It is a powerful way to add dynamic interactivity, and embed components within your content, helping you to bring your pages to life.
 
-![mdx-preview](/mdx-preview.png)
+![mdx-preview](https://github.com/danieljune/changelog/assets/104089773/83a35930-8f4e-4c3d-a077-afcd8251af0b)
 
 Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/using-mdx), [Using MDX](https://mdxjs.com/docs/using-mdx/)
 
