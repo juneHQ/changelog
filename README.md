@@ -1,4 +1,4 @@
-# Changelog
+# Changelog 🚀
 
 ![summary-repo](https://github.com/juneHQ/changelog/assets/104089773/91b333a5-0e66-420d-b0bf-815e76570501)
 
