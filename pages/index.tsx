@@ -1,5 +1,5 @@
 import { getArticleSlugs } from "lib/get-articles-slugs";
-import { PaginatedArticles } from "components/paginated-articles";
+import { MainLayout } from "components/layout/main-layout";
 import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
@@ -13,7 +13,7 @@ import { generateRssFeed } from "lib/generate-rss-feed";
 
 const ITEMS_PER_PAGE = 4;
 
-interface IPageProps {
+export interface IPageProps {
   slugs: string[];
   changelogsMap: { months: IAggregatedChangelogs; years: IAggregatedChangelogs };
   totalItems: { weeks: number; months: number; years: number };
@@ -31,7 +31,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   }, [timeline.view]);
 
   return (
-    <PaginatedArticles
+    <MainLayout
       page={page}
       itemsPerPage={ITEMS_PER_PAGE}
       totalItems={{
@@ -67,7 +67,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </PaginatedArticles>
+    </MainLayout>
   );
 };
 

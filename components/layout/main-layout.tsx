@@ -6,28 +6,32 @@ import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
 import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import TimeSelectionTabs from "./core/time-selection-tabs";
+import TimeSelectionTabs from "../core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
 
-export interface PaginatedArticlesProps {
-  page: number;
+export interface MainLayoutProps {
+  page?: number;
   children: ReactNode;
-  itemsPerPage: number;
-  totalItems: {
+  itemsPerPage?: number;
+  totalItems?: {
     weeks: number;
     months: number;
     years: number;
   };
+  infiniteScrollingView?: "year" | "month";
 }
 
-export const PaginatedArticles = ({
+export const MainLayout = ({
   page,
   children,
   itemsPerPage,
   totalItems,
-}: PaginatedArticlesProps) => {
-  const metaTitle = `${page > 0 ? `Page ${page} -` : ""} June Changelog`;
+  infiniteScrollingView,
+}: MainLayoutProps) => {
+  const metaTitle = `${
+    infiniteScrollingView ? "" : page > 0 ? `Page ${page} -` : ""
+  } June Changelog`;
   const timeline = useTimelineStore();
 
   React.useEffect(() => {
@@ -38,7 +42,8 @@ export const PaginatedArticles = ({
     );
   }, []);
 
-  const hasMorePage = page < Math.floor(totalItems[timeline.view] / itemsPerPage);
+  const hasMorePage =
+    !infiniteScrollingView && page < Math.floor(totalItems[timeline.view] / itemsPerPage);
 
   return (
     <>
@@ -114,6 +119,7 @@ export const PaginatedArticles = ({
                 </VStack>
               </motion.div>
               <motion.div
+                hidden={!!infiniteScrollingView}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 } },

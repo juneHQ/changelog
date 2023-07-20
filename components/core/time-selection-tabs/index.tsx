@@ -11,7 +11,7 @@ const TimeSelectionTabs = () => {
 
   const changeTimelineView = (view: "weeks" | "months" | "years") => {
     timeline.setView(view);
-    if (router.pathname.includes("/page/")) {
+    if (router.pathname.includes("/page/") || router.pathname.includes("/years/")) {
       router.push(`/page/0#${view}`);
     } else {
       // window.scrollTo(0, 0);
@@ -72,7 +72,7 @@ const TimeSelectionTabs = () => {
                   background: "#FFFFFF",
                   borderRadius: "9999px",
                   boxShadow: "0px 0.636364px 2.24px rgba(33, 40, 54, 0.16)",
-                  zIndex: 5
+                  zIndex: 5,
                 }}
                 transition={{ type: "linear", duration: 0.3 }}
               />

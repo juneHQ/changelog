@@ -44,12 +44,13 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
             >
               <VStack
                 onClick={() => {
-                  timeline.setView("months");
-                  router.push(
-                    `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
-                      sortedYearKeys[index]
-                    ).format("YYYY")}`
-                  );
+                  // timeline.setView("months");
+                  // router.push(
+                  //   `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
+                  //     sortedYearKeys[index]
+                  //   ).format("YYYY")}`
+                  // );
+                  router.push(`/years/${dayjs(sortedYearKeys[index]).format("YYYY")}`);
                 }}
                 cursor="pointer"
               >
@@ -78,7 +79,9 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                   {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
                     <MediumGrid changelogs={changelogs} />
                   )}
-                {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
+                  {changelogs.length > 9 && isLargerThan768 && (
+                    <LargeGrid changelogs={changelogs} />
+                  )}
                 </Box>
               </VStack>
             </Box>

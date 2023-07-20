@@ -79,12 +79,16 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                   maxWidth={"682px"}
                   display="flex"
                   onClick={() => {
-                    timeline.setView("weeks");
-                    router.push(
-                      `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
-                        Object.keys(monthChangelogsMap)[index]
-                      ).format("MM")}`
-                    );
+                    // timeline.setView("weeks");
+                    // router.push(
+                    //   `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
+                    //     Object.keys(monthChangelogsMap)[index]
+                    //   ).format("MM")}`
+                    // );
+                    const date = dayjs(Object.keys(monthChangelogsMap)[index]);
+                    const month = date.format("MM");
+                    const year = date.format("YYYY");
+                    router.push(`/years/${year}/months/${month}`);
                   }}
                   position="relative"
                   _hover={{
@@ -104,7 +108,9 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                   {changelogs.length <= 2 ? (
                     <Grid
                       gap={"8px"}
-                    templateColumns={changelogs.length === 1 ? "repeat(1, 1fr)" : "repeat(2, 1fr)"}
+                      templateColumns={
+                        changelogs.length === 1 ? "repeat(1, 1fr)" : "repeat(2, 1fr)"
+                      }
                       height="100%"
                     >
                       {changelogs.map(({ imageUrl }, index) => (
