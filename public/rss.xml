@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 13 Jul 2023 20:59:44 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jul 2023 20:03:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[🍣 Meeting you in person]]></title>
+            <link>https://changelog.june.so/changelogs/meeting-customers-in-person</link>
+            <guid>https://changelog.june.so/changelogs/meeting-customers-in-person</guid>
+            <pubDate>Fri, 14 Jul 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/meeting-customers-in-person/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[All new documentation and debugging tools]]></title>
             <link>https://changelog.june.so/changelogs/documentation-2-0</link>
