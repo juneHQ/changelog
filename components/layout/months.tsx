@@ -88,7 +88,10 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                     const date = dayjs(Object.keys(monthChangelogsMap)[index]);
                     const month = date.format("MM");
                     const year = date.format("YYYY");
-                    router.push(`/years/${year}/months/${month}`);
+                    router.push(`/years/${year}/months/${month}`, undefined, {
+                      // NOTE: not working yet
+                      scroll: true,
+                    });
                   }}
                   position="relative"
                   _hover={{
@@ -102,9 +105,7 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                     },
                   }}
                 >
-                  {sortedChangelogsArrayByMonth.length > 3 && (
-                    <MoreItems numberOfItems={sortedChangelogsArrayByMonth.length - 3} />
-                  )}
+                  {changelogs.length > 3 && <MoreItems numberOfItems={changelogs.length - 3} />}
                   {changelogs.length <= 2 ? (
                     <Grid
                       gap={"8px"}
@@ -113,30 +114,44 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                       }
                       height="100%"
                     >
-                      {changelogs.map(({ imageUrl }, index) => (
+                      {changelogs.map(({ imageUrl, slug }, index) => (
                         <Box key={index}>
-                          <Image
-                            src={imageUrl}
-                            alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
-                            height="100%"
-                            objectFit={"cover"}
-                            borderLeftRadius={index === 0 ? "16px" : 0}
-                            borderRightRadius={index === 1 || changelogs.length === 1 ? "16px" : 0}
-                          />
+                          <motion.div
+                          // layoutId={index === 0 ? slug : `months-grid-image-${slug}`}
+                          // initial="visible"
+                          // transition={{ duration: 0.6 }}
+                          >
+                            <Image
+                              src={imageUrl}
+                              alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
+                              height="100%"
+                              objectFit={"cover"}
+                              borderLeftRadius={index === 0 ? "16px" : 0}
+                              borderRightRadius={
+                                index === 1 || changelogs.length === 1 ? "16px" : 0
+                              }
+                            />
+                          </motion.div>
                         </Box>
                       ))}
                     </Grid>
                   ) : (
                     <HStack height="100%">
                       <Box width="100%">
-                        <Image
-                          src={changelogs[0]?.imageUrl}
-                          alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
-                          minHeight={["176px", "176px", "360px"]}
-                          height="100%"
-                          objectFit={"cover"}
-                          borderLeftRadius={"16px"}
-                        />
+                        <motion.div
+                        // layoutId={`${changelogs[0]?.slug}`}
+                        // initial="visible"
+                        // transition={{ duration: 0.6 }}
+                        >
+                          <Image
+                            src={changelogs[0]?.imageUrl}
+                            alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
+                            minHeight={["176px", "176px", "360px"]}
+                            height="100%"
+                            objectFit={"cover"}
+                            borderLeftRadius={"16px"}
+                          />
+                        </motion.div>
                       </Box>
                       <VStack width="176px" height="100%">
                         {changelogs.slice(1, 3).map(({ imageUrl }, index) => (

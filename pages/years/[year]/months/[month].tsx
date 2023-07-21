@@ -1,4 +1,4 @@
-import { MainLayout } from "components/layout/main-layout";
+import { ContentLayout } from "components/layout/content-layout";
 import { generateRssFeed } from "lib/generate-rss-feed";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import useTimelineStore from "lib/state/use-timeline-store";
@@ -7,6 +7,7 @@ import { IPageProps } from "pages";
 import React from "react";
 import dayjs from "dayjs";
 import Weeks from "components/layout/weeks";
+import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 
 const Page = ({ slugs }: IPageProps) => {
   const timeline = useTimelineStore();
@@ -14,14 +15,24 @@ const Page = ({ slugs }: IPageProps) => {
   React.useEffect(() => {
     timeline.setView("weeks");
     if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }, [timeline.view]);
 
   return (
-    <MainLayout infiniteScrollingView="month">
-      <Weeks slugs={slugs} />
-    </MainLayout>
+    <ContentLayout infiniteScrollingView="month">
+      <Tabs isLazy lazyBehavior="keepMounted" isFitted>
+        <TabPanels>
+          <TabPanel>
+            <Weeks slugs={slugs} />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </ContentLayout>
   );
 };
 

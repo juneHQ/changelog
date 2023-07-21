@@ -2,10 +2,8 @@ import { useRouter } from "next/router";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import dayjs from "dayjs";
-import SmallGrid from "components/core/years/small-grid";
 import MediumGrid from "components/core/years/medium-grid";
 import LargeGrid from "components/core/years/large-grid";
-import MoreItems from "components/core/more-items";
 import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
 import { motion } from "framer-motion";
@@ -50,7 +48,10 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                   //     sortedYearKeys[index]
                   //   ).format("YYYY")}`
                   // );
-                  router.push(`/years/${dayjs(sortedYearKeys[index]).format("YYYY")}`);
+                  router.push(`/years/${dayjs(sortedYearKeys[index]).format("YYYY")}`, undefined, {
+                    // NOTE: not working yet
+                    scroll: true,
+                  });
                 }}
                 cursor="pointer"
               >

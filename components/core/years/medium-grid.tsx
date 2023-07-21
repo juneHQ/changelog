@@ -28,7 +28,14 @@ const MediumGrid = (props: IGridProps) => {
               .reverse()
               .map(({ imageUrl, slug }, index) =>
                 imageUrl ? (
-                  <Image key={index} src={imageUrl} alt={slug} height="100%" objectFit={"cover"} />
+                  <Image
+                    key={index}
+                    src={imageUrl}
+                    alt={slug}
+                    height="100%"
+                    objectFit={"cover"}
+                    loading="lazy"
+                  />
                 ) : (
                   <Box bg="#F1F3F5" h="full" w="full" />
                 )
@@ -44,7 +51,7 @@ const MediumGrid = (props: IGridProps) => {
           rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
           colSpan={[1, 3, 6].includes(index) ? 4 : 2}
         >
-          <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} />
+          <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} loading="lazy" />
         </GridItem>
       ))}
     </Grid>

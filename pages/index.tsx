@@ -1,5 +1,5 @@
 import { getArticleSlugs } from "lib/get-articles-slugs";
-import { MainLayout } from "components/layout/main-layout";
+import { ContentLayout } from "components/layout/content-layout";
 import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
@@ -26,12 +26,16 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }, [timeline.view]);
 
   return (
-    <MainLayout
+    <ContentLayout
       page={page}
       itemsPerPage={ITEMS_PER_PAGE}
       totalItems={{
@@ -67,7 +71,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </MainLayout>
+    </ContentLayout>
   );
 };
 

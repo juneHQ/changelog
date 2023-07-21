@@ -14,6 +14,7 @@ const LargeSubGrid = (props: ISubGridProps) => {
       {changelogs.map(({ imageUrl, slug }, subI) => (
         <GridItem key={subI}>
           <Image
+            loading="lazy"
             src={imageUrl}
             alt={slug}
             height={rowLength - 1 <= 4 ? "198px" : "98px"}

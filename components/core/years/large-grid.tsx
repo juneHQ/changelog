@@ -34,6 +34,7 @@ const LargeGrid = (props: IGridProps) => {
                     h="198px"
                     w={rowItems.length === 1 ? "100%" : "282px"}
                     objectFit={"cover"}
+                    loading="lazy"
                   />
                   <VStack spacing="2px">
                     {rowItems
@@ -85,6 +86,7 @@ const LargeGrid = (props: IGridProps) => {
                     h="198px"
                     w={rowItems.length === 1 ? "100%" : "282px"}
                     objectFit={"cover"}
+                    loading="lazy"
                   />
                 </>
               )}

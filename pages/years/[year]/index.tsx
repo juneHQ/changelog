@@ -1,11 +1,12 @@
 import Months from "components/layout/months";
-import { MainLayout } from "components/layout/main-layout";
+import { ContentLayout } from "components/layout/content-layout";
 import { generateRssFeed } from "lib/generate-rss-feed";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IPageProps } from "pages";
 import React from "react";
+import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 
 const ITEMS_PER_PAGE = 4;
 
@@ -15,14 +16,24 @@ const Page = ({ changelogsMap }: IPageProps) => {
   React.useEffect(() => {
     timeline.setView("months");
     if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }, [timeline.view]);
 
   return (
-    <MainLayout infiniteScrollingView="year">
-      <Months monthChangelogsMap={changelogsMap.months} />
-    </MainLayout>
+    <ContentLayout infiniteScrollingView="year">
+      <Tabs isLazy lazyBehavior="keepMounted" isFitted>
+        <TabPanels>
+          <TabPanel>
+            <Months monthChangelogsMap={changelogsMap.months} />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </ContentLayout>
   );
 };
 
