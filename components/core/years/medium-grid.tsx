@@ -1,4 +1,5 @@
 import { Box, Grid, GridItem, Image, VStack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { IGridProps } from "./grid-interfaces";
 
 const MediumGrid = (props: IGridProps) => {
@@ -24,10 +25,17 @@ const MediumGrid = (props: IGridProps) => {
             templateColumns={`repeat(${rowItems.length}, 1fr)`}
             height="100%"
           >
-            {rowItems
-              .reverse()
-              .map(({ imageUrl, slug }, index) =>
-                imageUrl ? (
+            {rowItems.reverse().map(({ imageUrl, slug }, index) =>
+              imageUrl ? (
+                <motion.div
+                  layoutId={i === 0 && props.isFirstItem ? rowItems[0].slug : ``}
+                  initial={{
+                    scale: 1,
+                  }}
+                  transition={{
+                    duration: 0,
+                  }}
+                >
                   <Image
                     key={index}
                     src={imageUrl}
@@ -36,10 +44,11 @@ const MediumGrid = (props: IGridProps) => {
                     objectFit={"cover"}
                     loading="lazy"
                   />
-                ) : (
-                  <Box bg="#F1F3F5" h="full" w="full" />
-                )
-              )}
+                </motion.div>
+              ) : (
+                <Box bg="#F1F3F5" h="full" w="full" />
+              )
+            )}
           </Grid>
         ))}
     </VStack>
@@ -51,7 +60,17 @@ const MediumGrid = (props: IGridProps) => {
           rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
           colSpan={[1, 3, 6].includes(index) ? 4 : 2}
         >
-          <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} loading="lazy" />
+          <motion.div
+            layoutId={index === 0 && props.isFirstItem ? slug : ``}
+            initial={{
+              scale: 1,
+            }}
+            transition={{
+              duration: 0,
+            }}
+          >
+            <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} loading="lazy" />
+          </motion.div>
         </GridItem>
       ))}
     </Grid>

@@ -9,6 +9,7 @@ const MoreItems = (props: { numberOfItems: number }) => {
       h={6}
       display="flex"
       position="absolute"
+      zIndex={999}
       bottom={4}
       right={4}
       bg="linear-gradient(180deg, #6868F7 0%, #4C40D9 100%)"

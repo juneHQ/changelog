@@ -3,9 +3,10 @@ import React from "react";
 
 interface IWeeksProps {
   slugs: string[];
+  isInfiniteScrollingView?: boolean;
 }
 
-const Weeks = ({ slugs }: IWeeksProps) => {
+const Weeks = ({ slugs, isInfiniteScrollingView }: IWeeksProps) => {
   const Articles = React.useMemo(() => {
     return slugs.map((slug) => dynamic(() => import(`../../pages/changelogs/${slug}.mdx`)));
   }, [slugs]);
@@ -14,7 +15,15 @@ const Weeks = ({ slugs }: IWeeksProps) => {
     <>
       {Articles.map((Article, index) => (
         // @ts-ignore
-        <Article key={index} index={index} hideLayout={true} hideHead={true} hideAuthors={true} />
+        <Article
+          key={index}
+          // @ts-ignore
+          index={index}
+          hideLayout={true}
+          hideHead={true}
+          hideAuthors={true}
+          isInfiniteScrollingView={isInfiniteScrollingView}
+        />
       ))}
     </>
   );

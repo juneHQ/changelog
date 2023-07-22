@@ -26,13 +26,7 @@ const Page = ({ changelogsMap }: IPageProps) => {
 
   return (
     <ContentLayout infiniteScrollingView="year">
-      <Tabs isLazy lazyBehavior="keepMounted" isFitted>
-        <TabPanels>
-          <TabPanel>
-            <Months monthChangelogsMap={changelogsMap.months} />
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+      <Months monthChangelogsMap={changelogsMap.months} isInfiniteScrollingView />
     </ContentLayout>
   );
 };

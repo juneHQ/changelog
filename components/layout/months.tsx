@@ -10,9 +10,10 @@ import { motion } from "framer-motion";
 
 interface IMonthsProps {
   monthChangelogsMap: IAggregatedChangelogs;
+  isInfiniteScrollingView?: boolean;
 }
 
-const Months = ({ monthChangelogsMap }: IMonthsProps) => {
+const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) => {
   const router = useRouter();
   const timeline = useTimelineStore();
 
@@ -117,14 +118,21 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                       {changelogs.map(({ imageUrl, slug }, index) => (
                         <Box key={index}>
                           <motion.div
-                          // layoutId={index === 0 ? slug : `months-grid-image-${slug}`}
-                          // initial="visible"
-                          // transition={{ duration: 0.6 }}
+                            layoutId={index === 0 && isInfiniteScrollingView ? slug : ``}
+                            initial={{
+                              scale: index === 0 && isInfiniteScrollingView ? 0.7 : 1,
+                              opacity: 1,
+                            }}
+                            animate={{
+                              scale: 1,
+                            }}
+                            transition={{ duration: 0.6 }}
                           >
                             <Image
                               src={imageUrl}
                               alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                               height="100%"
+                              maxHeight={"100%"}
                               objectFit={"cover"}
                               borderLeftRadius={index === 0 ? "16px" : 0}
                               borderRightRadius={
@@ -139,9 +147,20 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                     <HStack height="100%">
                       <Box width="100%">
                         <motion.div
-                        // layoutId={`${changelogs[0]?.slug}`}
-                        // initial="visible"
-                        // transition={{ duration: 0.6 }}
+                          // layoutId={`${changelogs[0]?.slug}`}
+                          // initial="visible"
+                          // transition={{ duration: 0.6 }}
+                          layoutId={
+                            index === 0 && isInfiniteScrollingView ? changelogs[0]?.slug : ``
+                          }
+                          initial={{
+                            scale: index === 0 && isInfiniteScrollingView ? 0.7 : 1,
+                            opacity: 1,
+                          }}
+                          animate={{
+                            scale: 1,
+                          }}
+                          transition={{ duration: 0.6 }}
                         >
                           <Image
                             src={changelogs[0]?.imageUrl}

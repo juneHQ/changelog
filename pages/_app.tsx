@@ -21,22 +21,15 @@ import "@fontsource/inter/900.css";
 
 import juneTheme from "../lib/theme";
 import Layout from "components/layout";
-import { useRouter } from "next/router";
 
 dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
-  const router = useRouter();
-
   return (
     <ChakraProvider theme={juneTheme}>
-      {router.pathname.startsWith("/changelogs/") ? (
+      <Layout>
         <Component {...pageProps} />
-      ) : (
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      )}
+      </Layout>
     </ChakraProvider>
   );
 };

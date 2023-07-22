@@ -60,13 +60,13 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
         }}
       >
         <TabPanels>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Weeks slugs={slugs} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Months monthChangelogsMap={changelogsMap.months} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Years yearChangelogsMap={changelogsMap.years} />
           </TabPanel>
         </TabPanels>

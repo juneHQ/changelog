@@ -7,6 +7,8 @@ import LargeGrid from "components/core/years/large-grid";
 import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
 import { motion } from "framer-motion";
+import MoreItems from "components/core/more-items";
+import SmallGrid from "components/core/years/small-grid";
 
 interface IYearsProps {
   yearChangelogsMap: IAggregatedChangelogs;
@@ -75,13 +77,13 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                     },
                   }}
                 >
-                  {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
-                  {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
+                  {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />}
+                  {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />}
                   {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
-                    <MediumGrid changelogs={changelogs} />
+                    <MediumGrid changelogs={changelogs} isFirstItem={index === 0} />
                   )}
                   {changelogs.length > 9 && isLargerThan768 && (
-                    <LargeGrid changelogs={changelogs} />
+                    <LargeGrid changelogs={changelogs} isFirstItem={index === 0} />
                   )}
                 </Box>
               </VStack>

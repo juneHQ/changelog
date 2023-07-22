@@ -1,4 +1,5 @@
 import { VStack, Grid, GridItem, HStack, Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { IGridProps } from "./grid-interfaces";
 import LargeSubGrid from "./large-sub-grid";
 
@@ -28,14 +29,24 @@ const LargeGrid = (props: IGridProps) => {
             <HStack spacing="2px">
               {i % 2 === 0 && (
                 <>
-                  <Image
-                    src={rowItems[0].imageUrl}
-                    alt={rowItems[0].slug}
-                    h="198px"
-                    w={rowItems.length === 1 ? "100%" : "282px"}
-                    objectFit={"cover"}
-                    loading="lazy"
-                  />
+                  <motion.div
+                    layoutId={i === 0 && props.isFirstItem ? rowItems[0].slug : ``}
+                    initial={{
+                      scale: 1,
+                    }}
+                    transition={{
+                      duration: 0,
+                    }}
+                  >
+                    <Image
+                      src={rowItems[0].imageUrl}
+                      alt={rowItems[0].slug}
+                      h="198px"
+                      w={rowItems.length === 1 ? "100%" : "282px"}
+                      objectFit={"cover"}
+                      loading="lazy"
+                    />
+                  </motion.div>
                   <VStack spacing="2px">
                     {rowItems
                       .slice(1, rowItems.length)

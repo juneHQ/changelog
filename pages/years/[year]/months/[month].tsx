@@ -25,13 +25,7 @@ const Page = ({ slugs }: IPageProps) => {
 
   return (
     <ContentLayout infiniteScrollingView="month">
-      <Tabs isLazy lazyBehavior="keepMounted" isFitted>
-        <TabPanels>
-          <TabPanel>
-            <Weeks slugs={slugs} />
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+      <Weeks slugs={slugs} isInfiniteScrollingView />
     </ContentLayout>
   );
 };
