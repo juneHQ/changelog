@@ -1,4 +1,4 @@
-import { Box, HStack, Image, VStack } from "@chakra-ui/react";
+import { Box, HStack, Image, VStack, Skeleton } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { IGridProps } from "./grid-interfaces";
 
@@ -6,7 +6,7 @@ const SmallGrid = (props: IGridProps) => {
   const { changelogs } = props;
 
   return (
-    <HStack height="100%">
+    <HStack height="100%" maxHeight="360px" maxWidth={"682px"}>
       <Box width="100%">
         <motion.div
           layoutId={props.isFirstItem ? changelogs[0].slug : ``}
@@ -16,14 +16,14 @@ const SmallGrid = (props: IGridProps) => {
           transition={{
             duration: 0,
           }}
+          style={{ overflow: "hidden" }}
         >
           <Image
             src={changelogs[0]?.imageUrl}
             alt={changelogs[0]?.slug}
             minHeight={["176px", "176px", "360px"]}
-            height="100%"
             objectFit={"cover"}
-            loading="lazy"
+            fallbackSrc="/plain-gray.jpg"
           />
         </motion.div>
       </Box>
@@ -33,9 +33,11 @@ const SmallGrid = (props: IGridProps) => {
             key={index}
             src={imageUrl}
             alt={slug}
-            height="100%"
             objectFit={"cover"}
-            loading="lazy"
+            maxHeight="176px"
+            height="100%"
+            maxWidth="176px"
+            fallbackSrc="/plain-gray.jpg"
           />
         ))}
       </VStack>

@@ -177,10 +177,10 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                 scale: shouldAnimateFromPreviousPage ? 0.9 : 1,
               }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.6 }, scale: 1 }}
+              style={{width: '100%', overflow: 'hidden', borderRadius: '16px' }}
             >
               <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
                 <Image
-                  borderRadius="16px"
                   src={props.meta.headerImage}
                   alt={props.meta.title}
                   w="full"
@@ -192,6 +192,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                     // },
                     boxShadow: props.hideLayout ? "0px 2px 4px 0px rgba(0, 0, 0, 0.1)" : "",
                   }}
+                  fallbackSrc="/plain-gray.jpg"
                 />
               </Link>
             </motion.div>

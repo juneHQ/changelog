@@ -5,13 +5,33 @@ import { getArticleSlugs } from "lib/get-articles-slugs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IPageProps } from "pages";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const ITEMS_PER_PAGE = 4;
+const MONTHS_PER_RENDER = 4;
 
 const Page = ({ changelogsMap }: IPageProps) => {
   const timeline = useTimelineStore();
+  const [renderedMonths, setRenderedMonths] = useState(0);
+
+  useEffect(() => {
+    setRenderedMonths((prevRenderedMonths) => prevRenderedMonths + MONTHS_PER_RENDER);
+  }, []);
+
+  const hasMoreMonths = () => renderedMonths < Object.keys(changelogsMap.months).length;
+
+  const handleLoadMore = () => {
+    setRenderedMonths((prevRenderedMonths) => prevRenderedMonths + MONTHS_PER_RENDER);
+  };
+
+  const monthsToRender = Object.entries(changelogsMap.months)
+    .slice(0, renderedMonths)
+    .reduce((obj, [key, value]) => {
+      obj[key] = value;
+      return obj;
+    }, {});
 
   React.useEffect(() => {
     timeline.setView("months");
@@ -26,7 +46,16 @@ const Page = ({ changelogsMap }: IPageProps) => {
 
   return (
     <ContentLayout infiniteScrollingView="year">
-      <Months monthChangelogsMap={changelogsMap.months} isInfiniteScrollingView />
+      <InfiniteScroll
+        style={{ overflow: "visible" }}
+        dataLength={renderedMonths}
+        next={handleLoadMore}
+        hasMore={hasMoreMonths()}
+        loader={<h4>Loading...</h4>}
+        scrollThreshold={0.7}
+      >
+        <Months monthChangelogsMap={monthsToRender} isInfiniteScrollingView />
+      </InfiniteScroll>
     </ContentLayout>
   );
 };

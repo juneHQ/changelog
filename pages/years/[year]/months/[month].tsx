@@ -4,10 +4,13 @@ import { getArticleSlugs } from "lib/get-articles-slugs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
 import { IPageProps } from "pages";
-import React from "react";
+import React, { useState } from "react";
 import dayjs from "dayjs";
 import Weeks from "components/layout/weeks";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
+import InfiniteScroll from "react-infinite-scroll-component";
+
+const WEEKS_PER_RENDER = 1;
 
 const Page = ({ slugs }: IPageProps) => {
   const timeline = useTimelineStore();
@@ -23,9 +26,30 @@ const Page = ({ slugs }: IPageProps) => {
     }
   }, [timeline.view]);
 
+  const [renderedWeeks, setRenderedWeeks] = useState(WEEKS_PER_RENDER);
+
+  const handleLoadMore = () => {
+    setRenderedWeeks((prevRenderedWeeks) => prevRenderedWeeks + WEEKS_PER_RENDER);
+  };
+
+  const weeksToRender = slugs.slice(0, renderedWeeks)
+
+  const hasMoreWeeks = () => renderedWeeks < slugs.length;
+
+
+
   return (
     <ContentLayout infiniteScrollingView="month">
-      <Weeks slugs={slugs} isInfiniteScrollingView />
+      <InfiniteScroll
+        style={{ overflow: "visible" }}
+        dataLength={renderedWeeks}
+        next={handleLoadMore}
+        hasMore={hasMoreWeeks()}
+        loader={<h4>Loading...</h4>}
+        scrollThreshold={0.7}
+      >
+        <Weeks slugs={weeksToRender} isInfiniteScrollingView />
+      </InfiniteScroll>
     </ContentLayout>
   );
 };

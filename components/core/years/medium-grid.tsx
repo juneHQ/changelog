@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Image, VStack } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Image, VStack, Skeleton } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { IGridProps } from "./grid-interfaces";
 
@@ -19,12 +19,7 @@ const MediumGrid = (props: IGridProps) => {
         }, [])
         .reverse()
         .map((rowItems, i) => (
-          <Grid
-            key={i}
-            gap={"8px"}
-            templateColumns={`repeat(${rowItems.length}, 1fr)`}
-            height="100%"
-          >
+          <Grid key={i} gap={"8px"} templateColumns={`repeat(${rowItems.length}, 1fr)`}>
             {rowItems.reverse().map(({ imageUrl, slug }, index) =>
               imageUrl ? (
                 <motion.div
@@ -35,6 +30,7 @@ const MediumGrid = (props: IGridProps) => {
                   transition={{
                     duration: 0,
                   }}
+                  style={{ height: "100%" }}
                 >
                   <Image
                     key={index}
@@ -42,7 +38,7 @@ const MediumGrid = (props: IGridProps) => {
                     alt={slug}
                     height="100%"
                     objectFit={"cover"}
-                    loading="lazy"
+                    fallbackSrc="/plain-gray.jpg"
                   />
                 </motion.div>
               ) : (
@@ -53,7 +49,13 @@ const MediumGrid = (props: IGridProps) => {
         ))}
     </VStack>
   ) : (
-    <Grid gap={"8px"} templateColumns="repeat(8, 1fr)" templateRows="repeat(7, 1fr)" height="100%">
+    <Grid
+      gap={"8px"}
+      templateColumns="repeat(8, 1fr)"
+      templateRows="repeat(7, 1fr)"
+      height="100%"
+      maxHeight="601px"
+    >
       {changelogs.slice(0, 9).map(({ imageUrl, slug }, index) => (
         <GridItem
           key={index}
@@ -68,8 +70,20 @@ const MediumGrid = (props: IGridProps) => {
             transition={{
               duration: 0,
             }}
+            style={{ height: "100%" }}
           >
-            <Image src={imageUrl} alt={slug} minHeight="100%" objectFit={"cover"} loading="lazy" />
+            <Image
+              src={imageUrl}
+              alt={slug}
+              height="100%"
+              width="100%"
+              objectFit={"cover"}
+              fallback={
+                <Box overflow="hidden" width="100%">
+                  <Skeleton height={[0, 2, 3].includes(index) ? "253px" : "166px"} width="3000px" />
+                </Box>
+              }
+            />
           </motion.div>
         </GridItem>
       ))}

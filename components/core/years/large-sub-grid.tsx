@@ -1,4 +1,4 @@
-import { Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Image, Skeleton } from "@chakra-ui/react";
 import { IImagePreviewMeta } from "lib/models/view";
 
 interface ISubGridProps {
@@ -14,12 +14,19 @@ const LargeSubGrid = (props: ISubGridProps) => {
       {changelogs.map(({ imageUrl, slug }, subI) => (
         <GridItem key={subI}>
           <Image
-            loading="lazy"
             src={imageUrl}
             alt={slug}
             height={rowLength - 1 <= 4 ? "198px" : "98px"}
             width={`${400 / changelogs.length - 2}px`}
             objectFit={"cover"}
+            fallback={
+              <Box overflow="hidden">
+                <Skeleton
+                  height={rowLength - 1 <= 4 ? "198px" : "98px"}
+                  width={`${400 / changelogs.length - 2}px`}
+                />
+              </Box>
+            }
           />
         </GridItem>
       ))}
