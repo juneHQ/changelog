@@ -10,6 +10,7 @@ import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
 import { generateRssFeed } from "lib/generate-rss-feed";
+import { MainLayout } from "components/layout/main-layout";
 
 const ITEMS_PER_PAGE = 4;
 
@@ -35,7 +36,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
   }, [timeline.view]);
 
   return (
-    <ContentLayout
+    <MainLayout
       page={page}
       itemsPerPage={ITEMS_PER_PAGE}
       totalItems={{
@@ -71,7 +72,7 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </ContentLayout>
+    </MainLayout>
   );
 };
 

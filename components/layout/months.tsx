@@ -79,6 +79,7 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                 >
                   <Box
                     maxHeight="360px"
+                    width={["100%", "100%", "682px"]}
                     maxWidth={"682px"}
                     display="flex"
                     onClick={() => {
@@ -129,12 +130,14 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                                 scale: 1,
                               }}
                               transition={{ duration: 0.6 }}
+                              style={{ height: "100%", width: "100%" }}
                             >
                               <Image
                                 src={imageUrl}
                                 alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                                 objectFit={"cover"}
-                                width="100%"
+                                width={["100%", "100%", "682px"]}
+                                height={["100%", "100%", "360px"]}
                                 fallbackSrc="/plain-gray.jpg"
                               />
                             </motion.div>

@@ -27,9 +27,9 @@ dayjs.extend(advancedFormat);
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={juneTheme}>
-      <Layout>
+      {/* <Layout> */}
         <Component {...pageProps} />
-      </Layout>
+      {/* </Layout> */}
     </ChakraProvider>
   );
 };

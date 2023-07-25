@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Button, HStack, VStack } from "@chakra-ui/react";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
+import useAnimatePageStore from "lib/state/use-animate-page-store";
 
 export interface ContentLayoutProps {
   page?: number;
@@ -28,6 +29,7 @@ export const ContentLayout = ({
     infiniteScrollingView ? "" : page > 0 ? `Page ${page} -` : ""
   } June Changelog`;
   const timeline = useTimelineStore();
+  const { animatePage, setAnimatePage } = useAnimatePageStore();
 
   React.useEffect(() => {
     const hash = window?.location.hash ?? "";
@@ -48,7 +50,15 @@ export const ContentLayout = ({
         <meta property="og:title" content={metaTitle} />
         <meta name="twitter:title" content={metaTitle} />
       </Head>
-      {children}
+      <motion.div
+        initial={animatePage ? "hidden" : "visible"}
+        animate="visible"
+        onAnimationComplete={() => {
+          setAnimatePage(false);
+        }}
+      >
+        {children}
+      </motion.div>
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },

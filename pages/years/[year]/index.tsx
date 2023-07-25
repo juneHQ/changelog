@@ -8,6 +8,7 @@ import { IPageProps } from "pages";
 import React, { useEffect, useState } from "react";
 import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { MainLayout } from "components/layout/main-layout";
 
 const ITEMS_PER_PAGE = 4;
 const MONTHS_PER_RENDER = 4;
@@ -45,7 +46,7 @@ const Page = ({ changelogsMap }: IPageProps) => {
   }, [timeline.view]);
 
   return (
-    <ContentLayout infiniteScrollingView="year">
+    <MainLayout infiniteScrollingView="year">
       <InfiniteScroll
         style={{ overflow: "visible" }}
         dataLength={renderedMonths}
@@ -56,7 +57,7 @@ const Page = ({ changelogsMap }: IPageProps) => {
       >
         <Months monthChangelogsMap={monthsToRender} isInfiniteScrollingView />
       </InfiniteScroll>
-    </ContentLayout>
+    </MainLayout>
   );
 };
 

@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import dayjs from "dayjs";
 import InfiniteScroll from "react-infinite-scroll-component";
 import dynamic from "next/dynamic";
+import { MainLayout } from "components/layout/main-layout";
 
 const WEEKS_PER_RENDER = 4;
 
@@ -40,7 +41,7 @@ const Page = ({ slugs }: IPageProps) => {
   const hasMoreWeeks = () => renderedWeeks < slugs.length;
 
   return (
-    <ContentLayout infiniteScrollingView="month">
+    <MainLayout infiniteScrollingView="month">
       {ArticlesToInitiallyRender.map((Article, index) => (
         // @ts-ignore
         <Article
@@ -74,7 +75,7 @@ const Page = ({ slugs }: IPageProps) => {
           />
         ))}
       </InfiniteScroll>
-    </ContentLayout>
+    </MainLayout>
   );
 };
 
