@@ -110,158 +110,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
 
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
-  return isInBlogPage ? (
-    <MainLayout>
-      <MDXProvider components={components}>
-        {!props.hideHead && (
-          <Head>
-            <title>{title}</title>
-            <link rel="icon" href="/favicon.ico" />
-            <meta name="title" content={title} />
-            <meta name="description" content={description} />
-            <meta name="image" content={props.meta.headerImage} />
-            <meta property="og:type" content="website" />
-            <meta property="og:url" content={url} />
-            <meta property="og:title" content={title} />
-            <meta property="og:description" content={description} />
-            <meta property="og:image" content={props.meta.headerImage} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:url" content={url} />
-            <meta name="twitter:title" content={title} />
-            <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={props.meta.headerImage} />
-            <link
-              rel="alternate"
-              type="application/rss+xml"
-              title="June Changelog"
-              href="https://changelog.june.so/rss.xml"
-            />
-          </Head>
-        )}
-        <Timeline
-          date={dayjs(props.meta.publishedAt).format("MMM DD YYYY")}
-          className={`timeline-month-${dayjs(props.meta.publishedAt).format("MM")}`}
-        >
-          <Box
-            // mt={!props.hideLayout && [86, 86, 140]}
-            // maxW="4xl"
-            // mx="auto"
-            // width={"682px"}
-            // w="100%"
-            maxW="682px"
-            // px={defaultPx(32)}
-          >
-            {/* Article header */}
-            <VStack align="start" spacing={[4, 4, 6]}>
-              {props.tags !== undefined && (
-                <Flex gap={2}>
-                  {props.tags?.map((tag, index) => (
-                    <Box
-                      height="22px"
-                      bg="#F1F3F5"
-                      color="#0D131B"
-                      fontSize="14px"
-                      borderRadius="full"
-                      px={2}
-                      lineHeight="21px"
-                      fontWeight={500}
-                      position="relative"
-                      top="-8px"
-                      mb="-10px"
-                    >
-                      {tag}
-                    </Box>
-                  ))}
-                </Flex>
-              )}
-              <motion.div
-                layoutId={shouldAnimateFromPreviousPage ? `${props.meta.slug}` : ``}
-                initial={{
-                  opacity: shouldAnimateFromPreviousPage ? 1 : 0,
-                  y: shouldAnimateFromPreviousPage ? 0 : 20,
-                  scale: shouldAnimateFromPreviousPage ? 0.9 : 1,
-                }}
-                animate={{ opacity: 1, y: 0, transition: { duration: 0.6 }, scale: 1 }}
-                style={{ width: "100%", overflow: "hidden", borderRadius: "16px", height: "360px" }}
-              >
-                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-                  <Image
-                    src={props.meta.headerImage}
-                    alt={props.meta.title}
-                    w="full"
-                    height="100%"
-                    outline="1px solid red"
-                    objectFit={"cover"}
-                    cursor={props.hideLayout ? "pointer" : "default"}
-                    _hover={{
-                      // apply underline on hover to the next first .article-title
-                      // "& + .article-title": {
-                      //   textDecoration: "underline",
-                      // },
-                      boxShadow: props.hideLayout ? "0px 2px 4px 0px rgba(0, 0, 0, 0.1)" : "",
-                    }}
-                    // fallbackSrc={props.isInfiniteScrollingView ? "" : "/plain-gray.jpg"}
-                    fallback={
-                      props.isInfiniteScrollingView ? (
-                        <Box height="100%" />
-                      ) : (
-                        <Image src="/plain-gray.jpg" height="100%" objectFit={"cover"} w="full" />
-                      )
-                    }
-                  />
-                </Link>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: shouldAnimateFromPreviousPage ? 0 : 20 }}
-                animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
-              >
-                <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
-                  <Heading
-                    className="article-title"
-                    as="h1"
-                    fontSize="24px"
-                    color="#0D131B"
-                    cursor={props.hideLayout ? "pointer" : "default"}
-                    _hover={{
-                      textDecoration: "underline",
-                    }}
-                  >
-                    {props.meta.title}
-                  </Heading>
-                </Link>
-              </motion.div>
-            </VStack>
-            {/* Article content */}
-            <motion.div
-              initial={{ opacity: 0, y: props.hideLayout ? 0 : 20 }}
-              animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
-            >
-              <Box
-                // pt={[10]}
-                pb={16}
-                fontSize="lg"
-                lineHeight="32px"
-                color="landing.almostBlack.500"
-              >
-                {props.children}
-              </Box>
-            </motion.div>
-            {/* Article authors */}
-            {!props.hideAuthors && (
-              <>
-                <Divider mt={16} mb={8} />
-                <VStack px={[6]} align="start" spacing={4}>
-                  {props.meta.authors.map((author) => (
-                    <Contributor key={author.name} {...author} />
-                  ))}
-                </VStack>
-              </>
-            )}
-          </Box>
-        </Timeline>
-      </MDXProvider>
-    </MainLayout>
-  ) : (
+  const MDX = () => (
     <MDXProvider components={components}>
       {!props.hideHead && (
         <Head>
@@ -349,11 +198,21 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                     // },
                     boxShadow: props.hideLayout ? "0px 2px 4px 0px rgba(0, 0, 0, 0.1)" : "",
                   }}
-                  fallbackSrc={props.isInfiniteScrollingView ? "" : "/plain-gray.jpg"}
+                  fallback={
+                    props.isInfiniteScrollingView ? (
+                      <Box height={["100%", "100%", "360px"]} />
+                    ) : (
+                      <Image
+                        src="/plain-gray.jpg"
+                        height={["100%", "100%", "360px"]}
+                        objectFit={"cover"}
+                        w="full"
+                      />
+                    )
+                  }
                 />
               </Link>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: shouldAnimateFromPreviousPage ? 0 : 20 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
@@ -403,5 +262,13 @@ export const MdxLayout = (props: MdxLayoutProps) => {
         </Box>
       </Timeline>
     </MDXProvider>
+  );
+  
+  return isInBlogPage ? (
+    <MainLayout>
+      <MDX />
+    </MainLayout>
+  ) : (
+    <MDX />
   );
 };

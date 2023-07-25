@@ -59,56 +59,56 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
           key={index}
           date={dayjs(Object.keys(monthChangelogsMap)[index]).format("MMM YYYY")}
         >
-          <LazyLoad height="360px" once>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Box
+              display="flex"
+              paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
             >
-              <Box
-                display="flex"
-                paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
+              <VStack
+                // onClick={() => {
+                //   timeline.setView("weeks");
+                // }}
+                borderRadius={"16px"}
+                overflow="hidden"
+                cursor="pointer"
               >
-                <VStack
-                  // onClick={() => {
-                  //   timeline.setView("weeks");
-                  // }}
-                  borderRadius={"16px"}
-                  overflow="hidden"
-                  cursor="pointer"
+                <Box
+                  height={["100%", "100%", "360px"]}
+                  width={["100%", "100%", "682px"]}
+                  maxWidth={"682px"}
+                  display="flex"
+                  onClick={() => {
+                    // timeline.setView("weeks");
+                    // router.push(
+                    //   `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
+                    //     Object.keys(monthChangelogsMap)[index]
+                    //   ).format("MM")}`
+                    // );
+                    const date = dayjs(Object.keys(monthChangelogsMap)[index]);
+                    const month = date.format("MM");
+                    const year = date.format("YYYY");
+                    router.push(`/years/${year}/months/${month}`, undefined, {
+                      // NOTE: not working yet
+                      scroll: true,
+                    });
+                  }}
+                  position="relative"
+                  _hover={{
+                    "& img": {
+                      boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
+                    },
+                  }}
+                  sx={{
+                    "& img": {
+                      transition: "box-shadow 0.3s",
+                    },
+                  }}
                 >
-                  <Box
-                    maxHeight="360px"
-                    width={["100%", "100%", "682px"]}
-                    maxWidth={"682px"}
-                    display="flex"
-                    onClick={() => {
-                      // timeline.setView("weeks");
-                      // router.push(
-                      //   `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
-                      //     Object.keys(monthChangelogsMap)[index]
-                      //   ).format("MM")}`
-                      // );
-                      const date = dayjs(Object.keys(monthChangelogsMap)[index]);
-                      const month = date.format("MM");
-                      const year = date.format("YYYY");
-                      router.push(`/years/${year}/months/${month}`, undefined, {
-                        // NOTE: not working yet
-                        scroll: true,
-                      });
-                    }}
-                    position="relative"
-                    _hover={{
-                      "& img": {
-                        boxShadow: "0px 2px 4px 0px rgba(0, 0, 0, 0.1)",
-                      },
-                    }}
-                    sx={{
-                      "& img": {
-                        transition: "box-shadow 0.3s",
-                      },
-                    }}
-                  >
+                  <LazyLoad height="100%" once>
                     {changelogs.length > 3 && <MoreItems numberOfItems={changelogs.length - 3} />}
                     {changelogs.length <= 2 ? (
                       <Grid
@@ -181,18 +181,18 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                               objectFit={"cover"}
                               maxHeight="176px"
                               height="100%"
-                              maxWidth="176px"
+                              maxWidth={["88px","176px"]}
                               fallbackSrc="/plain-gray.jpg"
                             />
                           ))}
                         </VStack>
                       </HStack>
                     )}
-                  </Box>
-                </VStack>
-              </Box>
-            </motion.div>
-          </LazyLoad>
+                  </LazyLoad>
+                </Box>
+              </VStack>
+            </Box>
+          </motion.div>
         </Timeline>
       ))}
     </>
