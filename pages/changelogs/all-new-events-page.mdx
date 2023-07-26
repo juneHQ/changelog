@@ -67,7 +67,7 @@ First we sat down to identify the criteria we should use to evaluate different d
 
 We then went ahead and designed a new version of the page that we thought would address these problems and shipped it.
 
-![New events page](https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-events-page/new-events-page.png)
+![New events page](https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-events-page/event-page-demo.gif)
 
 We are still collecting feedback on the new page, but so far it seems to be a big improvement over the old one.
 
@@ -83,7 +83,7 @@ Figuring out the right design for this was taking a lot of time and it felt were
 
 Not over-thinking allowed us to ship some value faster. With time we'll get a better understanding of the gaps in our solution and we'll be able to iterate on it.
 
-![Event breakdowns in the explorer](https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-events-page/event-breakdowns.png)
+![Event breakdowns in the explorer](https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-events-page/breakdown.gif)
 
 ## Performance improvements
 
@@ -101,3 +101,9 @@ We are not done yet, there's lots more we need to do to make the app fast and re
 - We added an option to opt-out of the AI features in the settings page
 - The explorer report is now a widget that everybody can use
 - We enabled the ability to create multiple views for everyone
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
