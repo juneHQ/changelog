@@ -136,6 +136,7 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                                 src={imageUrl}
                                 alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                                 objectFit={"cover"}
+                                minHeight={["176px", "100%", "360px"]}
                                 width={["100%", "100%", "682px"]}
                                 height={["100%", "100%", "360px"]}
                                 fallbackSrc="/plain-gray.jpg"
@@ -166,9 +167,11 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                           <Image
                             src={changelogs[0]?.imageUrl}
                             alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
-                            minHeight={["176px", "176px", "360px"]}
-                            height="100%"
                             objectFit={"cover"}
+                            minHeight={["176px", "176px", "360px"]}
+                            minWidth={["176px"]}
+                            height="100%"
+                            width={["100%", "100%", "682px"]}
                             fallbackSrc="/plain-gray.jpg"
                           />
                         </motion.div>
@@ -180,8 +183,9 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                               alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                               objectFit={"cover"}
                               maxHeight="176px"
-                              height="100%"
-                              maxWidth={["88px","176px"]}
+                              height={["88px","176px", "176px"]}
+                              width={["88px","176px", "176px"]}
+                              maxWidth={["176px"]}
                               fallbackSrc="/plain-gray.jpg"
                             />
                           ))}
