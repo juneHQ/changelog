@@ -2,7 +2,6 @@ import { Box, Grid, HStack, Image, Skeleton, VStack } from "@chakra-ui/react";
 import MoreItems from "components/core/more-items";
 import dayjs from "dayjs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
-import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
 import Timeline from "./timeline";
 import React from "react";
@@ -16,7 +15,6 @@ interface IMonthsProps {
 
 const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) => {
   const router = useRouter();
-  const timeline = useTimelineStore();
 
   const sortedChangelogsArrayByMonth: IImagePreviewMeta[][] = Object.keys(monthChangelogsMap || {})
     .sort((a, b) => {
@@ -51,6 +49,18 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
     }
   }, [router.asPath, monthChangelogsMap]);
 
+  const handleFindWeekChangelog = (publishedAt: string) => {
+    const date = dayjs(publishedAt);
+    const targetDate = date.format("MMM DD YYYY");
+    const month = date.format("MM");
+    const year = date.format("YYYY");
+    const hash = targetDate.replace(/[\s_]+/g, "-").toLowerCase();
+
+    router.push(`/years/${year}/months/${month}#${hash}`, undefined, {
+      scroll: true,
+    });
+  };
+
   return (
     <>
       {sortedChangelogsArrayByMonth.map((changelogs, index) => (
@@ -81,21 +91,7 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                   width={["100%", "100%", "682px"]}
                   maxWidth={"682px"}
                   display="flex"
-                  onClick={() => {
-                    // timeline.setView("weeks");
-                    // router.push(
-                    //   `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
-                    //     Object.keys(monthChangelogsMap)[index]
-                    //   ).format("MM")}`
-                    // );
-                    const date = dayjs(Object.keys(monthChangelogsMap)[index]);
-                    const month = date.format("MM");
-                    const year = date.format("YYYY");
-                    router.push(`/years/${year}/months/${month}`, undefined, {
-                      // NOTE: not working yet
-                      scroll: true,
-                    });
-                  }}
+                  onClick={() => {}}
                   position="relative"
                   _hover={{
                     "& img": {
@@ -118,7 +114,7 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                         }
                         height="100%"
                       >
-                        {changelogs.map(({ imageUrl, slug }, index) => (
+                        {changelogs.map(({ imageUrl, slug, publishedAt }, index) => (
                           <Box key={index}>
                             <motion.div
                               layoutId={index === 0 && isInfiniteScrollingView ? slug : ``}
@@ -140,6 +136,9 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                                 width={["100%", "100%", "682px"]}
                                 height={["100%", "100%", "360px"]}
                                 fallbackSrc="/plain-gray.jpg"
+                                onClick={() => {
+                                  handleFindWeekChangelog(publishedAt);
+                                }}
                               />
                             </motion.div>
                           </Box>
@@ -173,20 +172,26 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                             height="100%"
                             width={["100%", "100%", "682px"]}
                             fallbackSrc="/plain-gray.jpg"
+                            onClick={() => {
+                              handleFindWeekChangelog(changelogs[0].publishedAt);
+                            }}
                           />
                         </motion.div>
                         <VStack height="100%">
-                          {changelogs.slice(1, 3).map(({ imageUrl }, index) => (
+                          {changelogs.slice(1, 3).map(({ imageUrl, publishedAt }, index) => (
                             <Image
                               key={index}
                               src={imageUrl}
                               alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                               objectFit={"cover"}
                               maxHeight="176px"
-                              height={["88px","176px", "176px"]}
-                              width={["88px","176px", "176px"]}
+                              height={["88px", "176px", "176px"]}
+                              width={["88px", "176px", "176px"]}
                               maxWidth={["176px"]}
                               fallbackSrc="/plain-gray.jpg"
+                              onClick={() => {
+                                handleFindWeekChangelog(publishedAt);
+                              }}
                             />
                           ))}
                         </VStack>

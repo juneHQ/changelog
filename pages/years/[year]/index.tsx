@@ -11,7 +11,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { MainLayout } from "components/layout/main-layout";
 
 const ITEMS_PER_PAGE = 4;
-const MONTHS_PER_RENDER = 4;
+const MONTHS_PER_RENDER = 12;
 
 const Page = ({ changelogsMap }: IPageProps) => {
   const timeline = useTimelineStore();
@@ -44,6 +44,27 @@ const Page = ({ changelogsMap }: IPageProps) => {
       });
     }
   }, [timeline.view]);
+
+  React.useLayoutEffect(() => {
+    timeline.setView("months");
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      const targetElementId = hash.slice(hash.indexOf("#") + 1);
+
+      setTimeout(() => {
+        const element = document.getElementById(targetElementId);
+        const firstElement = document.querySelector(".timeline-item");
+
+        if (element === firstElement) {
+          return;
+        }
+
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 1000);
+    }
+  }, []);
 
   return (
     <MainLayout infiniteScrollingView="year">

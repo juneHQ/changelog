@@ -49,7 +49,13 @@ const Timeline = (props: TimelineProps) => {
           </motion.div>
         </VStack>
       )}
-      <HStack alignItems="start" spacing={isOpen ? 0 : 8} display="relative">
+      <HStack
+        alignItems="start"
+        spacing={isOpen ? 0 : 8}
+        display="relative"
+        id={date.replace(/[\s_]+/g, "-").toLowerCase()}
+        className="timeline-item"
+      >
         {!isOpen && (
           <Box
             style={{

@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-import useTimelineStore from "lib/state/use-timeline-store";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import dayjs from "dayjs";
 import MediumGrid from "components/core/years/medium-grid";
@@ -16,8 +14,6 @@ interface IYearsProps {
 }
 
 const Years = ({ yearChangelogsMap }: IYearsProps) => {
-  const timeline = useTimelineStore();
-  const router = useRouter();
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
   const sortedYearKeys = Object.keys(yearChangelogsMap || {}).sort((a, b) => {
@@ -43,21 +39,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
               display="flex"
               paddingBottom={index === sortedChangelogsByYear.length - 1 ? 0 : [12, 16, 20]}
             >
-              <VStack
-                onClick={() => {
-                  // timeline.setView("months");
-                  // router.push(
-                  //   `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
-                  //     sortedYearKeys[index]
-                  //   ).format("YYYY")}`
-                  // );
-                  router.push(`/years/${dayjs(sortedYearKeys[index]).format("YYYY")}`, undefined, {
-                    // NOTE: not working yet
-                    scroll: true,
-                  });
-                }}
-                cursor="pointer"
-              >
+              <VStack onClick={() => {}} cursor="pointer">
                 <Box
                   overflow="hidden"
                   borderRadius={"16px"}
@@ -89,9 +71,8 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                       <MediumGrid changelogs={changelogs} isFirstItem={index === 0} />
                     </LazyLoad>
                   )}
-
                   {changelogs.length > 9 && isLargerThan768 && (
-                    <LazyLoad height="678px" offset={0} once>  
+                    <LazyLoad height="678px" offset={0} once>
                       <LargeGrid changelogs={changelogs} isFirstItem={index === 0} />
                     </LazyLoad>
                   )}

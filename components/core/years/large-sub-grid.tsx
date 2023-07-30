@@ -1,5 +1,8 @@
 import { Box, Grid, GridItem, Image, Skeleton } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import { IImagePreviewMeta } from "lib/models/view";
+import { useRouter } from "next/router";
+
 
 interface ISubGridProps {
   changelogs: IImagePreviewMeta[];
@@ -8,10 +11,12 @@ interface ISubGridProps {
 
 const LargeSubGrid = (props: ISubGridProps) => {
   const { changelogs, rowLength } = props;
+  const router = useRouter()
+
 
   return (
     <Grid gap="2px" templateColumns={`repeat(${changelogs.length}, 1fr)`}>
-      {changelogs.map(({ imageUrl, slug }, subI) => (
+      {changelogs.map(({ imageUrl, slug, publishedAt }, subI) => (
         <GridItem key={subI}>
           <Image
             src={imageUrl}
@@ -27,6 +32,14 @@ const LargeSubGrid = (props: ISubGridProps) => {
                 />
               </Box>
             }
+            onClick={() => {
+              const date = dayjs(publishedAt);
+              const targetDate = date.format("MMM YYYY");
+              const year = date.format("YYYY");
+              const hash = targetDate.replace(/[\s_]+/g, "-").toLowerCase();
+
+              router.push(`/years/${year}#${hash}`, undefined, { scroll: true });
+            }}
           />
         </GridItem>
       ))}

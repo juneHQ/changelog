@@ -1,10 +1,13 @@
 import { Box, Grid, GridItem, HStack, Image, Skeleton, VStack } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { IGridProps } from "./grid-interfaces";
 import LargeSubGrid from "./large-sub-grid";
 
 const LargeGrid = (props: IGridProps) => {
   const { changelogs } = props;
+  const router = useRouter()
 
   return (
     <Grid
@@ -52,6 +55,14 @@ const LargeGrid = (props: IGridProps) => {
                           />
                         </Box>
                       }
+                      onClick={() => {
+                        const date = dayjs(rowItems[0].publishedAt);
+                        const targetDate = date.format("MMM YYYY");
+                        const year = date.format("YYYY");
+                        const hash = targetDate.replace(/[\s_]+/g, "-").toLowerCase();
+
+                        router.push(`/years/${year}#${hash}`, undefined, { scroll: true });
+                      }}
                     />
                   </motion.div>
                   <VStack spacing="2px">
@@ -109,6 +120,14 @@ const LargeGrid = (props: IGridProps) => {
                         <Skeleton height="198px" width={rowItems.length === 1 ? "100%" : "282px"} />
                       </Box>
                     }
+                    onClick={() => {
+                      const date = dayjs(rowItems[rowItems.length - 1].publishedAt);
+                      const targetDate = date.format("MMM YYYY");
+                      const year = date.format("YYYY");
+                      const hash = targetDate.replace(/[\s_]+/g, "-").toLowerCase();
+
+                      router.push(`/years/${year}#${hash}`, undefined, { scroll: true });
+                    }}
                   />
                 </>
               )}
