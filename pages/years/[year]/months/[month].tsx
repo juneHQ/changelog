@@ -40,6 +40,46 @@ const Page = ({ slugs }: IPageProps) => {
 
   const hasMoreWeeks = () => renderedWeeks < slugs.length;
 
+  React.useEffect(() => {
+    timeline.setView("weeks");
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [timeline.view]);
+
+  React.useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash;
+      const targetElementId = hash.slice(hash.indexOf("#") + 1);
+      console.log(">>>:", targetElementId, Articles[0]);
+      if (
+        targetElementId ===
+        // first element in the list
+        slugs[0]
+      ) {
+        return;
+      }
+
+      setTimeout(() => {
+        const element = document.getElementById(targetElementId);
+        const firstElement = document.querySelector(".timeline-item");
+
+        if (element === firstElement) {
+          return;
+        }
+
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset - 120;
+
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 1000);
+    }
+  }, []);
+
   return (
     <MainLayout infiniteScrollingView="month">
       {ArticlesToInitiallyRender.map((Article, index) => (

@@ -1,9 +1,13 @@
 import { Box, Grid, GridItem, Image, VStack, Skeleton } from "@chakra-ui/react";
+import dayjs from "dayjs";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { IGridProps } from "./grid-interfaces";
 
 const MediumGrid = (props: IGridProps) => {
   const { changelogs } = props;
+  const router = useRouter();
+
 
   return changelogs.length < 9 ? (
     <VStack spacing="8px">
@@ -56,7 +60,7 @@ const MediumGrid = (props: IGridProps) => {
       height="100%"
       maxHeight="601px"
     >
-      {changelogs.slice(0, 9).map(({ imageUrl, slug }, index) => (
+      {changelogs.slice(0, 9).map(({ imageUrl, slug, publishedAt }, index) => (
         <GridItem
           key={index}
           rowSpan={[0, 2, 3].includes(index) ? 3 : 2}
@@ -83,6 +87,14 @@ const MediumGrid = (props: IGridProps) => {
                   <Skeleton height={[0, 2, 3].includes(index) ? "253px" : "166px"} width="3000px" />
                 </Box>
               }
+              onClick={() => {
+                const date = dayjs(publishedAt);
+                const targetDate = date.format("MMM YYYY");
+                const year = date.format("YYYY");
+                const hash = targetDate.replace(/[\s_]+/g, "-").toLowerCase();
+
+                router.push(`/years/${year}#${hash}`, undefined, { scroll: true });
+              }}
             />
           </motion.div>
         </GridItem>
