@@ -14,6 +14,20 @@
         </image>
         <copyright>All rights reserved 2023, June</copyright>
         <item>
+            <title><![CDATA[All new events page]]></title>
+            <link>https://changelog.june.so/changelogs/all-new-events-page</link>
+            <guid>https://changelog.june.so/changelogs/all-new-events-page</guid>
+            <pubDate>Fri, 21 Jul 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-events-page/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Meeting you in person]]></title>
+            <link>https://changelog.june.so/changelogs/meeting-customers-in-person</link>
+            <guid>https://changelog.june.so/changelogs/meeting-customers-in-person</guid>
+            <pubDate>Fri, 14 Jul 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/meeting-customers-in-person/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
             <title><![CDATA[All new documentation and debugging tools]]></title>
             <link>https://changelog.june.so/changelogs/documentation-2-0</link>
             <guid>https://changelog.june.so/changelogs/documentation-2-0</guid>
