@@ -1,5 +1,5 @@
 import { getArticleSlugs } from "lib/get-articles-slugs";
-import { PaginatedArticles } from "components/paginated-articles";
+import { ContentLayout } from "components/layout/content-layout";
 import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
@@ -10,10 +10,11 @@ import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from "next/router";
 import { generateRssFeed } from "lib/generate-rss-feed";
+import { MainLayout } from "components/layout/main-layout";
 
 const ITEMS_PER_PAGE = 4;
 
-interface IPageProps {
+export interface IPageProps {
   slugs: string[];
   changelogsMap: { months: IAggregatedChangelogs; years: IAggregatedChangelogs };
   totalItems: { weeks: number; months: number; years: number };
@@ -26,12 +27,16 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
 
   React.useEffect(() => {
     if (typeof window !== "undefined") {
-      window.scrollTo(0, 0);
+      // window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }, [timeline.view]);
 
   return (
-    <PaginatedArticles
+    <MainLayout
       page={page}
       itemsPerPage={ITEMS_PER_PAGE}
       totalItems={{
@@ -56,18 +61,18 @@ const Page = ({ slugs, changelogsMap, totalItems }: IPageProps) => {
         }}
       >
         <TabPanels>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Weeks slugs={slugs} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Months monthChangelogsMap={changelogsMap.months} />
           </TabPanel>
-          <TabPanel>
+          <TabPanel padding={0}>
             <Years yearChangelogsMap={changelogsMap.years} />
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </PaginatedArticles>
+    </MainLayout>
   );
 };
 

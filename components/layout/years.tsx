@@ -2,13 +2,14 @@ import { useRouter } from "next/router";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import dayjs from "dayjs";
-import SmallGrid from "components/core/years/small-grid";
 import MediumGrid from "components/core/years/medium-grid";
 import LargeGrid from "components/core/years/large-grid";
-import MoreItems from "components/core/more-items";
 import { Box, useMediaQuery, VStack } from "@chakra-ui/react";
 import Timeline from "../../components/layout/timeline";
 import { motion } from "framer-motion";
+import MoreItems from "components/core/more-items";
+import SmallGrid from "components/core/years/small-grid";
+import LazyLoad from "react-lazyload";
 
 interface IYearsProps {
   yearChangelogsMap: IAggregatedChangelogs;
@@ -44,12 +45,16 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
             >
               <VStack
                 onClick={() => {
-                  timeline.setView("months");
-                  router.push(
-                    `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
-                      sortedYearKeys[index]
-                    ).format("YYYY")}`
-                  );
+                  // timeline.setView("months");
+                  // router.push(
+                  //   `/page/${changelogs[0]?.monthlyViewPage || 0}#months?year=${dayjs(
+                  //     sortedYearKeys[index]
+                  //   ).format("YYYY")}`
+                  // );
+                  router.push(`/years/${dayjs(sortedYearKeys[index]).format("YYYY")}`, undefined, {
+                    // NOTE: not working yet
+                    scroll: true,
+                  });
                 }}
                 cursor="pointer"
               >
@@ -73,12 +78,23 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                     },
                   }}
                 >
-                  {/* {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />} */}
-                  {/* {changelogs.length === 3 && <SmallGrid changelogs={changelogs} />} */}
-                  {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
-                    <MediumGrid changelogs={changelogs} />
+                  {changelogs.length > 27 && <MoreItems numberOfItems={changelogs.length - 27} />}
+                  {changelogs.length === 3 && (
+                    <LazyLoad height="421px" once>
+                      <SmallGrid changelogs={changelogs} />
+                    </LazyLoad>
                   )}
-                {changelogs.length > 9 && isLargerThan768 && <LargeGrid changelogs={changelogs} />}
+                  {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
+                    <LazyLoad height={changelogs.length < 9 ? "300px" : "681px"} once>
+                      <MediumGrid changelogs={changelogs} isFirstItem={index === 0} />
+                    </LazyLoad>
+                  )}
+
+                  {changelogs.length > 9 && isLargerThan768 && (
+                    <LazyLoad height="678px" offset={0} once>  
+                      <LargeGrid changelogs={changelogs} isFirstItem={index === 0} />
+                    </LazyLoad>
+                  )}
                 </Box>
               </VStack>
             </Box>

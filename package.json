@@ -34,6 +34,8 @@
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazyload": "^3.2.0",
     "react-markdown": "^8.0.0",
     "remark-gfm": "^3.0.1",
     "url-loader": "^4.1.1",

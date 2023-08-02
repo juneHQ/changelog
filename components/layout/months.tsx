@@ -1,4 +1,4 @@
-import { Box, Grid, HStack, Image, VStack } from "@chakra-ui/react";
+import { Box, Grid, HStack, Image, Skeleton, VStack } from "@chakra-ui/react";
 import MoreItems from "components/core/more-items";
 import dayjs from "dayjs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
@@ -7,12 +7,14 @@ import { useRouter } from "next/router";
 import Timeline from "./timeline";
 import React from "react";
 import { motion } from "framer-motion";
+import LazyLoad from "react-lazyload";
 
 interface IMonthsProps {
   monthChangelogsMap: IAggregatedChangelogs;
+  isInfiniteScrollingView?: boolean;
 }
 
-const Months = ({ monthChangelogsMap }: IMonthsProps) => {
+const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) => {
   const router = useRouter();
   const timeline = useTimelineStore();
 
@@ -70,21 +72,29 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                 // onClick={() => {
                 //   timeline.setView("weeks");
                 // }}
+                borderRadius={"16px"}
+                overflow="hidden"
                 cursor="pointer"
               >
                 <Box
-                  maxHeight="360px"
-                  // overflow="hidden"
-                  borderRadius={"16px"}
+                  height={["100%", "100%", "360px"]}
+                  width={["100%", "100%", "682px"]}
                   maxWidth={"682px"}
                   display="flex"
                   onClick={() => {
-                    timeline.setView("weeks");
-                    router.push(
-                      `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
-                        Object.keys(monthChangelogsMap)[index]
-                      ).format("MM")}`
-                    );
+                    // timeline.setView("weeks");
+                    // router.push(
+                    //   `/page/${changelogs[0].weeklyViewPage}#weeks?month=${dayjs(
+                    //     Object.keys(monthChangelogsMap)[index]
+                    //   ).format("MM")}`
+                    // );
+                    const date = dayjs(Object.keys(monthChangelogsMap)[index]);
+                    const month = date.format("MM");
+                    const year = date.format("YYYY");
+                    router.push(`/years/${year}/months/${month}`, undefined, {
+                      // NOTE: not working yet
+                      scroll: true,
+                    });
                   }}
                   position="relative"
                   _hover={{
@@ -98,55 +108,91 @@ const Months = ({ monthChangelogsMap }: IMonthsProps) => {
                     },
                   }}
                 >
-                  {sortedChangelogsArrayByMonth.length > 3 && (
-                    <MoreItems numberOfItems={sortedChangelogsArrayByMonth.length - 3} />
-                  )}
-                  {changelogs.length <= 2 ? (
-                    <Grid
-                      gap={"8px"}
-                    templateColumns={changelogs.length === 1 ? "repeat(1, 1fr)" : "repeat(2, 1fr)"}
-                      height="100%"
-                    >
-                      {changelogs.map(({ imageUrl }, index) => (
-                        <Box key={index}>
-                          <Image
-                            src={imageUrl}
-                            alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
-                            height="100%"
-                            objectFit={"cover"}
-                            borderLeftRadius={index === 0 ? "16px" : 0}
-                            borderRightRadius={index === 1 || changelogs.length === 1 ? "16px" : 0}
-                          />
-                        </Box>
-                      ))}
-                    </Grid>
-                  ) : (
-                    <HStack height="100%">
-                      <Box width="100%">
-                        <Image
-                          src={changelogs[0]?.imageUrl}
-                          alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
-                          minHeight={["176px", "176px", "360px"]}
-                          height="100%"
-                          objectFit={"cover"}
-                          borderLeftRadius={"16px"}
-                        />
-                      </Box>
-                      <VStack width="176px" height="100%">
-                        {changelogs.slice(1, 3).map(({ imageUrl }, index) => (
-                          <Image
-                            key={index}
-                            src={imageUrl}
-                            alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
-                            height="100%"
-                            objectFit={"cover"}
-                            borderTopRightRadius={index === 0 ? "16px" : 0}
-                            borderBottomRightRadius={index === 1 ? "16px" : 0}
-                          />
+                  <LazyLoad height="100%" once>
+                    {changelogs.length > 3 && <MoreItems numberOfItems={changelogs.length - 3} />}
+                    {changelogs.length <= 2 ? (
+                      <Grid
+                        gap={"8px"}
+                        templateColumns={
+                          changelogs.length === 1 ? "repeat(1, 1fr)" : "repeat(2, 1fr)"
+                        }
+                        height="100%"
+                      >
+                        {changelogs.map(({ imageUrl, slug }, index) => (
+                          <Box key={index}>
+                            <motion.div
+                              layoutId={index === 0 && isInfiniteScrollingView ? slug : ``}
+                              initial={{
+                                scale: index === 0 && isInfiniteScrollingView ? 0.7 : 1,
+                                opacity: 1,
+                              }}
+                              animate={{
+                                scale: 1,
+                              }}
+                              transition={{ duration: 0.6 }}
+                              style={{ height: "100%", width: "100%" }}
+                            >
+                              <Image
+                                src={imageUrl}
+                                alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
+                                objectFit={"cover"}
+                                minHeight={["176px", "100%", "360px"]}
+                                width={["100%", "100%", "682px"]}
+                                height={["100%", "100%", "360px"]}
+                                fallbackSrc="/plain-gray.jpg"
+                              />
+                            </motion.div>
+                          </Box>
                         ))}
-                      </VStack>
-                    </HStack>
-                  )}
+                      </Grid>
+                    ) : (
+                      <HStack height="100%">
+                        <motion.div
+                          // layoutId={`${changelogs[0]?.slug}`}
+                          // initial="visible"
+                          // transition={{ duration: 0.6 }}
+                          layoutId={
+                            index === 0 && isInfiniteScrollingView ? changelogs[0]?.slug : ``
+                          }
+                          initial={{
+                            scale: index === 0 && isInfiniteScrollingView ? 0.7 : 1,
+                            opacity: 1,
+                          }}
+                          animate={{
+                            scale: 1,
+                          }}
+                          transition={{ duration: 0.6 }}
+                          style={{ overflow: "hidden", height: "100%" }}
+                        >
+                          <Image
+                            src={changelogs[0]?.imageUrl}
+                            alt={`${Object.keys(monthChangelogsMap)[index]} - ${0}`}
+                            objectFit={"cover"}
+                            minHeight={["176px", "176px", "360px"]}
+                            minWidth={["176px"]}
+                            height="100%"
+                            width={["100%", "100%", "682px"]}
+                            fallbackSrc="/plain-gray.jpg"
+                          />
+                        </motion.div>
+                        <VStack height="100%">
+                          {changelogs.slice(1, 3).map(({ imageUrl }, index) => (
+                            <Image
+                              key={index}
+                              src={imageUrl}
+                              alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
+                              objectFit={"cover"}
+                              maxHeight="176px"
+                              height={["88px","176px", "176px"]}
+                              width={["88px","176px", "176px"]}
+                              maxWidth={["176px"]}
+                              fallbackSrc="/plain-gray.jpg"
+                            />
+                          ))}
+                        </VStack>
+                      </HStack>
+                    )}
+                  </LazyLoad>
                 </Box>
               </VStack>
             </Box>

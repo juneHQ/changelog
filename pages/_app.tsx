@@ -1,7 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
-import { AnimateSharedLayout } from "framer-motion";
 
 import "@fontsource/ibm-plex-sans/100.css";
 import "@fontsource/ibm-plex-sans/200.css";
@@ -21,14 +20,17 @@ import "@fontsource/inter/800.css";
 import "@fontsource/inter/900.css";
 
 import juneTheme from "../lib/theme";
+import Layout from "components/layout";
 
 dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-      <ChakraProvider theme={juneTheme}>
+    <ChakraProvider theme={juneTheme}>
+      {/* <Layout> */}
         <Component {...pageProps} />
-      </ChakraProvider>
+      {/* </Layout> */}
+    </ChakraProvider>
   );
 };
 
