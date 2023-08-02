@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Sun, 30 Jul 2023 12:02:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 02 Aug 2023 22:08:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Pick the companny metrics that matter]]></title>
+            <link>https://changelog.june.so/changelogs/pick-the-company-that-metrics-matter</link>
+            <guid>https://changelog.june.so/changelogs/pick-the-company-that-metrics-matter</guid>
+            <pubDate>Fri, 28 Jul 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/pick-the-company-that-metrics-matter/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[All new events page]]></title>
             <link>https://changelog.june.so/changelogs/all-new-events-page</link>
