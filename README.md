@@ -4,7 +4,7 @@
 
 ![screenshot-repo](https://github.com/juneHQ/changelog/assets/104089773/18ff86a4-3e9f-4fc8-9fab-38fb15b0c8cd)
 
-Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
+Set-up a changelog and share what you ship as easily as 1-2-3. A Next.js blog starter project built with MDX and Chakra UI. Fully-customizable and open source, so don't hesitate to add new features and report bugs!
 
 #### [👉 Visit working demo](https://changelog.june.so)
 
