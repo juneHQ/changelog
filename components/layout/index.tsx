@@ -1,7 +1,6 @@
 import React from "react";
 import Head from "next/head";
 import { defaultPx } from "lib/utils/default-container-px";
-import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
 import { Box, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
@@ -22,21 +21,27 @@ export default function Layout({ children }: ILayoutProps) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Discover new updates and improvements to June." />
-        <meta name="image" content="https://changelog.june.so/social.png" />
+        <meta name="description" content="Discover new updates and improvements to Screeb." />
+        <meta name="image" content="https://changelog.screeb.app/social.png" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://changelog.june.so" />
-        <meta property="og:description" content="Discover new updates and improvements to June." />
-        <meta property="og:image" content="https://changelog.june.so/social.png" />
+        <meta property="og:url" content="https://changelog.screeb.app" />
+        <meta
+          property="og:description"
+          content="Discover new updates and improvements to Screeb."
+        />
+        <meta property="og:image" content="https://changelog.screeb.app/social.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://changelog.june.so" />
-        <meta name="twitter:description" content="Discover new updates and improvements to June." />
-        <meta name="twitter:image" content="https://changelog.june.so/social.png" />
+        <meta name="twitter:url" content="https://changelog.screeb.app" />
+        <meta
+          name="twitter:description"
+          content="Discover new updates and improvements to Screeb."
+        />
+        <meta name="twitter:image" content="https://changelog.screeb.app/social.png" />
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="June Changelog"
-          href="https://changelog.june.so/rss.xml"
+          title="Screeb Changelog"
+          href="https://changelog.screeb.app/rss.xml"
         />
       </Head>
       <motion.div initial="hidden" animate="visible">
@@ -74,7 +79,7 @@ export default function Layout({ children }: ILayoutProps) {
                   {!isInBlogPage && (
                     <VStack alignItems="start" width="100%">
                       <Text fontSize="xl" color="gray.700" textAlign={"start"}>
-                        The latest from June
+                        The latest from Screeb
                       </Text>
                       <Heading as="h1" fontSize={["5xl"]} color="black" textAlign={"start"}>
                         Changelog
@@ -94,8 +99,6 @@ export default function Layout({ children }: ILayoutProps) {
               visible: { opacity: 1, transition: { duration: 1, delay: 0.4 } },
             }}
           >
-            <TryBanner _wrapper={{ my: [50, 50, 120] }} />
-
             <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
           </motion.div>
         </Box>

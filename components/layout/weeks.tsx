@@ -21,7 +21,7 @@ const Weeks = ({ slugs, isInfiniteScrollingView }: IWeeksProps) => {
           index={index}
           hideLayout={true}
           hideHead={true}
-          hideAuthors={true}
+          hideAuthorsNames={true}
           isInfiniteScrollingView={isInfiniteScrollingView}
         />
       ))}

@@ -19,6 +19,7 @@ import {
   Text,
   UnorderedList,
   VStack,
+  Stack,
 } from "@chakra-ui/react";
 import Timeline from "./layout/timeline";
 import { MainLayout } from "./layout/main-layout";
@@ -51,7 +52,7 @@ export interface MdxLayoutProps {
   children: ReactNode;
   hideLayout?: boolean;
   hideHead?: boolean;
-  hideAuthors?: boolean;
+  hideAuthorsNames?: boolean;
   imagePreviewMode?: boolean;
   tags?: string[];
   index?: number;
@@ -59,9 +60,9 @@ export interface MdxLayoutProps {
 }
 
 export const MdxLayout = (props: MdxLayoutProps) => {
-  const title = `${props.meta.title} | June Changelog`;
-  const description = "Discover new updates and improvements to June.";
-  const url = "https://changelog.june.so";
+  const title = `${props.meta.title} | Screeb Changelog`;
+  const description = "Discover new updates and improvements to Screeb.";
+  const url = "https://changelog.screeb.app";
 
   const router = useRouter();
   React.useLayoutEffect(() => {
@@ -128,8 +129,8 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <link
             rel="alternate"
             type="application/rss+xml"
-            title="June Changelog"
-            href="https://changelog.june.so/rss.xml"
+            title="Screeb Changelog"
+            href="https://changelog.screeb.app/rss.xml"
           />
         </Head>
       )}
@@ -234,27 +235,22 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             initial={{ opacity: 0, y: props.hideLayout ? 0 : 20 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
           >
-            <Box
-              // pt={[10]}
-              pb={16}
-              fontSize="lg"
-              lineHeight="32px"
-              color="landing.almostBlack.500"
-            >
+            <Box fontSize="lg" lineHeight="32px" color="landing.almostBlack.500">
               {props.children}
             </Box>
           </motion.div>
           {/* Article authors */}
-          {!props.hideAuthors && (
-            <>
-              <Divider mt={16} mb={8} />
-              <VStack px={[6]} align="start" spacing={4}>
-                {props.meta.authors.map((author) => (
-                  <Contributor key={author.name} {...author} />
-                ))}
-              </VStack>
-            </>
-          )}
+          <Divider mt={16} mb={8} />
+          <Stack
+            px={[6]}
+            align="start"
+            spacing={4}
+            direction={props.hideAuthorsNames ? "row" : "column"}
+          >
+            {props.meta.authors.map((author) => (
+              <Contributor hideNames={props.hideAuthorsNames} key={author.name} {...author} />
+            ))}
+          </Stack>
         </Box>
       </Timeline>
     </MDXProvider>

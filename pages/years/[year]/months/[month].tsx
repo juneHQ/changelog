@@ -89,7 +89,7 @@ const Page = ({ slugs }: IPageProps) => {
           index={index}
           hideLayout={true}
           hideHead={true}
-          hideAuthors={true}
+          hideAuthorsNames={true}
           isInfiniteScrollingView={true}
         />
       ))}
@@ -109,7 +109,7 @@ const Page = ({ slugs }: IPageProps) => {
             index={index + WEEKS_PER_RENDER}
             hideLayout={true}
             hideHead={true}
-            hideAuthors={true}
+            hideAuthorsNames={true}
             isInfiniteScrollingView={true}
           />
         ))}

@@ -22,8 +22,13 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
     >
       <Flex direction="column">
         <Flex align="center" justify="space-between">
-          <Flex p={4} as="a" href="https://june.so/">
-            <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="june-logo" />
+          <Flex p={4} as="a" href="https://screeb.app/">
+            <NextImage
+              height={48}
+              width={48}
+              src="/screeb-logo-symbol-only.png"
+              alt="screeb-logo"
+            />
           </Flex>
           <Flex p={4} onClick={toggle}>
             <Box pr={1}>
@@ -46,62 +51,41 @@ export const NavbarMobileMenu = ({ toggle }: NavbarMobileMenuProps) => (
       overflowY="hidden"
     >
       <Flex width="100%" direction="column" h="40%" justify="space-between">
-        <Link prefetch={false} href="https://june.so/feature-launches" passHref>
-          <Flex align="center" style={{ textDecoration: "none" }}>
-            <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-              Feature report
-            </Text>
-          </Flex>
-        </Link>
-        <Link prefetch={false} href="https://qualify.june.so/" passHref>
-          <Flex align="center" style={{ textDecoration: "none" }}>
-            <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-              Qualification Bot
-            </Text>
-          </Flex>
-        </Link>
-        <Link prefetch={false} href="https://june.so/customer-stories" passHref>
-          <Flex align="center" style={{ textDecoration: "none" }}>
-            <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-              Customers
-            </Text>
-          </Flex>
-        </Link>
-        <Link prefetch={false} href="https://june.so/pricing" passHref>
-          <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
-            <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
-              Pricing
-            </Text>
-          </Flex>
-        </Link>
         <Flex align="center" as="a" href="/" style={{ textDecoration: "none" }}>
           <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
             Changelog
           </Text>
         </Flex>
+        <Link prefetch={false} href="https://github.com/ScreebApp/developers/wiki" passHref>
+          <Flex align="center" style={{ textDecoration: "none" }} _hover={{ cursor: "pointer" }}>
+            <Text fontSize="4xl" fontWeight="bold" color={MOBILE_MENU_COLOR}>
+              Developers Doc
+            </Text>
+          </Flex>
+        </Link>
       </Flex>
       <Stack spacing={4} mt={16}>
         <Button
           h={50}
           size="md"
           as="a"
-          href={`${process.env.JUNE_APP_HOST}/log-in`}
+          href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/get-a-demo`}
           borderRadius={6}
           fontWeight={MOBILE_FONT_WEIGHT}
         >
-          Log in
+          Get a demo
         </Button>
         <Button
           colorScheme="purple"
           size="md"
           h={50}
           as="a"
-          href={`${process.env.JUNE_APP_HOST}/start`}
+          href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`}
           borderRadius={6}
           fontWeight={MOBILE_FONT_WEIGHT}
           className="g-conversion-button"
         >
-          Get started
+          Try for free
         </Button>
       </Stack>
     </Flex>

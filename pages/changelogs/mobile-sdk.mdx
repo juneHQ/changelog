@@ -1,0 +1,56 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "mobile-sdk",
+  publishedAt: "2023-08-08T16:00:00.000Z",
+  title: "Our new mobile SDK",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/mobile-sdk.png`,
+  authors: [
+    {
+      name: "Alexis Rouillard",
+      description: "Tech lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/alexis-rouillard.png`,
+    },
+    {
+      name: "Clément Chaban",
+      description: "Software Engineer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+  ],
+};
+
+We are excited to share some incredible news that will undoubtedly enhance your experience and expedite your development process. We're thrilled to announce the release of our latest Mobile SDK, now available on our developer website.
+
+This revamped SDK represents a significant milestone for us as we have unified our code base between web and mobile SDKs, resulting in a host of game-changing benefits for you.
+
+**One SDK, Unified Experience:**
+
+In the past, implementing new features meant triple the effort - for web, iOS, and Android. But, with our new approach, we're utilizing webviews on mobile, allowing us to leverage the same web SDK code for native mobile apps. This unification means that you will now be able to launch new features faster on mobile, saving valuable time and resources.
+
+**Enhanced Stability and even Lighter:**
+
+By consolidating our code base, we have taken steps to ensure that our SDKs are more stable than ever. With fewer separate codebases, we can focus on optimizing and refining the core functionalities, resulting in a seamless and stable experience for you and your app users.
+
+**Effortless Updates and Features:**
+
+With the new unified code base, updating your app with our latest features will be a breeze. You will no longer need to go through the hassle of updating your app on the app stores for each new feature release. Our updates will be seamlessly integrated into your app through the Screeb.app Mobile SDK.
+
+Our SDK is now lighter:
+
+- Reduced dependencies from 23 to 5 and the size from ~1MB to ~27KB.
+- Minimum Android SDK has been reduced from 21 to 19.
+- And the minimum iOS version has been reduced from 12.4 to 11.0.
+
+**Empowering You with Innovation:**
+
+Our commitment to innovation remains steadfast, and this unification enables us to dedicate more resources to developing cutting-edge features. You can expect a continuous stream of exciting features and improvements without any disruptions to your app's functionality.
+
+**Getting Started:**
+
+To take advantage of our latest Screeb.app Mobile SDK, head over to our developer website [https://developers.screeb.app/](https://developers.screeb.app/) to access the SDK documentation and implementation guide. We have made the transition as smooth as possible, and our support team is always available to assist you with any queries.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
