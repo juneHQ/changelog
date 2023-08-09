@@ -19,8 +19,8 @@ export function Footer(props: FooterProps) {
           <NextResponsiveImage
             src="/screeb-logo.svg"
             alt="screeb"
-            width={["175px"]}
-            height={["80px"]}
+            width={["128px"]}
+            height={["60px"]}
             {...(props.mode === "dark" && {
               filter: "invert(1) brightness(10000%)",
             })}

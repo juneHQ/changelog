@@ -240,9 +240,10 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             </Box>
           </motion.div>
           {/* Article authors */}
-          <Divider mt={16} mb={8} />
+          <Divider mt={16} mb={4} />
           <Stack
             px={[6]}
+            mb={8}
             align="start"
             spacing={4}
             direction={props.hideAuthorsNames ? "row" : "column"}
