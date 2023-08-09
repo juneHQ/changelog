@@ -16,7 +16,7 @@ const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
 const ROUTES = [
   { href: "/", title: "Changelog", type: "internal-link" },
   {
-    href: "hhttps://github.com/ScreebApp/developers/wiki",
+    href: "https://github.com/ScreebApp/developers/wiki",
     title: "Developers Doc",
     type: "external-link",
   },
