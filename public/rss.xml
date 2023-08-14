@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 03 Aug 2023 17:12:18 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 14 Aug 2023 10:23:18 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Feature audit improvements]]></title>
+            <link>https://changelog.june.so/changelogs/feature-audit-grouped-events</link>
+            <guid>https://changelog.june.so/changelogs/feature-audit-grouped-events</guid>
+            <pubDate>Fri, 11 Aug 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/feature-audit-grouped-events/grouped-events-changelog.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Slice and dice your funnels]]></title>
+            <link>https://changelog.june.so/changelogs/funnel-breakdown-by-user-traits</link>
+            <guid>https://changelog.june.so/changelogs/funnel-breakdown-by-user-traits</guid>
+            <pubDate>Fri, 04 Aug 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/funnel-breakdown-by-user-traits/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Pick the company metrics that matter]]></title>
             <link>https://changelog.june.so/changelogs/pick-the-company-that-metrics-matter</link>
