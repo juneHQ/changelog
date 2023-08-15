@@ -38,15 +38,15 @@ const Timeline = (props: TimelineProps) => {
       {isLargerThan768 && (
         <VStack position="relative" top={isOpen ? "" : "-8px"} width="120px" spacing={4}>
           {isOpen && <BackButton />}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
+          <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
               {date}
-            </Text>
-          </motion.div>
+            </motion.div>
+          </Text>
         </VStack>
       )}
       <HStack
