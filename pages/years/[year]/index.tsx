@@ -1,12 +1,10 @@
 import Months from "components/layout/months";
-import { ContentLayout } from "components/layout/content-layout";
 import { generateRssFeed } from "lib/generate-rss-feed";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { IPageProps } from "pages";
 import React, { useEffect, useState } from "react";
-import { TabPanel, TabPanels, Tabs } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { MainLayout } from "components/layout/main-layout";
 
