@@ -1,0 +1,29 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2023-01-23-response-expiration",
+  publishedAt: "2023-01-23T16:30:00.000Z",
+  title: "🕒 Introducing Response Expiration: Take Control of Your Survey Responses!",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/response-expiration.png`,
+  authors: [
+    {
+      name: "Samuel Berthe",
+      description: "Cofounder",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+  ],
+};
+
+We're pleased to announce a valuable addition to the Screeb experience – "Response Expiration". With this release, we're giving you the power to set an expiration period for survey responses, ensuring that a response is 'closed' after a certain time.
+
+**What is Response Expiration?**
+
+The idea behind Response Expiration is simple but powerful: you can now define a specific time frame for a survey response. Once the expiration period is reached, the responses will be considered as 'closed' an so share to intergrations or webhooks. This feature provides you with more control over the timing and relevance of your data, helping you to focus on the responses that matter most.
+
+_At Screeb, we innovate to make your survey journey effortless and efficient. Try Response Expiration today and experience the control._
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
