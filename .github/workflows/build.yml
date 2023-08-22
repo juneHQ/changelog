@@ -11,4 +11,5 @@ jobs:
       - uses: actions/setup-node@v3
       - run: npm install -g yarn
       - run: yarn install --frozen-lockfile
+      - run: cp .env.example .env.local
       - run: yarn build
