@@ -1,0 +1,35 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2023-08-23-new-homepage",
+  publishedAt: "2023-08-23T16:30:00.000Z",
+  title: "🌟 Introducing Screeb's New Homepage: A Fresh Look with Enhanced Features 🌟",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/new-homepage.png`,
+  authors: [
+    {
+      name: "Clément Chaban",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+  ],
+};
+
+We're thrilled to announce the launch of Screeb's redesigned homepage, crafted with you in mind. This update is more than just a visual refresh; it's a commitment to making your experience with our platform more efficient, engaging, and enjoyable. Here's what you can look forward to:
+
+**1. Simplified Navigation:** With less clutter and a more intuitive layout, you can easily access the information that matters most. Whether it's user feedback, NPS scores, or survey insights, everything is just a click away.
+
+**2. Streamlined User Experience:** The new design emphasizes clarity and ease of use. We've reorganized key elements to help you quickly find what you need, so you can spend more time analyzing insights and less time searching.
+
+**3. Responsive Design:** Whether you're on a desktop, tablet, or mobile device, the new homepage adapts to your screen size, providing a seamless experience across all devices.
+
+**4. Your Key Information, Unchanged:** While we've freshened up the look, all your essential data remains at your fingertips. Your user insights, NPS, and surveys are still prominently displayed, ensuring continuity with the features you rely on.
+
+**5. Open to Your Feedback:** As always, we value your input. Explore the new design, and don't hesitate to share your thoughts with us. Your feedback drives our continuous improvement.
+
+The new homepage is live now, and we invite you to explore it today. We believe these enhancements will make your experience with Screeb even more rewarding. Thank you for being a part of our journey towards better customer feedback management.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
