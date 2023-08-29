@@ -118,3 +118,5 @@ build
 !.env.example
 
 out/*
+
+changelog-images/
