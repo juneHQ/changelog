@@ -53,7 +53,7 @@ export const MainLayout = ({
 
   return (
     <>
-      <Head>
+      {!isInBlogPage && <Head>
         <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={metaTitle} />
@@ -75,7 +75,7 @@ export const MainLayout = ({
           title="June Changelog"
           href="https://changelog.june.so/rss.xml"
         />
-      </Head>
+      </Head>}
       <motion.div
         initial={animatePage ? "hidden" : "visible"}
         animate="visible"
