@@ -14,6 +14,13 @@
         </image>
         <copyright>All rights reserved 2023, June</copyright>
         <item>
+            <title><![CDATA[Last seen at]]></title>
+            <link>https://changelog.june.so/changelogs/last-seen-at</link>
+            <guid>https://changelog.june.so/changelogs/last-seen-at</guid>
+            <pubDate>Fri, 18 Aug 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/last-seen-at/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
             <title><![CDATA[Feature audit improvements]]></title>
             <link>https://changelog.june.so/changelogs/feature-audit-grouped-events</link>
             <guid>https://changelog.june.so/changelogs/feature-audit-grouped-events</guid>

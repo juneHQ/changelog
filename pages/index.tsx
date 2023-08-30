@@ -1,5 +1,4 @@
 import { getArticleSlugs } from "lib/get-articles-slugs";
-import { ContentLayout } from "components/layout/content-layout";
 import Months from "components/layout/months";
 import Years from "components/layout/years";
 import Weeks from "components/layout/weeks";
