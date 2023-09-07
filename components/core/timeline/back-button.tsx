@@ -13,7 +13,11 @@ const BackButton = () => {
   return (
     <Box
       onClick={() => {
-        router.back();
+        if (window.history.length === 1) {
+          router.push("/");
+        } else {
+          router.back();
+        }
       }}
       cursor="pointer"
       display="flex"
