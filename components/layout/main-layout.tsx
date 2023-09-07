@@ -35,8 +35,8 @@ export const MainLayout = ({
     infiniteScrollingView ? "" : page > 0 ? `Page ${page} -` : ""
   } June Changelog`;
   const timeline = useTimelineStore();
-  const {animatePage, setAnimatePage} = useAnimatePageStore();
-  const router = useRouter()
+  const { animatePage, setAnimatePage } = useAnimatePageStore();
+  const router = useRouter();
 
   React.useEffect(() => {
     const hash = window?.location.hash ?? "";
@@ -46,14 +46,16 @@ export const MainLayout = ({
     );
   }, []);
 
-  const hasMorePage =
-    !infiniteScrollingView && (!page ?? page < Math.floor(totalItems[timeline.view] / itemsPerPage));
-
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
+
+  const hasMorePage =
+    !isInBlogPage &&
+    !infiniteScrollingView &&
+    page < Math.floor(totalItems[timeline.view] / itemsPerPage);
 
   return (
     <>
-      <Head>
+      {!isInBlogPage && <Head>
         <title>{metaTitle}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={metaTitle} />
@@ -75,7 +77,7 @@ export const MainLayout = ({
           title="June Changelog"
           href="https://changelog.june.so/rss.xml"
         />
-      </Head>
+      </Head>}
       <motion.div
         initial={animatePage ? "hidden" : "visible"}
         animate="visible"

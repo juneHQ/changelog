@@ -1,4 +1,3 @@
-import { ContentLayout } from "components/layout/content-layout";
 import { generateRssFeed } from "lib/generate-rss-feed";
 import { getArticleSlugs } from "lib/get-articles-slugs";
 import useTimelineStore from "lib/state/use-timeline-store";
