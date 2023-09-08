@@ -183,7 +183,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
               animate={{ opacity: 1, y: 0, transition: { duration: 0.6 }, scale: 1 }}
               style={{ width: "100%", overflow: "hidden", borderRadius: "16px", height: "100%" }}
             >
-              <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+              {isInBlogPage ? (
                 <Image
                   src={props.meta.headerImage}
                   alt={props.meta.title}
@@ -211,26 +211,71 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                     )
                   }
                 />
-              </Link>
+              ) : (
+                <Link href={`/changelogs/${props.meta.slug}`}>
+                  <Image
+                    src={props.meta.headerImage}
+                    alt={props.meta.title}
+                    w="full"
+                    height={["100%", "100%", "360px"]}
+                    objectFit={"cover"}
+                    cursor={props.hideLayout ? "pointer" : "default"}
+                    _hover={{
+                      // apply underline on hover to the next first .article-title
+                      // "& + .article-title": {
+                      //   textDecoration: "underline",
+                      // },
+                      boxShadow: props.hideLayout ? "0px 2px 4px 0px rgba(0, 0, 0, 0.1)" : "",
+                    }}
+                    fallback={
+                      props.isInfiniteScrollingView ? (
+                        <Box height={["100%", "100%", "360px"]} />
+                      ) : (
+                        <Image
+                          src="/plain-gray.jpg"
+                          height={["100%", "100%", "360px"]}
+                          objectFit={"cover"}
+                          w="full"
+                        />
+                      )
+                    }
+                  />
+                </Link>
+              )}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: shouldAnimateFromPreviousPage ? 0 : 20 }}
               animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
             >
-              <Link href={props.hideLayout ? `/changelogs/${props.meta.slug}` : ""}>
+              {isInBlogPage ? (
                 <Heading
                   className="article-title"
                   as="h1"
                   fontSize="24px"
                   color="#0D131B"
-                  cursor={props.hideLayout ? "pointer" : "default"}
+                  cursor={props.hideLayout ? "pointer" : "text"}
                   _hover={{
-                    textDecoration: "underline",
+                    textDecoration: props.hideLayout ? "underline" : "none",
                   }}
                 >
                   {props.meta.title}
                 </Heading>
-              </Link>
+              ) : (
+                <Link href={`/changelogs/${props.meta.slug}`}>
+                  <Heading
+                    className="article-title"
+                    as="h1"
+                    fontSize="24px"
+                    color="#0D131B"
+                    cursor={props.hideLayout ? "pointer" : "text"}
+                    _hover={{
+                      textDecoration: props.hideLayout ? "underline" : "none",
+                    }}
+                  >
+                    {props.meta.title}
+                  </Heading>
+                </Link>
+              )}
             </motion.div>
           </VStack>
           {/* Article content */}
