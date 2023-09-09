@@ -32,7 +32,7 @@ const Timeline = (props: TimelineProps) => {
       alignItems="start"
       spacing={0}
       pt={isOpen ? (isLargerThan768 ? 28 : 8) : 0}
-      px={isOpen ? 6 : 0}
+      px={isOpen ? 4 : 0}
       minWidth={isLargerThan768 ? "768px" : "100%"}
     >
       {isLargerThan768 && (

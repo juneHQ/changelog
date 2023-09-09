@@ -5,7 +5,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Heading, HStack, Text, useMediaQuery, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "../core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
@@ -37,6 +37,8 @@ export const MainLayout = ({
   const timeline = useTimelineStore();
   const {animatePage, setAnimatePage} = useAnimatePageStore();
   const router = useRouter()
+
+  const [isLargerThan834] = useMediaQuery("(min-width: 834px)");
 
   React.useEffect(() => {
     const hash = window?.location.hash ?? "";
@@ -118,7 +120,13 @@ export const MainLayout = ({
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
                 }}
               >
-                <VStack display="flex" justifyContent="center" alignItems="start" gap={[8, 8, 14]}>
+                <VStack
+                  display="flex"
+                  justifyContent="start"
+                  alignItems="start"
+                  gap={[8, 8, 14]}
+                  minWidth={isLargerThan834 ? "834px" : "100%"}
+                >
                   {!isInBlogPage && (
                     <VStack alignItems="start" width="100%">
                       <Text fontSize="xl" color="gray.700" textAlign={"start"}>
