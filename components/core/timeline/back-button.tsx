@@ -1,19 +1,24 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Spinner, Text } from "@chakra-ui/react";
+import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
-
-export interface TimelineProps {
-  date: string;
-  children: ReactNode;
-}
+import { useState } from "react";
 
 const BackButton = () => {
+  const { prevUrl } = usePreviousPageUrl();
   const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Box
       onClick={() => {
-        router.back();
+        if (prevUrl) {
+          router.push(prevUrl); 
+          setIsLoading(true);
+        } else {
+          router.push("/");
+          setIsLoading(true);
+        }
       }}
       cursor="pointer"
       display="flex"
@@ -84,7 +89,7 @@ const BackButton = () => {
         alignItems="start"
         // _hover={{ textDecoration: "underline" }}
       >
-        Back
+        {isLoading ? <Spinner size="sm" /> : "Back"}
       </Text>
     </Box>
   );

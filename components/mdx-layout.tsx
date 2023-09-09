@@ -27,6 +27,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { motion } from "framer-motion";
 import { MainLayout } from "./layout/main-layout";
+import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
@@ -67,6 +68,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
   const description = "Discover new updates and improvements to June.";
   const url = "https://changelog.june.so";
 
+  const { setPrevUrl } = usePreviousPageUrl();
   const router = useRouter();
   React.useLayoutEffect(() => {
     // using a timeout to wait for the page to render and get the right scroll position
@@ -239,6 +241,9 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                         />
                       )
                     }
+                    onClick={() => {
+                      setPrevUrl(router.asPath);
+                    }}
                   />
                 </Link>
               )}
@@ -270,6 +275,9 @@ export const MdxLayout = (props: MdxLayoutProps) => {
                     cursor={props.hideLayout ? "pointer" : "text"}
                     _hover={{
                       textDecoration: props.hideLayout ? "underline" : "none",
+                    }}
+                    onClick={() => {
+                      setPrevUrl(router.asPath);
                     }}
                   >
                     {props.meta.title}
