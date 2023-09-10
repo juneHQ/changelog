@@ -1,8 +1,10 @@
-import { Box, HStack, Text, VStack, useMediaQuery } from "@chakra-ui/react";
-import BackButton from "components/core/timeline/back-button";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import { ReactNode, useEffect, useState } from "react";
+import BackButton from 'components/core/timeline/back-button';
+import { motion } from 'framer-motion';
+import usePageStatusStore from 'lib/state/use-page-status-store';
+import { useRouter } from 'next/router';
+import { ReactNode, useEffect, useState } from 'react';
+
+import { Box, HStack, Text, useMediaQuery, VStack } from '@chakra-ui/react';
 
 export interface TimelineProps {
   date: string;
@@ -15,6 +17,7 @@ const Timeline = (props: TimelineProps) => {
   const { children, date } = props;
 
   const router = useRouter();
+  const pageStatus = usePageStatusStore();
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +39,15 @@ const Timeline = (props: TimelineProps) => {
       minWidth={isLargerThan768 ? "768px" : "100%"}
     >
       {isLargerThan768 && (
-        <VStack position="relative" top={isOpen ? "" : "-8px"} width="120px" spacing={4}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            {isOpen && <BackButton />}
-          </motion.div>
+        <VStack
+          position="relative"
+          top={isOpen ? "" : "-8px"}
+          width="120px"
+          spacing={4}
+          visibility={pageStatus.isLoading ? "hidden" : "visible"}
+        >
+          {isOpen && <BackButton />}
+
           <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
             <motion.div
               initial={{ opacity: 0 }}
