@@ -2,6 +2,7 @@ import { Button, VStack, ButtonGroup } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const TimeSelectionTabs = () => {
   const router = useRouter();
@@ -12,10 +13,9 @@ const TimeSelectionTabs = () => {
   const changeTimelineView = (view: "weeks" | "months" | "years") => {
     timeline.setView(view);
     if (router.pathname.includes("/page/") || router.pathname.includes("/years/")) {
-      router.push(`/page/0#${view}`);
+      router.push(`/page/0#${view}`, undefined, {shallow: true});
     } else {
-      // window.scrollTo(0, 0);
-      router.push(`#${view}`);
+      router.push(`#${view}`, undefined, { shallow: true });
     }
   };
 
