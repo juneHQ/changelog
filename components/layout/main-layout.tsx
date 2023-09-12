@@ -5,12 +5,22 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { Box, Button, Container, Heading, HStack, Text, useMediaQuery, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  HStack,
+  Text,
+  useMediaQuery,
+  VStack,
+} from "@chakra-ui/react";
 import TimeSelectionTabs from "../core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
 import useAnimatePageStore from "lib/state/use-animate-page-store";
 import { useRouter } from "next/router";
+import usePageStatusStore from "lib/state/use-page-status-store";
 
 export interface MainLayoutProps {
   page?: number;
@@ -35,8 +45,9 @@ export const MainLayout = ({
     infiniteScrollingView ? "" : page > 0 ? `Page ${page} -` : ""
   } June Changelog`;
   const timeline = useTimelineStore();
-  const {animatePage, setAnimatePage} = useAnimatePageStore();
-  const router = useRouter()
+  const { animatePage, setAnimatePage } = useAnimatePageStore();
+  const router = useRouter();
+  const pageStatus = usePageStatusStore();
 
   const [isLargerThan834] = useMediaQuery("(min-width: 834px)");
 
@@ -48,8 +59,37 @@ export const MainLayout = ({
     );
   }, []);
 
+  React.useEffect(() => {
+    router.events.on("routeChangeStart", (url: string) => {
+      if (!url.includes("/changelogs/")) {
+        pageStatus.setIsLoading(true);
+        window.scrollTo({
+          top: 0,
+          // behavior: "smooth",
+        });
+      }
+
+      if (url.includes("/years") && !url.includes("/months")) {
+        timeline.setView("months");
+      } else if (url.includes("/years") && url.includes("/months")) {
+        timeline.setView("weeks");
+      }
+    });
+
+    router.events.on("routeChangeComplete", (url: string) => {
+      pageStatus.setIsLoading(false);
+
+      if (url.includes("/years") && !url.includes("/months")) {
+        timeline.setView("months");
+      } else if (url.includes("/years") && url.includes("/months")) {
+        timeline.setView("weeks");
+      }
+    });
+  }, []);
+
   const hasMorePage =
-    !infiniteScrollingView && (!page ?? page < Math.floor(totalItems[timeline.view] / itemsPerPage));
+    !infiniteScrollingView &&
+    (!page ?? page < Math.floor(totalItems[timeline.view] / itemsPerPage));
 
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
@@ -100,6 +140,7 @@ export const MainLayout = ({
               visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
             }}
             layout
+            layoutId="timeline-switcher-button"
             transition={{ duration: 0 }}
             style={{
               position: "sticky",
@@ -126,6 +167,7 @@ export const MainLayout = ({
                   alignItems="start"
                   gap={[8, 8, 14]}
                   minWidth={isLargerThan834 ? "834px" : "100%"}
+                  minHeight="100vh"
                 >
                   {!isInBlogPage && (
                     <VStack alignItems="start" width="100%">

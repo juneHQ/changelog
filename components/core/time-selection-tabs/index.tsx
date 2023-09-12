@@ -2,7 +2,6 @@ import { Button, VStack, ButtonGroup } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 const TimeSelectionTabs = () => {
   const router = useRouter();

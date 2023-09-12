@@ -44,6 +44,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                   overflow="hidden"
                   borderRadius={"16px"}
                   maxWidth="682px"
+                  width={["100%", "100%", "682px"]}
                   display="flex"
                   onClick={() => {}}
                   position="relative"
