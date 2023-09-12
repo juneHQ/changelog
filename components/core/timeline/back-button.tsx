@@ -1,7 +1,9 @@
-import { Box, Spinner, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 import { useRouter } from "next/router";
 import { useState } from "react";
+
+import { Box, Text } from "@chakra-ui/react";
 
 const BackButton = () => {
   const { prevUrl } = usePreviousPageUrl();
@@ -13,7 +15,7 @@ const BackButton = () => {
     <Box
       onClick={() => {
         if (prevUrl) {
-          router.push(prevUrl); 
+          router.push(prevUrl);
           setIsLoading(true);
         } else {
           router.push("/");
@@ -82,15 +84,17 @@ const BackButton = () => {
         </defs>
       </svg>
 
-      <Text
-        className="back-button-text"
-        fontSize="16px"
-        color="#868E96"
-        alignItems="start"
-        // _hover={{ textDecoration: "underline" }}
-      >
-        {isLoading ? <Spinner size="sm" /> : "Back"}
-      </Text>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+        <Text
+          className="back-button-text"
+          fontSize="16px"
+          color="#868E96"
+          alignItems="start"
+          // _hover={{ textDecoration: "underline" }}
+        >
+          Back
+        </Text>
+      </motion.div>
     </Box>
   );
 };
