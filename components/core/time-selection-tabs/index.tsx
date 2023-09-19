@@ -10,11 +10,24 @@ const TimeSelectionTabs = () => {
   const timeline = useTimelineStore();
 
   const changeTimelineView = (view: "weeks" | "months" | "years") => {
-    timeline.setView(view);
-    if (router.pathname.includes("/page/") || router.pathname.includes("/years/")) {
+    if (
+      (router.pathname.includes("/page/") || router.pathname.includes("/years/")) &&
+      timeline.view !== view
+    ) {
       router.push(`/page/0#${view}`, undefined, {shallow: true});
-    } else {
-      router.push(`#${view}`, undefined, { shallow: true });
+      timeline.setView(view);
+
+    } else if(timeline.view === view){
+       window.scrollTo({
+         top: 0,
+         behavior: "smooth",
+       });
+    }else {
+      if (timeline.view !== view) {
+        router.push(`#${view}`, undefined, { shallow: true });
+        timeline.setView(view);
+
+      }
     }
   };
 
