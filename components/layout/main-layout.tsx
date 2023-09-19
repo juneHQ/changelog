@@ -62,12 +62,12 @@ export const MainLayout = ({
   React.useEffect(() => {
     router.events.on("routeChangeStart", (url: string) => {
       if (!url.includes("/changelogs/")) {
-        pageStatus.setIsLoading(true);
         window.scrollTo({
           top: 0,
-          // behavior: "smooth",
         });
       }
+
+      pageStatus.setIsLoading(true);
 
       if (url.includes("/years") && !url.includes("/months")) {
         timeline.setView("months");
