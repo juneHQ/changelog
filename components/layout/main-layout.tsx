@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { defaultPx } from "lib/utils/default-container-px";
@@ -12,7 +12,6 @@ import {
   Heading,
   HStack,
   Text,
-  useMediaQuery,
   VStack,
 } from "@chakra-ui/react";
 import TimeSelectionTabs from "../core/time-selection-tabs";
@@ -48,8 +47,6 @@ export const MainLayout = ({
   const { animatePage, setAnimatePage } = useAnimatePageStore();
   const router = useRouter();
   const pageStatus = usePageStatusStore();
-
-  const [isLargerThan834] = useMediaQuery("(min-width: 834px)");
 
   React.useEffect(() => {
     const hash = window?.location.hash ?? "";
@@ -89,7 +86,8 @@ export const MainLayout = ({
 
   const hasMorePage =
     !infiniteScrollingView &&
-    (!page ?? page < Math.floor(totalItems[timeline.view] / itemsPerPage));
+    page !== undefined &&
+    page < Math.floor(totalItems[timeline.view] / itemsPerPage);
 
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
@@ -166,7 +164,7 @@ export const MainLayout = ({
                   justifyContent="start"
                   alignItems="start"
                   gap={[8, 8, 14]}
-                  minWidth={isLargerThan834 ? "834px" : "100%"}
+                  minWidth={["100%", "100%", "834px"]}
                   minHeight="100vh"
                 >
                   {!isInBlogPage && (

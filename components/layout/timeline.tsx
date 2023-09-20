@@ -38,7 +38,7 @@ const Timeline = (props: TimelineProps) => {
       spacing={0}
       pt={isOpen ? (isLargerThan768 ? 28 : 8) : 0}
       px={isOpen ? 4 : 0}
-      minWidth={isLargerThan768 ? "768px" : "100%"}
+      minWidth={["100%", "100%", "834px"]}
       visibility={pageStatus.isLoading ? "hidden" : "visible"}
     >
       {isLargerThan768 && (
