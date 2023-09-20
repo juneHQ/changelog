@@ -14,7 +14,7 @@ const TimeSelectionTabs = () => {
       (router.pathname.includes("/page/") || router.pathname.includes("/years/")) &&
       timeline.view !== view
     ) {
-      router.push(`/page/0#${view}`, undefined, {shallow: true});
+      router.push(`/page/0#${view}`);
       timeline.setView(view);
 
     } else if(timeline.view === view){
@@ -24,7 +24,7 @@ const TimeSelectionTabs = () => {
        });
     }else {
       if (timeline.view !== view) {
-        router.push(`#${view}`, undefined, { shallow: true });
+        router.push(`#${view}`);
         timeline.setView(view);
 
       }
