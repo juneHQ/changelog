@@ -1,10 +1,10 @@
+import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import { MdxMeta } from "lib/models/mdx-meta";
+import { motion } from "framer-motion";
 import dayjs from "dayjs";
-import TryBanner from "components/core/try-banner";
-import Navbar from "components/core/navbar";
-import { Footer } from "components/core/footer";
 import { Contributor } from "components/contributor";
 import { ReactNode } from "@mdx-js/react/lib";
 import { MDXProvider } from "@mdx-js/react";
@@ -21,14 +21,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Timeline from "./layout/timeline";
-
-import type { MDXComponents } from "mdx/types";
-import { useRouter } from "next/router";
-import React from "react";
-import { motion } from "framer-motion";
 import { MainLayout } from "./layout/main-layout";
 import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 
+import type { MDXComponents } from "mdx/types";
 const components: MDXComponents = {
   h1: (props) => <Heading as="h1" fontSize={["2xl", "2xl", "32px"]} color="#000" {...props} />,
   h2: (props) => <Text fontWeight="bold" fontSize="xl" mt={12} mb={6} {...props} />,
@@ -316,7 +312,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
       </Timeline>
     </MDXProvider>
   );
-  
+
   return isInBlogPage ? (
     <MainLayout>
       <MDX />

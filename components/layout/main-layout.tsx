@@ -5,15 +5,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import {
-  Box,
-  Button,
-  Container,
-  Heading,
-  HStack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "../core/time-selection-tabs";
 import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
@@ -93,29 +85,37 @@ export const MainLayout = ({
 
   return (
     <>
-      <Head>
-        <title>{metaTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="title" content={metaTitle} />
-        <meta name="description" content="Discover new updates and improvements to June." />
-        <meta name="image" content="https://changelog.june.so/social.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://changelog.june.so" />
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content="Discover new updates and improvements to June." />
-        <meta property="og:image" content="https://changelog.june.so/social.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://changelog.june.so" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content="Discover new updates and improvements to June." />
-        <meta name="twitter:image" content="https://changelog.june.so/social.png" />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="June Changelog"
-          href="https://changelog.june.so/rss.xml"
-        />
-      </Head>
+      {!isInBlogPage && (
+        <Head>
+          <title>{metaTitle}</title>
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="title" content={metaTitle} />
+          <meta name="description" content="Discover new updates and improvements to June." />
+          <meta name="image" content="https://changelog.june.so/social.png" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://changelog.june.so" />
+          <meta property="og:title" content={metaTitle} />
+          <meta
+            property="og:description"
+            content="Discover new updates and improvements to June."
+          />
+          <meta property="og:image" content="https://changelog.june.so/social.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content="https://changelog.june.so" />
+          <meta name="twitter:title" content={metaTitle} />
+          <meta
+            name="twitter:description"
+            content="Discover new updates and improvements to June."
+          />
+          <meta name="twitter:image" content="https://changelog.june.so/social.png" />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="June Changelog"
+            href="https://changelog.june.so/rss.xml"
+          />
+        </Head>
+      )}
       <motion.div
         initial={animatePage ? "hidden" : "visible"}
         animate="visible"
