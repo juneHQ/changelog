@@ -47,10 +47,11 @@ export const MainLayout = ({
 
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
+  let newPage = page === 0 ? 1 : page;
   const hasMorePage =
     !isInBlogPage &&
     !infiniteScrollingView &&
-    page < Math.floor(totalItems[timeline.view] / itemsPerPage);
+    newPage < Math.floor(totalItems[timeline.view] / itemsPerPage);
 
   return (
     <>
