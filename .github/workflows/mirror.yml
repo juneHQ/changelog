@@ -5,11 +5,18 @@ on: [push, delete]
 jobs:
   to_gitlab:
     runs-on: ubuntu-latest
-    steps:                                              # <-- must use actions/checkout@v1 before mirroring!
-    - uses: actions/checkout@v1
-    - uses: pixta-dev/repository-mirroring-action@v1
-      with:
-        target_repo_url:
-          git@gitlab.com:screeb-otis/screeb-changelog.git
-        ssh_private_key:                                # <-- use 'secrets' to pass credential information.
-          ${{ secrets.GITLAB_SSH_PRIVATE_KEY }}
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Prepare SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GITLAB_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
+
+      - name: Mirror to GitLab
+        run: |
+          git remote add mirror git@gitlab.com:screeb-otis/screeb-changelog.git
+          git fetch --unshallow
+          git push mirror master -f
