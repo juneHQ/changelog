@@ -18,5 +18,4 @@ jobs:
       - name: Mirror to GitLab
         run: |
           git remote add mirror git@gitlab.com:screeb-otis/screeb-changelog.git
-          git fetch --unshallow
           git push mirror master -f
