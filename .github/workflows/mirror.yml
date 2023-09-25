@@ -2,8 +2,13 @@ name: Mirroring
 
 on: [push, delete]
 
+concurrency:
+  group: ${{ github.workflow }}-mirror-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   to_gitlab:
+    name: Mirror to GitLab
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -18,4 +23,4 @@ jobs:
       - name: Mirror to GitLab
         run: |
           git remote add mirror git@gitlab.com:screeb-otis/screeb-changelog.git
-          git push mirror master -f
+          git push mirror main -f
