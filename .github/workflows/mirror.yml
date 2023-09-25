@@ -22,5 +22,7 @@ jobs:
 
       - name: Mirror to GitLab
         run: |
-          git remote add mirror git@gitlab.com:screeb-otis/screeb-changelog.git
-          git push mirror main -f
+          git remote set-url --push origin git@gitlab.com:screeb-otis/screeb-changelog.git
+          git fetch -p origin
+          git for-each-ref --format 'delete %(refname)' refs/pull | git update-ref --stdin
+          git push --mirror
