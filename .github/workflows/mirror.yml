@@ -23,4 +23,4 @@ jobs:
       - name: Mirror to GitLab
         run: |
           git remote add gitlab git@gitlab.com:screeb-otis/screeb-changelog.git
-          git push gitlab --force
+          git push gitlab master --force
