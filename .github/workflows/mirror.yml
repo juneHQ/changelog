@@ -1,6 +1,9 @@
 name: Mirroring
 
-on: [push, delete]
+on:
+  push:
+    branches:
+      - master
 
 concurrency:
   group: ${{ github.workflow }}-mirror-${{ github.event.pull_request.number || github.ref }}
@@ -23,4 +26,4 @@ jobs:
       - name: Mirror to GitLab
         run: |
           git remote add gitlab git@gitlab.com:screeb-otis/screeb-changelog.git
-          git push gitlab master --force
+          git push  --force gitlab "refs/remotes/origin/*:refs/heads/*"
