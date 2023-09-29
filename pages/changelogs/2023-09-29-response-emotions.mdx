@@ -1,0 +1,39 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2023-09-29-response-emotions",
+  publishedAt: "2023-09-29T12:30:00.000Z",
+  title: "😱 Introducing Emotion Analysis"
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/response-emotions.png`,
+  authors: [
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+    {
+      name: "Clément Chaban",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+    {
+      name: "Alexis Rouillard",
+      description: "Tech lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/alexis-rouillard.png`,
+    },
+  ],
+};
+
+Feedback is more than just words—it's emotions. It's a window on how your users feel about your product.
+
+**What is Emotion Analysis?**
+
+Our new feature analyzes the underlying emotions in every piece of feedback you receive, categorizing them into joy, fear, anger, and sadness. Visualize these emotions across surveys, users, segments, or your entire Screeb account. By understanding the emotional context, you can tailor your product strategies to resonate even more with your users.
+
+_At Screeb, we innovate to make your survey journey effortless and efficient. Try Emotion Analysis today and experience the power of emotions._
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
