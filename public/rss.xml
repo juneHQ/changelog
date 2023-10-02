@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 21 Sep 2023 11:41:59 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 02 Oct 2023 07:44:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Computed traits]]></title>
+            <link>https://changelog.june.so/changelogs/computed-traits</link>
+            <guid>https://changelog.june.so/changelogs/computed-traits</guid>
+            <pubDate>Wed, 27 Sep 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/computed-traits/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[10x performance improvements]]></title>
+            <link>https://changelog.june.so/changelogs/speed</link>
+            <guid>https://changelog.june.so/changelogs/speed</guid>
+            <pubDate>Wed, 20 Sep 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/changelog-speed.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Sync your data with Attio]]></title>
             <link>https://changelog.june.so/changelogs/attio</link>
