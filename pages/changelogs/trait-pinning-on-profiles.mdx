@@ -1,10 +1,11 @@
 import { MdxLayout } from "components/mdx-layout.tsx";
 
 export const meta = {
-  slug: "computed-traits",
-  publishedAt: "2023-09-29T09:00:00.000Z",
-  title: "Computed traits",
-  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/computed-traits/header.png",
+  slug: "trait-pinning-on-profiles",
+  publishedAt: "2023-09-22T09:00:00.000Z",
+  title: "Trait pinning and the new Pro plan",
+  headerImage:
+    "https://june-changelog.s3.eu-central-1.amazonaws.com/trait-pinning-on-profiles/header.png",
   authors: [
     {
       name: "Alberto Incisa della Rocchetta",
@@ -48,22 +49,23 @@ export const meta = {
   ],
 };
 
-One of our most requested features is the ability to create traits that are computed from events.
+This week we've been working on two main things: trait pinning on profiles and the new Pro plan.
 
-For instance being able to have a trait like "Reports opened in the last 7 days" or "Number of times a user has logged in".
+## Trait pinning on profiles
 
-We're finally releasing this today!
+Much like in any CRM, you can now pin your most important traits to the top of your profiles. This is a great way to highlight the most important information about your users and customers.
 
-## How it works
+Additionally because a lot of trait values were being cut off unnecessarily we've updated the design to show more of the trait value.
 
-We built a no-code interface that allows you to create traits that are computed from events. It works similarly to how you would setup a report, but instead of showing you a report, it creates a trait.
+## New Pro plan
 
-![Computed traits](https://june-changelog.s3.eu-central-1.amazonaws.com/computed-traits/traits-computation.png)
+We've been working on a new Pro plan that will be available soon. This week we've built the foundation to allow us to offer a new plan with more features and more flexibility.
 
-## Use cases
+You can now upgrade to the Pro plan from the billing page and get access to our new CRM features and more.
 
-- **Your Sales** team can uncover the hidden revenue in your pipeline. Proactively surface the best opportunities based on usage insights.
-- **Your Support** team can spend time with your customers and keep customers happy and coming back for more. Use data to proactively manage churn and boost retention.
+**Other improvements**
+
+- We pushed fixes to CSV exports of companies in the Active Users and New Users reports.
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
