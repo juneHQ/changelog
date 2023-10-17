@@ -1,53 +1,15 @@
 import { generateRssFeed } from "lib/generate-rss-feed";
 import { getArticleSlugs } from "lib/get-articles-slugs";
-import useTimelineStore from "lib/state/use-timeline-store";
 import { IPageProps } from "pages";
-import React, { useState } from "react";
+import React from "react";
 import dayjs from "dayjs";
-import InfiniteScroll from "react-infinite-scroll-component";
 import dynamic from "next/dynamic";
 import { MainLayout } from "components/layout/main-layout";
-
-const WEEKS_PER_RENDER = 4;
 
 const Page = ({ slugs }: IPageProps) => {
   const Articles = React.useMemo(() => {
     return slugs.map((slug) => dynamic(() => import(`../../../../pages/changelogs/${slug}.mdx`)));
   }, [slugs]);
-
-  const timeline = useTimelineStore();
-
-  React.useEffect(() => {
-    timeline.setView("weeks");
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  }, [timeline.view]);
-
-  const [renderedWeeks, setRenderedWeeks] = useState(WEEKS_PER_RENDER);
-
-  const handleLoadMore = () => {
-    setRenderedWeeks((prevRenderedWeeks) => prevRenderedWeeks + WEEKS_PER_RENDER);
-  };
-
-  const ArticlesToInitiallyRender = Articles.slice(0, WEEKS_PER_RENDER);
-
-  const ArticlesToRenderOnLoadMore = Articles.slice(WEEKS_PER_RENDER, renderedWeeks);
-
-  const hasMoreWeeks = () => renderedWeeks < slugs.length;
-
-  React.useEffect(() => {
-    timeline.setView("weeks");
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    }
-  }, [timeline.view]);
 
   React.useLayoutEffect(() => {
     if (typeof window !== "undefined") {
@@ -81,7 +43,7 @@ const Page = ({ slugs }: IPageProps) => {
 
   return (
     <MainLayout infiniteScrollingView="month">
-      {ArticlesToInitiallyRender.map((Article, index) => (
+      {Articles.map((Article, index) => (
         // @ts-ignore
         <Article
           key={slugs[index]}
@@ -93,27 +55,6 @@ const Page = ({ slugs }: IPageProps) => {
           isInfiniteScrollingView={true}
         />
       ))}
-      <InfiniteScroll
-        style={{ overflow: "visible" }}
-        dataLength={renderedWeeks}
-        next={handleLoadMore}
-        hasMore={hasMoreWeeks()}
-        loader={<h4>Loading...</h4>}
-        scrollThreshold={0.7}
-      >
-        {ArticlesToRenderOnLoadMore.map((Article, index) => (
-          // @ts-ignore
-          <Article
-            key={slugs[index]}
-            // @ts-ignore
-            index={index + WEEKS_PER_RENDER}
-            hideLayout={true}
-            hideHead={true}
-            hideAuthors={true}
-            isInfiniteScrollingView={true}
-          />
-        ))}
-      </InfiniteScroll>
     </MainLayout>
   );
 };

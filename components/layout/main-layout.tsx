@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { defaultPx } from "lib/utils/default-container-px";
@@ -11,6 +11,7 @@ import useTimelineStore from "lib/state/use-timeline-store";
 import { motion } from "framer-motion";
 import useAnimatePageStore from "lib/state/use-animate-page-store";
 import { useRouter } from "next/router";
+import usePageStatusStore from "lib/state/use-page-status-store";
 
 export interface MainLayoutProps {
   page?: number;
@@ -37,6 +38,7 @@ export const MainLayout = ({
   const timeline = useTimelineStore();
   const { animatePage, setAnimatePage } = useAnimatePageStore();
   const router = useRouter();
+  const pageStatus = usePageStatusStore();
 
   React.useEffect(() => {
     const hash = window?.location.hash ?? "";
@@ -46,38 +48,74 @@ export const MainLayout = ({
     );
   }, []);
 
-  const isInBlogPage = router.pathname.startsWith("/changelogs/");
+  React.useEffect(() => {
+    router.events.on("routeChangeStart", (url: string) => {
+      if (!url.includes("/changelogs/")) {
+        window.scrollTo({
+          top: 0,
+        });
+      }
+
+      pageStatus.setIsLoading(true);
+
+      if (url.includes("/years") && !url.includes("/months")) {
+        timeline.setView("months");
+      } else if (url.includes("/years") && url.includes("/months")) {
+        timeline.setView("weeks");
+      }
+    });
+
+    router.events.on("routeChangeComplete", (url: string) => {
+      pageStatus.setIsLoading(false);
+
+      if (url.includes("/years") && !url.includes("/months")) {
+        timeline.setView("months");
+      } else if (url.includes("/years") && url.includes("/months")) {
+        timeline.setView("weeks");
+      }
+    });
+  }, []);
 
   const hasMorePage =
-    !isInBlogPage &&
     !infiniteScrollingView &&
+    page !== undefined &&
     page < Math.floor(totalItems[timeline.view] / itemsPerPage);
+
+  const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
   return (
     <>
-      {!isInBlogPage && <Head>
-        <title>{metaTitle}</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="title" content={metaTitle} />
-        <meta name="description" content="Discover new updates and improvements to June." />
-        <meta name="image" content="https://changelog.june.so/social.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://changelog.june.so" />
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content="Discover new updates and improvements to June." />
-        <meta property="og:image" content="https://changelog.june.so/social.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://changelog.june.so" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content="Discover new updates and improvements to June." />
-        <meta name="twitter:image" content="https://changelog.june.so/social.png" />
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="June Changelog"
-          href="https://changelog.june.so/rss.xml"
-        />
-      </Head>}
+      {!isInBlogPage && (
+        <Head>
+          <title>{metaTitle}</title>
+          <link rel="icon" href="/favicon.ico" />
+          <meta name="title" content={metaTitle} />
+          <meta name="description" content="Discover new updates and improvements to June." />
+          <meta name="image" content="https://changelog.june.so/social.png" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://changelog.june.so" />
+          <meta property="og:title" content={metaTitle} />
+          <meta
+            property="og:description"
+            content="Discover new updates and improvements to June."
+          />
+          <meta property="og:image" content="https://changelog.june.so/social.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content="https://changelog.june.so" />
+          <meta name="twitter:title" content={metaTitle} />
+          <meta
+            name="twitter:description"
+            content="Discover new updates and improvements to June."
+          />
+          <meta name="twitter:image" content="https://changelog.june.so/social.png" />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="June Changelog"
+            href="https://changelog.june.so/rss.xml"
+          />
+        </Head>
+      )}
       <motion.div
         initial={animatePage ? "hidden" : "visible"}
         animate="visible"
@@ -100,6 +138,7 @@ export const MainLayout = ({
               visible: { opacity: 1, transition: { duration: 0.6, delay: 0.2 } },
             }}
             layout
+            layoutId="timeline-switcher-button"
             transition={{ duration: 0 }}
             style={{
               position: "sticky",
@@ -120,7 +159,14 @@ export const MainLayout = ({
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.2 } },
                 }}
               >
-                <VStack display="flex" justifyContent="center" alignItems="start" gap={[8, 8, 14]}>
+                <VStack
+                  display="flex"
+                  justifyContent="start"
+                  alignItems="start"
+                  gap={[8, 8, 14]}
+                  minWidth={["100%", "100%", "834px"]}
+                  minHeight="100vh"
+                >
                   {!isInBlogPage && (
                     <VStack alignItems="start" width="100%">
                       <Text fontSize="xl" color="gray.700" textAlign={"start"}>
@@ -172,17 +218,16 @@ export const MainLayout = ({
               </motion.div>
             </VStack>
           </Container>
-          <motion.div
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { duration: 1, delay: 0.4 } },
-            }}
-          >
-            <TryBanner _wrapper={{ my: [50, 50, 120] }} />
-
-            <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
-          </motion.div>
         </Box>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: animatePage ? 0 : 1 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.4 }}
+      >
+        <TryBanner _wrapper={{ my: [50, 50, 120] }} />
+
+        <Footer _wrapper={{ mt: [50, 50, 120], mb: 20 }} />
       </motion.div>
     </>
   );

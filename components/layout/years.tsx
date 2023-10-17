@@ -44,6 +44,7 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                   overflow="hidden"
                   borderRadius={"16px"}
                   maxWidth="682px"
+                  width={["100%", "100%", "682px"]}
                   display="flex"
                   onClick={() => {}}
                   position="relative"
@@ -67,7 +68,11 @@ const Years = ({ yearChangelogsMap }: IYearsProps) => {
                     </LazyLoad>
                   )}
                   {((changelogs.length <= 9 && changelogs.length !== 3) || !isLargerThan768) && (
-                    <LazyLoad height={changelogs.length < 9 ? "300px" : "681px"} once>
+                    <LazyLoad
+                      height={changelogs.length < 9 ? "300px" : "681px"}
+                      offset={!isLargerThan768 ? 100 : 0}
+                      once
+                    >
                       <MediumGrid changelogs={changelogs} isFirstItem={index === 0} />
                     </LazyLoad>
                   )}

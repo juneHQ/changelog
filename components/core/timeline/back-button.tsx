@@ -1,22 +1,25 @@
-import { Box, Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
+import { useState } from "react";
 
-export interface TimelineProps {
-  date: string;
-  children: ReactNode;
-}
+import { Box, Text } from "@chakra-ui/react";
 
 const BackButton = () => {
+  const { prevUrl } = usePreviousPageUrl();
   const router = useRouter();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Box
       onClick={() => {
-        if (window.history.length === 1) {
-          router.push("/");
+        if (prevUrl) {
+          router.push(prevUrl);
+          setIsLoading(true);
         } else {
-          router.back();
+          router.push("/");
+          setIsLoading(true);
         }
       }}
       cursor="pointer"
@@ -81,15 +84,17 @@ const BackButton = () => {
         </defs>
       </svg>
 
-      <Text
-        className="back-button-text"
-        fontSize="16px"
-        color="#868E96"
-        alignItems="start"
-        // _hover={{ textDecoration: "underline" }}
-      >
-        Back
-      </Text>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
+        <Text
+          className="back-button-text"
+          fontSize="16px"
+          color="#868E96"
+          alignItems="start"
+          // _hover={{ textDecoration: "underline" }}
+        >
+          Back
+        </Text>
+      </motion.div>
     </Box>
   );
 };

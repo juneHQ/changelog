@@ -1,8 +1,11 @@
-import { Box, HStack, Text, VStack, useMediaQuery } from "@chakra-ui/react";
 import BackButton from "components/core/timeline/back-button";
 import { motion } from "framer-motion";
+import usePageStatusStore from "lib/state/use-page-status-store";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
+
+import { Box, HStack, Text, useMediaQuery, VStack } from "@chakra-ui/react";
+import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
 
 export interface TimelineProps {
   date: string;
@@ -13,8 +16,10 @@ export interface TimelineProps {
 
 const Timeline = (props: TimelineProps) => {
   const { children, date } = props;
+  const { prevUrl } = usePreviousPageUrl();
 
   const router = useRouter();
+  const pageStatus = usePageStatusStore();
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +37,14 @@ const Timeline = (props: TimelineProps) => {
       alignItems="start"
       spacing={0}
       pt={isOpen ? (isLargerThan768 ? 28 : 8) : 0}
-      px={isOpen ? 6 : 0}
-      minWidth={isLargerThan768 ? "768px" : "100%"}
+      px={isOpen ? 4 : 0}
+      minWidth={["100%", "100%", "834px"]}
+      visibility={pageStatus.isLoading ? "hidden" : "visible"}
     >
       {isLargerThan768 && (
         <VStack position="relative" top={isOpen ? "" : "-8px"} width="120px" spacing={4}>
           {isOpen && <BackButton />}
+
           <Text fontSize="16px" color="#868E96" alignItems="start" width="125px">
             <motion.div
               initial={{ opacity: 0 }}
@@ -57,7 +64,12 @@ const Timeline = (props: TimelineProps) => {
         className="timeline-item"
       >
         {!isOpen && (
-          <Box
+          <motion.div
+            initial={{
+              opacity: router.pathname.includes("/year") || prevUrl.includes("/year") ? 0 : 1,
+            }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
             style={{
               display: isOpen ? "hidden" : "flex",
               alignItems: "start",
@@ -86,7 +98,7 @@ const Timeline = (props: TimelineProps) => {
                 zIndex: 5,
               }}
             />
-          </Box>
+          </motion.div>
         )}
         <VStack alignItems="start" spacing={[0, 0, 2]}>
           {!isLargerThan768 && (
