@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 16 Oct 2023 09:13:11 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Oct 2023 14:35:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -14,7 +14,14 @@
         </image>
         <copyright>All rights reserved 2023, June</copyright>
         <item>
-            <title><![CDATA[Offsite in Orvieto]]></title>
+            <title><![CDATA[Instant debugging]]></title>
+            <link>https://changelog.june.so/changelogs/instant-debugging</link>
+            <guid>https://changelog.june.so/changelogs/instant-debugging</guid>
+            <pubDate>Fri, 13 Oct 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/instant-debugging/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Zooming out - Orvieto offsite]]></title>
             <link>https://changelog.june.so/changelogs/orvieto</link>
             <guid>https://changelog.june.so/changelogs/orvieto</guid>
             <pubDate>Fri, 06 Oct 2023 09:00:00 GMT</pubDate>
