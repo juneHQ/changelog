@@ -49,6 +49,7 @@ export const ContentLayout = ({
         <meta name="title" content={metaTitle} />
         <meta property="og:title" content={metaTitle} />
         <meta name="twitter:title" content={metaTitle} />
+        <meta name="robots" content="noindex,nofollow" />
       </Head>
       <motion.div
         initial={animatePage ? "hidden" : "visible"}

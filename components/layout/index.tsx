@@ -36,6 +36,7 @@ export default function Layout({ children }: ILayoutProps) {
           name="twitter:description"
           content="Discover new updates and improvements to Screeb."
         />
+        <meta name="robots" content="noindex,nofollow" />
         <meta name="twitter:image" content="https://changelog.screeb.app/social.png" />
         <link
           rel="alternate"

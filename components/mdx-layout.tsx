@@ -121,6 +121,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
           <meta property="og:image" content={props.meta.headerImage} />
+          <meta name="robots" content="noindex,nofollow" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={url} />
           <meta name="twitter:title" content={title} />

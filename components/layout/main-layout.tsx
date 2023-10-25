@@ -69,6 +69,7 @@ export const MainLayout = ({
             property="og:description"
             content="Discover new updates and improvements to Screeb."
           />
+          <meta name="robots" content="noindex,nofollow" />
           <meta property="og:image" content="https://changelog.screeb.app/social.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content="https://changelog.screeb.app" />
