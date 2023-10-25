@@ -1,0 +1,44 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2023-10-24-survey-audio-video",
+  publishedAt: "2023-10-24T11:00:00.000Z",
+  title: "🎥 Introducing Audio & Video Surveys",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/survey-audio-video.gif`,
+  authors: [
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/romain-jolidon.png`,
+    },
+    {
+      name: "Samuel Berthe",
+      description: "Chief Technical Officer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+    {
+      name: "Martin Dequatremare",
+      description: "Tech Lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/martin-dequatremare.png`,
+    },
+    {
+      name: "Simon Robic",
+      description: "Chief Product Officer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/simon-robic.png`,
+    },
+  ],
+};
+
+Today, we're launching a new way to interact with your users from your website and mobile app on the Screeb platform:
+
+📽️ Ask questions in video and get a 35% higher response rate than text surveys!
+
+Collect answers in video or 🎙 in voice note (yes, like in WhatsApp) and receive richer, more spontaneous insights from your users!
+
+🎉 It's a major evolution that we're very proud of, and one that our first users, in beta since last June, already can't live without.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

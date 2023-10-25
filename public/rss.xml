@@ -4,7 +4,7 @@
         <title>Screeb Changelog</title>
         <link>http://localhost:3000</link>
         <description>How Screeb gets better every week</description>
-        <lastBuildDate>Mon, 25 Sep 2023 08:25:10 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Oct 2023 07:54:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Screeb changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>http://localhost:3000</link>
         </image>
         <copyright>All rights reserved 2023, Screeb</copyright>
+        <item>
+            <title><![CDATA[🎥 Introducing Audio & Video Surveys]]></title>
+            <link>http://localhost:3000/changelogs/2023-10-24-survey-audio-video</link>
+            <guid>http://localhost:3000/changelogs/2023-10-24-survey-audio-video</guid>
+            <pubDate>Tue, 24 Oct 2023 11:00:00 GMT</pubDate>
+            <enclosure url="http://localhost:3000/imgs/survey-audio-video.gif" length="0" type="image/gif"/>
+        </item>
+        <item>
+            <title><![CDATA[😱 Introducing Emotion Analysis]]></title>
+            <link>http://localhost:3000/changelogs/2023-09-29-response-emotions</link>
+            <guid>http://localhost:3000/changelogs/2023-09-29-response-emotions</guid>
+            <pubDate>Fri, 29 Sep 2023 12:30:00 GMT</pubDate>
+            <enclosure url="http://localhost:3000/imgs/response-emotions.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[🌟 Introducing Screeb's New Homepage: A Fresh Look with Enhanced Features 🌟]]></title>
             <link>http://localhost:3000/changelogs/2023-08-23-new-homepage</link>
