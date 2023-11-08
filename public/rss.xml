@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Wed, 08 Nov 2023 14:52:14 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Nov 2023 14:52:56 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -17,7 +17,7 @@
             <title><![CDATA[DEVELOPERS DEVELOPERS DEVELOPERS]]></title>
             <link>https://changelog.june.so/changelogs/developer-tools</link>
             <guid>https://changelog.june.so/changelogs/developer-tools</guid>
-            <pubDate>Wed, 01 Nov 2023 09:00:00 GMT</pubDate>
+            <pubDate>Fri, 03 Nov 2023 09:00:00 GMT</pubDate>
             <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/developer-tools/header.png" length="0" type="image/png"/>
         </item>
         <item>
