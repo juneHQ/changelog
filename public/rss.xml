@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 31 Oct 2023 10:51:22 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Nov 2023 14:32:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,27 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[DEVELOPERS DEVELOPERS DEVELOPERS]]></title>
+            <link>https://changelog.june.so/changelogs/developer-tools</link>
+            <guid>https://changelog.june.so/changelogs/developer-tools</guid>
+            <pubDate>Wed, 01 Nov 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/developer-tools/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Non-technical onboarding]]></title>
+            <link>https://changelog.june.so/changelogs/non-technical-onboarding</link>
+            <guid>https://changelog.june.so/changelogs/non-technical-onboarding</guid>
+            <pubDate>Fri, 27 Oct 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/non-technical-onboarding/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Improved Hubspot integration]]></title>
+            <link>https://changelog.june.so/changelogs/improved-hubspot-integration</link>
+            <guid>https://changelog.june.so/changelogs/improved-hubspot-integration</guid>
+            <pubDate>Fri, 20 Oct 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/improved-hubspot-integration/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Instant debugging]]></title>
             <link>https://changelog.june.so/changelogs/instant-debugging</link>
