@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Wed, 08 Nov 2023 14:52:56 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Nov 2023 09:53:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -14,7 +14,21 @@
         </image>
         <copyright>All rights reserved 2023, June</copyright>
         <item>
-            <title><![CDATA[DEVELOPERS DEVELOPERS DEVELOPERS]]></title>
+            <title><![CDATA[Hang tight, upgrades in progress]]></title>
+            <link>https://changelog.june.so/changelogs/hang-tight-migration-in-progress</link>
+            <guid>https://changelog.june.so/changelogs/hang-tight-migration-in-progress</guid>
+            <pubDate>Fri, 17 Nov 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/hang-tight-migration-in-progress/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Let's make things easier for you..]]></title>
+            <link>https://changelog.june.so/changelogs/evolving-our-data-model</link>
+            <guid>https://changelog.june.so/changelogs/evolving-our-data-model</guid>
+            <pubDate>Fri, 10 Nov 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/evolving-our-data-model/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Developer tools]]></title>
             <link>https://changelog.june.so/changelogs/developer-tools</link>
             <guid>https://changelog.june.so/changelogs/developer-tools</guid>
             <pubDate>Fri, 03 Nov 2023 09:00:00 GMT</pubDate>
