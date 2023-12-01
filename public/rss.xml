@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 23 Nov 2023 09:53:13 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Dec 2023 09:56:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Introducing objects]]></title>
+            <link>https://changelog.june.so/changelogs/introducing-objects</link>
+            <guid>https://changelog.june.so/changelogs/introducing-objects</guid>
+            <pubDate>Fri, 24 Nov 2023 10:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/introducing-objects/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Hang tight, upgrades in progress]]></title>
             <link>https://changelog.june.so/changelogs/hang-tight-migration-in-progress</link>
