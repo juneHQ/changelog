@@ -31,7 +31,7 @@ export const meta = {
 
 **Other improvements**
 
-${improvements.join("\n")}
+${improvements.map((improvement) => `- ${improvement}`).join("\n")}
 
 
 
