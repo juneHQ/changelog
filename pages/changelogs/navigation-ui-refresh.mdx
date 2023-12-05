@@ -48,17 +48,23 @@ After a couple of weeks of very under-the hood work, we wanted to balance things
 
 Our navigation UI has been around for a while, and it was time to give it a refresh, in order to create space for more custom views.
 
-**New navigation UI**
+## New navigation UI
 
 So this week we are introducing a new navigation UI, which is more compact and leaves more space for the content. We think it looks great, and we hope you will like it too!
 
 We also updated some of the icons, so that they are consistent with the rest of the UI.
 
-**New help bubble**
+## New help bubble
 
-In the bottom right corner of the screen, you will now find a new help bubble replacing Intercom. We are still using Intercom, but we decided to include self-service help articles and product updates in the bubble, so that you can find answers to your questions more easily.
+![New help bubble](https://june-changelog.s3.eu-central-1.amazonaws.com/navigation-ui-refresh/help-center.png)
+
+In the bottom right corner of the screen, you will now find a new help bubble replacing Intercom. We are still using Intercom, but we decided to include self-service help articles and product updates, so that you can find answers to your questions more easily.
 
 **Other improvements**
+
+- Audiences have been now moved to the People section
+- We updated navigation in Events and People to use breadcrumbs, so that you can easily go back to the previous page
+- We fixed a UI issue displaying labels in funnels when breakdowns have more than 20 values
 
 export default ({ children, ...rest }) => (
   <MdxLayout meta={meta} {...rest}>
