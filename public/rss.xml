@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 05 Dec 2023 10:06:17 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Dec 2023 10:13:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2023, June</copyright>
+        <item>
+            <title><![CDATA[Auto-generated Companies Beta Release]]></title>
+            <link>https://changelog.june.so/changelogs/auto-generated-companies-beta-release</link>
+            <guid>https://changelog.june.so/changelogs/auto-generated-companies-beta-release</guid>
+            <pubDate>Fri, 08 Dec 2023 09:45:02 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/auto-generated-companies-beta-release/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Navigation UI Refresh]]></title>
             <link>https://changelog.june.so/changelogs/navigation-ui-refresh</link>
