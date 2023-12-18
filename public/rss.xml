@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 18 Dec 2023 12:13:10 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Dec 2023 12:18:35 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -15,10 +15,10 @@
         <copyright>All rights reserved 2023, June</copyright>
         <item>
             <title><![CDATA[Performance improvements]]></title>
-            <link>https://changelog.june.so/changelogs/performance-improvements</link>
-            <guid>https://changelog.june.so/changelogs/performance-improvements</guid>
+            <link>https://changelog.june.so/changelogs/reactive-performance-improvements</link>
+            <guid>https://changelog.june.so/changelogs/reactive-performance-improvements</guid>
             <pubDate>Fri, 15 Dec 2023 10:59:03 GMT</pubDate>
-            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/performance-improvements/header.png" length="0" type="image/png"/>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/reactive-performance-improvements/header.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Auto-generated companies now in Beta]]></title>
@@ -236,6 +236,13 @@
             <guid>https://changelog.june.so/changelogs/order-your-features</guid>
             <pubDate>Fri, 12 May 2023 09:00:00 GMT</pubDate>
             <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/order-your-features/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Performance Improvements]]></title>
+            <link>https://changelog.june.so/changelogs/performance-improvements</link>
+            <guid>https://changelog.june.so/changelogs/performance-improvements</guid>
+            <pubDate>Fri, 05 May 2023 09:00:00 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/performance-improvements/header.png" length="0" type="image/png"/>
         </item>
         <item>
             <title><![CDATA[Bug bashing week]]></title>
