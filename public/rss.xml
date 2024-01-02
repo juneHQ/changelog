@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Sat, 23 Dec 2023 16:59:25 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 02 Jan 2024 12:28:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -12,7 +12,14 @@
             <url>https://changelog.june.so/favicon.ico</url>
             <link>https://changelog.june.so</link>
         </image>
-        <copyright>All rights reserved 2023, June</copyright>
+        <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[End of year review 2023]]></title>
+            <link>https://changelog.june.so/changelogs/end-of-year-review-2023</link>
+            <guid>https://changelog.june.so/changelogs/end-of-year-review-2023</guid>
+            <pubDate>Fri, 29 Dec 2023 10:56:42 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/end-of-year-review-2023/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Introducing Objects]]></title>
             <link>https://changelog.june.so/changelogs/releasing-objects</link>
