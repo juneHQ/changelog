@@ -1,0 +1,40 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-01-08-benchmark-page",
+  publishedAt: "2024-01-08T12:00:00.000Z",
+  title: "📊 Introducing Benchmarks",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/survey-audio-video.gif`,
+  authors: [
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/romain-jolidon.png`,
+    },
+    {
+      name: "Salomé Cousseau",
+      description: "Custom Success Manager",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/salome-cousseau.png`,
+    },
+    {
+      name: "Simon Robic",
+      description: "Chief Product Officer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/simon-robic.png`,
+    },
+  ],
+};
+
+
+Introducing Benchmark Page Feature!
+
+We're thrilled to announce the release of our latest feature, the Benchmark Page!
+
+This powerful addition allows you to explore industry-specific statistics and compare yourself to top performers within it.
+
+Gain valuable insights into user feedback and behavioral events, enabling you to benchmark your performance against industry standards.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

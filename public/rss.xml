@@ -4,7 +4,7 @@
         <title>Screeb Changelog</title>
         <link>http://localhost:3000</link>
         <description>How Screeb gets better every week</description>
-        <lastBuildDate>Wed, 25 Oct 2023 07:54:06 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 09 Jan 2024 15:30:49 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Screeb changelog</generator>
         <image>
@@ -12,7 +12,14 @@
             <url>http://localhost:3000/favicon.ico</url>
             <link>http://localhost:3000</link>
         </image>
-        <copyright>All rights reserved 2023, Screeb</copyright>
+        <copyright>All rights reserved 2024, Screeb</copyright>
+        <item>
+            <title><![CDATA[📊 Introducing Benchmarks]]></title>
+            <link>http://localhost:3000/changelogs/2024-01-08-benchmark-page</link>
+            <guid>http://localhost:3000/changelogs/2024-01-08-benchmark-page</guid>
+            <pubDate>Mon, 08 Jan 2024 12:00:00 GMT</pubDate>
+            <enclosure url="http://localhost:3000/imgs/survey-audio-video.gif" length="0" type="image/gif"/>
+        </item>
         <item>
             <title><![CDATA[🎥 Introducing Audio & Video Surveys]]></title>
             <link>http://localhost:3000/changelogs/2023-10-24-survey-audio-video</link>

@@ -15,5 +15,7 @@ export function getArticleSlugs() {
       return file.name.replace(".mdx", "");
     })
     .filter((article) => article);
+  console.log(articles);
+  
   return articles;
 }
