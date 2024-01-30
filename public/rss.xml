@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 02 Jan 2024 12:28:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 14:32:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[We're hiring]]></title>
+            <link>https://changelog.june.so/changelogs/we-re-hiring</link>
+            <guid>https://changelog.june.so/changelogs/we-re-hiring</guid>
+            <pubDate>Fri, 12 Jan 2024 14:23:18 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/we-re-hiring/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Syncing frequency settings for CRMs]]></title>
+            <link>https://changelog.june.so/changelogs/syncing-frequency-settings-for-crms</link>
+            <guid>https://changelog.june.so/changelogs/syncing-frequency-settings-for-crms</guid>
+            <pubDate>Fri, 05 Jan 2024 09:44:23 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/syncing-frequency-settings-for-crms/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[End of year review 2023]]></title>
             <link>https://changelog.june.so/changelogs/end-of-year-review-2023</link>
