@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 30 Jan 2024 14:32:52 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 14:58:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Companies CSV export]]></title>
+            <link>https://changelog.june.so/changelogs/companies-csv-export</link>
+            <guid>https://changelog.june.so/changelogs/companies-csv-export</guid>
+            <pubDate>Fri, 26 Jan 2024 14:47:23 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/companies-csv-export/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Supporting companies CRM Sync]]></title>
+            <link>https://changelog.june.so/changelogs/company-crm-sync</link>
+            <guid>https://changelog.june.so/changelogs/company-crm-sync</guid>
+            <pubDate>Fri, 19 Jan 2024 14:38:14 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/company-crm-sync/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[We're hiring]]></title>
             <link>https://changelog.june.so/changelogs/we-re-hiring</link>
