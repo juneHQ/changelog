@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Wed, 07 Feb 2024 21:05:47 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Feb 2024 10:05:12 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Unpacking the black box]]></title>
+            <link>https://changelog.june.so/changelogs/unpacking-the-black-box</link>
+            <guid>https://changelog.june.so/changelogs/unpacking-the-black-box</guid>
+            <pubDate>Fri, 09 Feb 2024 09:48:20 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/unpacking-the-black-box/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[New Hubspot Sync UI]]></title>
             <link>https://changelog.june.so/changelogs/new-hubspot-sync-ui</link>
