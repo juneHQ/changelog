@@ -4,7 +4,7 @@ import { defaultPx } from "lib/utils/default-container-px";
 import TryBanner from "components/core/try-banner";
 import Navbar from "components/core/navbar";
 import { Footer } from "components/core/footer";
-import { Box, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import TimeSelectionTabs from "../core/time-selection-tabs";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
