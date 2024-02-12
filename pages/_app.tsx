@@ -18,18 +18,16 @@ import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/800.css";
 import "@fontsource/inter/900.css";
+import "styles/global.css";
 
 import juneTheme from "../lib/theme";
-import Layout from "components/layout";
 
 dayjs.extend(advancedFormat);
 
 const MyApp = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={juneTheme}>
-      {/* <Layout> */}
-        <Component {...pageProps} />
-      {/* </Layout> */}
+      <Component {...pageProps} />
     </ChakraProvider>
   );
 };
