@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 12 Feb 2024 11:29:04 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 19 Feb 2024 15:17:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Bulk trait updates]]></title>
+            <link>https://changelog.june.so/changelogs/bulk-trait-updates</link>
+            <guid>https://changelog.june.so/changelogs/bulk-trait-updates</guid>
+            <pubDate>Fri, 16 Feb 2024 15:16:21 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/bulk-trait-updates/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Unpacking the black box]]></title>
             <link>https://changelog.june.so/changelogs/unpacking-the-black-box</link>
