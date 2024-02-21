@@ -1,0 +1,27 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-02-21-recurring-if-not-answered",
+  publishedAt: "2024-02-21T17:30:00.000Z",
+  title: "🔁 Recurrence rule for surveys that users have seen but not responded to!",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/recurrence-if-not-answered.png`,
+  authors: [
+    {
+      name: "Clément Chaban",
+      description: "Fullstack developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+  ],
+};
+
+Exciting news from Screeb! We're rolling out a new feature that enhances how you engage with your audience. With our latest update, you can now set a recurrence rule for surveys that users have seen but not responded to. Here’s what you need to know:
+
+- Customize the recurrence interval from 1 to 365 days, ensuring a follow-up with users who haven’t answered your survey without overwhelming those who have.
+
+Benefit: This feature empowers you to re-engage customers who missed responding while respecting the input of those who have participated. It’s all about striking the perfect balance between collecting valuable feedback and maintaining a respectful, user-friendly experience.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
