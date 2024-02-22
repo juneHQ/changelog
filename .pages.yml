@@ -3,3 +3,4 @@ content:
     label: Changelogs
     path: pages/changelogs
     type: collection
+    fields: [ title, published ]
