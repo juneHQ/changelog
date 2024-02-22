@@ -3,12 +3,19 @@ content:
     label: Changelogs
     path: pages/changelogs
     type: collection
+    view:
+      fields: [ title, published, date ]
     fields:
-      - view:
-        fields: [ title ]
-        primary: title
-        sort: [ date, title ]
-        default:
-          search: ''
-          sort: title
-          order: desc
+      - name: published
+        label: Published
+        type: boolean
+        default: true
+      - name: date
+        label: Date
+        type: date
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
