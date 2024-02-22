@@ -1,0 +1,5 @@
+content:
+  - name: changelogs
+    label: Changelogs
+    path: pages/changelogs
+    type: collection
