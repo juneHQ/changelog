@@ -4,7 +4,7 @@ export const meta = {
 slug: "working-for-you",
 publishedAt: "2024-03-08T10:00:57.196Z",
 title: "Working for you",
-headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/slack-updates-hub/header.png",
+headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/header.png",
 authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"},{"name":"Apoorv Parijiat","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/apoorv.jpg"}],
 };
 
@@ -27,7 +27,7 @@ Thank you for your feedback, and can't appreciate enough your patience and under
 
 We're far from perfect, but we're working hard to get there.
 
-![](/causal-feedback.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/causal.png)
 
 ## How can I remove this Slack alert?
 
@@ -39,14 +39,15 @@ We've received a ton of feedback over the years about this, so we decided to fix
 
 Here's the new Slack updates hub:
 
-![]()
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/alerts-hub.png)
 
 You can both see all your enabled notifications and edit them right from this page.
 
-![](/multi-feedback.png)
-"My engineering team loves Slack notifications for new features, it really gives us the pulse of our product, but after some time they get too noisy and we need to disable them manually" - Alexander from Multi
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/multi.png)
 
 ## Slack getting too noisy?
+
+**"My engineering team loves Slack notifications for new features, it really gives us the pulse of our product, but after some time they get too noisy and we need to disable them manually" - Alexander from Multi**
 
 If you've been using our instant Slack notifications you know that sometimes you can become a victim of your own success.
 
@@ -56,9 +57,9 @@ We shipped just that! Now once things get too noisy in a Slack channel we'll sho
 
 You can see the new menu in action here:
 
-![](/slack-update-frequency.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/slack-frequency.png)
 
-![](/attio-feedback.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/attio.png)
 
 ## CMD-K has been slow for me
 
@@ -70,7 +71,7 @@ We pushed 5 different performance improvements to how we allow you to search use
 
 From our [Honeycomb](https://honeycomb.io/) dashboards 90% of searches (the P90) take less than 58ms. Our P99 is now 2 seconds, we'll push an additional improvement this week that should help us become even faster here!
 
-![](/amie-feedback.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/amie.png)
 
 ## The audience filters are janky
 
@@ -82,7 +83,7 @@ So last week we rebuilt their UI from scratch and made them much more intuitive 
 
 You should now be able to add the right audience filter with half the clicks.
 
-![](/depict-feedback.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/depict.png)
 
 ## John was confused by our Retention insights
 
@@ -94,7 +95,7 @@ But is it really acceptable to wait 12 weeks to be able to see the right retenti
 
 So this week we shipped a smart logic to show you an in-progress retention highlight number if you haven't been sending events for enough time.
 
-![](/arrows-feedback.png)
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/working-for-you/arrows.png)
 
 ## Workspace level reports not loading with complex filters
 
@@ -111,8 +112,6 @@ If you face similar issues, let us know and we'll try and fix the problem as fas
 **Other improvements**
 
 - Fix an intermitted issue with "exactly" and "less than" event audience filters with timeranges
-- Fix funnel audience filter - 1 Mar
-- Remove new objects badge - 1 Mar
 - Align the design of list pagination across the whole product
 - UI polish for the [discover section](https://changelog.june.so/changelogs/discover-june)
 - Add hint text for Cmd+k shortcut in the sidebar
@@ -125,6 +124,8 @@ If you face similar issues, let us know and we'll try and fix the problem as fas
 - Fix the HubSpot app name spelling, as we called it Hubspot in some places
 - Update the email of users from Google OAuth if it changes (if you change your Google workspace domain, we now handle this)
 - We redesigned the time picker for reports, so it's easier to use and ready for our next big feature
+- Fix a bug with the funnel audience filters
+- Remove new objects badge in the settings
 
 export default ({ children, ...rest }) => (
 <MdxLayout meta={meta} {...rest}>
