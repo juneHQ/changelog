@@ -41,8 +41,8 @@ async function fetchPRs(owner, repo) {
 }
 
 async function main() {
-  const owner = "juneHQ";
-  const repo = "june";
+  const owner = process.env.COMPANY_GITHUB_ORG_NAME;
+  const repo = process.env.COMPANY_GITHUB_REPO_NAME;
   const prs = (await fetchPRs(owner, repo)).reverse();
 
   return prs.map((pr) => {
