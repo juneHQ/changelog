@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 04 Apr 2024 08:58:41 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Apr 2024 12:44:06 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[All new report setup]]></title>
+            <link>https://changelog.june.so/changelogs/all-new-report-setup</link>
+            <guid>https://changelog.june.so/changelogs/all-new-report-setup</guid>
+            <pubDate>Fri, 05 Apr 2024 09:49:04 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/all-new-report-setup/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Sync your users to Attio]]></title>
             <link>https://changelog.june.so/changelogs/sync-your-users-to-attio</link>
