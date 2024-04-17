@@ -1,0 +1,33 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-04-17-filters-integrations",
+  publishedAt: "2024-04-17T17:30:00.000Z",
+  title: "🎯 Enhanced Filtering for Integration Sharing",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/filters-integrations`,
+  authors: [
+    {
+      name: "Clément Chaban",
+      description: "Fullstack developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+  ],
+};
+
+We're excited to introduce a powerful update to our integration sharing capabilities! Now, you can fine-tune which feedback responses are shared through integrations with advanced filters, ensuring that only the most relevant information reaches your team and tools.
+
+Key Features:
+
+- Keyword Filtering: Zero in on feedback containing specific words or phrases.
+- Answer Type Selection: Filter responses based on the nature of the answer.
+- Emotion Detection: Focus on responses that convey specific emotional tones.
+- Tag-Based Sorting: Organize and view responses by customized tags.
+- Custom Question Filters: Tailor your filters further with options like scoring thresholds.
+
+Benefits: This enhancement allows you to streamline your workflow and stay alert to critical feedback directly in tools like Slack, based on predefined filters such as low scores. Maximize the impact of your feedback by focusing on what truly matters to your team and business.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
