@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 09 Apr 2024 21:03:06 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Apr 2024 08:56:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[New report setup released to all]]></title>
+            <link>https://changelog.june.so/changelogs/new-report-setup-released-to-all</link>
+            <guid>https://changelog.june.so/changelogs/new-report-setup-released-to-all</guid>
+            <pubDate>Fri, 19 Apr 2024 11:11:52 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/new-report-setup-released-to-all/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Customer activation notifications]]></title>
+            <link>https://changelog.june.so/changelogs/customer-activation-notifications</link>
+            <guid>https://changelog.june.so/changelogs/customer-activation-notifications</guid>
+            <pubDate>Fri, 12 Apr 2024 07:28:28 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/customer-activation-notifications/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[All new report setup]]></title>
             <link>https://changelog.june.so/changelogs/all-new-report-setup</link>
