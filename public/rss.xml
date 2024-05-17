@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 06 May 2024 14:22:53 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 17 May 2024 14:21:57 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Weekly email digest]]></title>
+            <link>https://changelog.june.so/changelogs/weekly-email-digest</link>
+            <guid>https://changelog.june.so/changelogs/weekly-email-digest</guid>
+            <pubDate>Fri, 10 May 2024 10:21:39 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/weekly-email-digest/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Connect deeply with your customers]]></title>
             <link>https://changelog.june.so/changelogs/advanced-retention-insights</link>
