@@ -1,0 +1,62 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-05-01-single-sign-on",
+  publishedAt: "2024-05-01T14:00:00.000Z",
+  title: "🔑 Single Sign On",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/sso.png`,
+  authors: [
+    {
+      name: "Samuel Berthe",
+      description: "Cofounder",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/romain-jolidon.png`,
+    },
+  ],
+};
+
+We are thrilled to announce the release of the highly anticipated Single Sign-On (SSO) functionality on our platform. This new feature is designed to enhance security, improve user experience, and streamline the authentication process.
+
+
+## What is SSO?
+Single Sign-On (SSO) allows users to log in to Screeb using their existing credentials from other identity providers (IdPs) such as Google, Microsoft Azure AD, Okta, and more. This eliminates the need to create and remember separate login credentials for Screeb.
+
+## Benefits of SSO:
+
+Enhanced Security: SSO reduces the risk of password fatigue and phishing attacks by minimizing the number of passwords users need to manage.
+Improved User Experience: Users can access OurProduct more quickly and conveniently using their existing credentials from trusted providers.
+Streamlined Access Management: Administrators can manage user access more efficiently through centralized identity providers.
+Supported Identity Providers:
+
+- Google
+- Microsoft Azure AD
+- Custom SAML 2.0 and OpenID Connect providers
+- Many others...
+
+
+## Improvements
+
+### Enhanced Security Measures:
+Implemented additional encryption protocols for secure communication between OurProduct and identity providers.
+Improved logging and monitoring capabilities for tracking SSO-related activities.
+
+#### User Interface Updates:
+Revamped the login page to support SSO options alongside traditional email/password login.
+
+## Bug Fixes
+Fixed an issue where some users experienced delays during the authentication process.
+Resolved minor UI inconsistencies on the login and settings pages.
+
+## Feedback and Support
+We value your feedback and are here to help you with any questions or issues you may encounter. Please reach out to our support team through the Help Center in your Screeb dashboard.
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

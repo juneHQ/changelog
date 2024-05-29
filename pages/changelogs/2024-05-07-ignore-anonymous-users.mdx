@@ -1,0 +1,34 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-05-07-ignore-anonymous-users",
+  publishedAt: "2024-05-07T12:30:00.000Z",
+  title: "💊 Ignore Anonymous Users",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/ignore-anonymous-users.png`,
+  authors: [
+    {
+      name: "Samuel Berthe",
+      description: "Cofounder",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+    {
+      name: "Alexis Rouillard",
+      description: "Tech lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/alexis-rouillard.png`,
+    },
+  ],
+};
+
+After receiving feedback from our users, we're excited to announce the launch of a new feature that allows you to ignore activity from anonymous users, by just enabling an option.
+Here's what you need to know:
+
+- Anonymous User Filtering: Exclude responses from anonymous users in your survey data.
+- Anonymous User Activity: Anonymous users will not be taken into account in your workspace quota and statistics.
+
+This feature provides you with more control over your survey data, allowing you to focus on responses from identified users. By filtering out anonymous responses, you can gain a clearer understanding of your audience and make more informed decisions based on the data you collect.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
