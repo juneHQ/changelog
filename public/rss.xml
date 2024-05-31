@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 20 May 2024 14:09:01 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 May 2024 09:36:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[User filtering on company profiles]]></title>
+            <link>https://changelog.june.so/changelogs/user-filtering-on-company-profiles</link>
+            <guid>https://changelog.june.so/changelogs/user-filtering-on-company-profiles</guid>
+            <pubDate>Fri, 24 May 2024 09:25:07 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/user-filtering-on-company-profiles/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[One click report creation]]></title>
             <link>https://changelog.june.so/changelogs/one-click-report-creation</link>
