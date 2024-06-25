@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Fri, 14 Jun 2024 13:54:25 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 25 Jun 2024 16:50:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Pin audiences]]></title>
+            <link>https://changelog.june.so/changelogs/pin-audiences</link>
+            <guid>https://changelog.june.so/changelogs/pin-audiences</guid>
+            <pubDate>Fri, 14 Jun 2024 13:55:53 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/pin-audiences/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Free audiences]]></title>
             <link>https://changelog.june.so/changelogs/free-audiences</link>
