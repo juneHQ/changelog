@@ -1,0 +1,54 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-07-15-dashboard-homepage",
+  publishedAt: "2024-07-15T12:30:00.000Z",
+  title: "🏡 Dashboard Homepage",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/dashboard-homepage.png`,
+  authors: [
+    {
+      name: "Samuel Berthe",
+      description: "Cofounder",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/samuel-berthe.png`,
+    },
+    {
+      name: "Alexis Rouillard",
+      description: "Tech lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/alexis-rouillard.png`,
+    },
+    {
+      name: "Martin Dequatremare",
+      description: "Tech Lead",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/martin-dequatremare.png`,
+    },
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/romain-jolidon.png`,
+    },
+    {
+      name: "Clément Chaban",
+      description: "Fullstack developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/clement-chaban.png`,
+    },
+  ],
+};
+
+Welcome to the new update of our Dashboard Homepage!
+In this version, we have introduced exciting new features that allow users to customize and arrange their homepage according to their preferences.
+
+One of the key highlights of this update is the ability for users to add and arrange the data that they value the most.
+
+Whether it's NPS, CES, response rate, or MAU usage, users now have the flexibility to choose which widgets they want to see on their homepage.
+
+With this new feature, you can easily prioritize the data that is most relevant to you, making your dashboard more personalized and efficient.
+No more scrolling through irrelevant information - the Dashboard Homepage puts the power of customization in the hands of our users.
+
+Stay tuned for more updates and enhancements coming soon. Enjoy the new Dashboard Homepage experience!
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

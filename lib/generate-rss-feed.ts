@@ -1,6 +1,7 @@
-import path from "path";
-import fs from "fs";
+import { log } from "console";
 import { Feed } from "feed";
+import fs from "fs";
+import path from "path";
 
 const MDX_DIR = "changelogs";
 
@@ -33,9 +34,14 @@ export const generateRssFeed = async () => {
     withFileTypes: true,
   });
 
+  console.log(changelogFileObjects);
+  
+
   const changelogFiles = await Promise.allSettled(
     changelogFileObjects.map((file) => import(`../pages/changelogs/${file.name}`))
   );
+
+  log(changelogFiles);
 
   const changelogsMeta = changelogFiles
     .map((res) => res.status === "fulfilled" && res.value.meta)

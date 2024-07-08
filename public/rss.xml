@@ -4,7 +4,7 @@
         <title>Screeb Changelog</title>
         <link>http://localhost:3004</link>
         <description>How Screeb gets better every week</description>
-        <lastBuildDate>Wed, 29 May 2024 09:22:29 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jul 2024 13:55:16 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Screeb changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>http://localhost:3004</link>
         </image>
         <copyright>All rights reserved 2024, Screeb</copyright>
+        <item>
+            <title><![CDATA[🏡 Dashboard Homepage]]></title>
+            <link>http://localhost:3004/changelogs/2024-07-15-dashboard-homepage</link>
+            <guid>http://localhost:3004/changelogs/2024-07-15-dashboard-homepage</guid>
+            <pubDate>Mon, 15 Jul 2024 12:30:00 GMT</pubDate>
+            <enclosure url="http://localhost:3004/imgs/dashboard-homepage.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[💊 Ignore Anonymous Users]]></title>
             <link>http://localhost:3004/changelogs/2024-05-07-ignore-anonymous-users</link>
