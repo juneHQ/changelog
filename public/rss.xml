@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Wed, 26 Jun 2024 11:34:31 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jul 2024 10:49:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Computed traits for companies upgrade]]></title>
+            <link>https://changelog.june.so/changelogs/better-company-computed-traits</link>
+            <guid>https://changelog.june.so/changelogs/better-company-computed-traits</guid>
+            <pubDate>Fri, 05 Jul 2024 10:36:13 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/better-company-computed-traits/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Launching June 4.0]]></title>
+            <link>https://changelog.june.so/changelogs/4-0-release</link>
+            <guid>https://changelog.june.so/changelogs/4-0-release</guid>
+            <pubDate>Fri, 28 Jun 2024 09:25:32 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/4-0-release/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Real-time last seen]]></title>
             <link>https://changelog.june.so/changelogs/real-time-last-seen</link>
