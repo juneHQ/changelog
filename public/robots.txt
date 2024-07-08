@@ -7,3 +7,6 @@ Host: https://changelog.screeb.app
 
 # Sitemaps
 Sitemap: https://changelog.screeb.app/sitemap.xml
+
+User-agent: *
+Disallow: /years
