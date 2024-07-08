@@ -1,0 +1,31 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "2024-07-15-email-survey",
+  publishedAt: "2024-07-15T12:30:00.000Z",
+  title: "📧 Email Survey",
+  headerImage: `${process.env.NEXT_PUBLIC_APP_HOST}/imgs/email-survey.png`,
+  authors: [
+    {
+      name: "Romain Jolidon",
+      description: "Fullstack Developer",
+      avatarUrl: `${process.env.NEXT_PUBLIC_APP_HOST}/authors/romain-jolidon.png`,
+    },
+  ],
+};
+
+Welcome to the new update of our Email Survey!
+
+In this version, we have introduced exciting new features that allow users to create and send surveys in a more engaging format.
+
+One of the key highlights of this update is the ability for users to customize the design and content of the template that will be included in the email body.
+
+There is one custom template per question type, allowing your end users to start answering the survey directly from the email!
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+   <Template content={content} />
+   {children}
+  </MdxLayout>
+);

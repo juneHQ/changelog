@@ -1,4 +1,3 @@
-import { log } from "console";
 import { Feed } from "feed";
 import fs from "fs";
 import path from "path";
@@ -32,16 +31,11 @@ export const generateRssFeed = async () => {
 
   const changelogFileObjects = fs.readdirSync(path.join(process.cwd(), "pages", MDX_DIR), {
     withFileTypes: true,
-  });
-
-  console.log(changelogFileObjects);
-  
+  });  
 
   const changelogFiles = await Promise.allSettled(
     changelogFileObjects.map((file) => import(`../pages/changelogs/${file.name}`))
   );
-
-  log(changelogFiles);
 
   const changelogsMeta = changelogFiles
     .map((res) => res.status === "fulfilled" && res.value.meta)
