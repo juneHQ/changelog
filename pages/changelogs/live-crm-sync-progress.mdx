@@ -1,0 +1,40 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+
+export const meta = {
+  slug: "live-crm-sync-progress",
+  publishedAt: "2024-07-12T11:59:20.219Z",
+  title: "Live CRM sync progress",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/live-crm-sync-progress/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"},{"name":"Mads Ohm Larsen","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/mads.png"}],
+};
+
+This week's biggest update is a live update state for our CRM syncs.
+
+Up until now the way we've shown progress for data getting synced over to CRMs has not been live.
+
+For large workspaces and especially for the first time around syncing data with a CRM though things could take a long time, and waiting times to get all the data synced over weren't straightforward to understand.
+
+For this reason this week we've decided to make things better by showing a live state for CRM syncs.
+
+This means you can now see how far along we are in syncing over all your users or companies into your favorite CRM.
+
+Additionally we've now further integrated Attio within our product. From now on you can get deeplinks into your Attio objects directly from user and company pages.
+
+This brings the Attio and Hubspot integrations to the same level of depth.
+
+**Other improvements**
+
+- Standardise the labels for weekly periods in the "New signups" report
+- We pushed some fixes to our hamburger menu on the mobile homepage, and other small things like our meta description
+- We added a banner in the product after onboardign to recommend booking a call with us
+- Fix an error with computed traits showing "1970" as the first seen date
+- Avoid re-rendering the table when changing the order on the People list
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
