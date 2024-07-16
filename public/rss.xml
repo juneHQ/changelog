@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 08 Jul 2024 10:49:50 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 15 Jul 2024 15:16:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Live CRM sync progress]]></title>
+            <link>https://changelog.june.so/changelogs/live-crm-sync-progress</link>
+            <guid>https://changelog.june.so/changelogs/live-crm-sync-progress</guid>
+            <pubDate>Fri, 12 Jul 2024 11:59:20 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/live-crm-sync-progress/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Computed traits for companies upgrade]]></title>
             <link>https://changelog.june.so/changelogs/better-company-computed-traits</link>

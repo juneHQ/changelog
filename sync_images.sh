@@ -16,4 +16,4 @@ if [ ! "$(ls -A ./changelog-images)" ]; then
 fi
 
 # Sync changelog-images to the S3 bucket
-aws s3 sync ./changelog-images s3://$BUCKET_NAME/ --acl public-read --exclude '*/.DS_Store' --delete
+aws s3 sync ./changelog-images s3://$BUCKET_NAME/ --acl public-read --exclude "*.DS_Store" --delete
