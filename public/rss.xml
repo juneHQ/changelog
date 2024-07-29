@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 22 Jul 2024 14:01:30 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 29 Jul 2024 12:45:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Improved no-code experience]]></title>
+            <link>https://changelog.june.so/changelogs/improved-no-code-experience</link>
+            <guid>https://changelog.june.so/changelogs/improved-no-code-experience</guid>
+            <pubDate>Fri, 26 Jul 2024 12:24:15 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/improved-no-code-experience/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Export events as CSV]]></title>
             <link>https://changelog.june.so/changelogs/export-events-as-csv</link>

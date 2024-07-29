@@ -1,0 +1,56 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+
+export const meta = {
+  slug: "improved-no-code-experience",
+  publishedAt: "2024-07-26T12:24:15.711Z",
+  title: "Improved no-code experience",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/improved-no-code-experience/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week's updates are a huge step forward in supporting a no-code setup of June!
+
+The first thing we shipped was the new manual event creation in the product. This allows non-technical teammates to create events in the product UI.
+
+We first had the idea for this a couple of years ago, but never got to actually ship this until now.
+
+The main trigger for this has been an onboarding session we did with Ryan Singer - where we went through the whole set up of the product together and identified some of the pain points.
+
+One of the most frustrating things we've found was the awkward handover between technical and non-technical teammates.
+
+This new update allows you to create events manually from the UI, set them up in reports and then invite a colleague to implement all of the events.
+
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/improved-no-code-experience/changelog-computed-traits-page-views.png)
+
+## Pageview computed traits
+
+A second update we rolled out this week is computed traits for pageviews.
+
+This one's easy to explain - if you have a product that relies on pageviews you can now just use them as part of your computed traits.
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/improved-no-code-experience/changelog-attio-users-sync.png)
+
+## Users Sync for Attio
+
+A couple of months ago we've built the ability to sync users to Attio for our own instance. This week we've improved it and released it to all Pro customers.
+
+Around ten companies have been using it for a month or so without any major problems. So we're happy to make it available to all now.
+
+**Other improvements**
+
+- Fix CRM sync drill down for the Attio integration
+- We now allow setting "Any event" in the setup of feature reports
+- We added a new feature audit insight that you can add to views and company pages with an easy to read table.
+- We now disable the sync settings when integrations are uninstalled
+- We standardised the product UI to use UTC time everywhere
+- We added a refresh button for CRM properties - so if you create a new property, you can see it right away!
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
