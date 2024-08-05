@@ -1,0 +1,42 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+
+export const meta = {
+  slug: "redesigned-company-page",
+  publishedAt: "2024-08-02T08:34:03.365Z",
+  title: "Redesigned Company page",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/redesigned-company-page/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week's biggest update is on the company pages - we've made a series of improvements that make them better in every way!
+
+The first thing we did was to improve the discovery of the ability to add insights to company pages by moving all the actions on it to the top right of the page.
+
+After that we redesigned the layout of the page to be responsive and allow you to see more insights at the same time!
+
+The cherry on the cake is that we know show the Feature list on company pages.
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/redesigned-company-page/company-feature-list.png)
+
+You can now see what features your customers are using with minimal setup.
+
+We've found this incredibly helpful, and we hope you do too!
+
+
+**Other improvements**
+
+- You can now add audience filters for a CRM sync - this allows you to only sync a subset of your users to your CRM
+- Attio CRM syncs now can disable automatic associations of workspaces to companies
+- We added a refresh button for CRM properties, so when you create new ones you don't need to reload the whole page
+- You can now map your workspaces "group_id" in your CRM syncs
+- We fixed a bug that was preventing labels to be added correctly to reports
+- We redesigned the event selection menu across the product to include "First event" and "Any event"
+- We redesigned the settings pages sidebar to be on brand
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
