@@ -14,7 +14,7 @@ export const useAuth = () => {
           mode: 'cors',
         });
         const data = await response.json();
-        setLoggedIn(data.loggedIn);
+        setLoggedIn(data.logged_in);
       } catch (error) {
         setLoggedIn(false);
       }
