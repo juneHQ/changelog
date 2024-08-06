@@ -248,35 +248,22 @@ export const MdxLayout = (props: MdxLayoutProps) => {
               animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
             >
               {isInBlogPage ? (
-                <Heading
-                  className="article-title"
-                  as="h1"
-                  fontSize="24px"
-                  color="#0D131B"
-                  cursor={props.hideLayout ? "pointer" : "text"}
-                  _hover={{
-                    textDecoration: props.hideLayout ? "underline" : "none",
-                  }}
+                <h1
+                  className={`article-title text-gray-900 font-hero text-[24px] leading-[32px] font-bold ${props.hideLayout ? 'cursor-pointer hover:underline underline-offset-[3px]' : 'cursor-text hover:no-underline'}`}
+                  
                 >
                   {props.meta.title}
-                </Heading>
+                </h1>
               ) : (
                 <Link href={`/changelogs/${props.meta.slug}`}>
-                  <Heading
-                    className="article-title"
-                    as="h1"
-                    fontSize="24px"
-                    color="#0D131B"
-                    cursor={props.hideLayout ? "pointer" : "text"}
-                    _hover={{
-                      textDecoration: props.hideLayout ? "underline" : "none",
-                    }}
+                  <h2
+                    className={`article-title text-gray-900 font-hero text-[24px] leading-[32px] font-bold ${props.hideLayout ? 'cursor-pointer hover:underline underline-offset-[3px]' : 'cursor-text hover:no-underline'}`}   
                     onClick={() => {
                       setPrevUrl(router.asPath);
                     }}
                   >
                     {props.meta.title}
-                  </Heading>
+                  </h2>
                 </Link>
               )}
             </motion.div>
