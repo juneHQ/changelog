@@ -6,7 +6,7 @@ const nextConfig = {
     NEXT_PUBLIC_STRAPI_API_URL: process.env.NEXT_PUBLIC_STRAPI_API_URL,
     NEXT_PUBLIC_MARKETING_HOST: process.env.NEXT_PUBLIC_MARKETING_HOST,
     NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
-    NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
+    NEXT_PUBLIC_JUNE_API_HOST: process.env.NEXT_PUBLIC_JUNE_API_HOST,
   },
   async redirects() {
     return [];

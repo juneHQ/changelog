@@ -1,9 +1,9 @@
-// import { useAuth } from "unbundled-core/hooks/useAuth";
 import { useState } from 'react';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import dynamic from 'next/dynamic';
 import { defaultPx } from 'lib/utils/default-container-px';
+import { useAuth } from 'lib/state/use-auth';
 // import { NextResponsiveImage } from "../next-responsive-image";
 import { gradients } from 'lib/constants/gradients';
 import {
@@ -56,7 +56,7 @@ interface NavbarProps {
 }
 
 function Navbar(props: NavbarProps) {
-  // const { loggedIn } = useAuth();
+  const { loggedIn } = useAuth();
   const { isOpen: isMobileMenuOpen, onToggle: onMobileMenuToggle } = useDisclosure();
 
   const isHome = props.activeHref === "/";
@@ -81,7 +81,7 @@ function Navbar(props: NavbarProps) {
     });
   };
 
-  const loggedIn = false;
+
 
   return (
     <>
@@ -311,14 +311,12 @@ function Navbar(props: NavbarProps) {
           {/* CTAs */}
           <HStack spacing={4} align="center">
             {loggedIn ? (
-              <Button
-                as="a"
-                size="landingMd"
-                variant="landingGradient"
+              <a
+                className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
                 href={process.env.JUNE_APP_HOST}
               >
                 Dashboard
-              </Button>
+              </a>
             ) : (
               <>
                 <a
