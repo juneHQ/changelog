@@ -272,8 +272,8 @@ function Navbar(props: NavbarProps) {
           <HStack spacing={4} align="center">
             {loggedIn ? (
               <a
-                className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
-                href={process.env.JUNE_APP_HOST}
+                href={`${process.env.NEXT_PUBLIC_APP_HOST}/dashboard`}
+                className="relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary cursor-pointer"
               >
                 Dashboard
               </a>
@@ -281,7 +281,7 @@ function Navbar(props: NavbarProps) {
               <>
                 <a
                   className={`text-[16px] font-bold font-hero leading-normal text-primary hover:underline underline-offset-2`}
-                  href={`${process.env.JUNE_APP_HOST}/login`}
+                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/login`}
                 >
                   Login
                 </a>
@@ -289,7 +289,7 @@ function Navbar(props: NavbarProps) {
                 <div>
                   <a
                     className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
-                    href={`${process.env.JUNE_APP_HOST}/start`}
+                    href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
                   >
                     Get started
                   </a>
