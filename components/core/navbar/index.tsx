@@ -4,8 +4,6 @@ import NextImage from 'next/image';
 import dynamic from 'next/dynamic';
 import { defaultPx } from 'lib/utils/default-container-px';
 import { useAuth } from 'lib/state/use-auth';
-// import { NextResponsiveImage } from "../next-responsive-image";
-import { gradients } from 'lib/constants/gradients';
 import {
   Box,
   Button,
@@ -24,9 +22,8 @@ import {
 } from '@chakra-ui/react';
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { NavbarMobileMenuProps } from './navbar-mobile-menu';
-import { DesktopNavItem, desktopNavItemStyle } from './desktop-nav-item';
+import { DesktopNavItem } from './desktop-nav-item';
 import { NextResponsiveImage } from '../next-responsive-image';
-import { SelectedTick } from '../custom-icons/selected-tick';
 
 const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
   () => import("./navbar-mobile-menu").then((mod) => mod.NavbarMobileMenu),
@@ -201,22 +198,16 @@ function Navbar(props: NavbarProps) {
             <Popover variant="responsive" trigger="hover">
               <PopoverTrigger>
                 <HStack role="group" spacing={[1]}>
-                  <Text
-                    {...desktopNavItemStyle}
-                    {...(props.mode === "dark" && {
-                      color: "white",
-                    })}
+                  <p
+                    className='font-hero text-[16px] cursor-pointer hover:underline underline-offset-[3px] font-bold leading-normal text-primary'
                   >
                     Features
-                  </Text>
+                  </p>
                   <ChevronDownIcon
                     boxSize={[5]}
-                    {...(props.mode === "dark" && {
-                      color: "white",
+                    {...(props.mode === 'dark' && {
+                      color: 'white',
                     })}
-                    _groupHover={{
-                      color: "primary",
-                    }}
                   />
                 </HStack>
               </PopoverTrigger>
@@ -229,72 +220,41 @@ function Navbar(props: NavbarProps) {
                   minWidth="unset"
                   width="unset"
                 >
-                  <Box p={[6]}>
-                    <VStack alignItems="start" spacing={[6]}>
-                      <HStack w="200px" justify={"space-between"}>
-                        <Text
-                          fontWeight="medium"
-                          color="landing.almostBlack.500"
-                          _hover={{ color: "primary", cursor: "pointer" }}
-                          as="a"
-                          href="https://june.so/"
-                        >
-                          Product Analytics
-                        </Text>
-                        {isHome && <SelectedTick />}
+                  <Box className="w-[319px] p-5">
+                  <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
+                    <Link href="/role/product" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <img className="mr-1" src="/navbar/product-analytics.svg" alt="Role Product" />
+                        <Text>For Product teams</Text>
                       </HStack>
-                      <HStack w="200px" justify="space-between">
-                        <Flex gap={3}>
-                          <Text
-                            fontWeight="medium"
-                            color="landing.almostBlack.500"
-                            as="a"
-                            href="https://june.so/feature-launches"
-                            _hover={{ color: "primary", cursor: "pointer" }}
-                          >
-                            Feature Report
-                          </Text>
-                        </Flex>
-                        {isFeatureLaunches && <SelectedTick />}
+                    </Link>
+                    <Link href="/role/success-sales" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <img className="mr-1" src="/navbar/success-sales.svg" alt="Role Success Sales" />
+                        <Text>For CS and Sales teams</Text>
                       </HStack>
-                      <HStack>
-                        <Text
-                          fontWeight="medium"
-                          color="landing.almostBlack.500"
-                          as="a"
-                          href="https://qualify.june.so/"
-                          _hover={{ color: "primary", cursor: "pointer" }}
-                        >
-                          Qualification Bot
-                        </Text>
+                    </Link>
+                    <div className="w-full h-[1px] bg-gray-200" />
+                    <Link href="/integration/hubspot" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <img className="mr-1" src="/navbar/hubspot-integration.svg" alt="HubSpot integration" />
+                        <Text>HubSpot integration</Text>
+                        <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
+                          NEW
+                        </div>
                       </HStack>
-                      <HStack w="200px" justify="space-between">
-                        <Flex gap={3}>
-                          <Text
-                            fontWeight="medium"
-                            color="landing.almostBlack.500"
-                            as="a"
-                            href="https://june.so/ai"
-                            _hover={{ color: "primary", cursor: "pointer" }}
-                          >
-                            June AI
-                          </Text>
-                          <Text
-                            fontWeight="semibold"
-                            fontSize="xs"
-                            color="white"
-                            bgGradient={gradients["PRIMARY_LIGHTER"]}
-                            px={[1.5]}
-                            py={[1]}
-                            rounded="md"
-                          >
-                            New
-                          </Text>
-                        </Flex>
-                        {isAI && <SelectedTick />}
+                    </Link>
+                    <Link href="/integration/attio" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <img className="mr-1" src="/navbar/attio-integration.svg" alt="Attio integration" />
+                        <Text>Attio integration</Text>
+                        <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
+                          NEW
+                        </div>
                       </HStack>
-                    </VStack>
-                  </Box>
+                    </Link>
+                  </VStack>
+                </Box>
                 </PopoverContent>
               </Portal>
             </Popover>
