@@ -1,12 +1,12 @@
-import { Box, Grid, HStack, Image, Skeleton, VStack } from "@chakra-ui/react";
-import MoreItems from "components/core/more-items";
-import dayjs from "dayjs";
-import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
-import { useRouter } from "next/router";
-import Timeline from "./timeline";
-import React from "react";
-import { motion } from "framer-motion";
-import LazyLoad from "react-lazyload";
+import LazyLoad from 'react-lazyload';
+import React from 'react';
+import { useRouter } from 'next/router';
+import { IAggregatedChangelogs, IImagePreviewMeta } from 'lib/models/view';
+import { motion } from 'framer-motion';
+import dayjs from 'dayjs';
+import MoreItems from 'components/core/more-items';
+import { Box, Grid, HStack, Image, VStack } from '@chakra-ui/react';
+import Timeline from './timeline';
 
 interface IMonthsProps {
   monthChangelogsMap: IAggregatedChangelogs;
@@ -79,9 +79,6 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
               paddingBottom={index === sortedChangelogsArrayByMonth.length - 1 ? 0 : [12, 16, 20]}
             >
               <VStack
-                // onClick={() => {
-                //   timeline.setView("weeks");
-                // }}
                 borderRadius={"16px"}
                 overflow="hidden"
                 cursor="pointer"
@@ -147,9 +144,6 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                     ) : (
                       <HStack height="100%">
                         <motion.div
-                          // layoutId={`${changelogs[0]?.slug}`}
-                          // initial="visible"
-                          // transition={{ duration: 0.6 }}
                           layoutId={
                             index === 0 && isInfiniteScrollingView ? changelogs[0]?.slug : ``
                           }

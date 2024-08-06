@@ -1,17 +1,17 @@
-import React, { ReactNode } from "react";
-import Link from "next/link";
-import Head from "next/head";
-import { defaultPx } from "lib/utils/default-container-px";
-import TryBanner from "components/core/try-banner";
-import Navbar from "components/core/navbar";
-import { Footer } from "components/core/footer";
-import { Box, Button, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
-import TimeSelectionTabs from "../core/time-selection-tabs";
-import useTimelineStore from "lib/state/use-timeline-store";
-import { motion } from "framer-motion";
-import useAnimatePageStore from "lib/state/use-animate-page-store";
-import { useRouter } from "next/router";
-import usePageStatusStore from "lib/state/use-page-status-store";
+import React, { ReactNode } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Head from 'next/head';
+import { defaultPx } from 'lib/utils/default-container-px';
+import useTimelineStore from 'lib/state/use-timeline-store';
+import usePageStatusStore from 'lib/state/use-page-status-store';
+import useAnimatePageStore from 'lib/state/use-animate-page-store';
+import { motion } from 'framer-motion';
+import TryBanner from 'components/core/try-banner';
+import Navbar from 'components/core/navbar';
+import { Footer } from 'components/core/footer';
+import { Box, Button, Container, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import TimeSelectionTabs from '../core/time-selection-tabs';
 
 export interface MainLayoutProps {
   page?: number;
@@ -79,7 +79,7 @@ export const MainLayout = ({
   const hasMorePage =
     !infiniteScrollingView &&
     page !== undefined &&
-    page < Math.floor(totalItems[timeline.view] / itemsPerPage);
+    page < (Math.floor(totalItems[timeline.view] / itemsPerPage) - 1);
 
   const isInBlogPage = router.pathname.startsWith("/changelogs/");
 
