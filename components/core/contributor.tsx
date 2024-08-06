@@ -6,13 +6,17 @@ interface ContributorProps {
   description: string;
 }
 
-export function Contributor(props: ContributorProps) {
+export function Contributor({
+  avatarUrl,
+  name,
+  description,
+}: ContributorProps) {
   return (
     <HStack spacing={4}>
-      {!!props.avatarUrl && <Avatar src={props.avatarUrl} />}
+      {!!avatarUrl && <Avatar src={avatarUrl} />}
       <Flex direction="column" align="flex-start" justify="center">
-        <Text fontWeight="semibold">{props.name}</Text>
-        <Text color="rgba(36,31,71,0.8)">{props.description}</Text>
+        <Text fontWeight="semibold">{name}</Text>
+        <Text color="gray.700">{description}</Text>
       </Flex>
     </HStack>
   );

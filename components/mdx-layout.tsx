@@ -1,16 +1,15 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import Head from "next/head";
-import { MdxMeta } from "lib/models/mdx-meta";
-import { motion } from "framer-motion";
-import dayjs from "dayjs";
-import { Contributor } from "components/contributor";
-import { ReactNode } from "@mdx-js/react/lib";
-import { MDXProvider } from "@mdx-js/react";
+import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Head from 'next/head';
+import usePreviousPageUrl from 'lib/state/use-previous-page-url-store';
+import { MdxMeta } from 'lib/models/mdx-meta';
+import { motion } from 'framer-motion';
+import dayjs from 'dayjs';
+import { ReactNode } from '@mdx-js/react/lib';
+import { MDXProvider } from '@mdx-js/react';
 import {
   Box,
-  Divider,
   Flex,
   Heading,
   Image,
@@ -19,10 +18,10 @@ import {
   Text,
   UnorderedList,
   VStack,
-} from "@chakra-ui/react";
-import Timeline from "./layout/timeline";
-import { MainLayout } from "./layout/main-layout";
-import usePreviousPageUrl from "lib/state/use-previous-page-url-store";
+} from '@chakra-ui/react';
+import Timeline from './layout/timeline';
+import { MainLayout } from './layout/main-layout';
+import { Contributors } from './core/contributors';
 
 import type { MDXComponents } from "mdx/types";
 const components: MDXComponents = {
@@ -298,16 +297,7 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             </Box>
           </motion.div>
           {/* Article authors */}
-          {!props.hideAuthors && (
-            <>
-              <Divider mt={16} mb={8} />
-              <VStack px={[6]} align="start" spacing={4}>
-                {props.meta.authors.map((author) => (
-                  <Contributor key={author.name} {...author} />
-                ))}
-              </VStack>
-            </>
-          )}
+          {!props.hideAuthors && <Contributors authors={props.meta.authors} />}
         </Box>
       </Timeline>
     </MDXProvider>
