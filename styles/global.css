@@ -1,3 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'SN Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/sn-pro/SNPro-Black.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SN Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/sn-pro/SNPro-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SN Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/sn-pro/SNPro-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SN Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/sn-pro/SNPro-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SN Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/sn-pro/SNPro-Regular.woff2') format('woff2');
+}
+
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;

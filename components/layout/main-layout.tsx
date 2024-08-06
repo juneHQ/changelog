@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import TryBanner from 'components/core/try-banner';
 import Navbar from 'components/core/navbar';
 import { Footer } from 'components/core/footer';
-import { Box, Button, Container, Heading, HStack, Text, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, HStack, VStack } from '@chakra-ui/react';
 import TimeSelectionTabs from '../core/time-selection-tabs';
 
 export interface MainLayoutProps {
@@ -168,14 +168,14 @@ export const MainLayout = ({
                   minHeight="100vh"
                 >
                   {!isInBlogPage && (
-                    <VStack alignItems="start" width="100%">
-                      <Text fontSize="xl" color="gray.700" textAlign={"start"}>
-                        The latest from June
-                      </Text>
-                      <Heading as="h1" fontSize={["5xl"]} color="black" textAlign={"start"}>
+                    <div className="font-hero flex flex-col items-start w-full gap-2">
+                      <h1 className="text-5xl font-hero font-black tracking-tight text-gray-900 sm:text-6xl sm:leading-[75px] text-left">
                         Changelog
-                      </Heading>
-                    </VStack>
+                      </h1>
+                      <p className="max-w-2xl text-2xl font-hero font-bold leading-8 text-gray-900 text-left">
+                        New features, improvements, and fixes every week
+                      </p>
+                    </div>
                   )}
                   <VStack spacing={0} justifyContent="center">
                     {children}

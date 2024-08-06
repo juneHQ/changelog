@@ -321,27 +321,20 @@ function Navbar(props: NavbarProps) {
               </Button>
             ) : (
               <>
-                <Button
-                  as="a"
-                  size="landingMd"
-                  variant="landingOutline"
+                <a
+                  className={`text-[16px] font-bold font-hero leading-normal text-primary hover:underline underline-offset-2`}
                   href={`${process.env.JUNE_APP_HOST}/login`}
-                  {...(props.mode === "dark" && {
-                    variant: "landingOutlineDark",
-                  })}
                 >
                   Login
-                </Button>
+                </a>
+                <div className="flex justify-center items-center space-x-2"></div>
                 <div>
-                  <Button
-                    className="g-conversion-button"
-                    as="a"
-                    size="landingMd"
-                    variant="landingGradient"
+                  <a
+                    className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
                     href={`${process.env.JUNE_APP_HOST}/start`}
                   >
-                    Sign up
-                  </Button>
+                    Get started
+                  </a>
                   {/* Google one-tap */}
                   <div
                     id="g_id_onload"
