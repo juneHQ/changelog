@@ -1,11 +1,11 @@
 // import { useAuth } from "unbundled-core/hooks/useAuth";
-import { useState } from "react";
-import Link from "next/link";
-import NextImage from "next/image";
-import dynamic from "next/dynamic";
-import { defaultPx } from "lib/utils/default-container-px";
+import { useState } from 'react';
+import Link from 'next/link';
+import NextImage from 'next/image';
+import dynamic from 'next/dynamic';
+import { defaultPx } from 'lib/utils/default-container-px';
 // import { NextResponsiveImage } from "../next-responsive-image";
-import { gradients } from "lib/constants/gradients";
+import { gradients } from 'lib/constants/gradients';
 import {
   Box,
   Button,
@@ -21,12 +21,12 @@ import {
   useDisclosure,
   useToast,
   VStack,
-} from "@chakra-ui/react";
-import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { NavbarMobileMenuProps } from "./navbar-mobile-menu";
-import { DesktopNavItem, desktopNavItemStyle } from "./desktop-nav-item";
-import { NextResponsiveImage } from "../next-responsive-image";
-import { SelectedTick } from "../custom-icons/selected-tick";
+} from '@chakra-ui/react';
+import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { NavbarMobileMenuProps } from './navbar-mobile-menu';
+import { DesktopNavItem, desktopNavItemStyle } from './desktop-nav-item';
+import { NextResponsiveImage } from '../next-responsive-image';
+import { SelectedTick } from '../custom-icons/selected-tick';
 
 const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
   () => import("./navbar-mobile-menu").then((mod) => mod.NavbarMobileMenu),
@@ -184,7 +184,7 @@ function Navbar(props: NavbarProps) {
             <Link href="https://june.so/" passHref prefetch={false}>
               <NextResponsiveImage
                 display={["none", "none", "block"]}
-                src="/june-3.0-logo.svg"
+                src="/logo.svg"
                 alt="June's logo"
                 width={["100px"]}
                 height={["32px"]}

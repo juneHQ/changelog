@@ -1,6 +1,6 @@
-import React from "react";
-import NextImage from "next/image";
-import { defaultPx } from "lib/utils/default-container-px";
+import React from 'react';
+import NextImage from 'next/image';
+import { defaultPx } from 'lib/utils/default-container-px';
 import {
   Box,
   chakra,
@@ -13,10 +13,10 @@ import {
   Image,
   Text,
   VStack,
-} from "@chakra-ui/react";
-import { FooterTitle } from "./footer-title";
-import { FooterLink } from "./footer-link";
-import { NextResponsiveImage } from "../next-responsive-image";
+} from '@chakra-ui/react';
+import { FooterTitle } from './footer-title';
+import { FooterLink } from './footer-link';
+import { NextResponsiveImage } from '../next-responsive-image';
 
 const LINK_GAPS = [2, 2, 8];
 
@@ -67,7 +67,7 @@ export function Footer(props: FooterProps) {
             title={
               <HStack cursor={"pointer"}>
                 <Flex h="32px" w="32px" justify={"center"} align="center">
-                  <Image h={"24px"} w={"24px"} src="/gdrp.svg" alt="GDPR" />
+                  <Image h={"24px"} w={"24px"} src="/gdpr.svg" alt="GDPR" />
                 </Flex>
                 <Text color={props.mode === "dark" ? "gray.600" : "landing.gray"}>GDPR Ready</Text>
               </HStack>
