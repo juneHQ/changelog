@@ -177,9 +177,9 @@ export const MainLayout = ({
                       </p>
                     </div>
                   )}
-                  <VStack spacing={0} justifyContent="center">
+                  <div className="flex flex-col justify-center">
                     {children}
-                  </VStack>
+                  </div>
                 </VStack>
               </motion.div>
               <motion.div

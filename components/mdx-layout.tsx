@@ -273,15 +273,11 @@ export const MdxLayout = (props: MdxLayoutProps) => {
             initial={{ opacity: 0, y: props.hideLayout ? 0 : 20 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.2 } }}
           >
-            <Box
-              // pt={[10]}
-              pb={16}
-              fontSize="lg"
-              lineHeight="32px"
-              color="landing.almostBlack.500"
+            <div
+              className="pb-16 text-lg leading-8 text-gray-700 font-hero"
             >
               {props.children}
-            </Box>
+            </div>
           </motion.div>
           {/* Article authors */}
           {!props.hideAuthors && <Contributors authors={props.meta.authors} />}
