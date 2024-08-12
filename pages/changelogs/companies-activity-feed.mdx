@@ -1,0 +1,42 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+
+export const meta = {
+  slug: "companies-activity-feed",
+  publishedAt: "2024-08-09T03:42:14.401Z",
+  title: "Companies activity feed",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/companies-activity-feed/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+The first feature I've ever built in June was the user event feed.
+
+The big idea behind it was to give everyone a way to get a list of who their users are and what they're doing.
+
+Over time our product has evolved to be a lot more focused on the needs of B2B companies that sell software to other companies.
+
+This created the need to be able to see what are all the events individual customers are performing?
+
+So this week's release includes a new event feed on company pages, so you can now look at what events people are performing in specific companies or workspaces.
+
+To find this new feature just head to a workspace or company page and click on the Feed tab.
+
+We built this feature because of feedback from customers like you, so if you have something specific in mind you'd want us to build - please share with us your feedback.
+
+
+**Other improvements**
+
+- Fixed an error that caused views to crash for some customers
+- We refreshed the settings UI to match the style of the main product sidebar
+- Fix the wrong computed trait drilldown being displayed when opening computed traits from the companies page
+- We pushed our brand redesign to our changelog
+- Fix an error where the view Emoji picker in the sidebar was wrongly cut off
+- We fixed the workspace switcher search for users in more than 5 workspaces
+- We pushed some copy improvements in the object settings
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
