@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Link from 'next/link';
-import NextImage from 'next/image';
-import dynamic from 'next/dynamic';
-import { defaultPx } from 'lib/utils/default-container-px';
-import { useAuth } from 'lib/state/use-auth';
+import { useState } from "react";
+import Link from "next/link";
+import NextImage from "next/image";
+import dynamic from "next/dynamic";
+import { defaultPx } from "lib/utils/default-container-px";
+import { useAuth } from "lib/state/use-auth";
 import {
   Box,
   Button,
@@ -19,11 +19,11 @@ import {
   useDisclosure,
   useToast,
   VStack,
-} from '@chakra-ui/react';
-import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { NavbarMobileMenuProps } from './navbar-mobile-menu';
-import { DesktopNavItem } from './desktop-nav-item';
-import { NextResponsiveImage } from '../next-responsive-image';
+} from "@chakra-ui/react";
+import { ChevronDownIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { NavbarMobileMenuProps } from "./navbar-mobile-menu";
+import { DesktopNavItem } from "./desktop-nav-item";
+import { NextResponsiveImage } from "../next-responsive-image";
 
 const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
   () => import("./navbar-mobile-menu").then((mod) => mod.NavbarMobileMenu),
@@ -77,8 +77,6 @@ function Navbar(props: NavbarProps) {
       duration: 1000,
     });
   };
-
-
 
   return (
     <>
@@ -198,15 +196,13 @@ function Navbar(props: NavbarProps) {
             <Popover variant="responsive" trigger="hover">
               <PopoverTrigger>
                 <HStack role="group" spacing={[1]}>
-                  <p
-                    className='font-hero text-[16px] cursor-pointer hover:underline underline-offset-[3px] font-bold leading-normal text-primary'
-                  >
+                  <p className="font-hero text-[16px] cursor-pointer hover:underline underline-offset-[3px] font-bold leading-normal text-primary">
                     Features
                   </p>
                   <ChevronDownIcon
                     boxSize={[5]}
-                    {...(props.mode === 'dark' && {
-                      color: 'white',
+                    {...(props.mode === "dark" && {
+                      color: "white",
                     })}
                   />
                 </HStack>
@@ -221,40 +217,88 @@ function Navbar(props: NavbarProps) {
                   width="unset"
                 >
                   <Box className="w-[319px] p-5">
-                  <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
-                    <Link href="/role/product" passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/product-analytics.svg" alt="Role Product" />
-                        <Text>For Product teams</Text>
-                      </HStack>
-                    </Link>
-                    <Link href="/role/success-sales" passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/success-sales.svg" alt="Role Success Sales" />
-                        <Text>For CS and Sales teams</Text>
-                      </HStack>
-                    </Link>
-                    <div className="w-full h-[1px] bg-gray-200" />
-                    <Link href="/integration/hubspot" passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/hubspot-integration.svg" alt="HubSpot integration" />
-                        <Text>HubSpot integration</Text>
-                        <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                          NEW
-                        </div>
-                      </HStack>
-                    </Link>
-                    <Link href="/integration/attio" passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/attio-integration.svg" alt="Attio integration" />
-                        <Text>Attio integration</Text>
-                        <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                          NEW
-                        </div>
-                      </HStack>
-                    </Link>
-                  </VStack>
-                </Box>
+                    <VStack
+                      alignItems="start"
+                      spacing={[4]}
+                      className="font-bold text-primary font-hero"
+                    >
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/product`}
+                        passHref
+                      >
+                        <HStack
+                          as="a"
+                          spacing={2}
+                          className="hover:underline underline-offset-[3px] cursor-pointer"
+                        >
+                          <img
+                            className="mr-1"
+                            src="/navbar/product-analytics.svg"
+                            alt="Role Product"
+                          />
+                          <Text>For Product teams</Text>
+                        </HStack>
+                      </Link>
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/success-sales`}
+                        passHref
+                      >
+                        <HStack
+                          as="a"
+                          spacing={2}
+                          className="hover:underline underline-offset-[3px] cursor-pointer"
+                        >
+                          <img
+                            className="mr-1"
+                            src="/navbar/success-sales.svg"
+                            alt="Role Success Sales"
+                          />
+                          <Text>For CS and Sales teams</Text>
+                        </HStack>
+                      </Link>
+                      <div className="w-full h-[1px] bg-gray-200" />
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`}
+                        passHref
+                      >
+                        <HStack
+                          as="a"
+                          spacing={2}
+                          className="hover:underline underline-offset-[3px] cursor-pointer"
+                        >
+                          <img
+                            className="mr-1"
+                            src="/navbar/hubspot-integration.svg"
+                            alt="HubSpot integration"
+                          />
+                          <Text>HubSpot integration</Text>
+                          <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
+                            NEW
+                          </div>
+                        </HStack>
+                      </Link>
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/attio`}
+                        passHref
+                      >
+                        <HStack
+                          as="a"
+                          spacing={2}
+                          className="hover:underline underline-offset-[3px] cursor-pointer"
+                        >
+                          <img
+                            className="mr-1"
+                            src="/navbar/attio-integration.svg"
+                            alt="Attio integration"
+                          />
+                          <Text>Attio integration</Text>
+                          <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
+                            NEW
+                          </div>
+                        </HStack>
+                      </Link>
+                    </VStack>
+                  </Box>
                 </PopoverContent>
               </Portal>
             </Popover>
@@ -288,7 +332,7 @@ function Navbar(props: NavbarProps) {
                 <div className="flex justify-center items-center space-x-2"></div>
                 <div>
                   <a
-                    className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
+                    className="relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary"
                     href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
                   >
                     Get started
