@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 20 Aug 2024 20:47:01 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 26 Aug 2024 20:54:15 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Merging the feature audit and explorer reports]]></title>
+            <link>https://changelog.june.so/changelogs/merging-the-feature-audit-and-explorer-reports</link>
+            <guid>https://changelog.june.so/changelogs/merging-the-feature-audit-and-explorer-reports</guid>
+            <pubDate>Fri, 23 Aug 2024 20:42:43 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/merging-the-feature-audit-and-explorer-reports/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Trait management]]></title>
             <link>https://changelog.june.so/changelogs/trait-management</link>

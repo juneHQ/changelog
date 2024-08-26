@@ -1,0 +1,32 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "merging-the-feature-audit-and-explorer-reports",
+  publishedAt: "2024-08-23T20:42:43.230Z",
+  title: "Merging the feature audit and explorer reports",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/merging-the-feature-audit-and-explorer-reports/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+At the beginging of June we had this fear that we didn't have enough features to keep our customers engaged.
+
+So we started building out as many reports as we could. Naturally, over time we ended up with two very similar reports.
+
+In an effort to make things easier for our customers we decided to merge the two reports into one.
+
+This change makes it both easier for you to discover - and also makes the individual report itself more useful.
+
+**Other improvements**
+
+- We now generate a domain trait for companies - this allows you to filter them by domain in your audiences.
+- We improved the reliability of our main analytics database and the speed of ingesting data - which will make updates of traits on any object faster.
+- We fixed a bug with relative timestamps on milestone insights.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
