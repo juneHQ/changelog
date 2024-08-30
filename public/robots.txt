@@ -1,9 +1,195 @@
-# *
+# Updated: 08/30/2024
+
 User-agent: *
 Allow: /
 
-# Host
-Host: https://changelog.june.so
-
-# Sitemaps
 Sitemap: https://changelog.june.so/sitemap.xml
+
+User-agent: Ruby
+User-agent: python-requests
+User-agent: libwww-perl
+User-agent: DotBot
+User-agent: Mail.RU_Bot
+User-agent: +https://www.megaindex.ru/
+User-agent: Alexibot
+User-agent: Aqua_Products
+User-agent: asterias
+User-agent: b2w
+User-agent: BackDoorBot
+User-agent: BecomeBot
+User-agent: Bloglovin
+User-agent: BlowFish
+User-agent: Bookmark search tool
+User-agent: Bot
+User-agent: BotALot
+User-agent: BuiltBotTough
+User-agent: Bullseye
+User-agent: BunnySlippers
+User-agent: calculon spider
+User-agent: CheeseBot
+User-agent: CherryPicker
+User-agent: CherryPickerElite
+User-agent: CherryPickerSE
+User-agent: coccoc
+User-agent: Copernic
+User-agent: CopyRightCheck
+User-agent: cosmos
+User-agent: Crescent
+User-agent: Daum
+User-agent: DittoSpyder
+User-agent: dumbot
+User-agent: EmailCollector
+User-agent: EmailSiphon
+User-agent: EmailWolf
+User-agent: Enterprise_Search
+User-agent: EroCrawler
+User-agent: es
+User-agent: exabot
+User-agent: ExtractorPro
+User-agent: ezooms
+User-agent: FairAd Client
+User-agent: fatbot
+User-agent: Flaming AttackBot
+User-agent: Foobot
+User-agent: FreeFind
+User-agent: Gaisbot
+User-agent: GetRight
+User-agent: grub
+User-agent: grub-client
+User-agent: Harvest
+User-agent: Hatena Antenna
+User-agent: hloader
+User-agent: httplib
+User-agent: humanlinks
+User-agent: IDG
+User-agent: InfoNaviRobot
+User-agent: inoreader.com
+User-agent: Iron33
+User-agent: JennyBot
+User-agent: Jetbot
+User-agent: Jetbot
+User-agent: jikespider
+User-agent: Kenjin Spider
+User-agent: Keyword Density
+User-agent: larbin
+User-agent: LexiBot
+User-agent: libWeb/clsHTTP
+User-agent: LinkextractorPro
+User-agent: LinkScan
+User-agent: LinkWalker
+User-agent: LNSpiderguy
+User-agent: lwp-trivial
+User-agent: Mata Hari
+User-agent: MegaIndex.ru
+User-agent: Microsoft URL Control
+User-agent: MIIxpc
+User-agent: Mister PiX
+User-agent: moget
+User-agent: MegaIndex.ru
+User-agent: spbot
+User-agent: MSIECrawler
+User-agent: naver
+User-agent: NetAnts
+User-agent: NetMechanic
+User-agent: NICErsPRO
+User-agent: Nutch
+User-agent: Offline Explorer
+User-agent: OmniExplorer_Bot
+User-agent: Openbot
+User-agent: Openfind 
+User-agent: Openfind data gathere
+User-agent: Optimizer
+User-agent: Oracle Ultra Search
+User-agent: Parser
+User-agent: PaperLiBot
+User-agent: Pcore-HTTP
+User-agent: PerMan
+User-agent: PHP
+User-agent: ProPowerBot
+User-agent: ProWebWalker
+User-agent: psbot
+User-agent: Pu_iN Crawler
+User-agent: Python-urllib
+User-agent: pyton-requests
+User-agent: Qwantify
+User-agent: QueryN Metasearch
+User-agent: Radiation Retriever
+User-agent: RepoMonkey
+User-agent: RepoMonkey Bait & Tackle
+User-agent: RMA
+User-agent: searchpreview
+User-agent: SeznamBot
+User-agent: sitebot
+User-agent: SiteSnagger
+User-agent: SMTBot
+User-agent: Sogou
+User-agent: sootle
+User-agent: sosospider
+User-agent: SpankBot
+User-agent: spanner
+User-agent: Spinn3r
+User-agent: Stanford
+User-agent: Stanford Comp Sci
+User-agent: suzuran
+User-agent: Swiftbot
+User-agent: Szukacz
+User-agent: Teleport
+User-agent: TeleportPro
+User-agent: Telesoft
+User-agent: The Intraformant
+User-agent: TheNomad
+User-agent: toCrawl
+User-agent: Trident
+User-agent: True_Robot
+User-agent: turingos
+User-agent: Updownerbot
+User-agent: URL Control
+User-agent: URL_Spider_Pro
+User-agent: URLy Warning
+User-agent: VCI
+User-agent: VCI WebViewer VCI WebViewer Win32
+User-agent: voilabot
+User-agent: Web Image Collector
+User-agent: WebAuto
+User-agent: WebBandit
+User-agent: WebCopier
+User-agent: WebEnhancer
+User-agent: WebSauger
+User-agent: Website Quester
+User-agent: Webster Pro
+User-agent: WebStripper
+User-agent: WebVac
+User-agent: WebZip
+User-agent: Wget
+User-agent: willybot
+User-agent: woorankreview
+User-agent: WWW-Collector-E
+User-agent: yodaobot
+User-agent: YaK
+User-agent: Zeus
+User-agent: moget
+User-agent: ichiro
+User-agent: NaverBot
+User-agent: Yeti
+Disallow: /
+
+#AI and various
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: cohere-ai
+User-agent: ia_archiver
+User-Agent: omgili
+User-Agent: omgilibot
+User-agent: MJ12bot
+User-agent: PiplBot
+User-agent: Bytespider
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: FacebookBot
+User-agent: magpie-crawler
+User-agent: NewsNow
+User-agent: news-please
+User-agent: Perplexity-ai
+Disallow: /
