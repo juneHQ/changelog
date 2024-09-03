@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 26 Aug 2024 20:54:15 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 03 Sep 2024 16:24:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[HubSpot Deals Sync]]></title>
+            <link>https://changelog.june.so/changelogs/hubspot-deals-sync</link>
+            <guid>https://changelog.june.so/changelogs/hubspot-deals-sync</guid>
+            <pubDate>Fri, 30 Aug 2024 16:08:25 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/hubspot-deals-sync/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Merging the feature audit and explorer reports]]></title>
             <link>https://changelog.june.so/changelogs/merging-the-feature-audit-and-explorer-reports</link>

@@ -1,0 +1,42 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "hubspot-deals-sync",
+  publishedAt: "2024-08-30T16:08:25.625Z",
+  title: "HubSpot Deals Sync",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/hubspot-deals-sync/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week I'm super excited to announce that we're launching support for syncing June data with HubSpot Deals!
+
+When setting up Hubspot out of the box there are some limitations in how companies work. For instance domains are unique and it's hard to support having multiple companies with the same domain.
+
+When syncing June Workspace data with Hubspot this causes issues - for example if you have a "Staging" and "Production" workspace and both workspaces have a company "Hubspot" in them.
+
+By syncing June data to Hubspot Deals we can avoid these issues - as every company can have many deals! So you can have a deal in the deal pipeline for your "Staging" workspace and another deal in the pipeline for your "Production" workspace.
+
+We think this is a super exciting feature and we can't wait to see what people build with it!
+
+To try it out, open the HubSpot settings for your workspace and you'll see a new Deals option when syncing Workspace data.
+
+**If you have already been using our HubSpot integration, you'll need to uninstall and reinstall the integration to give us permission to sync to your Deals.**
+
+The next thing we want to tackle as part of this work is support for syncing to HubSpot Custom Objects. As we've seen many customers want to sync to custom objects to really nail how their data is structured in HubSpot.
+
+**Other improvements**
+
+- You can now set a 5 minute frequency for CRM Syncs
+- You can now add a description to audiences from the People list page
+- We fixed an issue with public links to Explorer reports
+- You can now disable the weekly digest at a workspace level
+- We fixed the confusion of what the audience is when looking at a report for a specific company
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
