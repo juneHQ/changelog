@@ -1,10 +1,9 @@
-import { generateRssFeed } from "lib/generate-rss-feed";
-import { getArticleSlugs } from "lib/get-articles-slugs";
-import { IPageProps } from "pages";
-import React from "react";
-import dayjs from "dayjs";
-import dynamic from "next/dynamic";
-import { MainLayout } from "components/layout/main-layout";
+import React from 'react';
+import { IPageProps } from 'pages';
+import dynamic from 'next/dynamic';
+import { getArticleSlugs } from 'lib/get-articles-slugs';
+import dayjs from 'dayjs';
+import { MainLayout } from 'components/layout/main-layout';
 
 const Page = ({ slugs }: IPageProps) => {
   const Articles = React.useMemo(() => {
@@ -84,7 +83,6 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }) => {
-  await generateRssFeed();
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(

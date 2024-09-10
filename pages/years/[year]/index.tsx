@@ -1,10 +1,9 @@
-import Months from "components/layout/months";
-import { generateRssFeed } from "lib/generate-rss-feed";
-import { getArticleSlugs } from "lib/get-articles-slugs";
-import { IAggregatedChangelogs, IImagePreviewMeta } from "lib/models/view";
-import { IPageProps } from "pages";
-import React, { useEffect, useState } from "react";
-import { MainLayout } from "components/layout/main-layout";
+import React, { useEffect, useState } from 'react';
+import { IPageProps } from 'pages';
+import { IAggregatedChangelogs, IImagePreviewMeta } from 'lib/models/view';
+import { getArticleSlugs } from 'lib/get-articles-slugs';
+import Months from 'components/layout/months';
+import { MainLayout } from 'components/layout/main-layout';
 
 const ITEMS_PER_PAGE = 4;
 const MONTHS_PER_RENDER = 12;
@@ -67,7 +66,6 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params }) => {
-  await generateRssFeed();
   const slugs = getArticleSlugs();
 
   const results = await Promise.allSettled(

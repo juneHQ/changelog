@@ -1,0 +1,71 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "the-all-new-insight-builder",
+  publishedAt: "2024-09-06T12:30:29.219Z",
+  title: "The all new insight builder",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/the-all-new-insight-builder/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week I've got some MASSIVE updates for you.
+
+This was very tough to do, but I'm super proud of the team for pulling it off.
+
+So a couple of weeks ago we set out to make June company profiles even more powerful.
+
+Starting today, you can now build your own custom insights without having to create a full report.
+
+To help you appreciate the new builder, let me show you what I love about it.
+
+## Contribution Graph
+
+Our friends at Multi, that are now building the [ChatGPT Desktop app](https://multi.app/blog/multi-is-joining-openai), showed us some months back how they were measuring how different people within a company were using their product.
+
+I thought to myself, we need to add this to June.
+
+And not only that, but we need to make it so you can filter this however you like.
+
+Here's what we came up with:
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/the-all-new-insight-builder/contribution-graph.png)
+
+You can try this out by visiting any company profile and clicking on the new "Add Insight" button.
+
+
+## Trend Insights
+
+We've added a new type of insight that shows you how something is trending.
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/the-all-new-insight-builder/trends.png)
+
+This is just one of the many types of insights you can build. 
+
+You can try this out by visiting any view, or the company profile page and clicking on the new "Add Insight" button.
+
+Here's a full video explaining why and how we built this:
+
+
+<iframe class="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/lCmkDsU1DjM?si=LsFaCtEhspRJCNFp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+We can't wait to see what you build with this. If you come up with something cool, I'd be psyched if you shared it with us on Twitter at [@junedotso](https://x.com/junedotso) or replying to this email.
+
+
+**Other improvements**
+
+- We added support for Daily, Weekly and Monthly time granularity to the Funnel conversion analysis.
+- We added a new Conversion Window setting to the Funnel analysis.
+- We fixed a bug with the wrong colours displayed in the vertical funnel tooltip.
+- We now have a [new API for data deletions](https://help.june.so/en/articles/8061155-programmatically-delete-users). You can both delete companies and users and check the status of ongoing deletions.
+- We fixed an issue with data deletions before a certain date not removing users from belonging to companies correctly.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
