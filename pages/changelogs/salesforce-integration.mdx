@@ -1,0 +1,88 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "salesforce-integration",
+  publishedAt: "2024-09-13T08:49:13.475Z",
+  title: "Salesforce integration",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/salesforce-integration/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+We're growing up!
+
+Last week we rolled out our new Salesforce integration.
+
+**WHY NOW?**
+
+We've been working tirelessly on our CRM integrations with HubSpot and Attio for almost a year now.
+
+We onboarded 1:1 more than 300 companies to our CRM integrations and have built a ton of features to cater to all the different use cases.
+
+Most integrations companies build are half baked. But we believe that it's better to have a few outstandingly good ones than many half baked ones.
+
+So we decided to take one step at the time and first nail down the HubSpot and Attio integrations - which are the CRMs used by the most of our customers.
+
+But now, we're starting to see some later stage companies using June - and they need a Salesforce integration.
+
+As much as it pains us to say it - once a VP of Sales joins your company, you'll be using Salesforce.
+
+The good news is that we're pretty damn good at building CRM integrations. In fact before starting at June, Adis from our team worked on building both the HubSpot and Salesforce integrations at Intercom.
+
+So we took all the learning from the last couple of years and built an integration that is as good as it can be.
+
+## Why can't people just write a script for this?
+
+While it's true that every company at some point will write an internal script to update some data in Salesforce, this approach comes with several drawbacks:
+
+1. **Maintenance burden**: Your CRM setup is always evolving, and custom scripts require ongoing changes, especially as both your product and Salesforce evolve.
+
+2. **Painful rate limiting**: Salesforce has strict API rate limits that can be easily hit by custom scripts, making your integration unreliable.
+
+3. **Granular control**: Your revenue operations person is most likely not a software engineer - and will have to spend more time chasing after the engineers instead of doing their job.
+
+
+## What our Salesforce integration offers
+
+Our Salesforce integration is designed to seamlessly connect your product data with your sales processes. Here's what you can expect:
+
+1. **Real-time updates**: Give your sales team the latest data on how your customers are using your product.
+
+2. **No-code custom field mapping**: Your team can create new computed traits in June from the UI and add them as part of your existing sync.
+
+## Getting started
+
+As we've seen first hand how scary it is to make any mistakes, we offer 1:1 onboarding sessions with our team to set up your integration.
+
+If you're interested in trying out our Salesforce integration, [here's a link](https://cal.com/alberto-incisa/pro-plan) to book a free 30 minute session with our team.
+
+We'll use this call to understand in depth your existing setup and help you make a solid plan on how to make the transition as smooth as possible.
+
+While we love making things self-serve, it's 10x better to have someone that has done it 100 times before on your side as you figure out the right setup for your company.
+
+**Other improvements**
+
+- Every Audience is now associated with a specific Object. This means that you can have Workspaces or Companies selected by default when opening an audience.
+- Add timerange on Wau/Mau insight on the Active Users report
+- Improved the copy of the CRM syncing for one object
+- Better formatting for the CSV export emails
+- Fix a bug where audience filters on the audience page had the wrong value
+- Hide All-time-highs for insights for a single company
+- Fixed the email template to render the right id for manual user deletions
+- Fixed a bug where the computed trait editor wouldn't allow searching for objects
+- Fixed a bug where updates to report name were not being saved when editing the report setup
+- Fixed a bug where the company/workspace profile tab width was glitchy
+- We added an informational toast when a SQL block is added to the bottom of a report
+- We improved the tooltips and added a legend to the Explorer insights
+- We fixed the retention color shades in the insight builder
+- Fixed the UI when the command + k has no results were found
+- We fixed a bug when reloading the Feed page - the audience filters would be reset
+- We fixed a bug with Slack notifications not being sent when the properties were "null"
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

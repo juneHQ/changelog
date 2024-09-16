@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 10 Sep 2024 12:56:19 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 16 Sep 2024 09:24:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Salesforce integration]]></title>
+            <link>https://changelog.june.so/changelogs/salesforce-integration</link>
+            <guid>https://changelog.june.so/changelogs/salesforce-integration</guid>
+            <pubDate>Fri, 13 Sep 2024 08:49:13 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/salesforce-integration/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[The all new insight builder]]></title>
             <link>https://changelog.june.so/changelogs/the-all-new-insight-builder</link>
