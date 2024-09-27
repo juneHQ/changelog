@@ -1,0 +1,51 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+
+export const meta = {
+  slug: "new-sidebar",
+  publishedAt: "2024-09-13T08:49:13.475Z",
+  title: "A new sidebar to unlock more value for you",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/new-sidebar/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Over the past few years, our sidebar has quietly evolved, just as we have. What started as a cute little analytics tool has now grown into something much more—a revenue driver for B2B SaaS companies.
+
+## The Evolution of Our Sidebar
+
+**Chapter 1: The Beginning**
+
+June began as a straightforward analytics tool, a simpler, product-focused alternative to Google Analytics. Early adopters loved the simplicity, especially for analyzing product data rather than just marketing metrics. And so, our journey began.
+
+**Chapter 2: The Discovery**
+
+As we grew, we noticed something interesting—our users were primarily B2B SaaS companies. They loved June not just for the analytics, but because we offered account-level analyses that traditional tools lacked. This wasn’t something we initially planned for, but it opened our eyes to the unique needs of these companies. So, we adapted, and our sidebar got its first refresh.
+
+**Chapter 3: A New Audience**
+
+Soon, we noticed another shift—Customer Success teams were using June as much as Product Managers. Collaboration became key, and we asked ourselves if we were building the right tool for this new audience. The answer was a resounding YES! By making our product more collaborative, we went from being used occasionally to being a daily essential. And, of course, our sidebar got another update.
+
+**Chapter 4: The Revenue Shift**
+
+And then, we encountered something unexpected. When we asked new users why they chose June, the most common response was: “To generate more revenue.” This was a bit of a wake-up call. While analytics are crucial for decision-making, they don’t directly drive revenue—at least not in the traditional sense. We wanted to change that.
+
+So, we integrated deeply with CRM systems and introduced dynamic traits that don’t require engineering effort, like tracking active users or changes in usage. Suddenly, Sales and Customer Success teams were using June not just for insights but to drive revenue directly. This became a core part of our product, and naturally, our sidebar evolved again.
+
+## What we’ve Learned:
+
+Our sidebar’s evolution has been a reflection of our journey—a journey shaped by our users, not by a fixed vision. While it’s essential to know where you want to go, the path you take is often guided by those who use your product every day.
+
+We’re grateful for your feedback and for helping us shape June into what it is today. We hope this latest update makes it even easier for you to navigate and get the most out of June.
+
+## Other improvements
+
+We've added support for an 'in the first' time range on boolean computed traits. This is really powerful because it lets you measure activation for every user, company, or workspace within the first X days of them performing a particular event. Once synced to your CRM, this trait can enable you to be proactive and reach out to customers who haven't activated yet.
+
+Have a fantastic weekend 💜
+Ferruccio
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
