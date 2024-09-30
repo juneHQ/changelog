@@ -1,0 +1,50 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "audiences-for-dashboards",
+  publishedAt: "2024-09-27T09:29:51.149Z",
+  title: "Audiences for dashboards",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-for-dashboards/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Guess what? You can now set an audience for your dashboards!
+
+We're moving to a world where reports will be replaced by dashboards.
+
+As much as we love our reports, we understand that most businesses need to be able to customise what they want to measure.
+
+That's why we're bringing over the best parts of our reports into our dashboards.
+
+The first step was introducing the new insight builder a few weeks ago - which allows you to build your own metrics.
+
+This week we're taking this one step further allowing you to set an audience for your dashboards that can be used by any of the cards in the dashboard.
+
+This is an optional setting, so if you need a specific insight for a card in your dashboard you can still customise it.
+
+## Why are we doing this?
+
+We think that having both reports and dashboards is confusing for our customers.
+
+That being said, we're also aware that thousands of people use our reports every month.
+
+So reports can only be something we'll replace progressively and it the least disruptive way possible.
+
+Our strategy for this change is to keep improving our dashboards and make them more powerful and reach the point where most users only create new dashboards and no reports.
+
+Once we reach that point, we'll migrate every report to a dashboard and say goodbye to reports.
+
+**Other improvements**
+
+- You can now sync June with Custom Objects in HubSpot - to access this feature you'll need to reconnect your HubSpot account to June as we need to update our scopes to also include Custom Objects.
+- You can now remove internal users from your company pages. Head to the settings page and you'll find the option to remove internal users.
+- Fix an issue with the retention line chart cohort picker
+- We improved how we validate hubspot properties that be used for mapping
+- We added a new button to create computed traits from the audience filters menu
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
