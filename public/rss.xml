@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 30 Sep 2024 10:12:19 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 10 Oct 2024 15:05:43 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[All-in-one Pricing]]></title>
+            <link>https://changelog.june.so/changelogs/all-in-one-pricing</link>
+            <guid>https://changelog.june.so/changelogs/all-in-one-pricing</guid>
+            <pubDate>Fri, 04 Oct 2024 14:18:54 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/all-in-one-pricing/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Audiences for dashboards]]></title>
             <link>https://changelog.june.so/changelogs/audiences-for-dashboards</link>
@@ -25,7 +32,7 @@
             <link>https://changelog.june.so/changelogs/new-sidebar</link>
             <guid>https://changelog.june.so/changelogs/new-sidebar</guid>
             <pubDate>Fri, 20 Sep 2024 08:49:13 GMT</pubDate>
-            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/new-sidebar/header.png" length="0" type="image/png"/>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/new-sidebar/header.jpeg" length="0" type="image/jpeg"/>
         </item>
         <item>
             <title><![CDATA[Salesforce integration]]></title>

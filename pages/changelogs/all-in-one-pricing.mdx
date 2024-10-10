@@ -1,0 +1,111 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "all-in-one-pricing",
+  publishedAt: "2024-10-04T14:18:54.783Z",
+  title: "All-in-one Pricing",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/all-in-one-pricing/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+We're making the switch to a new pricing model for all of our product.
+
+## What's changing for you?
+
+If you're an existing customer, you'll be able to keep using June as you are. We're super grateful for your support and belief in us and want to do right by you.
+
+That being said, we're evolving our business, so our product roadmap will be heavily influenced by these changes.
+
+## Wait, why are you doing this?
+
+It's been 4 years since we started working on June. And we’ve realised we've made a mistake with our pricing.
+
+We borrowed our business model from companies that are in a very different place than we are and that’s working against us.
+
+We have around 300 paying customers - half of them are extremely happy with us, the other half have a high chance of churning sometime in the future.
+
+This is because they’re only using a small part of our product.
+
+The root cause of this problem is that we’re trying to do too many things at the same time - and that we aren’t charging enough to be able to be a true partner to them.
+
+We currently have 3 pricing plans:
+- **Free** - which includes Product analytics
+- **Growth** - Product analytics at a B2B level
+- **Pro** - Integrations with CRMs and automations
+
+
+Users on the Free plan tend to either upgrade their plan in their first 30 days with us, or never pay.
+
+Customers on the Growth plan have been flat in the past 12 months. All the most successful users eventually graduate to our Pro plan.
+
+Customers on the Pro plan have 4x the product usage of the Growth customers, and we haven’t had anyone churn in the year since we introduced it. The only cancellations happened when people weren't able to set everything up themselves and didn't take the time to talk to us and get help.
+
+All of our revenue growth is coming from people buying our Pro plan and using all of our product.
+
+Because of the higher price we're able to dedicate more time to our Pro users and really be able to do whatever it takes to make them successful. Working with them is also a lot of fun.
+
+So we think the right thing to do is to double down on this - and bring this experience to everyone.
+
+This means we need to simplify everything we do. Changing our pricing to be just one, with everything we have. Fully leaning into what has worked best for us.
+
+This means June will now be a paid-only product and everything we build from now will be available to everyone.
+
+We think our customers deserve better than a complex pricing maze. We want to move to a world where the pricing is simple and is high enough for us to be able to dedicate time to you.
+
+As a customer the truth with any product is that you’ll have the best experience only if you pay enough for it.
+
+As a founder in all honesty, my favourite thing is to hop on a call with customers or new users and help them in any way I can.
+
+Realistically we can only afford to do this for people who either pay for June or have a good chance to pay for June.
+
+If someone's not able to pay for our service, it's hard to justify taking that time to help them.
+
+## Who is June for?
+
+June is something for you if:
+
+
+- You’re a B2B SaaS company where your users have to be actively using your product. Generally if you charge your customers per-seat there’s a good fit.
+
+- You’re far enough in your startup journey that preventing a single customer from churning every year or negotiating an account expansion from a strategic customer can pay back for your June subscription.
+
+
+This is not something for you if:
+
+- Once customers set up your product they never churn. For example you’re a payment gateway that can’t be easily ripped out.
+
+- You don’t make enough money from each of your customers to dedicate time to them individually. As a rule of thumb, if none of your customers pay you more than 300$/month, this is not for you.
+
+## What's next?
+
+If you're an existing Growth customer or free user - nothing will change for you. The only change is that you'll now be able to upgrade to our new All-in-one pricing if you want to have higher priority support and unlock all of our product.
+
+If you're an existing Pro customer - you'll be able to keep using the product as you are, and you can expect us to continue to invest in making sure you're successful. (If you don't have my contact information, message me on Slack or reply to this email, I'm here to help).
+
+If you're a new user - you'll have a 14 day trial to check out the product. And after that you'll have to pay for the product to keep using it.
+
+As always, we're always learning and iterating. If you have any questions or feedback, please let me know.
+
+I'm super excited for the coming months and to get to spend more time with you.
+
+Cheers, and talk soon, Ferruccio and the June team.
+
+**Other improvements**
+
+- Remove the features list from views as it's not used and a lot of customers wanted to remove it
+- We increased the amount of blocked domains for temporary emails
+- We added an option to re-install HubSpot as existing customers might need to re-authenticate to enable additional permissions
+- We fixed an issue with the Salesforce loading states
+- We fixed an issue with the sidebar behaviour on the report page
+- We fixed an issue with manual syncs to HubSpot to handle errors better in the UI
+- We fixed an issue with the data mapping selection for syncing data to HubSpot Deals
+- We introduced a system to allow us to block certain events from being sent to June. This is to help us keep everything running smoothly when any customer ships a bug that causes an event to be sent billions of times.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
