@@ -1,0 +1,36 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "share-your-dashboards",
+  publishedAt: "2024-10-19T00:03:06.130Z",
+  title: "Share your dashboards",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/dashboard-sharing/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+You can now share your dashboards with others!
+
+Once we introduced our dashboard feature, we've seen a lot of requests to be able to share them with others.
+
+This week we've shipped just that!
+
+Head to the top right of your dashboard and you'll see the new "Share" button.
+
+Additonally, we've polished the experience for those of you who put dashboards on a monitor in your office.
+
+We now persist whether the sidebars and audience filters are open or closed so they don't reset every time you reload the dashboard.
+
+As always, we're looking forward to see what you use this for!
+
+**Other improvements**
+
+- We've pushed a new landing page for June - check it out and let us know what you think!
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

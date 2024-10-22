@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Thu, 10 Oct 2024 15:05:43 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Oct 2024 00:46:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Share your dashboards]]></title>
+            <link>https://changelog.june.so/changelogs/share-your-dashboards</link>
+            <guid>https://changelog.june.so/changelogs/share-your-dashboards</guid>
+            <pubDate>Sat, 19 Oct 2024 00:03:06 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/dashboard-sharing/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[AI insights for dashboards]]></title>
+            <link>https://changelog.june.so/changelogs/ai-insights-for-dashboards</link>
+            <guid>https://changelog.june.so/changelogs/ai-insights-for-dashboards</guid>
+            <pubDate>Fri, 11 Oct 2024 23:53:45 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/ai-insights-for-dashboards/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[All-in-one Pricing]]></title>
             <link>https://changelog.june.so/changelogs/all-in-one-pricing</link>
