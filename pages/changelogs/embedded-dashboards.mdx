@@ -1,0 +1,41 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "embedded-dashboards",
+  publishedAt: "2024-10-25T22:34:33.111Z",
+  title: "Embedded dashboards",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/embedded-dashboards/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Since the early days of June something we've heard as a recurring request was the ability to show your June dashboards to your customers.
+
+This week we're excited to release an exciting update to our analytics capabilities.
+
+You can now both embed dashboards in your product - and share metrics for individual customers.
+
+What's more is that we built a api to allow you to consume June data in your own products.
+
+This means you can build your own custom dashboards for your customers, powered by June data.
+
+This is super exciting for those of you who need to build things like usage dashboards and reporting tools for your customers.
+
+We can't wait to see what you build. To try it out reach out to us via the Intercom chat.
+
+**Other improvements**
+
+- We fixed an issue with our Stripe checkout links
+- We fixed an issue when displaying the last synced at date
+- We added support for Active Users Ratio insights for a specific workspace
+- We added a description for the activation user insight
+- We fixed an issue with the drilldown search on charts not loading properly in some cases
+- We added a "June profile URL" trait that you can sync to your CRM. This gives you a URL you can click on in your CRM to open the June profile of a user or company.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
