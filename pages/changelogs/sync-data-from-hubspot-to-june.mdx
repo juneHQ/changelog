@@ -1,0 +1,37 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "sync-data-from-hubspot-to-june",
+  publishedAt: "2024-11-01T16:41:33.244Z",
+  title: "Sync data from HubSpot to June",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/sync-data-from-hubspot-to-june/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Do you have some important data in HubSpot that you'd want to have in June as well?
+
+We've got you covered! You can now add a mapping to sync some data from HubSpot back into June.
+
+This makes it super easy to get data like Deal Stage or Owner into June.
+
+To use this new feature, just open the settings of your HubSpot integration and add a new mapping in the .
+
+We can't wait to see what you'll build with this!
+
+**Other improvements**
+
+- We moved our application API to run on backend.june.so given some adblockers were blocking api.june.so making the app unaccessible from Arc browser.
+- We fixed an issue causing the cards to reload when adding new insights
+- We updated the is not audience filter to also include objects that do not have a specific trait.
+- We updated the funnel conversion UI to show more detailed information for each step in the funnel.
+- We now allow percentage outputs in computed traits - you can create ratios like number of active seats over the number purchased seats.
+- We now support syncing to percentage outputs in Salesforce.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
