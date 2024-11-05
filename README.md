@@ -16,7 +16,7 @@ Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog star
 - 🧩 Mosaic mode
 - 🏄‍♀️ Smooth transitions
 - 🎉 Celebrate your team's achievements with team credits on each post
-- ⚙️ Easy-to-use admin panel
+- ⚙️ Easy-to-use, just use markdown files to write your changelogs~
 
 👇 Mosaic mode in action below
 
