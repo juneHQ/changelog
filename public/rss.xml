@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 28 Oct 2024 23:02:50 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Nov 2024 00:20:54 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,20 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[Custom tables for audiences]]></title>
+            <link>https://changelog.june.so/changelogs/custom-tables-for-audiences</link>
+            <guid>https://changelog.june.so/changelogs/custom-tables-for-audiences</guid>
+            <pubDate>Fri, 08 Nov 2024 19:10:08 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/custom-tables-for-audiences/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Sync data from HubSpot to June]]></title>
+            <link>https://changelog.june.so/changelogs/sync-data-from-hubspot-to-june</link>
+            <guid>https://changelog.june.so/changelogs/sync-data-from-hubspot-to-june</guid>
+            <pubDate>Fri, 01 Nov 2024 16:41:33 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/sync-data-from-hubspot-to-june/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Embedded dashboards]]></title>
             <link>https://changelog.june.so/changelogs/embedded-dashboards</link>

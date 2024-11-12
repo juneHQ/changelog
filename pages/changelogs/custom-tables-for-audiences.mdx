@@ -1,0 +1,33 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "custom-tables-for-audiences",
+  publishedAt: "2024-11-08T19:10:08.630Z",
+  title: "Custom tables for audiences",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/custom-tables-for-audiences/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+One of the inevitable challenges of building a product based on customer data is that we never know what kind of things our customers will do with our product.
+
+Don't get me wrong, we do have in mind a handful of use cases when designing a feature, but each customer will care about different metrics and events.
+
+This week we're rolling out a new feature that allows you to customise the columns of your audiences tables for each of your audiences.
+
+So when you have an audience for current trialing customers you can highlight the trial data and progress towards a paid plan. And at the same time when looking at existing customers you can only include columns related with product engagement - so you can spot churn risk or upsell opportunities.
+
+As small as this might seem - this is incredibly powerful and will allow you to spend less time figuring out the most important metrics for each of your customers.
+
+**Other improvements**
+
+- There's a new Schema documentation that you can use to understand how to write SQL queries to access your data.
+- When computed traits like Last Seen haven't been computed yet, we now show a pending state in the audience table.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
