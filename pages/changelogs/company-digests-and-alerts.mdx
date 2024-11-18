@@ -1,0 +1,99 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+
+export const meta = {
+  slug: "company-digests-and-alerts",
+  publishedAt: "2024-11-15T19:19:52.705Z",
+  title: "Company digests and alerts",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/company-digests-and-alerts/header.png",
+  authors: [
+    {
+      name: "Alberto Incisa della Rocchetta",
+      description: "Product & Growth",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"
+    },
+    {
+      name: "Ferruccio Balestreri",
+      description: "Engineer", 
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"
+    },
+    {
+      name: "Daniel Beere",
+      description: "Designer",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"
+    },
+    {
+      name: "Adis Banda", 
+      description: "Engineer",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"
+    },
+    {
+      name: "Vinayak Mehta",
+      description: "Engineer",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"
+    },
+    {
+      name: "Pranav Singh",
+      description: "Engineer",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"
+    },
+    {
+      name: "Enzo Avigo",
+      description: "Product",
+      avatarUrl: "https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"
+    }
+  ]
+};
+
+The way we think about a lot of our product development is that there's some parts of our product where most of our customers are spending most of their time - and those are the parts where we want to make sure we're doing the best job possible.
+
+Company pages are one of those parts. In fact they've overtaken dashboards as the most visited section of our product earlier this year and we've been iterating on them a lot.
+
+First we introduced the ability to create custom pages for each of your customers using reports, then we introduced the ability to just add an a chart to a page.
+
+Finally we added SQL blocks which allow you to show whatever you want on the page.
+
+This week we're launching both redesigned company pages and a new **Company digest** feature that allows you to get updates on companies that you're interested in via email.
+
+To set up a digest for your biggest customers you can go to their company profile page and click on the bell icon in the top left.
+
+## Some ideas from our research
+
+As part of this work we've also been experimenting with the idea of **goals** and overall getting alerts on companies that you're interested in.
+
+Our work so far has brought us to exploring two main directions with prototypes that we're testing with individual customers.
+
+Here's a quick overview of the two directions we're exploring - and screenshots of how they look.
+
+**Sneak peak #1 is the "set a goal" feature.**
+
+What if after finishing a call with one of your most strategic customers you could set a goal and get notified when the customer does something interesting? What if we could also let you know when something doesn't happen in a timely manner?
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/company-digests-and-alerts/goals.png)
+
+**Sneak peak #2 is the entering and exiting of companies or users from audiences.**
+
+What if you could get an alert whenever a company enters or exits an audience? Imagine automatically surfacing people who start using your product 6 months after you lost a deal because of bad timing - maybe they're ready to buy now?
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/company-digests-and-alerts/audiences.png)
+
+Which one of these two features would you pick to have if you could only have one?
+
+If you're interested in participating in the beta for one of the sneak peaks, just reply to this email and let us know how you'd use it, whether you're using something similar already and if so, how this could be better.
+
+We'll let you know when we're ready to onboard you on it.
+
+**Other improvements**
+
+- Fixed an issue that would cause insights to crash on creation
+- We now highlight the groupId of your customer in their workspace profile
+- We now collapse the sidebar when opening a user profile
+- We no longer show the timerange editor when the output of a report is a percentage
+- We fixed an issue that was causing event lists to not paginate correctly
+- You can now set the default audience for your reports and insights in the settings. You can now customize the default "email does not contain june.so" audience.
+- We open-sourced our [list of personal email domains](https://github.com/juneHQ/non-work-domains/) that we use to identify personal emails and block non-work emails from accessing our product.
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
