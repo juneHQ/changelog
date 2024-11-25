@@ -1,0 +1,69 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "entering-and-exiting-audiences",
+  publishedAt: "2024-11-22T18:02:39.951Z",
+  title: "Entering and exiting audiences",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/entering-and-exiting-audiences/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Sometimes months happen in weeks - this week was one of those weeks.
+
+The past 8 weeks of June have been magical - we've been experiencing some of the best months in June's history.
+
+The product team is evolving our offering as fast as we can and this week we're super proud to announce our most requested feature yet.
+
+We're introducing live monitoring of entering and exiting audiences. This means you can now get live updates over time of which users are entering and exiting your audiences.
+
+Some of the early use-cases we're seeing with our design partners include:
+
+- **Monitoring trialing users** - and being able to handhold them through their trial
+- **Proactive churn risk outreach** - getting live updates when individual workspaces start to disengage
+- **Upselling at the right moment** - being able to see when users are hitting new tiers or high levels of engagement on existing plans
+
+
+The customers we're working with can now enable monitoring of an audience from the audience list page.
+
+From there you'll be able to see a live feed of entering and exiting users - additionally you'll be able to send these alerts to Slack, email or webhooks.
+
+If you'd like to learn more about this feature and try it out reach out to us on your shared Slack channel.
+
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/entering-and-exiting-audiences/system-traits.png)
+
+## June Provided Traits
+
+This weeks we've also introduced a new set of traits that are automatically provided by June.
+
+The first one is `is_professional_email` which is a boolean trait that indicates if the user has a work email or not.
+
+This is a follow up on our initial work on open-sourcing our [non-work email list](https://github.com/juneHQ/non-work-domains/).
+
+This change is live for all customers - and if you'd like to include an additional domain to the list, feel free to reach out to us or [open an issue on GitHub](https://github.com/juneHQ/non-work-domains/).
+
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/entering-and-exiting-audiences/ai-summary.png)
+
+The second trait is `ai_summary` which is a string trait that includes a summary of the workspace activity based on their traits and events.
+
+If you enable alerting for a workspace we'll now automatically generate a summary of all the workspace activity and include it both in the alert email and in the traits for the workspace.
+
+We've completely rewritten our summarisation logic to be more accurate and useful, and can't wait to hear some of your feedback on it.
+
+**Other improvements**
+
+- Add support for Company profile alerts and not only Workspaces
+- Improve the invalid state when no delivery channel is selected for Workspace alerts
+- Use App's timezone on the event feed *(timezone support is in alpha release for selected customers)*
+- Let the people list take full width of the page on large screens
+- We now show a helpful date placeholder for trait audience filters that involve dates, so you don't have to guess the correct format
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
