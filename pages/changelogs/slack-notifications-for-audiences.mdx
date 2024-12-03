@@ -1,0 +1,39 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "slack-notifications-for-audiences",
+  publishedAt: "2024-11-30T03:12:18.476Z",
+  title: "Slack notifications for audiences",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/slack-notifications-for-audiences/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Audiences now support Slack notifications. Get notified **instantly**, daily or weekly when an audience changes.
+
+If a user or a company is added or removed from an audience you'll get a notification in Slack.
+
+The setup is simple and looks exactly like the one for Event notifications:
+
+![](https://june-changelog.s3.eu-central-1.amazonaws.com/slack-notifications-for-audiences/audience-notification-setup.png)
+
+Just head to your favorite audience and click on the **Add Slack notification** button in the top right corner.
+
+We're working on adding self-serve support for email and webhook notifications as well - expect those soon!
+
+**Other improvements**
+
+- Allow to view more than 5 step on funnel insight card
+- Make sure the computed traits menu overlay is not cut off when opening from the sidebar
+- Support ratios as part of the percentage computed traits
+- Improved full page design for the People page
+- We improved the design for the unidentified users page - better highlighting the most important information
+- We pushed some improvements to make it easier to contribute to our ["Non work domains" repository](https://github.com/juneHQ/non-work-domains/)
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
