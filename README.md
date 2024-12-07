@@ -20,7 +20,7 @@ Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog star
 
 👇 Mosaic mode in action below
 
-![ezgif com-video-to-gif (39)](https://github.com/juneHQ/changelog/assets/104089773/6ae75ac9-2a47-4dc9-9fb0-73cb90dbd2b7)
+![Changelog demo](https://github.com/juneHQ/changelog/assets/104089773/6ae75ac9-2a47-4dc9-9fb0-73cb90dbd2b7)
 
 ## Getting started
 
