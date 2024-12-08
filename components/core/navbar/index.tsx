@@ -56,10 +56,6 @@ function Navbar(props: NavbarProps) {
   const { loggedIn } = useAuth();
   const { isOpen: isMobileMenuOpen, onToggle: onMobileMenuToggle } = useDisclosure();
 
-  const isHome = props.activeHref === "/";
-  const isFeatureLaunches = props.activeHref === "/feature-launches";
-  const isAI = props.activeHref === "/ai";
-
   const [showLogoMenu, setShowLogoMenu] = useState(false);
   const { onCopy: onCopyLogo } = useClipboard(logoSvg);
   const { onCopy: onCopyWordmark } = useClipboard(wordmarkSvg);
@@ -82,7 +78,6 @@ function Navbar(props: NavbarProps) {
 
   return (
     <>
-      {/* Mobile navbar */}
       {isMobileMenuOpen ? (
         // @ts-ignore
         <DynamicNavbarMobileMenu toggle={onMobileMenuToggle} />
@@ -235,22 +230,25 @@ function Navbar(props: NavbarProps) {
                       </HStack>
                     </Link>
                     <div className="w-full h-[1px] bg-gray-200" />
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`} passHref>
+                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/salesforce`} passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/hubspot-integration.svg" alt="HubSpot integration" />
-                        <Text>HubSpot integration</Text>
+                        <img className="mr-1" src="/navbar/icons-sf.svg" alt="Salesforce integration" />
+                        <Text>Salesforce integration</Text>
                         <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
                           NEW
                         </div>
                       </HStack>
                     </Link>
+                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`} passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <img className="mr-1" src="/navbar/icons-hs.svg" alt="HubSpot integration" />
+                        <Text>HubSpot integration</Text>
+                      </HStack>
+                    </Link>
                     <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/attio`} passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/attio-integration.svg" alt="Attio integration" />
+                        <img className="mr-1" src="/navbar/icons-at.svg" alt="Attio integration" />
                         <Text>Attio integration</Text>
-                        <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                          NEW
-                        </div>
                       </HStack>
                     </Link>
                   </VStack>
@@ -267,6 +265,54 @@ function Navbar(props: NavbarProps) {
                 isActive={props.activeHref === route.href}
               />
             ))}
+            <Popover variant="responsive" trigger="hover" placement="bottom-start" strategy="fixed">
+              <PopoverTrigger>
+                <HStack role="group" spacing={[1]}>
+                  <DesktopNavItem
+                    key={'/content'}
+                    mode={props.mode}
+                    {...{ href: `${process.env.NEXT_PUBLIC_MARKETING_HOST}/content`, title: 'Content', type: 'external-link' }}
+                    isActive={false}
+                  />
+                  <ChevronDownIcon
+                    boxSize={[5]}
+                    {...(props.mode === 'dark' && {
+                      color: 'white',
+                    })}
+                  />
+                </HStack>
+              </PopoverTrigger>
+              <PopoverContent
+                background="white"
+                border="1px solid #F8F9FA"
+                rounded="20px"
+                minWidth="unset"
+                width="unset"
+                className="relative z-20 drop-shadow-md"
+              >
+                <Box className="w-[200px] p-5">
+                  <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
+                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog`} passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <div className="grid w-[32px] h-[32px] p-1 mr-1 bg-secondary rounded-[8px]">
+                          <img src="/navbar/blog-post.svg" alt="Blog" className="w-[20px] place-self-center" />
+                        </div>
+                        <Text>Blogs</Text>
+                        
+                      </HStack>
+                    </Link>
+                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/guides`} passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <div className="grid w-[32px] h-[32px] mr-1 p-1 bg-brown-300 rounded-[8px]">
+                          <img src="/navbar/guide.svg" alt="Guide" className="w-[20px] place-self-center" />
+                        </div>
+                        <Text>Guides</Text>
+                      </HStack>
+                    </Link>
+                  </VStack>
+                </Box>
+              </PopoverContent>
+            </Popover>
           </HStack>
           {/* CTAs */}
           <HStack spacing={4} align="center">
