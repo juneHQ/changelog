@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create changelog",
+      "type": "shell",
+      "command": "node",
+      "args": [
+        "./bin/changelog.js",
+        "--title=${input:changelogTitle}"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true,
+        "focus": true
+      },
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "Sync images",
+      "type": "shell",
+      "command": "./scripts/sync_images.sh",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "changelogTitle",
+      "type": "promptString",
+      "description": "Enter the title for the changelog"
+    }
+  ]
+}
