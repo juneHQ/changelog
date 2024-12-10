@@ -23,8 +23,16 @@
     {
       "label": "Sync images",
       "type": "shell",
-      "command": "./scripts/sync_images.sh",
-      "problemMatcher": []
+      "command": "./sync_images.sh",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
     }
   ],
   "inputs": [

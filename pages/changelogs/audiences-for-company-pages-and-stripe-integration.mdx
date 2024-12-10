@@ -1,0 +1,57 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "audiences-for-company-pages-and-stripe-integration",
+  publishedAt: "2024-12-06T06:38:25.643Z",
+  title: "Audiences for Company pages and Stripe Integration",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-for-company-pages-and-stripe-integration/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+We've worked on two main product improvements this week - one improving our company pages and the other adding a Stripe integration.
+
+## Company pages now support audiences
+
+![Company pages now support audiences](https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-for-company-pages-and-stripe-integration/company-audiences.png)
+
+We've added the ability to create and manage audiences for insights on company pages. This allows you to customise your company page to show charts for the right groups of users.
+
+We've learned from a lot of customers that different users within a products can have different types of permissions and goals in terms of engagement.
+
+For example for recruiting software high engagement of the HR team is important as they're the ones in charge of implementing the software - and you might not care about the overall retention of individual hiring managers.
+
+Anyways audience filters are now available on both workspace and company pages - we can't wait to see what you build with them!
+
+
+## Stripe integration
+
+
+
+This week we've added a new Stripe integration in beta.
+
+This allows you to connect your Stripe account to your workspace and automatically sync traits like Total spend, Total revenue, Last payment date, Last payment amount and more.
+
+This integration is not self-serve yet - but if you're interested in getting access to it please reach out in the chat or on your shared Slack channel with us.
+
+## Re-ordering dashboards in the sidebar
+
+![Re-ordering dashboards in the sidebar](https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-for-company-pages-and-stripe-integration/re-ordering-dashboards.gif)
+
+Last little easter egg we've added this week is the ability to re-order dashboards in the sidebar.
+
+Simply drag and drop the dashboards to re-order them - just like you do in Notion or Figma.
+
+**Other improvements**
+
+- Fix a bug with the timerange selector on charts
+- Improve how audience Slack alerts get formatted
+- Fixed an issue where audience screenshot would not show up correctly
+- Fixed a bug where the top retained users insight would not take into account audiences
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
