@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const weeklyImprovements = require("./weekly-improvements");
+const { execSync } = require("child_process");
 
 function parseArguments(args) {
   const result = {};
@@ -57,6 +58,8 @@ async function main() {
 
   fs.writeFileSync(filePath, content);
   console.log(`Changelog created at ${filePath}`);
+
+  execSync(`code -r "${filePath}"`, { stdio: 'inherit' });
 }
 
 main();
