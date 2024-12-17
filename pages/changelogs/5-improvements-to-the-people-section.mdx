@@ -1,0 +1,46 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "5-improvements-to-the-people-section",
+  publishedAt: "2024-12-13T15:28:47.098Z",
+  title: "People section improvements",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/5-improvements-to-the-people-section/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week's update was focused on improving the people section in the product.
+
+We've made 5 improvements to make it 10 times more powerful to use.
+
+
+1. **Specify trait types for faster filtering** - You can now specify the types of each of your traits. This will allow you to filter faster and more accurately dates, numbers and booleans.
+
+![Specify trait types for faster filtering](https://june-changelog.s3.eu-central-1.amazonaws.com/5-improvements-to-the-people-section/date-type-filter.png)
+
+2. **Improvements to the filters experience** - Depending on the type of your traits, we'll now show you the most relevant operators to use - for example dates will show you the most common operators like "is after" or "is before".
+
+![Set a prefix or suffix for your trait values](https://june-changelog.s3.eu-central-1.amazonaws.com/5-improvements-to-the-people-section/prefix.png)
+
+3. **You can now add a suffix or prefix to your trait values** - This way when looking at a trait table for say MRR, you can add "$" as a prefix to make it more readable.
+
+![Trait debugger](https://june-changelog.s3.eu-central-1.amazonaws.com/5-improvements-to-the-people-section/trait-debugger.png)
+
+4. **We added a debugger for trait values** - Within the object settings, you can now see how many times we received valid values for each trait. So you can make sure your implementation is correct.
+5. **Select a default object for your People page** - You can now select the default object for your People page in the settings. This allows you to open the People page and see what you want to see by default.
+
+
+**Other improvements**
+
+- You can now select what you want to see as a highlight for your charts in dashboards. No more guessing what the number in the top right corner of each chart means.
+- Use the default audience filters when creating new dashboards and reports.
+- We now also return the dashboard_url to the Embed api response when creating a new token. This way you don't need to guess the url of the dashboard.
+- We improved the design of the company header when the name of the company is very long.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

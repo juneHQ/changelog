@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 10 Dec 2024 08:38:21 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 17 Dec 2024 16:00:14 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2024, June</copyright>
+        <item>
+            <title><![CDATA[People section improvements]]></title>
+            <link>https://changelog.june.so/changelogs/5-improvements-to-the-people-section</link>
+            <guid>https://changelog.june.so/changelogs/5-improvements-to-the-people-section</guid>
+            <pubDate>Fri, 13 Dec 2024 15:28:47 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/5-improvements-to-the-people-section/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Audiences for Company pages and Stripe Integration]]></title>
             <link>https://changelog.june.so/changelogs/audiences-for-company-pages-and-stripe-integration</link>
