@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Tue, 17 Dec 2024 16:00:14 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 08 Jan 2025 11:57:19 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -12,9 +12,30 @@
             <url>https://changelog.june.so/favicon.ico</url>
             <link>https://changelog.june.so</link>
         </image>
-        <copyright>All rights reserved 2024, June</copyright>
+        <copyright>All rights reserved 2025, June</copyright>
         <item>
-            <title><![CDATA[People section improvements]]></title>
+            <title><![CDATA[Dashboard embedding]]></title>
+            <link>https://changelog.june.so/changelogs/dashboard-sql-embedding</link>
+            <guid>https://changelog.june.so/changelogs/dashboard-sql-embedding</guid>
+            <pubDate>Fri, 03 Jan 2025 11:46:27 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/dashboard-sql-embedding/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Polish Season]]></title>
+            <link>https://changelog.june.so/changelogs/polish-season</link>
+            <guid>https://changelog.june.so/changelogs/polish-season</guid>
+            <pubDate>Fri, 27 Dec 2024 11:32:58 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/polish-season/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[Self-serve Stripe integration]]></title>
+            <link>https://changelog.june.so/changelogs/self-serve-stripe-integration</link>
+            <guid>https://changelog.june.so/changelogs/self-serve-stripe-integration</guid>
+            <pubDate>Fri, 20 Dec 2024 11:26:16 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/self-serve-stripe-integration/header.png" length="0" type="image/png"/>
+        </item>
+        <item>
+            <title><![CDATA[5 improvements to the People section]]></title>
             <link>https://changelog.june.so/changelogs/5-improvements-to-the-people-section</link>
             <guid>https://changelog.june.so/changelogs/5-improvements-to-the-people-section</guid>
             <pubDate>Fri, 13 Dec 2024 15:28:47 GMT</pubDate>
