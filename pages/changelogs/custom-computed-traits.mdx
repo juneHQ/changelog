@@ -1,0 +1,51 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "custom-computed-traits",
+  publishedAt: "2025-01-10T10:07:46.777Z",
+  title: "Custom computed traits",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/custom-computed-traits/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+
+To kick things off this year, this week's big feature is custom computed traits.
+
+These computed traits enabled us to add new kinds of traits that can be used in audiences.
+
+This work initially started as a DM on X by [Molly](https://x.com/mollycantillon), who asked if we could help her get time spent using her app.
+
+We wrote a query for this and shared it with her and a handful of users.
+
+What happened next was that we saw that this data was super useful to get a sense of who might be a good customer to upsell.
+
+So we introduced a new kind of computed trait that allows you to create a trait based on a query.
+
+This allows us to create unique traits that are tailored to each of our customers. For now these traits are read-only, and have to be requested by our customers in our shared Slack channel.
+
+But we're excited to see what are the most popular use-cases here, and can't wait to make these available to everyone.
+
+If there's a trait based on your product data that you'd like to see available to you like "Customer Health" or "Total time spent on the app", please let us know in our shared Slack channel. We'll be happy to add the trait to your account.
+
+
+**Other improvements**
+
+- Public sharing of charts is now available on the company page with tokens that only allow accessing data for that specific company. This is useful for sharing insights with clients.
+- We pushed a fix that makes sure the help center is not accessible from iframes
+- We fixed an issue with email company digests where some charts were not fully visible in the screenshots
+- We improved the formatting of tables in iframes
+- We fixed and issue with post trial paywall
+- We now support csv values in audience filters, this means you can filter by multiple values by using a comma separated list
+- We added a not found page for company profiles in case the company is not found
+- In the company page we now support manual reverse syncs of properties from Hubspot to June
+- We fixed an issue that was causing the total count of users in a company profile to show "0" in the user table - even if there were users in the company
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
