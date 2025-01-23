@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 13 Jan 2025 11:13:58 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 23 Jan 2025 12:42:13 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2025, June</copyright>
+        <item>
+            <title><![CDATA[New company page]]></title>
+            <link>https://changelog.june.so/changelogs/editable-company-page</link>
+            <guid>https://changelog.june.so/changelogs/editable-company-page</guid>
+            <pubDate>Fri, 17 Jan 2025 12:30:42 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/editable-company-page/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Custom computed traits]]></title>
             <link>https://changelog.june.so/changelogs/custom-computed-traits</link>

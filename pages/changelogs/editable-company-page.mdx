@@ -1,0 +1,56 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "editable-company-page",
+  publishedAt: "2025-01-17T12:30:42.597Z",
+  title: "New company page",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/editable-company-page/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we're introducing a new version of the most loved page of our app: the company page.
+
+As we see more and more Customer Success teams adopting June we released a new redesgined version of the company page that is more suited for non-technical users.
+
+## What's new?
+
+- **New UI**: The new company page is more intuitive and easier to use.
+- **Pin traits at the top**: You can now pin traits to make them appear at the top of the page.
+- **Fast editing for traits**: Traits are now editable directly from the page. We also added two new trait types, options and users.
+
+## Editing traits
+
+In the last couple of weeks we've introduced data types for traits. This was a big step to allow sorting and filtering on traits depending on the data type.
+
+This week we're extending the trait editing experience to show the right type of input for each data type.
+
+Here's how it looks when a trait is of the new "option" type:
+
+![Trait editing](https://june-changelog.s3.eu-central-1.amazonaws.com/editable-company-page/changelog-profile-health.png)
+
+Here's how it looks when a trait is of the new "workspace member" type - useful for tracking the owners of an account:
+
+![Trait editing](https://june-changelog.s3.eu-central-1.amazonaws.com/editable-company-page/changelog-profile-owner.png)
+
+Of course, we support strings, dates, numbers and booleans as well.
+
+Each update you make is saved automatically and is reflected on the page instantly.
+
+## What's next?
+
+Next week we'll polish the rough edges of this new page and make its changes also available for the user page.
+
+**Other improvements**
+
+- The HubSpot app now supports the reverse sync of both owner and enum properties. The owner sync will automatically match your HubSpot users with your June workspace members.
+
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
