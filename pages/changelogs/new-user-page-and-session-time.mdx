@@ -1,0 +1,53 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "new-user-page-and-session-time",
+  publishedAt: "2025-01-24T14:13:36.196Z",
+  title: "New user page & session time",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/new-user-page-and-session-time/header.jpeg",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+Following last week's company page redesign, we're excited to bring the same powerful features to the user profile page. We've built session time tracking to help you better understand user engagement - let us know if you want us to enable this feature for your workspace, as it's only available on Pro workspaces.
+
+## What's new?
+
+- **Redesigned user page**: The user profile page now matches our new company page design
+- **Pin important traits**: Pin key user traits to keep them visible at the top
+- **Quick trait editing**: Edit user traits directly on the page with type-specific inputs
+- **Session time tracking**: Track how long users spend in your product
+
+## Enhanced user profiles
+
+The new user page brings all the features you loved from last week's company page update.
+
+You can now edit user traits directly on the page, with specialized inputs for different data types including strings, numbers, dates, options, and workspace members.
+
+## Session time tracking
+
+We've added automatic session time tracking to help you understand how engaged your users are:
+
+![Session time tracking](https://june-changelog.s3.eu-central-1.amazonaws.com/new-user-page-and-session-time/changelog-sessions.jpeg)
+
+Session times are automatically calculated and displayed in both the user and company views. This gives you instant insight into product usage patterns.
+
+## Improved Stripe integration experience
+
+We've also completely redesigned the Stripe integration experience to make it easier to set up and manage your Stripe data.
+
+![Stripe integration](https://june-changelog.s3.eu-central-1.amazonaws.com/new-user-page-and-session-time/changelog-stripe-setup.jpeg)
+
+The new experience includes a handy debugger view using our audiences, so you can see at a glance which users or companies are being synced and which aren't.
+
+**Other improvements**
+
+- Fixed an issue where trait updates weren't immediately reflected in filters
+- Improved the UI of embedded tables - to work better with tables with many columns
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
