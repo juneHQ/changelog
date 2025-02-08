@@ -1,0 +1,42 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "redesigned-dashboards",
+  publishedAt: "2025-01-31T18:17:43.823Z",
+  title: "Redesigned dashboard creation and editing",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/redesigned-dashboards/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we're happy to announce a new design for dashboards and for editing charts.
+
+For way too long, we've been taking flak for the functionality of dashboards. So after countless emails and Slack messages of not so pleased customers, we decided to do something about it.
+
+With this new design we reworked a lot of the underlying code that powers dashboards and charts.
+
+We also took the opportunity to give a refresh to our design just to keep up with the rest of the app.
+
+![redesigned charts](https://june-changelog.s3.eu-central-1.amazonaws.com/redesigned-dashboards/redesigned-charts.png)
+
+In the coming weeks we'll release even more improvements to dashboards and charts - we want to get to the point where the experience is as good as it gets.
+
+
+
+**Other improvements**
+
+
+- We now have an internal tool to support migrations from one kind of user_id to a new one. This is useful when customers redefine their user_id and want to migrate all their data from the old one to the new one.
+- You can now decide who to re-assign resources to when removing users from a workspace. This means that if a teammate is removed from a workspace, you can re-assign their resources to a different teammate and keep them in the same workspace.
+- We aligned the design of our tooltips across many parts of the app.
+- We made the insight editor sidepanel resizable.
+- We added the ability to share a link to a single company page without using our embed API.
+- We improved the way we handle reverse-syncing data from HubSpot to June to be more resilient.
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
