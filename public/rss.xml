@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Sat, 08 Feb 2025 18:29:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Feb 2025 17:26:24 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2025, June</copyright>
+        <item>
+            <title><![CDATA[Click into any dashboard]]></title>
+            <link>https://changelog.june.so/changelogs/click-into-any-dashboard</link>
+            <guid>https://changelog.june.so/changelogs/click-into-any-dashboard</guid>
+            <pubDate>Fri, 07 Feb 2025 17:18:17 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/click-into-any-dashboard/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Redesigned dashboard creation and editing]]></title>
             <link>https://changelog.june.so/changelogs/redesigned-dashboards</link>
