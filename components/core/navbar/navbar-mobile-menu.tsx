@@ -27,7 +27,7 @@ export const NavbarMobileMenu = ({ toggle, isRoleProduct, isRoleSuccessSales }: 
         <Flex direction="column" className="bg-white">
           <Flex align="center" justify="space-between">
             <Flex p={4} as="a" href="/">
-              <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="june-logo" />
+              <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="customer analytics software" />
             </Flex>
             <Flex p={4} onClick={toggle}>
               <Box pr={1}>
