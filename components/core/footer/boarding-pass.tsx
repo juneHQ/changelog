@@ -118,7 +118,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
 
                 <div className="relative items-center justify-center hidden xl:flex">
                   <img className="relative" src="/footer/logo-background.svg" alt="Background" />
-                  <img className="absolute" src="/footer/june-logo-white.svg" alt="June" />
+                  <img className="absolute" src="/footer/june-logo-white.svg" alt="customer analytics software" />
                 </div>
               </div>
               <div className="mt-[32px] text-[12px] leading-[14.32px] text-gray-400 flex w-full">
