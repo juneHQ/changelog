@@ -95,7 +95,7 @@ function Navbar(props: NavbarProps) {
                   height={48}
                   width={48}
                   src="/june-logo-symbol-only.svg"
-                  alt="june-logo"
+                  alt="customer analytics software"
                 />
               </Flex>
               <Flex p={4} onClick={onMobileMenuToggle}>
