@@ -1,0 +1,29 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "text-blocks-in-dashboards",
+  publishedAt: "2025-02-28T15:35:33.793Z",
+  title: "Text blocks in dashboards",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/text-blocks-in-dashboards/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+One of the most requested features we've had is the ability to add text blocks to dashboards.
+
+This can be useful to add context to the dashboard, or to add a note to the dashboard.
+
+![Text blocks in dashboards](https://june-changelog.s3.eu-central-1.amazonaws.com/text-blocks-in-dashboards/text-block.png)
+
+As we've been moving away from the old world of reports and into a more flexible and powerful world of dashboards, we've been improving the types of blocks that can be added to dashboards.
+
+This week's release of text blocks opens up a whole new set of use-cases for dashboards like creating portals to share insights with your customers.
+
+This is just the beginning of new capabilities we're working on, we can't wait to share with you what the next releases will bring.
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
