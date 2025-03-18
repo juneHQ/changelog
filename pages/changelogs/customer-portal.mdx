@@ -1,0 +1,51 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "customer-portal",
+  publishedAt: "2025-03-07T08:27:15.437Z",
+  title: "Customer portal",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/customer-portal/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we're releasing a new way to share data with your customers.
+
+We're calling it our **Customer portal**.
+
+![Customer portal](https://june-changelog.s3.eu-central-1.amazonaws.com/customer-portal/changelog-customer-portal-1.png)
+
+They're a new way to showcase value and craft stories to convey the value your product is delivering.
+
+We believe that the best way to showcase value is to show real data, real users on how people are using your product.
+
+![Customer portals](https://june-changelog.s3.eu-central-1.amazonaws.com/customer-portal/changelog-customer-portal-2.png)
+
+Whether it's the end of a POC or time for a renewal, customer portals are a great way to showcase your product metrics in a way that's easy to understand and engaging.
+
+![Customer portals](https://june-changelog.s3.eu-central-1.amazonaws.com/customer-portal/changelog-customer-portal-3.png)
+
+To be able to better cater to this use-case we've added three new features to our dashboard embedding capabilities:
+
+- Text blocks (released last week)
+- Password protection for public dashboards
+- Workspace filters for dashboards, so you can highlight the data for one customer at a time
+
+![Customer portals](https://june-changelog.s3.eu-central-1.amazonaws.com/customer-portal/changelog-customer-portal-4.png)
+
+We can't wait to see what you'll do with this!
+
+
+**Other improvements**
+
+- Fix sidebar reloading when editing insights
+- Fix a bug with the contains filter closing on edit
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
