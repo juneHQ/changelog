@@ -1,0 +1,38 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "stability-improvements-and-bug-fixing",
+  publishedAt: "2025-03-21T11:06:35.801Z",
+  title: "Stability improvements and bug fixing",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/stability-improvements-and-bug-fixing/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+As we grow older as a company, we need to make sure everything is working as expected.
+
+This week we've been working on various bug fixes and stability improvements to make sure all of the platform is working as expected.
+
+We'll be dedicating the next week too to bug fixes and quality of life improvements.
+
+So if you have any ideas on what we should fix or improve, please let us know!
+
+**Other improvements**
+
+- Fixed an issue with trait updates for companies
+- Fixed an issue with long running Amplitude imports by optimising how many events we insert in a given batch
+- Fixed confirmation modals not showing when updating computed trait
+- Fix an issue where users were getting updated in the CRM syncs in an inconsistent order
+- Fixed an issue with the user list count on company profiles
+- We disabled interactions with charts when setting up Slack alerts
+- Fixed a bug with adding multiple audience cards to dashboards
+- Fixed an issue where the menu closes when selecting timerange filters
+- We now don't save reports until done is pressed
+- Fixed an issue where identifies were not being shown correctly in the feed
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
