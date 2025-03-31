@@ -4,7 +4,7 @@
         <title>June Changelog</title>
         <link>https://changelog.june.so</link>
         <description>How June gets better every week</description>
-        <lastBuildDate>Mon, 24 Mar 2025 13:46:19 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 31 Mar 2025 12:59:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for June changelog</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://changelog.june.so</link>
         </image>
         <copyright>All rights reserved 2025, June</copyright>
+        <item>
+            <title><![CDATA[Audiences and dashboards list redesign]]></title>
+            <link>https://changelog.june.so/changelogs/audiences-and-dashboards-list-redesign</link>
+            <guid>https://changelog.june.so/changelogs/audiences-and-dashboards-list-redesign</guid>
+            <pubDate>Fri, 28 Mar 2025 13:53:53 GMT</pubDate>
+            <enclosure url="https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-and-dashboards-list-redesign/header.png" length="0" type="image/png"/>
+        </item>
         <item>
             <title><![CDATA[Stability improvements and bug fixing]]></title>
             <link>https://changelog.june.so/changelogs/stability-improvements-and-bug-fixing</link>

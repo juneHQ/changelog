@@ -1,0 +1,39 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "audiences-and-dashboards-list-redesign",
+  publishedAt: "2025-03-28T13:53:53.988Z",
+  title: "Audiences and dashboards list redesign",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/audiences-and-dashboards-list-redesign/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+In this week's changelog we've redesigned the audiences and dashboards lists to be faster and more user friendly.
+
+We've noticed some latency issues with the previous implementation and we've implemented a new approach that should fix the issue.
+
+Additionally, we've added a new feature that allows you to favourite audiences and dashboards.
+
+The rest of the time we've been busy with bug fixes and quality of life improvements. Hope you feel the difference!
+
+**Other improvements**
+
+- Fix how event filters are applied for automatically created companies
+- Fix view insight title
+- Solve the issue where sometimes reports would vanish from the reports list
+- Add learn more link to dashbaord list
+- Fix the redirect behaviour after deleting a dashboard
+- Fix audience filters on company profile
+- Fix an issue where the computed trait would not save events correctly
+- Fix how we sort by timestamp on the audiences and people lists
+- Speed up loading traits for a workspace
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
