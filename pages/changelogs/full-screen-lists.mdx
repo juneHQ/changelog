@@ -1,0 +1,39 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "full-screen-lists",
+  publishedAt: "2025-04-11T07:23:13.697Z",
+  title: "Full screen lists",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/full-screen-lists/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we've made a big step towards improving the people list experience in the product.
+
+We've shrinked the whitespace to a minimum to really use as much space as available.
+
+This change is also preparing the ground for one exciting new feature that we'll be announcing in the coming weeks.
+
+## Manual full sync for Attio
+
+Another big thing we're launching this week is the ability to manually trigger a full sync for Attio.
+
+This is useful on your first setup, to be able to sync all your data from Attio to June after setting up the connection.
+
+![Manual full sync for Attio](https://june-changelog.s3.eu-central-1.amazonaws.com/full-screen-lists/manual-full-sync.png)
+
+**Other improvements**
+
+- Change how CRM table is displayed
+- Disable audience selection for individual charts when using the dashboard audience
+- Fix how links are formatted in traits
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
