@@ -1,0 +1,43 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "sql-computed-traits",
+  publishedAt: "2025-05-02T12:49:11.767Z",
+  title: "SQL computed traits",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/sql-computed-traits/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we released a new type of computed traits - SQL computed traits.
+
+With SQL computed traits you can now write your own SQL queries to compute whatever traits you want.
+
+The kinds of traits you can compute are:
+
+- Health scores
+- Formulas based on different events and properties
+- Session times
+
+This is a very powerful set of capabilities that we're excited to see you all use.
+
+To create a SQL computed trait you need to select the "SQL" option in the computed trait creation/edit modal.
+
+You can then write your own SQL query to compute the trait.
+
+Additionally as requested by [Abby this week](https://www.linkedin.com/posts/abbydurbridge_customersuccess-productdevelopment-startup-activity-7324230596350660608-Y_0F/), you can use the "Duplicate" button to create variations of a trait.
+
+**Other improvements**
+
+- Added validation checks to ensure events are properly selected before computed traits can be enabled
+- Fixed an issue that was causing computed traits not to run for certain workspaces
+- Fixed an issue where the drilldown was showing the wrong results when the dashboard audience is enabled
+- We introduced support for custom objects in computed traits
+- Fixed a UI problem where the charts tooltips near the end of the cards were not displayed on dashboards
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
