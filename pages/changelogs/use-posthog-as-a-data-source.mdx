@@ -1,0 +1,32 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "use-posthog-as-a-data-source",
+  publishedAt: "2025-05-09T09:41:43.062Z",
+  title: "Use PostHog as a data source",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/use-posthog-as-a-data-source/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we've added the ability to use PostHog as a data source to your June account.
+
+This means you can now use PostHog as a CDP to power your June dashboards.
+
+The integration is available in the data sources section of the June platform - and the setup is just a few clicks.
+
+We've recently seen a lot of customers using June side by side with PostHog to get the best of both worlds, and we're excited to make it easier to combine the two.
+
+**Other improvements**
+
+- Fixed a bug with the Slack alert editor
+- We fixed an issue that was causing HubSpot syncs to require at least one property to be mapped for the reverse sync to work as expected
+- Fixed a UI issue in audience filters. The comparison type selection overflowed outside of the screen. Making it impossible to select some filters on small screens
+- We removed animal avatars and adopted a more neutral tone - to accomodate use-cases where you might want to share dashboards with your customers.
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
