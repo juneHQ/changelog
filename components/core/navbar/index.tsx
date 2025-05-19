@@ -217,19 +217,6 @@ function Navbar(props: NavbarProps) {
                 >
                   <Box className="w-[319px] p-5">
                   <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/product`} passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/product-analytics.svg" alt="Role Product" />
-                        <Text>For Product teams</Text>
-                      </HStack>
-                    </Link>
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/success-sales`} passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/success-sales.svg" alt="Role Success Sales" />
-                        <Text>For CS and Sales teams</Text>
-                      </HStack>
-                    </Link>
-                    <div className="w-full h-[1px] bg-gray-200" />
                     <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/salesforce`} passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
                         <img className="mr-1" src="/navbar/icons-sf.svg" alt="Salesforce integration" />
