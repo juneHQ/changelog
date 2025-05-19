@@ -41,25 +41,6 @@ export const NavbarMobileMenu = ({ toggle, isRoleProduct, isRoleSuccessSales }: 
         <VStack alignItems="start" spacing="24px" px="24px" className="font-black text-primary text-[20px] font-hero">
           <div className="">Features</div>
           <VStack alignItems="start" spacing="24px" px="12px" className="w-full">
-            <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/product`} passHref>
-              <HStack as="a" spacing={2} className="hover:underline w-full underline-offset-[3px] cursor-pointer">
-                <img className="mr-1" src="/navbar/product-analytics.svg" alt="Role Product" />
-                <div className="flex justify-between w-full">
-                  <Text>For Product teams</Text>
-                  {isRoleProduct && <img src="/navbar/check.svg" alt="Check" />}
-                </div>
-              </HStack>
-            </Link>
-            <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/role/success-sales`} passHref>
-              <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] w-full cursor-pointer">
-                <img className="mr-1" src="/navbar/success-sales.svg" alt="Role Success Sales" />
-                <div className="flex justify-between w-full">
-                  <Text>For CS and Sales teams</Text>
-                  {isRoleSuccessSales && <img src="/navbar/check.svg" alt="Check" />}
-                </div>
-              </HStack>
-            </Link>
-            <div className="w-full h-[1px] bg-gray-200" />
             <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`} passHref>
               <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
                 <img className="mr-1" src="/navbar/hubspot-integration.svg" alt="HubSpot integration" />
