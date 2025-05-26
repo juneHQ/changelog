@@ -1,0 +1,37 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "custom-objects-available-for-all",
+  publishedAt: "2025-05-23T09:49:13.882Z",
+  title: "Custom objects available for all",
+  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/custom-objects-available-for-all/header.png",
+  authors: [{"name":"Alberto Incisa della Rocchetta","description":"Product & Growth","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/dscf5588_2_6dcd0ce29c.jpg"},{"name":"Ferruccio Balestreri","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/Gut_Ec_N_Ky_400x400_0c189fcaa5.jpg"},{"name":"Daniel Beere","description":"Designer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U03_C1_S7_F5_A5_90609690daa6_512_5071aad8fc.jpeg"},{"name":"Adis Banda","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/IMG_3227_939da5481a.PNG"},{"name":"Vinayak Mehta","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/T01_AS_9_R1_RDL_U01_F830_FTC_7_94c9c8095b13_512_893705b288.jpeg"},{"name":"Pranav Singh","description":"Engineer","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/team/pranav.jpeg"},{"name":"Enzo Avigo","description":"Product","avatarUrl":"https://june-changelog.s3.eu-central-1.amazonaws.com/O_Doeqb_IW_400x400_47f624ed6e.jpg"}],
+};
+
+This week we've finally wrapped up one of the biggest features of this year.
+
+We're two months into Custom objects and we're finally ready to release it to all our customers.
+
+This feature is a game changer for many of our B2B customers that need to track different kinds of groups of users and want to have different pages with different insights.
+
+It's really exciting to see how many use cases this enables.
+
+We've already seen different use cases from handling complex enterprise deployments in many different teams, to helping restaurant businesses track restaurants and franchises separately.
+
+**Other improvements**
+
+- We fixed the audience section for Slack notifications
+- We fixed an issue where the type of output was not showing on Computed Traits
+- We fixed how the event logs were displayed in developer tools
+- We fixed an issue where the matching identifier was disappearing when switching Attio objects
+- We fixed an issue where duplicating audiences did not work
+
+
+
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);
