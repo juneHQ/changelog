@@ -1,0 +1,18 @@
+import { MdxLayout } from "components/mdx-layout.tsx";
+  
+
+export const meta = {
+  slug: "test",
+  publishedAt: "2025-08-29T15:35:33.793Z",
+  title: "双轴组合图",
+  headerImage: "https://youke1.picui.cn/s1/2025/08/25/68ac090e11817.png",
+  authors: [{"name":"Mood","description":"BI套件","avatarUrl":"https://youke1.picui.cn/s1/2025/08/25/68ac090db1528.jpeg"}]
+};
+
+BI套件新增图表组件类型：双轴组合图
+
+export default ({ children, ...rest }) => (
+  <MdxLayout meta={meta} {...rest}>
+    {children}
+  </MdxLayout>
+);

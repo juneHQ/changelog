@@ -30,8 +30,9 @@ const DynamicNavbarMobileMenu = dynamic<NavbarMobileMenuProps>(
   { ssr: false }
 );
 
-const logoSvg = `<svg width="142" height="150" viewBox="0 0 142 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M104.352 63.6393C106.672 76.7956 99.3795 86.0082 85.78 88.4062C75.3902 90.2382 66.6544 87.1306 62.5457 79.8555C62.0512 78.98 61.9547 77.9352 62.2791 76.9834C62.6033 76.0317 63.3179 75.2602 64.2444 74.8698L70.3263 72.3075C71.7733 71.6979 73.4452 72.1189 74.4332 73.3393C76.25 75.5836 79.2019 76.8376 83.085 76.1529C88.6284 75.1755 91.6388 71.0624 90.6353 65.3716L86.96 44.5276L65.6696 48.2817C63.7525 48.6197 61.9243 47.3396 61.5863 45.4225L60.7123 40.4657C60.3743 38.5486 61.6543 36.7204 63.5714 36.3824L94.9901 30.8424C96.9072 30.5044 98.7354 31.7845 99.0734 33.7016L104.352 63.6393ZM130.992 21.7223C128.472 7.42785 114.841 -2.11683 100.546 0.403675L43.9727 10.3791C37.1082 11.5895 31.0058 15.4773 27.0076 21.1869L5.386 52.0659C1.38795 57.7757 -0.178088 64.8398 1.03236 71.7042L11.0077 128.278C13.5282 142.572 27.1594 152.117 41.454 149.596L98.0274 139.621C104.892 138.411 110.994 134.523 114.992 128.813L136.614 97.9341C140.612 92.2244 142.178 85.1603 140.968 78.2958L130.992 21.7223ZM130.68 80.4892C132.192 89.0659 126.465 97.2446 117.888 98.7569L60.947 108.797C52.3705 110.309 44.1917 104.583 42.6793 96.006L32.639 39.0647C31.1267 30.488 36.8536 22.3093 45.4302 20.797L102.372 10.7566C110.948 9.24437 119.127 14.9711 120.639 23.5478L130.68 80.4892Z" fill="#6968F4"/>
+const logoSvg = `<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 8h24v24H8V8zm28 0h16v24H36V8zm20 0h16v24H56V8zm20 0h16v24H76V8z" fill="#FF6B35"/>
+<text x="8" y="22" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">数数科技</text>
 </svg>
 `;
 
@@ -42,9 +43,10 @@ const wordmarkSvg = `<svg width="313" height="100" viewBox="0 0 313 100" fill="n
 `;
 
 const ROUTES = [
-  { href: "https://june.so/customer-stories", title: "Customers", type: "external-link" },
-  { href: "https://june.so/pricing", title: "Pricing", type: "external-link" },
-  { href: "/", title: "Changelog", type: "internal-link" },
+  { href: "https://www.thinkingdata.cn/solution", title: "解决方案", type: "external-link" },
+  { href: "https://www.thinkingdata.cn/case", title: "客户案例", type: "external-link" },
+  { href: "https://www.thinkingdata.cn/support", title: "帮助与支持", type: "external-link" },
+  { href: "/", title: "更新日志", type: "internal-link" },
 ] as const;
 
 interface NavbarProps {
@@ -90,12 +92,12 @@ function Navbar(props: NavbarProps) {
         >
           <Flex direction="column">
             <Flex align="center" justify="space-between">
-              <Flex p={4} as="a" href="https://june.so/">
+              <Flex p={4} as="a" href="https://www.thinkingdata.cn/">
                 <NextImage
                   height={48}
                   width={48}
-                  src="/june-logo-symbol-only.svg"
-                  alt="customer analytics software"
+                  src="/logo.svg"
+                  alt="数数科技 ThinkingData"
                 />
               </Flex>
               <Flex p={4} onClick={onMobileMenuToggle}>
@@ -173,13 +175,13 @@ function Navbar(props: NavbarProps) {
               setShowLogoMenu(!showLogoMenu);
             }}
           >
-            <Link href="https://june.so/" passHref prefetch={false}>
+            <Link href="https://www.thinkingdata.cn/" passHref prefetch={false}>
               <NextResponsiveImage
                 display={["none", "none", "block"]}
                 src="/logo.svg"
-                alt="June's logo"
-                width={["100px"]}
-                height={["32px"]}
+                alt="数数科技 ThinkingData"
+                width={["120px"]}
+                height={["40px"]}
                 cursor="pointer"
                 {...(props.mode === "dark" && {
                   filter: "invert(1) brightness(10000%)",
@@ -196,7 +198,7 @@ function Navbar(props: NavbarProps) {
                   <p
                     className='font-hero text-[16px] cursor-pointer hover:underline underline-offset-[3px] font-bold leading-normal text-primary'
                   >
-                    Features
+                    产品能力
                   </p>
                   <ChevronDownIcon
                     boxSize={[5]}
@@ -215,27 +217,34 @@ function Navbar(props: NavbarProps) {
                   minWidth="unset"
                   width="unset"
                 >
-                  <Box className="w-[319px] p-5">
+                  <Box className="w-[360px] p-5">
                   <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/salesforce`} passHref>
+                    <Link href="https://www.thinkingdata.cn/product/ta" passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/icons-sf.svg" alt="Salesforce integration" />
-                        <Text>Salesforce integration</Text>
+                        <Text>实时用户行为分析</Text>
+                      </HStack>
+                    </Link>
+                    <Link href="https://www.thinkingdata.cn/product/te" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <Text>一站式精细化运营</Text>
+                      </HStack>
+                    </Link>
+                    <Link href="https://www.thinkingdata.cn/product/cdp" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <Text>数据开发治理平台</Text>
+                      </HStack>
+                    </Link>
+                    <Link href="https://www.thinkingdata.cn/product/sdk" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <Text>自助BI数据可视化</Text>
+                      </HStack>
+                    </Link>
+                    <Link href="https://www.thinkingdata.cn/product/community" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <Text>玩家社区分析平台</Text>
                         <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                          NEW
+                          热门
                         </div>
-                      </HStack>
-                    </Link>
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`} passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/icons-hs.svg" alt="HubSpot integration" />
-                        <Text>HubSpot integration</Text>
-                      </HStack>
-                    </Link>
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/attio`} passHref>
-                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                        <img className="mr-1" src="/navbar/icons-at.svg" alt="Attio integration" />
-                        <Text>Attio integration</Text>
                       </HStack>
                     </Link>
                   </VStack>
@@ -256,9 +265,9 @@ function Navbar(props: NavbarProps) {
               <PopoverTrigger>
                 <HStack role="group" spacing={[1]}>
                   <DesktopNavItem
-                    key={'/content'}
+                    key={'/resources'}
                     mode={props.mode}
-                    {...{ href: `${process.env.NEXT_PUBLIC_MARKETING_HOST}/content`, title: 'Content', type: 'external-link' }}
+                    {...{ href: "https://www.thinkingdata.cn/resources", title: '资源中心', type: 'external-link' }}
                     isActive={false}
                   />
                   <ChevronDownIcon
@@ -277,23 +286,30 @@ function Navbar(props: NavbarProps) {
                 width="unset"
                 className="relative z-20 drop-shadow-md"
               >
-                <Box className="w-[200px] p-5">
+                <Box className="w-[240px] p-5">
                   <VStack alignItems="start" spacing={[4]} className="font-bold text-primary font-hero">
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/blog`} passHref>
+                    <Link href="https://www.thinkingdata.cn/reports" passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
                         <div className="grid w-[32px] h-[32px] p-1 mr-1 bg-secondary rounded-[8px]">
-                          <img src="/navbar/blog-post.svg" alt="Blog" className="w-[20px] place-self-center" />
+                          <img src="/navbar/blog-post.svg" alt="Reports" className="w-[20px] place-self-center" />
                         </div>
-                        <Text>Blogs</Text>
-                        
+                        <Text>报告&白皮书下载</Text>
                       </HStack>
                     </Link>
-                    <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/guides`} passHref>
+                    <Link href="https://www.thinkingdata.cn/courses" passHref>
                       <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
                         <div className="grid w-[32px] h-[32px] mr-1 p-1 bg-brown-300 rounded-[8px]">
-                          <img src="/navbar/guide.svg" alt="Guide" className="w-[20px] place-self-center" />
+                          <img src="/navbar/guide.svg" alt="Courses" className="w-[20px] place-self-center" />
                         </div>
-                        <Text>Guides</Text>
+                        <Text>数数课堂</Text>
+                      </HStack>
+                    </Link>
+                    <Link href="https://www.thinkingdata.cn/blog" passHref>
+                      <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                        <div className="grid w-[32px] h-[32px] mr-1 p-1 bg-blue-300 rounded-[8px]">
+                          <img src="/navbar/blog-post.svg" alt="Blog" className="w-[20px] place-self-center" />
+                        </div>
+                        <Text>博客文章</Text>
                       </HStack>
                     </Link>
                   </VStack>
@@ -303,40 +319,23 @@ function Navbar(props: NavbarProps) {
           </HStack>
           {/* CTAs */}
           <HStack spacing={4} align="center">
-            {loggedIn ? (
+            <>
               <a
-                href={`${process.env.NEXT_PUBLIC_APP_HOST}/dashboard`}
-                className="relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary cursor-pointer"
+                className={`text-[16px] font-bold font-hero leading-normal text-primary hover:underline underline-offset-2`}
+                href="https://www.thinkingdata.cn/login"
               >
-                Dashboard
+                登录
               </a>
-            ) : (
-              <>
+              <div className="flex justify-center items-center space-x-2"></div>
+              <div>
                 <a
-                  className={`text-[16px] font-bold font-hero leading-normal text-primary hover:underline underline-offset-2`}
-                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/login`}
+                  className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
+                  href="https://www.thinkingdata.cn/trial"
                 >
-                  Login
+                  免费试用
                 </a>
-                <div className="flex justify-center items-center space-x-2"></div>
-                <div>
-                  <a
-                    className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
-                    href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
-                  >
-                    Get started
-                  </a>
-                  {/* Google one-tap */}
-                  <div
-                    id="g_id_onload"
-                    data-auto_prompt="true"
-                    data-client_id={process.env.GOOGLE_CLIENT_ID}
-                    data-login_uri={`${process.env.JUNE_API_HOST}/auth/google_oauth2`}
-                    data-cancel_on_tap_outside="false"
-                  ></div>
-                </div>
-              </>
-            )}
+              </div>
+            </>
           </HStack>
         </Flex>
       </Container>

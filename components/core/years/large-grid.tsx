@@ -42,7 +42,7 @@ const LargeGrid = (props: IGridProps) => {
                     }}
                   >
                     <Image
-                      src={rowItems[0].imageUrl}
+                      src={rowItems[0].imageUrl || "/plain-gray.jpg"}
                       alt={rowItems[0].slug}
                       h="198px"
                       w={rowItems.length === 1 ? "100%" : "282px"}

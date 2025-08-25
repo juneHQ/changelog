@@ -26,8 +26,8 @@ export const NavbarMobileMenu = ({ toggle, isRoleProduct, isRoleSuccessSales }: 
       <Box w="100%" maxWidth="100vw" position="fixed" zIndex="overlay" display={['block', 'block', 'none']}>
         <Flex direction="column" className="bg-white">
           <Flex align="center" justify="space-between">
-            <Flex p={4} as="a" href="/">
-              <NextImage height={48} width={48} src="/june-logo-symbol-only.svg" alt="customer analytics software" />
+            <Flex p={4} as="a" href="https://www.thinkingdata.cn/">
+              <NextImage height={48} width={48} src="/logo.svg" alt="数数科技 ThinkingData" />
             </Flex>
             <Flex p={4} onClick={toggle}>
               <Box pr={1}>
@@ -39,35 +39,43 @@ export const NavbarMobileMenu = ({ toggle, isRoleProduct, isRoleSuccessSales }: 
       </Box>
       <Flex pt="90px" h="100vh" w="100vw" bg="white" direction="column" justify="space-between" overflowY="auto">
         <VStack alignItems="start" spacing="24px" px="24px" className="font-black text-primary text-[20px] font-hero">
-          <div className="">Features</div>
+          <div className="">产品能力</div>
           <VStack alignItems="start" spacing="24px" px="12px" className="w-full">
-            <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/hubspot`} passHref>
+            <Link href="https://www.thinkingdata.cn/product/ta" passHref>
               <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                <img className="mr-1" src="/navbar/hubspot-integration.svg" alt="HubSpot integration" />
-                <Text>HubSpot integration</Text>
-                <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                  NEW
-                </div>
+                <Text>实时用户行为分析</Text>
               </HStack>
             </Link>
-            <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/integration/attio`} passHref>
+            <Link href="https://www.thinkingdata.cn/product/te" passHref>
               <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
-                <img className="mr-1" src="/navbar/attio-integration.svg" alt="Attio integration" />
-                <Text>Attio integration</Text>
+                <Text>一站式精细化运营</Text>
+              </HStack>
+            </Link>
+            <Link href="https://www.thinkingdata.cn/product/cdp" passHref>
+              <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                <Text>数据开发治理平台</Text>
+              </HStack>
+            </Link>
+            <Link href="https://www.thinkingdata.cn/product/community" passHref>
+              <HStack as="a" spacing={2} className="hover:underline underline-offset-[3px] cursor-pointer">
+                <Text>玩家社区分析平台</Text>
                 <div className="flex items-center justify-center w-[44px] h-[20px] rounded-full outline outline-2 outline-gray-200 font-black text-[12px]">
-                  NEW
+                  热门
                 </div>
               </HStack>
             </Link>
           </VStack>
-          <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/customer-stories`} passHref>
-            <a className="">Customers</a>
+          <Link href="https://www.thinkingdata.cn/solution" passHref>
+            <a className="">解决方案</a>
           </Link>
-          <Link href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/pricing`} passHref>
-            <a className="">Pricing</a>
+          <Link href="https://www.thinkingdata.cn/case" passHref>
+            <a className="">客户案例</a>
           </Link>
-          <Link href="https://changelog.june.so/" passHref>
-            <a className="">Changelog</a>
+          <Link href="https://www.thinkingdata.cn/support" passHref>
+            <a className="">帮助与支持</a>
+          </Link>
+          <Link href="/" passHref>
+            <a className="">更新日志</a>
           </Link>
 
           <div className="h-[192px] w-full" />

@@ -126,7 +126,7 @@ const Months = ({ monthChangelogsMap, isInfiniteScrollingView }: IMonthsProps) =
                               style={{ height: "100%", width: "100%" }}
                             >
                               <Image
-                                src={imageUrl}
+                                src={imageUrl || "/plain-gray.jpg"}
                                 alt={`${Object.keys(monthChangelogsMap)[index]} - ${index}`}
                                 objectFit={"cover"}
                                 minHeight={["176px", "100%", "360px"]}

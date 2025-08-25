@@ -22,7 +22,7 @@ const SmallGrid = (props: IGridProps) => {
           style={{ overflow: "hidden" }}
         >
           <Image
-            src={changelogs[0]?.imageUrl}
+            src={changelogs[0]?.imageUrl || "/plain-gray.jpg"}
             alt={changelogs[0]?.slug}
             minHeight={["176px", "176px", "360px"]}
             objectFit={"cover"}

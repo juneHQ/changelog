@@ -1,5 +1,5 @@
 export interface IImagePreviewMeta {
-  imageUrl: string;
+  imageUrl: string | null;
   slug: string;
   publishedAt: string;
   weeklyViewPage: number;

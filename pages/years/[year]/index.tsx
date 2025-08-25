@@ -97,7 +97,7 @@ export const getStaticProps = async ({ params }) => {
       acc[key] = [];
     }
     acc[key].push({
-      imageUrl: item.headerImage,
+      imageUrl: item.headerImage || null,
       slug: item.slug,
       publishedAt: item.publishedAt,
       weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE),

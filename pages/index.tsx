@@ -106,7 +106,7 @@ export async function getStaticProps({ params }) {
       acc[key] = [];
     }
     acc[key].push({
-      imageUrl: item.headerImage,
+      imageUrl: item.headerImage || null,
       slug: item.slug,
       publishedAt: item.publishedAt,
       weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE),
@@ -129,7 +129,7 @@ export async function getStaticProps({ params }) {
     }
 
     acc[year].push({
-      imageUrl: item.headerImage,
+      imageUrl: item.headerImage || null,
       slug: item.slug,
       publishedAt: item.publishedAt,
       weeklyViewPage: Math.floor(index / ITEMS_PER_PAGE),

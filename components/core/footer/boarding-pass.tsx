@@ -58,20 +58,20 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
     >
       <div className="flex flex-col ">
         <div className="font-black text-[24px] leading-[32px] lg:text-[40px] lg:leading-[50px]">
-          <h2>Let's meet for 30 mins</h2>
+          <h2>开启数据驱动增长之旅</h2>
         </div>
         <div className="text-[18px] tracking-[-0.015em] font-bold leading-[28px] w-[290px] lg:w-[480px] mt-2 lg:mt-4">
           <p>
-            We're here to help you provide an exceptional experience to your customers.
+          为全球游戏打造一体化 Data+AI 驱动解决方案，满足游戏企业全品类、全方位、全场景、全生命周期的数据需求
           </p>
         </div>
         <a
           className="cursor-pointer relative flex items-center pl-[40px] h-16 w-[223px] shadow-[inset_0_-2px_4px_0_rgba(0,0,0,0.20)] overflow-hidden rounded-[20px] text-[#6868F7] mt-6 lg:mt-8 bg-white text-[20px] leading-[24px] font-semibold hover:scale-110 ease-in-out duration-300"
-          href={`https://cal.com/alberto-incisa/demo`}
+          href="https://www.thinkingdata.cn/contact"
           target="_blank"
           rel="noreferrer noopener"
         >
-          <div>Book a demo</div>
+          <div>预约演示</div>
           <img className="absolute top-[12px] right-[18px]" src="/footer/right-arrow.svg" alt="Arrow-secondary" />
         </a>
         <div className="absolute hidden lg:block top-0 lg:-right-40 xl:right-0">
@@ -86,7 +86,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
               <div className="flex gap-6">
                 <div className="font-hero text-3xl font-black text-primary">{nearestAirport.name}</div>
                 <img src="/footer/plane.svg" alt="Plane" />
-                <div className="font-hero text-3xl font-black text-primary">OMG</div>
+                <div className="font-hero text-3xl font-black text-primary">ThinkingData</div>
               </div>
               <div className="mt-4 space-y-2">
                 <div className="flex flex-col items-center pt-2 border-t-[1px] border-gray-200">
@@ -95,7 +95,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
                 </div>
                 <div className="flex flex-col items-center pt-2 border-t-[1px] border-gray-200">
                   <span className="text-gray-400">TO</span>
-                  <span className="font-bold text-primary">"Oh my God!"</span>
+                  <span className="font-bold text-primary">Data+AI</span>
                 </div>
                 <div className="flex flex-col items-center pt-2 border-t-[1px] border-gray-200">
                   <span className="text-gray-400">DEPARTURE</span>
@@ -114,7 +114,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
               <div className="text-[40px] leading-[50px] flex w-full justify-between">
                 <div>{nearestAirport.name}</div>
                 <img className="absolute left-[143px] top-[29px] " src="/footer/plane.svg" alt="Plane" />
-                <div className="absolute left-[213px]">OMG</div>
+                <div className="absolute left-[213px]">TE</div>
 
                 <div className="relative items-center justify-center hidden xl:flex">
                   <img className="relative" src="/footer/logo-background.svg" alt="Background" />
@@ -129,7 +129,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
                 <div className="w-[162px] h-full flex items-center">{nearestAirport.city}</div>
 
                 <div className="absolute flex items-center left-[189px] border-l-[1px] border-gray-200 h-[60px] pl-[24px]">
-                  "Oh my God!"
+                Data+AI
                 </div>
               </div>
               <div className="mt-[16px] text-[12px] leading-[14.32px] text-gray-400 flex w-full">
@@ -139,7 +139,7 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
               <div className="mt-[12px] flex text-[18px] leading-[28px] font-bold h-[60px] w-full items-center border-t-[1px] border-gray-200">
                 <div className="w-[162px] h-full flex items-center">{currentTime}</div>
                 <div className="absolute flex items-center left-[189px] border-l-[1px] border-gray-200 h-[60px] pl-[24px]">
-                  30 mins
+                  即时响应
                 </div>
               </div>
             </div>
