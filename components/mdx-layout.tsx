@@ -22,6 +22,7 @@ import {
 import Timeline from './layout/timeline';
 import { MainLayout } from './layout/main-layout';
 import { Contributors } from './core/contributors';
+import { absoluteUrl } from 'lib/utils';
 
 import type { MDXComponents } from "mdx/types";
 const components: MDXComponents = {
@@ -115,17 +116,17 @@ export const MdxLayout = (props: MdxLayoutProps) => {
           <link rel="icon" href="/favicon.ico" />
           <meta name="title" content={title} />
           <meta name="description" content={description} />
-          <meta name="image" content={props.meta.headerImage} />
+          <meta name="image" content={absoluteUrl(props.meta.headerImage)} />
           <meta property="og:type" content="website" />
           <meta property="og:url" content={url} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
-          <meta property="og:image" content={props.meta.headerImage} />
+          <meta property="og:image" content={absoluteUrl(props.meta.headerImage)} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={url} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
-          <meta name="twitter:image" content={props.meta.headerImage} />
+          <meta name="twitter:image" content={absoluteUrl(props.meta.headerImage)} />
           <link
             rel="alternate"
             type="application/rss+xml"

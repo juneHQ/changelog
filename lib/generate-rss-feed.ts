@@ -1,11 +1,12 @@
 import path from "path";
 import fs from "fs";
 import { Feed } from "feed";
+import { absoluteUrl, SITE_URL } from "./utils";
 
 const MDX_DIR = "changelogs";
 
 export const generateRssFeed = async () => {
-  const siteURL = "https://changelog.june.so";
+  const siteURL = SITE_URL;
   const date = new Date();
   const author = {
     name: "June",
@@ -51,7 +52,7 @@ export const generateRssFeed = async () => {
       link: url,
       description: description,
       content: content,
-      image: headerImage,
+      image: absoluteUrl(headerImage),
       date: new Date(publishedAt),
     });
   });

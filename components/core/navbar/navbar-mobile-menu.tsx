@@ -69,25 +69,8 @@ export const NavbarMobileMenu = ({ toggle, isRoleProduct, isRoleSuccessSales }: 
           <Link href="https://changelog.june.so/" passHref>
             <a className="">Changelog</a>
           </Link>
-
-          <div className="h-[192px] w-full" />
         </VStack>
       </Flex>
-
-      <div className="flex flex-col gap-4 font-hero text-[20px] bg-white border-t-[1px] border-gray-200 p-6 font-bold absolute w-full h-[192px] bottom-0">
-        <a
-          href={`${process.env.NEXT_PUBLIC_APP_HOST}/log-in`}
-          className="inline-block bg-white h-16 flex items-center justify-center text-primary rounded-[20px] py-2 px-4 md:px-12 text-center border-[1px] border-[#E9ECEF] shadow-[inset_0_-2px_4px_0_rgba(0,0,0,0.20)] "
-        >
-          Login
-        </a>
-        <a
-          href={`${process.env.NEXT_PUBLIC_MARKETING_HOST}/demo`}
-          className="flex items-center justify-center inline-block h-16 rounded-[20px] px-4 py-2 text-center text-white bg-primary md:px-12 g-conversion-button"
-        >
-          Request a demo
-        </a>
-      </div>
     </div>
   );
 };

@@ -5,8 +5,7 @@
   "scripts": {
     "develop": "next dev",
     "dev": "next dev -p 3004",
-    "postbuild": "next-sitemap",
-    "build": "next build && next export",
+    "build": "next build && next export && next-sitemap && node bin/postexport.mjs",
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

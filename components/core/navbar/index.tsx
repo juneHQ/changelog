@@ -3,7 +3,6 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import dynamic from 'next/dynamic';
 import { defaultPx } from 'lib/utils/default-container-px';
-import { useAuth } from 'lib/state/use-auth';
 import {
   Box,
   Button,
@@ -53,7 +52,6 @@ interface NavbarProps {
 }
 
 function Navbar(props: NavbarProps) {
-  const { loggedIn } = useAuth();
   const { isOpen: isMobileMenuOpen, onToggle: onMobileMenuToggle } = useDisclosure();
 
   const [showLogoMenu, setShowLogoMenu] = useState(false);
@@ -301,43 +299,9 @@ function Navbar(props: NavbarProps) {
               </PopoverContent>
             </Popover>
           </HStack>
-          {/* CTAs */}
-          <HStack spacing={4} align="center">
-            {loggedIn ? (
-              <a
-                href={`${process.env.NEXT_PUBLIC_APP_HOST}/dashboard`}
-                className="relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary cursor-pointer"
-              >
-                Dashboard
-              </a>
-            ) : (
-              <>
-                <a
-                  className={`text-[16px] font-bold font-hero leading-normal text-primary hover:underline underline-offset-2`}
-                  href={`${process.env.NEXT_PUBLIC_APP_HOST}/login`}
-                >
-                  Login
-                </a>
-                <div className="flex justify-center items-center space-x-2"></div>
-                <div>
-                  <a
-                    className='relative h-12 px-4 flex justify-center items-center font-hero border-2 rounded-[12px] text-[16px] leading-normal font-semibold bg-primary text-white hover:bg-white hover:text-primary border-primary'
-                    href={`${process.env.NEXT_PUBLIC_APP_HOST}/start`}
-                  >
-                    Get started
-                  </a>
-                  {/* Google one-tap */}
-                  <div
-                    id="g_id_onload"
-                    data-auto_prompt="true"
-                    data-client_id={process.env.GOOGLE_CLIENT_ID}
-                    data-login_uri={`${process.env.JUNE_API_HOST}/auth/google_oauth2`}
-                    data-cancel_on_tap_outside="false"
-                  ></div>
-                </div>
-              </>
-            )}
-          </HStack>
+          {/* The June app is shut down, so there are no log-in or sign-up buttons; this spacer,
+              as wide as the logo, keeps the links in the middle. */}
+          <Box w="100px" />
         </Flex>
       </Container>
     </>

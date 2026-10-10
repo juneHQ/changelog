@@ -3,13 +3,12 @@ const optimizedImages = require("next-optimized-images");
 
 const nextConfig = {
   env: {
-    NEXT_PUBLIC_MARKETING_HOST: process.env.NEXT_PUBLIC_MARKETING_HOST,
-    NEXT_PUBLIC_APP_HOST: process.env.NEXT_PUBLIC_APP_HOST,
-    NEXT_PUBLIC_JUNE_API_HOST: process.env.NEXT_PUBLIC_JUNE_API_HOST,
+    NEXT_PUBLIC_MARKETING_HOST: "https://www.june.so",
   },
-  async redirects() {
-    return [];
-  },
+  // The site is a static export (see README), and Next 12.1's default next/image loader needs
+  // a server. The akamai loader only appends "?imwidth=N" to the path, which a static host
+  // ignores, so next/image serves the files in public/ as they are.
+  images: { loader: "akamai", path: "/" },
 };
 
 const withMDX = require("@next/mdx")({

@@ -8,6 +8,8 @@ Set-up a changelog and share what you ship as easy as 1-2-3. A Next.js blog star
 
 #### [👉 Visit working demo](https://changelog.june.so)
 
+> June has shut down, so the changelog at [changelog.june.so](https://changelog.june.so) is now an archive: a static export of this repository, hosted on GitHub Pages. See [Deploying](#deploying).
+
 ## Features
 
 - 💅 A stylish changelog
@@ -28,13 +30,7 @@ The easiest way to try this is to run it locally on your computer.
 
 First, you'll need to create your own copy of this code. You can do so by clicking the ["Fork"](https://github.com/juneHQ/changelog/fork) button on GitHub and filling out the form.
 
-Once you've cloned the repository, create a `.env.local` file to setup the environment variables, you can reuse the default variables or change them as you will:
-
-```bash
-cp .env.example .env.local
-```
-
-Then install dependencies and start the Next.js server:
+Once you've cloned the repository, install dependencies and start the Next.js server (the site needs no environment variables):
 
 ```bash
 # Using yarn
@@ -48,9 +44,20 @@ npm run dev
 
 ## Deploying
 
-You can deploy your blog to any hosting provider that supports Next.js. We recommend [Vercel](https://vercel.com), as it is the easiest way to deploy Next.js apps.
+`yarn build` exports the whole changelog as a static site in `out/` (`next build && next export`, then the sitemap and `bin/postexport.mjs`), so any static host can serve it.
 
-To deploy you'll need to make sure you include the right environment variables. You can find some examples of our environment variables in the [`.env.local.example`](https://github.com/juneHQ/changelog/tree/master/.env.example) file.
+changelog.june.so is served by GitHub Pages: `.github/workflows/pages.yml` builds and deploys `out/` on every push to `master`.
+
+- Settings > Pages: Source is "GitHub Actions", and the custom domain is `changelog.june.so`, with "Enforce HTTPS" on.
+- DNS: `changelog` is a CNAME to `junehq.github.io`. In Cloudflare it must be "DNS only", or GitHub cannot issue the certificate.
+
+`bin/postexport.mjs` adapts the export to GitHub Pages:
+
+- Pages such as `/years/2024`, which share a path with a directory, get an `index.html` copy inside that directory.
+- Every entry gets a redirect page at its old `/changelog/<slug>` URL.
+- The build fails if anything still points at the old S3 image bucket.
+
+`pages/404.tsx` retries a URL once without a trailing slash, like Vercel's redirects did.
 
 ## Routes
 
@@ -91,21 +98,9 @@ Learn more 👉 [Next.js: Using MDX](https://nextjs.org/docs/advanced-features/u
 
 ## Managing images and assets
 
-If you start having too many changelogs, you'll want to move your images in an S3 bucket.
+Images live in `public/images` and articles reference them from the root, e.g. `headerImage: "/images/<slug>/header.png"`. The RSS feed, `latest.json` and social previews turn these into full `https://changelog.june.so/...` URLs.
 
-To do so you'll need to:
-
-1. Create an S3 bucket for your changelog images
-2. Add the bucket name to your `.env` file
-3. Make sure you are authenticated to your AWS account and have the `aws` CLI installed
-4. Create a `changelog-images` directory in your repository (`mkdir changelog-images`)
-5. Run `sync_images.sh` to sync the images from your local to your S3 bucket
-
-You'll need to run the `sync_images.sh` script to sync your local images with your S3 bucket. This script will upload all images in the `/changelog-images` directory to your S3 bucket.
-
-```bash
-./sync_images.sh
-```
+They used to be served from an S3 bucket. `bin/archive/self-host-images.mjs` copied every image the articles used from a local copy of that bucket into `public/images`, at most 1600px wide and as WebP where that is smaller, and rewrote the URLs.
 
 ## Branding customization
 

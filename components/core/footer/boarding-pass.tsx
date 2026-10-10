@@ -7,15 +7,9 @@ type FooterProps = {
 
 export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
   const [currentTime, setCurrentTime] = useState('');
-  const [nearestAirport, setNearestAirport] = useState<{
-    name: string;
-    city: string;
-    country: string;
-  }>({
-    name: 'WTF',
-    city: 'What the f***',
-    country: 'WTF',
-  });
+  // This used to look up the visitor's nearest airport from their IP address through June's
+  // backend, which is shut down; every visitor now gets the same boarding pass, as on june.so.
+  const nearestAirport = { name: 'JUN', city: 'June', country: 'JUN' };
 
   useEffect(() => {
     const getTime = () => {
@@ -24,29 +18,6 @@ export const BoardingPass = ({ hideCTA = false }: FooterProps) => {
       setCurrentTime(formattedTime);
     };
     getTime();
-
-    const getUserLocationFromIP = async () => {
-      try {
-        const ipResponse = await fetch('https://api64.ipify.org?format=json');
-        const ipData = await ipResponse.json();
-        const ipAddress = ipData.ip;
-        const response = await fetch(`https://backend.june.so/public/airports?ip=${ipAddress}`);
-        const data: {
-          name: string;
-          city: string;
-          country: string;
-        } = await response.json();
-
-        setNearestAirport(data);
-      } catch (error) {
-        setNearestAirport({
-          name: 'WTF',
-          city: 'What the f***',
-          country: 'WTF',
-        });
-      }
-    };
-    getUserLocationFromIP();
   }, []);
 
   return (

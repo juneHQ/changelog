@@ -24,7 +24,7 @@ export const meta = {
     new Date().setDate(new Date().getDate() - (((new Date().getDay() + 1) % 7) + 1))
   ).toISOString()}",
   title: "${title}",
-  headerImage: "https://june-changelog.s3.eu-central-1.amazonaws.com/${slug}/header.png",
+  headerImage: "/images/${slug}/header.png",
   authors: ${JSON.stringify(
     JSON.parse(fs.readFileSync(path.join(__dirname, "../team.json"))).authors
   )},

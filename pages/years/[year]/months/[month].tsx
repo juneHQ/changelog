@@ -59,7 +59,8 @@ const Page = ({ slugs }: IPageProps) => {
 };
 
 export async function getStaticPaths() {
-  const currentYear = new Date().getFullYear();
+  // The changelog's last entry is from 2025; keep the year range the site was last built with.
+  const currentYear = 2025;
   const years = Array.from(Array(41), (x, i) => currentYear - 20 + i); // Generate paths for 20 years back and forth from the current year
   const months = Array.from(Array(12)).map((month, index) =>
     index < 9 ? `0${index + 1}` : `${index + 1}`

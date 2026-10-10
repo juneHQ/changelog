@@ -7,7 +7,6 @@ import useTimelineStore from 'lib/state/use-timeline-store';
 import usePageStatusStore from 'lib/state/use-page-status-store';
 import useAnimatePageStore from 'lib/state/use-animate-page-store';
 import { motion } from 'framer-motion';
-import TryBanner from 'components/core/try-banner';
 import Navbar from 'components/core/navbar';
 import { Footer } from 'components/core/footer';
 import { Box, Button, Container, HStack, VStack } from '@chakra-ui/react';

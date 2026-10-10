@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs";
+import { absoluteUrl } from "./utils";
 
 const MDX_DIR = "changelogs";
 
@@ -21,7 +22,11 @@ export const generateLatestChangelogsJson = async () => {
     .filter((item) => item)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
-  const latestChangelogs = changelogsMeta.slice(0, 3);
+  const latestChangelogs = changelogsMeta.slice(0, 3).map((meta) => ({
+    ...meta,
+    headerImage: absoluteUrl(meta.headerImage),
+    authors: meta.authors?.map((author) => ({ ...author, avatarUrl: absoluteUrl(author.avatarUrl) })),
+  }));
 
   console.debug("-------------------");
   console.debug("Writing latest.json to public/latest.json");
